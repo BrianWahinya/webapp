@@ -17,6 +17,8 @@ class NavBar extends React.Component{
     const {languages, projects} = this.state;
     // console.log('langs', languages);
     // console.log('pro', projects);
+    const projectsTags = projects.map(pro => <li id={pro.id}>{pro.name}</li>);
+    const languagesTags = languages.map(lang => <label><input type="radio" name="lang" id={lang.id} />{lang.id.toUpperCase()}</label> );
     return (
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
@@ -24,10 +26,10 @@ class NavBar extends React.Component{
             <a className="navbar-brand" href="https://www.brianwahinya.com">Portfolio</a>
           </div>
           <ul className="nav navbar-nav">
-            {projects.map(pro => <li id={pro.id}>{pro.name}</li>)}
+            {projectsTags}
           </ul>
           <div className="radio">
-            {languages.map(lang => <label><input type="radio" name="lang" id={lang.id} />{lang.id.toUpperCase()}</label> )}
+            {languagesTags}
           </div>
           <button className="btn btn-danger navbar-btn">Button</button>
         </div>
