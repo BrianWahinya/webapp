@@ -14,9 +14,10 @@ Programming stack:
 - Database
   : Postgres, MongoDb
 - Tools
-  Git, GithubActions, Postman, Heroku, Netlify
+  : Git, GithubActions, Postman, Heroku, Netlify
 
 ... among others.
+
 All versions of the above languages and tools will be indicated in the versions.txt file within the primary parent folder.
 
 Below are some of the sub-projects that will be included:
