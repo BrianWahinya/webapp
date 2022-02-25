@@ -1,9 +1,12 @@
-# WEBAPP
+# WebApp
 
 ### Portfolio + Sub-Projects
 
 The project involves creating a new personal portfolio and at the same time building small programming projects.
-This is the 3rd portfolio version.
+
+This is the 3rd portfolio version meant to replace the current portfolio.  
+Current portfolio -> [portfolio_V2](https://www.brianwahinya.com).  
+Maiden portfolio -> [portfolio_V1](https://www.brianwahinya.com/oldversion).
 
 Programming stack:
 
@@ -18,7 +21,7 @@ Programming stack:
 
 ... among others.
 
-All versions of the above languages and tools will be indicated in the versions.txt file within the primary parent folder.
+All versions of the above languages and tools will be indicated in the _versions.txt_ file within the primary parent folder.
 
 Below are some of the sub-projects that will be included:
 
@@ -41,5 +44,5 @@ Below are some of the sub-projects that will be included:
 17. [ ] News App(API)
 18. [ ] Weather App(API)
 
-Every app will have a short description of the programming stack used. This will be displayed on the user-interface.
+Every app will have a short description of the programming stack used. This will be displayed on the user-interface.  
 More sub-projects will be added as the project matures.
