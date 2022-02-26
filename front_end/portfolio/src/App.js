@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Clock from './projects/clock_app/clock_main';
+import Weather from './projects/weather_app/weather_main';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  selectApp = () => {
+    const apps = {
+      'clock': <Clock/>,
+      'weather': <Weather/>
+    }
+    const name = this.props.clickedProject;
+    return apps[name];
+  }
+  render(){
+    return ( <> {this.selectApp()} </> );
+  }
 }
 
 export default App;
