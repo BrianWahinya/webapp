@@ -5,11 +5,12 @@ import NavBar from './components/navbar';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import './styles/navbar.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <NavBar />
-    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

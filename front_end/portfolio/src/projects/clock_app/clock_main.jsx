@@ -32,15 +32,16 @@ function Clock(){
   }, [])
 
   return <>
-    <p>{dateState}</p>
-    <p>{clockState}</p>
+    <span>{dateState}</span>
+    <br />
+    <span>{clockState}</span>
   </>
 }
 
 export default Clock;
 
 
-// My first solution
+/* INITIAL SOLUTION */
 
 // class Clock extends React.Component{
 //   state = {
