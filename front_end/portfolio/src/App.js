@@ -13,7 +13,7 @@ class App extends React.Component {
     return apps[name];
   }
   render(){
-    return ( <> {this.selectApp()} </> );
+    return <> {this.selectApp()} </>;
   }
 }
 
