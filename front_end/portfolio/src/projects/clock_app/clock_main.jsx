@@ -1,24 +1,26 @@
 import React, {useEffect, useState} from 'react';
 
 function Clock(){
-  const months = {
-    1: {name:'January'},
-    2: {name:'February'},
-    3: {name:'March'},
-    4: {name:'April'},
-    5: {name:'May'},
-    6: {name:'June'},
-    7: {name:'July'},
-    8: {name:'August'},
-    9: {name:'September'},
-    10: {name:'October'},
-    11: {name:'November'}, 
-    12: {name:'December'}
-  }
+  
   const [clockState, setClockState] = useState();
   const [dateState, setDateState] = useState();
 
   useEffect(() => {
+    const months = {
+      1: {name:'January'},
+      2: {name:'February'},
+      3: {name:'March'},
+      4: {name:'April'},
+      5: {name:'May'},
+      6: {name:'June'},
+      7: {name:'July'},
+      8: {name:'August'},
+      9: {name:'September'},
+      10: {name:'October'},
+      11: {name:'November'}, 
+      12: {name:'December'}
+    }
+    
     const today = new Date();
     const day = today.getDate();
     const month = months[today.getMonth() + 1].name;
