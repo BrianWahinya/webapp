@@ -20,12 +20,13 @@ function Clock(){
       11: {name:'November'}, 
       12: {name:'December'}
     }
-    
+
     const today = new Date();
     const day = today.getDate();
     const month = months[today.getMonth() + 1].name;
     const year = today.getFullYear();
     setDateState(`${day}-${month}-${year}`);
+    setClockState(today.toLocaleTimeString());
 
     setInterval(() => {
       const date = new Date();

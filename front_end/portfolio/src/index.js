@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './styles/navbar.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <React.StrictMode>
+    <h5 className='comingSoon'>Coming Soon...&#128521;</h5>
     <NavBar />
   </React.StrictMode>,
   document.getElementById('root')

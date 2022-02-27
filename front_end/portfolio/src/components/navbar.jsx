@@ -38,7 +38,7 @@ class NavBar extends React.Component{
     return <>
       <nav className="navbar navbar-expand-sm bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href='window.location' target="_blank" rel="noreferrer">Portfolio</a>
+          <a className="navbar-brand" href='window.location'>Portfolio</a>
           <button className="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -47,8 +47,8 @@ class NavBar extends React.Component{
               <li className="nav-item dropdown">
                 <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">WebPortals</button>
                 <ul className="dropdown-menu">
-                  <a className="dropdown-item" href={webversions.current_version.link}>{webversions.current_version.name}</a>
-                  <a className="dropdown-item" href={webversions.maiden_version.link}>{webversions.maiden_version.name}</a>
+                  <a className="dropdown-item" href={webversions.current_version.link} target="_blank" rel="noreferrer">{webversions.current_version.name}</a>
+                  <a className="dropdown-item" href={webversions.maiden_version.link} target="_blank" rel="noreferrer">{webversions.maiden_version.name}</a>
                 </ul>
               </li>
               <li className="nav-item dropdown">
