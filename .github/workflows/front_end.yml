@@ -6,8 +6,6 @@ name: Front_End CI
 on:
   push:
     branches: [front_end]
-  pull_request:
-    branches: [front_end]
 
 jobs:
   build:
