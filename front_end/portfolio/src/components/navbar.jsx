@@ -12,8 +12,8 @@ class NavBar extends React.Component{
       lang: 'en'
     },
     projects: [
-      {id:'clock', name:"Clock"},
-      {id:'weather', name:"Weather"}
+      {id:'clock', name:"Clock", emoji: <>&#128338;</>},
+      {id:'weather', name:"Weather", emoji: <>&#127784;</>}
     ],
     languages: [
       {id:'en', name:"English"},
@@ -27,10 +27,10 @@ class NavBar extends React.Component{
     // console.log('langs', languages);
     // console.log('pro', projects);
     const projectsTags = projects.map(project => {
-      const {id, name} = project;      
+      const {id, name, emoji} = project;      
       return (
         <li>
-          <button className='dropdown-item' key={id} id={id} onClick={() => this.projectLinkClick(id)}>{name}</button>
+          <button className='dropdown-item' key={id} id={id} onClick={() => this.projectLinkClick(id)}>{name} {emoji}</button>
         </li>
       );      
     });
@@ -45,16 +45,16 @@ class NavBar extends React.Component{
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
-                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</button>
-                <ul className="dropdown-menu">
-                  {projectsTags}
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
                 <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">WebPortals</button>
                 <ul className="dropdown-menu">
                   <a className="dropdown-item" href={webversions.current_version.link}>{webversions.current_version.name}</a>
                   <a className="dropdown-item" href={webversions.maiden_version.link}>{webversions.maiden_version.name}</a>
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</button>
+                <ul className="dropdown-menu">
+                  {projectsTags}
                 </ul>
               </li>
             </ul>
