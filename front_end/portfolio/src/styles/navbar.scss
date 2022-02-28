@@ -7,7 +7,7 @@
   }
 
   .navbar-toggler {
-    border-color: rgb(73, 32, 189);
+    border-color: $navTogglerBorderColor;
     &:focus,
     &:active,
     .navbar-toggler-icon:focus {
@@ -21,11 +21,17 @@
 
   .nav-item {
     margin: 5px 0 0 5px;
-  }
-
-  .nav-link {
-    border-width: 0;
-    border-radius: 8px;
+    &:hover {
+      background-color: $navLinkHover;
+    }
+    .nav-link {
+      border-width: 0;
+      border-radius: 8px;
+      &:active,
+      &:focus {
+        background-color: $navLinkHover;
+      }
+    }
   }
 
   #collapsibleNavbar {

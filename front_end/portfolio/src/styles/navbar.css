@@ -22,9 +22,17 @@
   margin: 5px 0 0 5px;
 }
 
-.navbar .nav-link {
+.navbar .nav-item:hover {
+  background-color: #d8d8d8;
+}
+
+.navbar .nav-item .nav-link {
   border-width: 0;
   border-radius: 8px;
+}
+
+.navbar .nav-item .nav-link:active, .navbar .nav-item .nav-link:focus {
+  background-color: #d8d8d8;
 }
 
 .navbar #collapsibleNavbar .dropdown-menu {
