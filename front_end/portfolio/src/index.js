@@ -11,7 +11,6 @@ import './styles/index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h5 className='comingSoon'>Coming Soon...&#128521;</h5>
     <NavBar />
   </React.StrictMode>,
   document.getElementById('root')

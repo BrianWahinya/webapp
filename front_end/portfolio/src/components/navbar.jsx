@@ -38,22 +38,22 @@ class NavBar extends React.Component{
     return <>
       <nav className="navbar navbar-expand-sm bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href='window.location'>Portfolio</a>
+          <a className="navbar-brand" href='/'>Portfolio <span className='comingSoon'>&lt;&lt;Coming Soon...&#128521;&gt;&gt;</span></a>
           <button className="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
                 <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">WebPortals</button>
-                <ul className="dropdown-menu">
+                <div className="dropdown-menu dropdown-menu-start">
                   <a className="dropdown-item" href={webversions.current_version.link} target="_blank" rel="noreferrer">{webversions.current_version.name}</a>
                   <a className="dropdown-item" href={webversions.maiden_version.link} target="_blank" rel="noreferrer">{webversions.maiden_version.name}</a>
-                </ul>
+                </div>
               </li>
               <li className="nav-item dropdown">
                 <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</button>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu dropdown-menu-end">
                   {projectsTags}
                 </ul>
               </li>
