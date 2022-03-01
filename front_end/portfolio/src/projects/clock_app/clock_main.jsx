@@ -1,120 +1,83 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import DigitalClock from './digital_clock';
+import AnalogClock from './analog_clock';
+import '../../styles/clock_main.css';
 
-function Clock(){
-  
-  const [clockState, setClockState] = useState();
-  const [dateState, setDateState] = useState();
+class Clock extends React.Component{
+  state = {
+    localTime: '',
+    ampm: '',
+    time: {
+      hourRatio: 0,
+      minuteRatio: 0,
+      secondRatio: 0
+    },
+    switchBtns:{
+      active: 'analog',
+      btns: [
+        {id:'analog', name: 'Analog'},
+        {id:'digital', name: 'Digital'}
+      ]
+    },
+    clockApps: {
+      'digital': <DigitalClock/>,
+      'analog': <AnalogClock/>
+    }    
+  }
 
-  useEffect(() => {
-    const months = {
-      1: {name:'January'},
-      2: {name:'February'},
-      3: {name:'March'},
-      4: {name:'April'},
-      5: {name:'May'},
-      6: {name:'June'},
-      7: {name:'July'},
-      8: {name:'August'},
-      9: {name:'September'},
-      10: {name:'October'},
-      11: {name:'November'}, 
-      12: {name:'December'}
-    }
+  getAllSwitchBtns = () => {
+    return <>
+      {this.state.switchBtns.btns.map(btn =>{
+        return <label className='labelClockRadios'>
+          <input type='radio' name='clockRadioBtns' className='clockRadioBtns' key={btn.id} value={btn.id} checked={btn.id === this.state.switchBtns.active} onChange={this.radioOnChange} />
+          {btn.name}
+          </label>
+        })
+      }
+    </>    
+  }
 
-    const today = new Date();
-    const day = today.getDate();
-    const month = months[today.getMonth() + 1].name;
-    const year = today.getFullYear();
-    setDateState(`${day}-${month}-${year}`);
-    setClockState(today.toLocaleTimeString());
+  render(){
+    const {clockApps, switchBtns, time, localTime, ampm} = this.state;
+    const props = {hourRatio:time.hourRatio, minuteRatio:time.minuteRatio, secondRatio:time.secondRatio, localTime:localTime, ampm:ampm};
+    const app = React.cloneElement(clockApps[switchBtns.active], props);
+    // console.log('props', app.props)
+    return <>
+      {this.getAllSwitchBtns()}
+      <div className='clockApps'>{app}</div>
+    </>
+  }
 
+  radioOnChange = (event) => {
+    // console.log('radio event target', event.target);
+    const switchBtns = this.state.switchBtns;
+    switchBtns.active = event.target.value;
+    event.target.checked = true;
+    this.setState({switchBtns});
+    // console.log('radio state', this.state.switchBtns);
+  }
+
+  componentDidMount() {
+    this.setTime();
     setInterval(() => {
-      const date = new Date();
-      setClockState(date.toLocaleTimeString());
-    }, 1000)
-  }, [])
+      this.setTime()
+    }, 1000);
+  }
 
-  return <>
-    <span>{dateState}</span>
-    <br />
-    <span>{clockState}</span>
-  </>
+  setTime = () => {
+    const today = new Date();
+    // console.log('today', today);
+    const localTime = today.toLocaleTimeString();
+    const time = {
+      hourRatio: today.getHours(),
+      minuteRatio: today.getMinutes(),
+      secondRatio: today.getSeconds(),
+    }
+    const ampm = (time.hourRatio >= 12)? 'PM': 'AM';
+    this.setState({time});
+    this.setState({localTime});
+    this.setState({ampm});
+  }
 }
 
 export default Clock;
-
-
-/* INITIAL SOLUTION */
-
-// class Clock extends React.Component{
-//   state = {
-//     months: {
-//       1: {name:'January'},
-//       2: {name:'February'},
-//       3: {name:'March'},
-//       4: {name:'April'},
-//       5: {name:'May'},
-//       6: {name:'June'},
-//       7: {name:'July'},
-//       8: {name:'August'},
-//       9: {name:'September'},
-//       10: {name:'October'},
-//       11: {name:'November'}, 
-//       12: {name:'December'}
-//     },
-//     date: "default",
-//     time: {hour:0, min:0, sec:0}
-//   }
-
-//   render(){
-//     return <>
-//       <h4>Clock App</h4>
-//       <div>
-//         {/* <label><input type='radio' name='clockType' id='analog' checked/>Analog</label>
-//         <label><input type='radio' name='clockType' id='digital'/>Digital</label>
-//         <br/> */}
-//         <span id='date'>{this.state.date}</span>
-//         <br/>
-//         <span id='hour'>{this.state.time.hour}</span>: <span id='min'>{this.state.time.min}</span>: <span id='sec'>{this.state.time.sec}</span>
-//       </div>
-//     </>
-//   }
-
-//   async componentDidMount() {
-//     // console.log('mount', this);
-//     try {
-//       await this.getDateComp()
-//       await this.getTimeComp() 
-//     } catch (error) {
-//       // console.log(error)
-//     }
-//   }
-
-//   getDateComp = () => {
-//     // console.log('date func',this.state.date);
-//     const today = new Date();
-//     const month = this.state.months[today.getMonth() + 1].name;
-//     const date = today.getFullYear() + "-" + month + "-" + today.getDate();
-//     this.setState({date});
-//   }
-
-//   getTimeComp = () => {
-//     // console.log('time', this);
-//     const currentTime = () => {
-//       const today = new Date();
-//       let h = today.getHours();
-//       let m = today.getMinutes();
-//       let s = today.getSeconds();
-  
-//       const time = this.state.time;
-//       time.hour = (h < 10)? '0' + h : h;
-//       time.min = (m < 10)? '0' + m : m;
-//       time.sec = (s < 10)? '0' + s : s;
-//       this.setState({time});
-//     }
-//     currentTime();
-//     setInterval(currentTime, 1000);
-//   }
-// }
-
-// export default Clock;

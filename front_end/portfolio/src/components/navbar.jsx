@@ -70,7 +70,7 @@ class NavBar extends React.Component{
   }
 
   projectLinkClick = (projectId) => {
-    console.log('clicked', this);
+    // console.log('clicked', this);
     const defaultParams = this.state.defaultParams;
     defaultParams.project = projectId;
     this.setState({defaultParams});

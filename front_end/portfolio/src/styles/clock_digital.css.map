@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACZ,WAAW,ECAM,aAAa,EAAE,OAAO,EAAE,SAAS;EDClD,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "clock_digital.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "clock_digital.css"
+}
