@@ -1,0 +1,27 @@
+.divWeather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  .inputCity {
+    width: 80%;
+    margin: auto;
+    font-size: 16px;
+    border: 1px solid #add8e6;
+    border-radius: 3px;
+    &:hover,
+    &:focus-visible,
+    &:active {
+      border-radius: 8px;
+      border: 2.5px solid #add8e6;
+      outline: none;
+    }
+  }
+  .divCityWeather {
+    width: 60%;
+    min-width: 250px;
+    margin: 50px 0 0 0;
+  }
+}

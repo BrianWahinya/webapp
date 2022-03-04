@@ -1,0 +1,38 @@
+.divWeather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.divWeather .inputCity {
+  width: 80%;
+  margin: auto;
+  font-size: 16px;
+  border: 1px solid #add8e6;
+  border-radius: 3px;
+}
+
+.divWeather .inputCity:hover, .divWeather .inputCity:focus-visible, .divWeather .inputCity:active {
+  border-radius: 8px;
+  border: 2.5px solid #add8e6;
+  outline: none;
+}
+
+.divWeather .divCityWeather {
+  width: 60%;
+  min-width: 250px;
+  margin: 50px 0 0 0;
+}
+/*# sourceMappingURL=weather.css.map */

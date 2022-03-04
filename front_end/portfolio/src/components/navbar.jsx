@@ -13,7 +13,8 @@ class NavBar extends React.Component{
     },
     projects: [
       {id:'clock', name:"Clock", emoji: <>&#128338;</>},
-      {id:'weather', name:"Weather", emoji: <>&#127784;</>}
+      {id:'weather', name:"Weather", emoji: <>&#127784;</>},
+      {id:'quotegenerator', name:"Random Quote Generator", emoji: <>&#127784;</>}
     ],
     languages: [
       {id:'en', name:"English"},
