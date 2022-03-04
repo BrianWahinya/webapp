@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import "../../styles/weather.css";
 
 function Weather() {
-  const apiKey = "cb388d7f83e8c66802587e65b3bb6d60";
+  const {REACT_APP_OPENWEATHER_API_KEY} = process.env;
   const [weatherData, setWeatherData] = useState([]);
   const [city, setCity] = useState("");
 
   const getWeather = (event) => {
     if(event.key === "Enter"){
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_OPENWEATHER_API_KEY}`)
         .then(data => data.json())
         .then(jsondata => {
           // console.log(jsondata);
