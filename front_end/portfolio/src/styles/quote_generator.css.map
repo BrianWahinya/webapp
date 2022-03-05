@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,wCAAwC;EACrD,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "quote_generator.scss"
+    ],
+    "names": [],
+    "file": "quote_generator.css"
+}

@@ -1,9 +1,12 @@
 import React from "react";
+import "../../styles/quote_generator.css";
 
 class QuoteGenerator extends React.Component {
   state = {
     advice: "",
     buttons: "",
+    intervalDifference: 0,
+    lastTimeQuoteGenerated: "",
   };
 
   componentDidMount() {
@@ -14,11 +17,24 @@ class QuoteGenerator extends React.Component {
   fecthAdvice = () => {
     fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
-      .then((advice) => this.setState({ advice: advice.slip.advice }));
+      .then((advice) => {
+        this.setState({ advice: advice.slip.advice });
+        this.setState({ lastTimeQuoteGenerated: new Date().getTime() });
+      });
   };
 
   getNextQuote = () => {
-    this.fecthAdvice();
+    const date = new Date();
+    const currentTime = date.getTime();
+    const timeDifference = currentTime - this.state.lastTimeQuoteGenerated;
+    if (timeDifference > 2500) {
+      this.fecthAdvice();
+    } else {
+      this.setState({
+        advice: <span className="wait">Please Wait...&#128521;</span>,
+      });
+      setTimeout(() => this.fecthAdvice(), 2000 - timeDifference);
+    }
   };
 
   createButtons = () => {
