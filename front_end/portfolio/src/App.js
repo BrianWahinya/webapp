@@ -3,6 +3,7 @@ import "./App.css";
 import Clock from "./projects/clock_app/clock_main";
 import Weather from "./projects/weather_app/weather_main";
 import QuoteGenerator from "./projects/quotegenerator_app/quote_generator";
+import TvSeries from "./projects/tvseries_app/tvseries";
 
 class App extends React.Component {
   selectApp = () => {
@@ -10,6 +11,7 @@ class App extends React.Component {
       clock: <Clock />,
       weather: <Weather />,
       quotegenerator: <QuoteGenerator />,
+      tvseries: <TvSeries />,
     };
     const name = this.props.clickedProject;
     return apps[name];

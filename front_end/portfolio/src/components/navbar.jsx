@@ -25,6 +25,7 @@ class NavBar extends React.Component {
         name: "Random Quote Generator",
         emoji: <>&#128195;</>,
       },
+      { id: "tvseries", name: "TV Series", emoji: <>&#128250;</> },
     ],
     languages: [
       { id: "en", name: "English" },

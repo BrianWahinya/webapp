@@ -27,13 +27,21 @@ class QuoteGenerator extends React.Component {
     const date = new Date();
     const currentTime = date.getTime();
     const timeDifference = currentTime - this.state.lastTimeQuoteGenerated;
-    if (timeDifference > 2500) {
+    const showAfter = 2000;
+    const roundOff = 10;
+    if (timeDifference > showAfter) {
       this.fecthAdvice();
     } else {
+      const timeGap = showAfter - timeDifference;
       this.setState({
-        advice: <span className="wait">Please Wait...&#128521;</span>,
+        advice: (
+          <span className="wait">
+            Please Wait...&#128521; (
+            {Math.round((timeGap / 1000) * roundOff) / roundOff} secs)
+          </span>
+        ),
       });
-      setTimeout(() => this.fecthAdvice(), 2000 - timeDifference);
+      setTimeout(() => this.fecthAdvice(), timeGap);
     }
   };
 
@@ -47,8 +55,6 @@ class QuoteGenerator extends React.Component {
   };
 
   render() {
-    // return <div>Random Quote Generator App (Under Development) <br/> No hurry!!! &#128514; &#128514;</div>
-    // console.log("render", this.state);
     return (
       <>
         <h4>Random Quote Generator</h4>
