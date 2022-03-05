@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: self-hosted
     defaults:
-        run:
-          working-directory: front_end/portfolio/
+      run:
+        working-directory: front_end/portfolio/
 
     strategy:
       matrix:
@@ -29,7 +29,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: "./front_end/portfolio/package-lock.json"
-          super_secret: ${{ secrets.REACT_APP_OPENWEATHER_API_KEY }}
+          super_secret: ${{ secrets.REACT_APP_OPENWEATHER_APIKEY }}
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
