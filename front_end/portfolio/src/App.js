@@ -16,13 +16,13 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    document.title = `Portal:${this.props.clickedProject}`;
+    document.title = `Portal: ${this.props.clickedProject}`;
     window.process = {
       ...window.process,
     };
   }
   componentDidUpdate() {
-    document.title = `Portal:${this.props.clickedProject}`;
+    document.title = `Portal: ${this.props.clickedProject}`;
   }
 
   render() {

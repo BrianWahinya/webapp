@@ -3,7 +3,6 @@ import "../../styles/weather.css";
 
 function Weather() {
   const { REACT_APP_OPENWEATHER_APIKEY } = process.env;
-  console.log(process);
   const [weatherData, setWeatherData] = useState([]);
   const [city, setCity] = useState("");
 
@@ -61,6 +60,7 @@ function Weather() {
 
   return (
     <div className="divWeather">
+      <h4>Weather</h4>
       <input
         className="inputCity"
         placeholder="Enter City..."
