@@ -4,3 +4,9 @@
   font-style: italic;
   font-size: 12px;
 }
+
+.adviceNext:disabled {
+  background: #dddddd;
+  border-color: #a0a0a0;
+  color: #a0a0a0 !important;
+}
