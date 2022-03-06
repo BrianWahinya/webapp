@@ -4,26 +4,27 @@ import "../../styles/quote_generator.css";
 class QuoteGenerator extends React.Component {
   state = {
     advice: "",
-    buttons: "",
-    intervalDifference: 0,
+    disable: false,
     lastTimeQuoteGenerated: "",
   };
 
   componentDidMount() {
     this.fecthAdvice();
-    this.createButtons();
   }
 
   fecthAdvice = () => {
+    this.setState({ disable: true });
     fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
       .then((advice) => {
         this.setState({ advice: advice.slip.advice });
         this.setState({ lastTimeQuoteGenerated: new Date().getTime() });
+        this.setState({ disable: false });
       });
   };
 
   getNextQuote = () => {
+    this.setState({ disable: true });
     const date = new Date();
     const currentTime = date.getTime();
     const timeDifference = currentTime - this.state.lastTimeQuoteGenerated;
@@ -45,21 +46,18 @@ class QuoteGenerator extends React.Component {
     }
   };
 
-  createButtons = () => {
-    const buttons = (
-      <button className="adviceNext" onClick={this.getNextQuote}>
-        Next
-      </button>
-    );
-    this.setState({ buttons });
-  };
-
   render() {
     return (
       <>
         <h4>Random Quote Generator</h4>
         <p>{this.state.advice}</p>
-        {this.state.buttons}
+        <button
+          disabled={this.state.disable}
+          className="adviceNext btn btn-outline-primary"
+          onClick={this.getNextQuote}
+        >
+          Next
+        </button>
       </>
     );
   }
