@@ -3,7 +3,8 @@ import "../../styles/quote_generator.css";
 
 class QuoteGenerator extends React.Component {
   state = {
-    advice: "",
+    advice: "Loading...",
+    author: "",
     disable: false,
     lastTimeQuoteGenerated: "",
   };
@@ -14,12 +15,18 @@ class QuoteGenerator extends React.Component {
 
   fecthAdvice = () => {
     this.setState({ disable: true });
-    fetch("https://api.adviceslip.com/advice")
+    fetch("https://type.fit/api/quotes")
       .then((response) => response.json())
-      .then((advice) => {
-        this.setState({ advice: advice.slip.advice });
-        this.setState({ lastTimeQuoteGenerated: new Date().getTime() });
-        this.setState({ disable: false });
+      .then((quotes) => {
+        const randomNum = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomNum];
+        const genTime = new Date().getTime();
+        this.setState({
+          advice: quote.text,
+          author: quote.author,
+          disable: false,
+          lastTimeQuoteGenerated: genTime,
+        });
       });
   };
 
@@ -41,22 +48,26 @@ class QuoteGenerator extends React.Component {
             {Math.round((timeGap / 1000) * roundOff) / roundOff} secs)
           </span>
         ),
+        author: "",
       });
       setTimeout(() => this.fecthAdvice(), timeGap);
     }
   };
 
   render() {
-    const { advice, disable } = this.state;
+    const { advice, author, disable } = this.state;
     return (
       <>
         <h4>Random Quote Generator</h4>
-        <p>{advice}</p>
+        <p>"{advice}"</p>
+        <p>{author}</p>
         <a
           disabled={disable}
           role="button"
           className={`btn btn-primary btnTweet ${disable ? "disabled" : ""}`}
-          href={encodeURI(`https://twitter.com/intent/tweet?text=${advice}`)}
+          href={encodeURI(
+            `https://twitter.com/intent/tweet?text=${advice} - ${author}`,
+          )}
           target="_blank"
           rel="noreferrer noopener"
         >
