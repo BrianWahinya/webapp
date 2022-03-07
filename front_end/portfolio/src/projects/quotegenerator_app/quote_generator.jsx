@@ -47,12 +47,21 @@ class QuoteGenerator extends React.Component {
   };
 
   render() {
+    const { advice, disable } = this.state;
     return (
       <>
         <h4>Random Quote Generator</h4>
-        <p>{this.state.advice}</p>
+        <p>{advice}</p>
+        <a
+          role="button"
+          className={`btn btn-primary btnTweet ${disable ? "disabled" : ""}`}
+          href={`https://twitter.com/intent/tweet?text=${advice}`}
+          target="_blank"
+        >
+          Tweet
+        </a>
         <button
-          disabled={this.state.disable}
+          disabled={disable}
           className="adviceNext btn btn-outline-primary"
           onClick={this.getNextQuote}
         >
