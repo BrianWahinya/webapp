@@ -28,7 +28,7 @@ class QuoteGenerator extends React.Component {
     const date = new Date();
     const currentTime = date.getTime();
     const timeDifference = currentTime - this.state.lastTimeQuoteGenerated;
-    const showAfter = 2000;
+    const showAfter = 20000;
     const roundOff = 10;
     if (timeDifference > showAfter) {
       this.fecthAdvice();
@@ -53,6 +53,7 @@ class QuoteGenerator extends React.Component {
         <h4>Random Quote Generator</h4>
         <p>{advice}</p>
         <a
+          disabled={disable}
           role="button"
           className={`btn btn-primary btnTweet ${disable ? "disabled" : ""}`}
           href={encodeURI(`https://twitter.com/intent/tweet?text=${advice}`)}

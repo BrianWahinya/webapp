@@ -5,13 +5,6 @@
   font-size: 12px;
 }
 
-:where(.btnTweet, .adviceNext):disabled {
-  pointer-events: none;
-  background: #dddddd;
-  border-color: #a0a0a0;
-  color: #a0a0a0 !important;
-}
-
 .btnTweet {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,5 +17,13 @@
       -ms-flex-positive: inherit;
           flex-grow: inherit;
   margin: 5px;
+}
+
+.adviceNext:disabled,
+.disabled {
+  pointer-events: none;
+  background-color: #e0e0e0 !important;
+  border-color: #a0a0a0 !important;
+  color: #8a8a8a !important;
 }
 /*# sourceMappingURL=quote_generator.css.map */
