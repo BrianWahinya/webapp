@@ -57,6 +57,7 @@ class QuoteGenerator extends React.Component {
           className={`btn btn-primary btnTweet ${disable ? "disabled" : ""}`}
           href={encodeURI(`https://twitter.com/intent/tweet?text=${advice}`)}
           target="_blank"
+          rel="noreferrer noopener"
         >
           Tweet
         </a>
