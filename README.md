@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# WebApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Portfolio + Sub-Projects
 
-## Available Scripts
+The project involves creating a new personal portfolio and at the same time building small programming projects.
 
-In the project directory, you can run:
+This is the 3rd portfolio version meant to replace the current portfolio.  
+Current portfolio -> [portfolio_V2](https://www.brianwahinya.com).  
+Maiden portfolio -> [portfolio_V1](https://www.brianwahinya.com/oldversion).
 
-### `npm start`
+Programming stack:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- FrontEnd
+  : Javascript, ReactJS, HTML/CSS, Bootstrap, MaterialUI, Jest, Echarts
+- Backend
+  : Python, FastAPI, Pytest, PHP
+- Database
+  : Postgres, MongoDb
+- Tools
+  : Git, GithubActions, Postman, Heroku, Netlify
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+... among others.
 
-### `npm test`
+All versions of the above languages and tools will be indicated in the _versions.txt_ file within the primary parent folder.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Below are some of the sub-projects that will be included:
 
-### `npm run build`
+1. [ ] Clock app
+2. [ ] Stop watch
+3. [ ] Search
+4. [ ] Gallery(API)
+5. [ ] Tab control
+6. [ ] Sticker notes
+7. [ ] Calendar
+8. [ ] Calculator
+9. [ ] TodoList / TaskManager
+10. [ ] Rock Paper Scissors
+11. [ ] Conway Game of Life
+12. [ ] Validation form
+13. [ ] Shopping cart
+14. [ ] Random Qoute Generator
+15. [ ] Tv Series(API)
+16. [ ] Corona app(API)
+17. [ ] News App(API)
+18. [ ] Weather App(API)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Every app will have a short description of the programming stack used. This will be displayed on the user-interface.  
+More sub-projects will be added as the project matures.
