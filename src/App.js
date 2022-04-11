@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import logo from "./logo.svg";
+// import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/profile";
@@ -9,15 +9,18 @@ import Weather from "./components/app_weather/weather";
 import QouteGenerator from "./components/app_quotegenerator/quotegenerator";
 import Movies from "./components/app_movies/movies";
 import ErrorPage from "./components/errors/error_page";
+import Footer from "./components/footer/footer";
 
 function App() {
   // Various route objects with their configs
   const routesObj = [
-    { id: "profile", comp: <Profile />, path: "/" },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },
     { id: "movies", comp: <Movies />, path: "/app/movies" },
     { id: "taskmanager", comp: <TaskManager />, path: "/app/taskmanager" },
+    { id: "taskmanager1", comp: <TaskManager />, path: "/app/taskmanager" },
+    { id: "taskmanager2", comp: <TaskManager />, path: "/app/taskmanager" },
+    { id: "taskmanager3", comp: <TaskManager />, path: "/app/taskmanager" },
     {
       id: "quotegenerator",
       comp: <QouteGenerator />,
@@ -25,18 +28,18 @@ function App() {
     },
   ];
   return (
-    <div>
-      <Router>
-        <Navbar routesObj={routesObj} />
-        <Routes>
-          {routesObj.map((robj) => {
-            const { id, path, comp } = robj;
-            return <Route key={id} path={path} element={comp} />;
-          })}
-          <Route key="error" path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Navbar routesObj={routesObj} />
+      <Routes>
+        <Route key="profile" path="/" element={<Profile />} />
+        {routesObj.map((robj) => {
+          const { id, path, comp } = robj;
+          return <Route key={id} path={path} element={comp} />;
+        })}
+        <Route key="error" path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

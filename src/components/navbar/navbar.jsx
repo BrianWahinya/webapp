@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar({ routesObj }) {
   return (
-    <>
-      <h5>Navbar App</h5>
+    <nav>
       <a href="/">Profile</a>
       <a href="https://brianwahinya.com" target="_blank">
         Current Web-Version
@@ -19,6 +19,6 @@ export default function Navbar({ routesObj }) {
           </Link>
         );
       })}
-    </>
+    </nav>
   );
 }
