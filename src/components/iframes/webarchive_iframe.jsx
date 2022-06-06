@@ -7,6 +7,7 @@ export default function WebArchiveIframe({ archive, scroll }) {
         className="webarchive"
         scrolling={scroll}
         src={`${window.location.origin}/archives/${archive}`}
+        title={archive}
       ></iframe>
     </>
   );

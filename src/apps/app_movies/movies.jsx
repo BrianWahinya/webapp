@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./movies.css";
 export default function Movies() {
   const [year, setYear] = useState("2022");
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [moviesData, setMoviesData] = useState({});
-  const [errors, setErrors] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [errors, setErrors] = useState([]);
+  // const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   const currentYear = new Date().getFullYear();
@@ -16,7 +16,7 @@ export default function Movies() {
     i++;
   }
 
-  const dataFetch = () => {
+  const dataFetch = useCallback(() => {
     const movies_api_key = process.env.REACT_APP_MOVIE_API_KEY_v3;
     fetch(
       encodeURI(
@@ -26,7 +26,7 @@ export default function Movies() {
       .then((data) => data.json())
       .then((jsondata) => {
         // console.log(jsondata);
-        setLoading(false);
+        // setLoading(false);
         setMoviesData(jsondata);
         // if (parseInt(jsondata.cod) >= 200 && parseInt(jsondata.cod) < 300) {
         //   setMoviesData([jsondata]);
@@ -34,32 +34,36 @@ export default function Movies() {
         // } else {
         //   setErrors(["Invalid Location: Enter a valid location"]);
         // }
-        setSearch("");
+        // setSearch("");
       })
       .catch((err) => {
-        setLoading(false);
-        setErrors(["An error occurred in loading the data"]);
+        // setLoading(false);
+        // setErrors(["An error occurred in loading the data"]);
+        console.log(err);
       });
     // console.log("moviesdata", moviesData);
-  };
+  }, [page, year]);
 
   // Event listener
-  const getMovies = (event) => {
-    setMoviesData({});
-    setErrors([]);
-    // if (event.key === "Enter" || event.type === "click") {
-    //   setLoading(true);
-    //   switch (true) {
-    //     case search === "":
-    //       setErrors(["Please Enter a location"]);
-    //       setLoading(false);
-    //       break;
-    //     default:
-    //       dataFetch();
-    //   }
-    // }
-    dataFetch();
-  };
+  const getMovies = useCallback(
+    (event) => {
+      setMoviesData({});
+      // setErrors([]);
+      // if (event.key === "Enter" || event.type === "click") {
+      //   setLoading(true);
+      //   switch (true) {
+      //     case search === "":
+      //       setErrors(["Please Enter a location"]);
+      //       setLoading(false);
+      //       break;
+      //     default:
+      //       dataFetch();
+      //   }
+      // }
+      dataFetch();
+    },
+    [dataFetch],
+  );
 
   const selectYear = (e) => {
     setYear(e.target.value);
@@ -86,6 +90,7 @@ export default function Movies() {
       case "end":
         setPage(moviesData.total_pages >= 500 ? 500 : moviesData.total_pages);
         break;
+      default:
     }
   };
 
@@ -93,7 +98,7 @@ export default function Movies() {
     getMovies();
     // console.log("page", page);
     // console.log("moviesdata", moviesData);
-  }, [year, page]);
+  }, [year, page, getMovies]);
 
   return (
     <>
@@ -140,6 +145,7 @@ export default function Movies() {
               <div key={movie.id} className="movie">
                 <img
                   className="moviePoster"
+                  alt={movie.original_title}
                   src={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`

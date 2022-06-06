@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./analog.css";
 
 export default function AnalogClock() {
@@ -10,11 +10,7 @@ export default function AnalogClock() {
   const [amPm, setAmPm] = useState("");
   const [date, setDate] = useState("");
 
-  let sec = time.secondRatio / 60;
-  let min = (sec + time.minuteRatio) / 60;
-  let hour = (min + time.hourRatio) / 12;
-
-  const dateTimeGen = () => {
+  const dateTimeGen = useCallback(() => {
     const currentDate = new Date();
     const localDate = currentDate.toLocaleDateString(undefined, {
       year: "numeric",
@@ -33,7 +29,11 @@ export default function AnalogClock() {
     if (date !== localDate) {
       setDate(localDate);
     }
-  };
+  }, [time.hourRatio, date]);
+
+  let sec = time.secondRatio / 60;
+  let min = (sec + time.minuteRatio) / 60;
+  let hour = (min + time.hourRatio) / 12;
 
   useEffect(() => {
     dateTimeGen();
@@ -45,7 +45,7 @@ export default function AnalogClock() {
     return function stopTimer() {
       clearInterval(timer);
     };
-  }, []);
+  }, [dateTimeGen]);
 
   return (
     <>

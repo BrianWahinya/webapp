@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 export default function DigitalClock() {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [hourSys, setHourSys] = useState("12hrs");
 
-  const dateTimeGen = () => {
+  const dateTimeGen = useCallback(() => {
     const currentDate = new Date();
     const localDate = currentDate.toLocaleDateString(undefined, {
       year: "numeric",
@@ -21,10 +21,10 @@ export default function DigitalClock() {
     if (date !== localDate) {
       setDate(localDate);
     }
-  };
+  }, [date, hourSys]);
 
   const selectHourSys = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setHourSys(event.target.value);
   };
 
@@ -38,7 +38,7 @@ export default function DigitalClock() {
     return function stopTimer() {
       clearInterval(timer);
     };
-  }, [hourSys]);
+  }, [dateTimeGen]);
 
   return (
     <>
