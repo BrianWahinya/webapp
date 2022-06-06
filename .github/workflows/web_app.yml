@@ -31,9 +31,9 @@ jobs:
           cache-dependency-path: "./package-lock.json"
           # super_secret: ${{ secrets.REACT_APP_OPENWEATHER_APIKEY }}
         env:
+          CI: false
           REACT_APP_WEATHER_API_KEY: ${{ secrets.REACT_APP_WEATHER_API_KEY }}
           REACT_APP_MOVIE_API_KEY_v3: ${{ secrets.REACT_APP_MOVIE_API_KEY_v3 }}
-          CI: false
       - run: npm ci
-      - run: npm run build --if-present
+      - run: CI=false npm run build --if-present
       - run: npm test
