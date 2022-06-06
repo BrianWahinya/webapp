@@ -1,0 +1,9 @@
+export { default as Profile } from "./profile/profile";
+export { default as AppMain } from "./app_main/appmain";
+export { default as Clock } from "./app_clock/clock";
+export { default as TaskManager } from "./app_taskmanager/taskmanager";
+export { default as Weather } from "./app_weather/weather";
+export { default as QouteGenerator } from "./app_quotegenerator/quotegenerator";
+export { default as Movies } from "./app_movies/movies";
+export { default as RockPaperScissors } from "./app_rockpaperscissors/rockpaperscissors";
+export { default as ConwayGameOfLife } from "./app_conwaygameoflife/conwaygameoflife";

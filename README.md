@@ -5,8 +5,7 @@
 The project involves creating a new personal portfolio and at the same time building small programming projects.
 
 This is the 3rd portfolio version meant to replace the current portfolio.  
-Current portfolio -> [portfolio_V2](https://www.brianwahinya.com).  
-Maiden portfolio -> [portfolio_V1](https://www.brianwahinya.com/oldversion).
+Current portfolio -> [portfolio_V2](https://brianwebportal.netlify.app/archives/current).
 
 Programming stack:
 

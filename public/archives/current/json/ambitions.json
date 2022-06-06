@@ -1,0 +1,99 @@
+[
+    {
+        "en": [
+          {
+            "career":[
+                {"id": 1, "name":"Full-Stack Data Engineer"}
+            ],
+            "education":[
+                {"id": 1, "name":"Pursue Masters in Data Science or Data Engineering"}
+            ],
+            "family":[
+                {"id": 1, "name":"One wife...four kids."}
+            ],
+            "house":[
+                {"id": 1, "name":"2-storey mansion(3000sqft): 6-bedroom, swimming pool, office"}
+            ],
+            "cars":[
+                {"id": 1, "name":"First Car: Subaru Forester STI. Dream Car: Hummer H2. Others: BMW X6, RangeSport, Mercedes G-Class, Mustang, Harley-Davidson"}
+            ]
+          }
+        ],
+        "es": [
+            {
+                "career":[
+                    {"id": 1, "name":"Ingeniero de datos de pila completa"}
+                ],
+                "education":[
+                    {"id": 1, "name":"Seguir una maestría en ciencia de datos o ingeniería de datos"}
+                ],
+                "family":[
+                    {"id": 1, "name":"Una esposa ... cuatro hijos."}
+                ],
+                "house":[
+                    {"id": 1, "name":"2-piso palacio(3000sqft): 6-habitación, piscina, oficina"}
+                ],
+                "cars":[
+                    {"id": 1, "name":"Primer coche: Subaru Forester STI. El coche soñado: Hummer H2. Otros: BMW X6, RangeSport, Mercedes G-Class, Mustang, Harley-Davidson"}
+                ]
+            }
+        ],
+        "fr": [
+            {
+                "career":[
+                    {"id": 1, "name":"Ingénieur Full Stack Data"}
+                ],
+                "education":[
+                    {"id": 1, "name":"Poursuivre une maîtrise en science des données ou en ingénierie des données"}
+                ],
+                "family":[
+                    {"id": 1, "name":"Une femme ... quatre enfants."}
+                ],
+                "house":[
+                    {"id": 1, "name":"Manoir sur 2 étages (3000 sq ft): 6 chambres, piscine, bureau"}
+                ],
+                "cars":[
+                    {"id": 1, "name":"Première voiture: Subaru Forester STI. Voiture de rêve: Hummer H2. Autres: BMW X6, RangeSport, Mercedes G-Class, Mustang, Harley-Davidson"}
+                ]
+            }
+        ],
+        "swa": [
+            {
+                "career":[
+                    {"id": 1, "name":"Mhandisi kamili wa Takwimu"}
+                ],
+                "education":[
+                    {"id": 1, "name":"Kuhitimu kwa kupata digrii ya kiwango cha juu cha Sayansi ya Ufundi au Uhandisi wa data"}
+                ],
+                "family":[
+                    {"id": 1, "name":"Mke mmoja ... watoto wanne."}
+                ],
+                "house":[
+                    {"id": 1, "name":"Nyumba ya ghorofa 2 (3000 sq ft): 6-chumba cha kulala, bwawa la kuogelea, ofisi"}
+                ],
+                "cars":[
+                    {"id": 1, "name":"Gari ya kwanza: Subaru Forester STI. Gari ya ndoto: Hummer H2. Zingine: BMW X6, RangeSport, Mercedes G-Class, Mustang, Harley-Davidson"}
+                ]
+            }
+        ],
+        "port": [
+            {
+                "career":[
+                    {"id": 1, "name":"Engenheiro de dados de pilha completa"}
+                ],
+                "education":[
+                    {"id": 1, "name":"Mestrado em Ciência de Dados ou Engenharia de Dados"}
+                ],
+                "family":[
+                    {"id": 1, "name":"Uma esposa ... quatro filhos."}
+                ],
+                "house":[
+                    {"id": 1, "name":"Mansão de 2 andares (3000 pés quadrados): 6 quartos, piscina, escritório"}
+                ],
+                "cars":[
+                    {"id": 1, "name":"Primeiro Carro: Subaru Forester STI. Sonhe Carro: Hummer H2. Outros: BMW X6, RangeSport, Mercedes G-Class, Mustang, Harley-Davidson"}
+                ]
+            }
+        ]
+    }
+]

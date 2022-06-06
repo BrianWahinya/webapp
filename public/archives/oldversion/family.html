@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>myfamily</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  	
+	<style type="text/css">
+
+	#pachieve{
+  		padding-left: 20%;
+	 	padding-right: 20%;
+  	}
+
+
+	/* Set a style for all buttons */
+	button {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 0px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 50%;
+	    border-radius: 10px;
+	}
+
+	button:hover {
+	    opacity: 0.4;
+	    border-radius: 15px 50px;
+	}
+
+	/* Center the image and position the close button */
+	.imgcontainer {
+	    text-align: center;
+	    margin: 24px 0 12px 0;
+	    position: relative;
+	}
+
+	img.avatar {
+	    width: 10%;
+	    border-radius: 50%;
+	}
+
+	/* Extra styles for the cancel button */
+	.cancelbtn {
+	    padding: 14px 20px;
+	    background-color: #f44336;
+	}
+
+	/* Float cancel and signup buttons and add an equal width */
+	.cancelbtn, .signupbtn, .submitbtn {
+	  float: center;
+	  width: 50%;
+	  border-radius: 15px 50px;
+	}
+
+	/* Add padding to container elements */
+	.container {
+	    padding: 16px;
+
+	}
+	span.psw {
+    	float: right;
+    	padding-top: 16px;
+	}
+
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+    	height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: px;
+
+	}
+		/* Modal Content/Box */
+	.modal-content {
+	    background-color: ;
+	    margin: 4% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	    height:;
+	}
+
+	/* Modal Content/Box */
+	.modal-contents {
+	    background-color: ;
+	    margin: 4% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	    height:;
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 50px;
+	    top: 0px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #000;
+	}
+
+	.close:hover, .close:focus {
+	    color: #f44336;
+	    cursor: pointer;
+	}
+
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+		/* Add Zoom Animation */
+	.animate {
+	    -webkit-animation: animatezoom 0.6s;
+	    animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	    from {-webkit-transform: scale(0)} 
+	    to {-webkit-transform: scale(1)}
+	}
+	    
+	@keyframes animatezoom {
+	    from {transform: scale(0)} 
+	    to {transform: scale(1)}
+	}
+
+		/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    span.psw {
+	       display: block;
+	       float: none;
+	    }
+	    .cancelbtn {
+	       width: 50%;
+	    }
+	}
+
+
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+    	height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: 60px;
+
+	}
+		/* Modal Content/Box */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* Modal Content/Box */
+	.modal-contents {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 50px;
+	    top: 0px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #000;
+	}
+
+	.close:hover, .close:focus {
+	    color: #f44336;
+	    cursor: pointer;
+	}
+
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+		/* Add Zoom Animation */
+	.animate {
+	    -webkit-animation: animatezoom 0.6s;
+	    animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	    from {-webkit-transform: scale(0)} 
+	    to {-webkit-transform: scale(1)}
+	}
+	    
+	@keyframes animatezoom {
+	    from {transform: scale(0)} 
+	    to {transform: scale(1)}
+	}
+
+		/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    span.psw {
+	       display: block;
+	       float: none;
+	    }
+	    .cancelbtn {
+	       width: 50%;
+	    }
+	}
+
+
+	
+
+	</style>	
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="container-fluid">
+    	<div class="navbar-header">
+      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      	</button>
+	  
+	    <a class="navbar-brand" href="family.html">BRIAN / MY FAMILY</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	   
+	    <ul class="nav navbar-nav navbar-right">
+	      <li class=""><a href="index.html">BACK TO HOME</a></li>
+	      <li class=""><a class="" href="index.html#bio">BIOGRAPHY</a></li>
+	      <li class=""><a class="" href="index.html#achieve">ACHIEVEMENTS</a></li>
+	       <li class=""><a class="" href="index.html#aspire">ASPIRATIONS</a></li>
+	      <li class=""><a class="" href="index.html#family">FAMILY&FRIENDS</a></li>
+	      <li><a href="#id03" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PHOTOS</a></li>
+	      <li class=""><a class="" href="index.html#contact">CONTACT</a></li> 
+	    </ul>
+	    
+	    </div>    
+    </div>
+	</nav>
+
+
+
+
+
+	<div id="id03" class="modal">
+  
+	  	<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>      	
+	    	</div>
+
+	    <div class="container" style="background-color:#f1f1f1"><center>	      	
+	      	<a id="abtnhome" class="btn btn-success" href="familypics.html">FAMILY</a>
+	      	<a id="abtnhome" class="btn btn-danger" href="classmates.html">CLASSMATES</a>
+	      	<a id="abtnhome" class="btn btn-info" href="friends.html">FRIENDS</a></center>
+	      	
+	    </div>
+	    	<script>
+			// Get the modal
+			var modal = document.getElementById('id03');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    			}
+				}
+			</script>
+
+	  	</form>
+		</div>
+
+
+
+
+
+	<section id="family" class="row text-center">
+		<hr><hr>
+		<h2><b>MY LOVELY FAMILY</b></h2>
+			<p id="pachieve">The Truth is....there is nothing better on earth than going home to family,eating good food and relaxing. Family is not an important thing, it's EVERYTHING. You dont choose your family,they are God's gift to you, just as you are to them</p>
+		<div class="col-md-4">
+			<img src="images/mom/mom1.jpg" width="330" height="270">
+			<h3>Mom and Dad</h3>
+			<p style="background-color: #d7ffd9">In their lives I'm so precious to them. They brought me up with plenty of love. I received beatings of love whenever I did a mistake, I cried with love because I knew they always want the best for me. Both are teachers, staunch christians with a rich background of struggles to make where our family is today. Indeed they are a good picture to me of how my future family should be governed.Their efforts to bring me up can only be rewarded by He who is Omnipotent. They certainly are the best parents God gave to me.
+			</p>
+
+			<a id="abtnhome" class="btn btn-success" href="familypics.html">HER PHOTO COLLECTION</a>		
+      	</div>
+    	</form>
+    	</div>
+    	</div>
+		
+
+			
+
+		<div class="col-md-4">
+			<img src="images/bro/bro2.jpg" width="330" height="270">
+			<h3>Big Bro</h3>
+			<p style="background-color: #eeffff">
+				Currently studying in Kenyatta University.You will always make me remember of the fights we had in our childhood. Watching wrestling was our favourite Tv program, but the only part we didnt enjoy in that program is when they displayed these words "Dont Do This At Home". Anyway we are now grown ups...we are there to support each other as we wait to give back to our parents heavily. Meanwhile, trust God and always pray to Him to add you strengths so that we can be able to be testimonies of the far God has brought us.
+			</p>			
+
+		<a id="abtnhome" class="btn btn-success" href="familypics.html">HIS PHOTO COLLECTION</a>
+          	
+      	
+    	</div>
+  		</form>
+		</div>
+		</div>
+		
+
+				
+		<div class="col-md-4">
+			<img src="images/family/rela1.jpg" width="330" height="270">
+			<h3>Relatives</h3>
+			<p style="background-color: #eeffff">I've got so many relatives...lemmi try and break it down just a little...my mom has 15 brothers& sisters, my dad has 10 brothers& sisters. All of them have sons and daughters whom I call cousins. Cousins alone may be close to 80. Then a good number of cousins already have families....isnt this a sign of blessings, my closest relatives being close to 100? Some of my relatives have gone out of their way to assist me and my family in big issues. I'm sincerely proud to be in such a big extended family.
+			</p>			
+
+		<a id="abtnhome" class="btn btn-success" href="familypics.html">THEIR PHOTO COLLECTION</a>
+
+		
+    	</div>
+  		</form>
+		</div>
+		</div>
+						
+	</section>
+	<footer class="container-fluid row text-center" style="background-color:black"> 
+	  		
+	  		<p id="pwhite"><a href="index.html" title="Visit my website">www.brianwahinya.com</a><br>&#169;BrianWahinya</p> 
+
+	</footer>
+
+
+
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

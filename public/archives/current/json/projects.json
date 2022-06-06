@@ -1,0 +1,54 @@
+[
+    {
+        "en": [
+            {
+                "project":[
+                    {"id": 1, "img":"icp.jpg", "year":"2019", "desc":"(PHP C.R.U.D) System funded by World Bank through UN. Used to share economic information by UN-Statistics Division, World Bank, Latin America and Caribbean countries and other organisations.", "project":"International Comparison Program", "company":"United Nations ECLAC"},
+                    {"id": 2, "img":"charts.jpg", "year":"2019", "desc":"(Vanilla Js + Js chart libraries) Retrieve data from CepalStat API, convert data from XML to Json format then generate dynamic charts as per the design provided. Charts vary from sankeys, maps, treemaps, sunbursts among others", "project":"Dynamic Statistical Charts", "company":"United Nations ECLAC"},
+                    {"id": 3, "img":"dash.jpg", "year":"2018", "desc":"(Vanilla Js + Js chart libraries) User-interactive dynamic dashboard using data from CepalStat API", "project":"Dynamic Dashboard", "company":"United Nations ECLAC"},
+                    {"id": 4, "img":"cict.jpg", "year":"2018", "desc":"(PHP) Created a web-profile for the company. This project is halfway through the cycle due to certain constraints on the side of the company to be solved yet", "project":"Web-App", "company":"CICT-GOV"}
+                ]
+            }
+        ],
+        "es": [
+            {
+                "project":[
+                    {"id": 1, "img":"icp.jpg", "year":"2019", "desc":"(PHP C.R.U.D) Sistema financiado por el Banco Mundial a través de la ONU. Utilizado para compartir información económica por la División de Estadística de las Naciones Unidas, el Banco Mundial, los países de América Latina y el Caribe y otras organizaciones.", "project":"Programa de comparación internacional", "company":"CEPAL de las Naciones Unidas"},
+                    {"id": 2, "img":"charts.jpg", "year":"2019", "desc":"(Vanilla Js + Js bibliotecas de cartas) Recupere datos de la API de CepalStat, convierta datos de XML a formato Json y luego genere gráficos dinámicos según el diseño proporcionado. Los gráficos varían de sankeys, mapas, mapas de árboles, rayos de sol, entre otros", "project":"Gráficos estadísticos dinámicos", "company":"CEPAL de las Naciones Unidas"},
+                    {"id": 3, "img":"dash.jpg", "year":"2018", "desc":"(Vanilla Js + Js bibliotecas de cartas) Panel de control dinámico interactivo del usuario con datos de la API de CepalStat", "project":"Tablero Dinámico", "company":"CEPAL de las Naciones Unidas"},
+                    {"id": 4, "img":"cict.jpg", "year":"2018", "desc":"(PHP) Creó un perfil web para la empresa. Este proyecto está a la mitad del ciclo debido a ciertas restricciones del lado de la compañía que aún no se han resuelto", "project":"Aplicación de sitio web", "company":"CICT-GOV"}
+                ]
+            }
+        ],
+        "fr": [
+            {
+                "project":[
+                    {"id": 1, "img":"icp.jpg", "year":"2019", "desc":"(PHP C.R.U.D) Système financé par la Banque mondiale par l’intermédiaire de l’ONU. Utilisé pour partager des informations économiques par la Division de statistique de l'ONU, la Banque mondiale, les pays d'Amérique latine et des Caraïbes et d'autres organisations.", "project":"Programme de comparaison internationale", "company":"Nations Unies CEPAL"},
+                    {"id": 2, "img":"charts.jpg", "year":"2019", "desc":"(Vanilla Js + Js bibliothèques de cartes) Récupérez les données de l'API CepalStat, convertissez les données du format XML au format Json, puis générez des graphiques dynamiques selon la conception fournie. Les graphiques varient de sankeys, cartes, cartes, treaps, sunbursts entre autres", "project":"Graphiques statistiques dynamiques", "company":"Nations Unies CEPAL"},
+                    {"id": 3, "img":"dash.jpg", "year":"2018", "desc":"(Vanilla Js + Js bibliothèques de cartes) Tableau de bord dynamique interactif avec les données de l'API CepalStat", "project":"Tableau de bord dynamique", "company":"Nations Unies CEPAL"},
+                    {"id": 4, "img":"cict.jpg", "year":"2018", "desc":"(PHP) Création d'un profil Web pour l'entreprise. Ce projet est à mi-parcours du cycle en raison de certaines contraintes du côté de la société à résoudre encore", "project":"Application de site Web", "company":"CICT-GOV"}
+                ]
+            }
+        ],
+        "swa": [
+            {
+                "project":[
+                    {"id": 1, "img":"icp.jpg", "year":"2019", "desc":"(PHP C.R.U.D) Mfumo unaofadhiliwa na Benki ya Dunia kupitia UN. Inatumika kushiriki habari za kiuchumi na Idara ya Takwimu za UN, Benki ya Dunia, Amerika ya Kusini na nchi za Karibi na mashirika mengine.", "project":"Programu ya Ulinganishaji wa Kimataifa", "company":"Umoja wa Mataifa ECLAC"},
+                    {"id": 2, "img":"charts.jpg", "year":"2019", "desc":"(Vanilla Js + Js maktaba za chati) Kutoa data kutoka kwa CepalStat API, ubadilishe data kutoka kwa XML kuwa muundo wa Json kisha toa chati zenye nguvu kama ilivyo kwa muundo uliotolewa. Chati zinatofautiana na sankeys, ramani, treemaps, sunbursts kati ya zingine", "project":"Chati za Takwimu za Nguvu", "company":"Umoja wa Mataifa ECLAC"},
+                    {"id": 3, "img":"dash.jpg", "year":"2018", "desc":"(Vanilla Js + Js maktaba za chati) Dashibodi ya nguvu ya mwingiliano ya watumiaji kutumia data kutoka kwa CepalStat API", "project":"Dashibodi ya Nguvu", "company":"Umoja wa Mataifa ECLAC"},
+                    {"id": 4, "img":"cict.jpg", "year":"2018", "desc":"(PHP) Nimeunda wasifu wa wavuti ya kampuni hii. Mradi huu uko katikati ya mzunguko kwa sababu upande wa kampuni kuna vikwazo ambavyo havijatatuliwa bado", "project":"Tovuti", "company":"CICT-GOV"}
+                ]
+            }
+        ],
+        "port": [
+            {
+                "project":[
+                    {"id": 1, "img":"icp.jpg", "year":"2019", "desc":"(PHP C.R.U.D) Sistema financiado pelo Banco Mundial através da ONU. Usado para compartilhar informações econômicas da Divisão de Estatísticas da ONU, Banco Mundial, países da América Latina e Caribe e outras organizações.", "project":"Programa de Comparação Internacional", "company":"CEPAL das Nações Unidas"},
+                    {"id": 2, "img":"charts.jpg", "year":"2019", "desc":"(Vanilla Js + Js bibliotecas de gráficos) Recupere dados da API CepalStat, converta dados do XML para o formato Json e gere gráficos dinâmicos conforme o design fornecido. Os gráficos variam de chaves de acesso, mapas, mapas de árvores, explosões de sol entre outros", "project":"Gráficos estatísticos dinâmicos", "company":"CEPAL das Nações Unidas"},
+                    {"id": 3, "img":"dash.jpg", "year":"2018", "desc":"(Vanilla Js + Js bibliotecas de gráficos) Painel dinâmico interativo do usuário usando dados da API CepalStat", "project":"Painel Dinâmico", "company":"CEPAL das Nações Unidas"},
+                    {"id": 4, "img":"cict.jpg", "year":"2018", "desc":"(PHP) Criou um perfil da web para a empresa. Este projeto está no meio do ciclo devido a certas restrições do lado da empresa a serem resolvidas ainda", "project":"Aplicativo do site", "company":"CICT-GOV"}
+                ]
+            }
+        ]
+    }
+]

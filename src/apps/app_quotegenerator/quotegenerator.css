@@ -1,0 +1,19 @@
+.wait {
+  color: red;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.btnTweet, .adviceNext {
+  margin: 5px;
+  font-size: 12px;
+}
+
+.adviceNext:disabled,
+.disabled {
+  pointer-events: none;
+  background-color: #e0e0e0 !important;
+  border-color: #a0a0a0 !important;
+  color: #8a8a8a !important;
+}

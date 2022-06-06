@@ -1,0 +1,154 @@
+[
+    {
+        "en": [
+          {
+            "work":[
+                {"id": 1, "year":"2019", "fromdate":"2019 April", "todate":"Present", "desc":"Developing solutions using JS, PHP and SQL as per the needs of the clients in my division", "desg":"Full-Stack Software Engineer", "name":"United Nations ECLAC"},
+                {"id": 2, "year":"2019", "fromdate":"2019 January", "todate":"2019 March", "desc":"Consuming data from an API by using JS and JS chart libraries, visualize that data in form of tables and charts as per the requirements provided", "desg":"Front-End Developer", "name":"United Nations ECLAC"},
+                {"id": 3, "year":"2018", "fromdate":"2018 October", "todate":"2018 December", "desc":"Consuming data from an API by using JS and JS chart libraries, visualize that data in form of tables and charts as per the requirements provided", "desg":"Front-End Developer Intern", "name":"United Nations ECLAC"},
+                {"id": 4, "year":"2018", "fromdate":"2018 July", "todate":"2018 September", "desc":"Develop a dynamic website profile for the company.", "desg":"Full-Stack Developer", "name":"CICT-GOV"},
+                {"id": 5, "year":"2018", "fromdate":"2018 May", "todate":"2018 September", "desc":"Customer help desk, selling and advertising bank products", "desg":"Customer service and sales-rep", "name":"National Bank of Kenya"},
+                {"id": 6, "year":"2017", "fromdate":"2017 February", "todate":"2017 May", "desc":"Computer hardware repair and maintenance, network installation and troubleshooting", "desg":"ICT Intern", "name":"National Bank of Kenya"}
+            ],
+            "education":[
+                {"id": 1, "year":"2018", "fromdate":"2018 January", "todate":"2018 April", "course":"Web and Mobile App Development", "name":"Modcom Institute of Technology"},
+                {"id": 2, "year":"2018", "fromdate":"2014 January", "todate":"2018 March", "course":"Bachelor of Science Information and Communication Technology", "name":"Jaramogi Oginga Odinga University of Science and Technology"},
+                {"id": 3, "year":"2014", "fromdate":"2014 November", "todate":"2014 December", "course":"CompTIA A+", "name":"Computer Pride Technology"}
+            ],
+            "achieve":[
+                {"id": 1, "date":"2018-2019", "name":"UN-ECLAC Statistical Yearbook", "desc":"Generated published dynamic charts varied from sankeys, treemaps, maps, sunbursts, scatters"},
+                {"id": 2, "date":"2015-2016", "name":"Secretary General", "desc":"Elected university student leader to represent students in the senate and other forums"},
+                {"id": 3, "date":"2015-2017", "name":"ACCA Brand Ambassador", "desc":" "}
+            ],
+            "hobbies":[
+                {"id": 1, "name":"Watching Documentaries"},
+                {"id": 2, "name":"Computer Games"},
+                {"id": 3, "name":"Watching Soccer"},
+                {"id": 4, "name":"Dancing"},
+                {"id": 5, "name":"Skating"},
+                {"id": 6, "name":"Playing drums"}
+            ]
+          }
+        ],
+        "es": [
+            {
+                "work":[
+                    {"id": 1, "year":"2019", "fromdate":"2019 Abril", "todate":"Presente", "desc":"Desarrollando soluciones usando JS, PHP y SQL según las necesidades de los clientes en mi división", "desg":"Ingeniero de Software Full Stack", "name":"Naciones Unidas CEPAL"},
+                    {"id": 2, "year":"2019", "fromdate":"2019 Enero", "todate":"2019 Marzo", "desc":"Al consumir datos de una API utilizando las bibliotecas de gráficos JS y JS, visualice esos datos en forma de tablas y gráficos según los requisitos proporcionados", "desg":"Desarrollador front-end", "name":"Naciones Unidas CEPAL"},
+                    {"id": 3, "year":"2018", "fromdate":"2018 0ctubre", "todate":"2018 Diciembre", "desc":"Al consumir datos de una API utilizando las bibliotecas de gráficos JS y JS, visualice esos datos en forma de tablas y gráficos según los requisitos proporcionados", "desg":"Pasante de desarrollo front-end", "name":"Naciones Unidas CEPAL"},
+                    {"id": 4, "year":"2018", "fromdate":"2018 Julio", "todate":"2018 Septiembre", "desc":"Desarrollar un perfil de sitio web dinámico para la empresa.", "desg":"Desarrollador Full Stack", "name":"CICT-GOV"},
+                    {"id": 5, "year":"2018", "fromdate":"2018 Mayo", "todate":"2018 Septiembre", "desc":"Servicio de atención al cliente, venta y publicidad de productos bancarios", "desg":"Servicio al cliente y representante de ventas", "name":"Banco Nacional de Kenia"},
+                    {"id": 6, "year":"2017", "fromdate":"2017 Febrero", "todate":"2017 Mayo", "desc":"Reparación y mantenimiento de hardware, instalación de red y resolución de problemas", "desg":"Prácticas TIC", "name":"Banco Nacional de Kenia"}
+                ],
+                "education":[
+                    {"id": 1, "year":"2018", "fromdate":"Enero 2018", "todate":"2018 Abril", "course":"Desarrollo de aplicaciones web y móviles", "name":"Instituto de Tecnología Modcom"},
+                    {"id": 2, "year":"2018", "fromdate":"Enero 2014", "todate":"2018 Marzo", "course":"Licenciado en Ciencias de la Tecnología de la Información y la Comunicación", "name":"Jaramogi Oginga Odinga Universidad de Ciencia y Tecnología"},
+                    {"id": 3, "year":"2014", "fromdate":"2014 Noviembre", "todate":"2014 Diciembre", "course":"COMP TIA A+", "name":"Tecnología ComputerPride"}
+                ],
+                "achieve":[
+                    {"id": 1, "date":"2018-2019", "name":"Anuario estadístico de la CEPAL", "desc":"Genere gráficos dinámicos publicados que varían desde sankeys, mapas de árboles, mapas, rayos solares, dispersiones"},
+                    {"id": 2, "date":"2015-2016", "name":"Secretario General", "desc":"Elegido líder de estudiantes universitarios para representar a los estudiantes en el Senado y otros foros"},
+                    {"id": 3, "date":"2015-2017", "name":"Embajador de la marca ACCA", "desc":" "}
+                ],
+                "hobbies":[
+                    {"id": 1, "name":"Watching Documentaries"},
+                    {"id": 2, "name":"Computer Games"},
+                    {"id": 3, "name":"Watching Soccer"},
+                    {"id": 4, "name":"Dancing"},
+                    {"id": 5, "name":"Skating"},
+                    {"id": 6, "name":"Playing drums"}
+                ]
+            }
+        ],
+        "fr": [
+            {
+                "work":[
+                    {"id": 1, "year":"2019", "fromdate":"2019 Avril", "todate":"Présent", "desc":"Développer des solutions utilisant JS, PHP et SQL selon les besoins des clients de ma division", "desg":"Ingénieur Logiciel Full Stack", "name":"Nations Unies CEPAL"},
+                    {"id": 2, "year":"2019", "fromdate":"2019 Janvier", "todate":"2019 Mars", "desc":"Consommez les données d'une API à l'aide des bibliothèques de diagrammes JS et JS, visualisez ces données sous forme de tableaux et de diagrammes, conformément aux exigences fournies.", "desg":"Développeur frontal", "name":"Nations Unies CEPAL"},
+                    {"id": 3, "year":"2018", "fromdate":"2018 Octobre", "todate":"2018 Décembre", "desc":"Consommez les données d'une API à l'aide des bibliothèques de diagrammes JS et JS, visualisez ces données sous forme de tableaux et de diagrammes, conformément aux exigences fournies.", "desg":"Stagiaire développeur front-end", "name":"Nations Unies CEPAL"},
+                    {"id": 4, "year":"2018", "fromdate":"2018 Juillet", "todate":"2018 Septembre", "desc":"Développer un profil de site web dynamique pour l'entreprise", "desg":"Développeur Full Stack", "name":"CICT-GOV"},
+                    {"id": 5, "year":"2018", "fromdate":"2018 Mai", "todate":"2018 Septembre", "desc":"Assistance clientèle, vente et publicité de produits bancaires", "desg":"Représentant du service clientèle et des ventes", "name":"Banque Nationale du Kenya"},
+                    {"id": 6, "year":"2017", "fromdate":"2017 Février", "todate":"2017 Mai", "desc":"Réparation et maintenance de matériel informatique, installation de réseau et dépannage", "desg":"Stage en TIC", "name":"Banque Nationale du Kenya"}
+                ],
+                "education":[
+                    {"id": 1, "year":"2018", "fromdate":"2018 Janvier", "todate":"2018 Avril", "course":"Développement d'applications Web et mobiles", "name":"Institut de technologie Modcom"},
+                    {"id": 2, "year":"2018", "fromdate":"2014 Janvier", "todate":"2018 Mars", "course":"Baccalauréat en sciences de la technologie de l'information et de la communication", "name":"Jaramogi Oginga Odinga Université des sciences et technologies"},
+                    {"id": 3, "year":"2014", "fromdate":"2014 Novembre", "todate":"2014 Décembre", "course":"COMP TIA A+", "name":"Technologie ComputerPride"}
+                ],
+                "achieve":[
+                    {"id": 1, "date":"2018-2019", "name":"Annuaire statistique ONU-CEPAL", "desc":"Générer des graphiques dynamiques publiés allant de sankeys, cartes treemaps, cartes, sunbursts, scatters"},
+                    {"id": 2, "date":"2015-2016", "name":"Secrétaire Général", "desc":"Président étudiant élu d'université pour représenter des étudiants au sénat et dans d'autres forums"},
+                    {"id": 3, "date":"2015-2017", "name":"Ambassadeur de la marque ACCA", "desc":" "}
+                ],
+                "hobbies":[
+                    {"id": 1, "name":"Watching Documentaries"},
+                    {"id": 2, "name":"Computer Games"},
+                    {"id": 3, "name":"Watching Soccer"},
+                    {"id": 4, "name":"Dancing"},
+                    {"id": 5, "name":"Skating"},
+                    {"id": 6, "name":"Playing drums"}
+                ]
+            }
+        ],
+        "swa": [
+            {
+                "work":[
+                    {"id": 1, "year":"2019", "fromdate":"2019 Aprili", "todate":"Sasa", "desc":"Kuunda suluhisho kwa kutumia JS, PHP na SQL kulingana na mahitaji ya wateja katika idara yangu", "desg":"Mhandisi kamili wa programu za compyuta", "name":"Umoja wa Mataifa ECLAC"},
+                    {"id": 2, "year":"2019", "fromdate":"2019 Januari", "todate":"2019 Machi", "desc":"Kutumia data kutoka kwa API kwa kutumia maktaba za chati za JS na JS, taswira data hiyo katika mfumo wa meza na chati kulingana na mahitaji yaliyotolewa", "desg":"Front-End Developer", "name":"Umoja wa Mataifa ECLAC"},
+                    {"id": 3, "year":"2018", "fromdate":"2018 Oktoba", "todate":"2018 Desemba", "desc":"Kutumia data kutoka kwa API kwa kutumia maktaba za chati za JS na JS, taswira data hiyo katika mfumo wa meza na chati kulingana na mahitaji yaliyotolewa", "desg":"Front-End Developer Intern", "name":"Umoja wa Mataifa ECLAC"},
+                    {"id": 4, "year":"2018", "fromdate":"2018 Julai", "todate":"2018 Septemba", "desc":"Kuendeleza wasifu wenye nguvu wa wavuti kwa kampuni", "desg":"Wasanidi Programu kamili", "name":"CICT-GOV"},
+                    {"id": 5, "year":"2018", "fromdate":"2018 Mei", "todate":"2018 Septemba", "desc":"Kuwapa wateja huduma, kuuza na matangazo ya bidhaa za benki", "desg":"Huduma ya wateja na mwakilishi wa uuzaji", "name":"Benki ya Kitaifa ya Kenya"},
+                    {"id": 6, "year":"2017", "fromdate":"2017 Februari", "todate":"2017 Mei", "desc":"Urekebishaji na matengenezo ya vifaa vya kompyuta, ufungaji wa mtandao na utatuzi wa vifaa", "desg":"ICT Intern", "name":"Benki ya Kitaifa ya Kenya"}
+                ],
+                "education":[
+                    {"id": 1, "year":"2018", "fromdate":"2018 Januari", "todate":"2018 Aprili", "course":"Kuunda mfumo wa wavuti na programu za simu ya mkononi", "name":"Taasisi ya Teknolojia ya Modcom"},
+                    {"id": 2, "year":"2018", "fromdate":"2014 Januari", "todate":"2018 Machi", "course":"Shahada ya Sayansi ya Habari na Teknolojia ya Mawasiliano", "name":"Jaramogi Oginga Odinga Chuo Kikuu cha Sayansi na Teknolojia"},
+                    {"id": 3, "year":"2014", "fromdate":"2014 Novemba", "todate":"2014 Desemba", "course":"COMP TIA A+", "name":"Teknolojia ya ComputerPride"}
+                ],
+                "achieve":[
+                    {"id": 1, "date":"2018-2019", "name":"Kitabu cha Mwaka cha Takwimu cha UN-ECLAC", "desc":"Tengeneza chati za nguvu zilizochapishwa zilizo tofauti kutoka kwa sankeys, mitego, ramani, mikokoteni ya jua, kutawanya"},
+                    {"id": 2, "date":"2015-2016", "name":"Katibu Mkuu", "desc":"Kiongozi wa mwanafunzi wa chuo kikuu aliyechaguliwa kuwakilisha wanafunzi katika seneti na vikao vingine"},
+                    {"id": 3, "date":"2015-2017", "name":"Balozi wa Bidhaa wa ACCA", "desc":" "}
+                ],
+                "hobbies":[
+                    {"id": 1, "name":"Watching Documentaries"},
+                    {"id": 2, "name":"Computer Games"},
+                    {"id": 3, "name":"Watching Soccer"},
+                    {"id": 4, "name":"Dancing"},
+                    {"id": 5, "name":"Skating"},
+                    {"id": 6, "name":"Playing drums"}
+                ]
+            }
+        ],
+        "port": [
+            {
+                "work":[
+                    {"id": 1, "year":"2019", "fromdate":"2019 Abril", "todate":"Presente", "desc":"Desenvolvimento de soluções utilizando JS, PHP e SQL conforme as necessidades dos clientes da minha divisão", "desg":"Engenheiro de Software Full Stack", "name":"CEPAL das Nações Unidas"},
+                    {"id": 2, "year":"2019", "fromdate":"2019 Janeiro", "todate":"2019 Março", "desc":"Consumindo dados de uma API usando bibliotecas de gráficos JS e JS, visualize esses dados na forma de tabelas e gráficos conforme os requisitos fornecidos", "desg":"Desenvolvedor Front-End", "name":"CEPAL das Nações Unidas"},
+                    {"id": 3, "year":"2018", "fromdate":"2018 Outubro", "todate":"2018 Dezembro", "desc":"Consumindo dados de uma API usando bibliotecas de gráficos JS e JS, visualize esses dados na forma de tabelas e gráficos conforme os requisitos fornecidos", "desg":"Estagiário de Desenvolvimento Front-End", "name":"CEPAL das Nações Unidas"},
+                    {"id": 4, "year":"2018", "fromdate":"2018 Julho", "todate":"2018 Setembro", "desc":"Desenvolvendo um perfil de site dinâmico para a empresa", "desg":"Desenvolvedor Full Stack", "name":"CICT-GOV"},
+                    {"id": 5, "year":"2018", "fromdate":"2018 Maio", "todate":"2018 Setembro", "desc":"Atendimento ao cliente, venda e publicidade de produtos bancários", "desg":"Representante de vendas e atendimento ao cliente", "name":"Banco Nacional do Quênia"},
+                    {"id": 6, "year":"2017", "fromdate":"2017 Fevereiro", "todate":"2017 Maio", "desc":"Reparo e manutenção de hardware de computador, instalação e solução de problemas de rede", "desg":"Estagiário de TIC", "name":"Banco Nacional do Quênia"}
+                ],
+                "education":[
+                    {"id": 1, "year":"2018", "fromdate":"2018 Janeiro", "todate":"2019 Abril", "course":"Desenvolvimento Web e Mobile App", "name":"Instituto de Tecnologia Modcom"},
+                    {"id": 2, "year":"2018", "fromdate":"2014 Janeiro", "todate":"2018 Março", "course":"Bacharel em Ciência da Informação e Tecnologia da Comunicação", "name":"Jaramogi Oginga Odinga Universidade de Ciência e Tecnologia"},
+                    {"id": 3, "year":"2014", "fromdate":"2014 Novembro", "todate":"2014 Dezembro", "course":"COMP TIA A+", "name":"Computer Pride Technology"}
+                ],
+                "achieve":[
+                    {"id": 1, "date":"2018-2019", "name":"Anuário Estatístico da ONU-CEPAL", "desc":"Gere gráficos dinâmicos publicados, variando de chaves, mapas de árvores, mapas, explosões de sol e dispersões"},
+                    {"id": 2, "date":"2015-2016", "name":"Secretário Geral", "desc":"Eleito líder universitário para representar estudantes no Senado e em outros fóruns"},
+                    {"id": 3, "date":"2015-2017", "name":"Embaixador da marca ACCA", "desc":" "}
+                ],
+                "hobbies":[
+                    {"id": 1, "name":"Watching Documentaries PORT"},
+                    {"id": 2, "name":"Computer Games PORT"},
+                    {"id": 3, "name":"Watching Soccer"},
+                    {"id": 4, "name":"Dancing"},
+                    {"id": 5, "name":"Skating"},
+                    {"id": 6, "name":"Playing drums"}
+                ]
+            }
+        ]
+    }
+]

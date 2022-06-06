@@ -1,0 +1,439 @@
+[
+  {
+    "en": [
+      {
+        "about": "young software engineer from Nairobi, Kenya. I have a rich experience in data visualization, software and web development. I'm passionate about what I do and always keen on improving daily",
+        "age": "Mid-20s",
+        "marital": "adventurous",
+        "services": [
+          { "id": 1, "name": "Web - Development" },
+          { "id": 2, "name": "Data - Visualization" },
+          { "id": 3, "name": "API Development" },
+          { "id": 4, "name": "System Analysis and Design" }
+        ],
+        "clients": [
+          { "id": 1, "name": "United Nations ECLAC" },
+          { "id": 2, "name": "World Bank" },
+          { "id": 3, "name": "CICT-GOV" },
+          { "id": 4, "name": "Techhsoll" }
+        ],
+        "coding": [
+          {
+            "id": 1,
+            "name": "Python",
+            "tag": "iconpython",
+            "icon": "fab fa-python fa-3x"
+          },
+          {
+            "id": 2,
+            "name": "PhP",
+            "tag": "iconphp",
+            "icon": "fab fa-php fa-3x"
+          },
+          {
+            "id": 3,
+            "name": "Javascript ES5, ES6+",
+            "tag": "iconjs",
+            "icon": "fab fa-js-square fa-3x"
+          },
+          {
+            "id": 4,
+            "name": "HTML",
+            "tag": "iconhtml",
+            "icon": "fab fa-html5 fa-3x"
+          },
+          {
+            "id": 5,
+            "name": "CSS/SASS/SCSS",
+            "tag": "iconcss",
+            "icon": "fab fa-sass fa-3x"
+          },
+          {
+            "id": 6,
+            "name": "JQuery",
+            "tag": "iconjquery",
+            "icon": "fas fa-rss fa-3x"
+          },
+          {
+            "id": 7,
+            "name": "JS Chart Libraries",
+            "tag": "iconcharts",
+            "icon": "fas fa-chart-bar fa-3x"
+          },
+          {
+            "id": 8,
+            "name": "Git",
+            "tag": "icongit",
+            "icon": "fab fa-github fa-3x"
+          },
+          {
+            "id": 9,
+            "name": "SQL",
+            "tag": "iconsql",
+            "icon": "fas fa-database fa-3x"
+          },
+          {
+            "id": 10,
+            "name": "Laravel",
+            "tag": "iconlaravel",
+            "icon": "fab fa-laravel fa-3x"
+          },
+          {
+            "id": 11,
+            "name": "React",
+            "tag": "iconreact",
+            "icon": "fab fa-react fa-3x"
+          }
+        ]
+      }
+    ],
+    "es": [
+      {
+        "about": "joven ingeniero de software de Nairobi, Kenia. Tengo una rica experiencia en visualización de datos, software y desarrollo web. Me apasiona lo que hago y siempre me gusta mejorar a diario.",
+        "age": "Medio-20",
+        "marital": "aventurero",
+        "services": [
+          { "id": 1, "name": "Desarrollo web" },
+          { "id": 2, "name": "Visualización de datos" },
+          { "id": 3, "name": "Desarrollo de la API" },
+          { "id": 4, "name": "Análisis y diseño de sistemas" }
+        ],
+        "clients": [
+          { "id": 1, "name": "Naciones Unidas CEPAL" },
+          { "id": 2, "name": "Banco Mundial" },
+          { "id": 3, "name": "CICT-GOV" },
+          { "id": 4, "name": "Techhsoll" }
+        ],
+        "coding": [
+          {
+            "id": 1,
+            "name": "Python",
+            "tag": "iconpython",
+            "icon": "fab fa-python fa-3x"
+          },
+          {
+            "id": 2,
+            "name": "PhP",
+            "tag": "iconphp",
+            "icon": "fab fa-php fa-3x"
+          },
+          {
+            "id": 3,
+            "name": "Javascript ES5, ES6+",
+            "tag": "iconjs",
+            "icon": "fab fa-js-square fa-3x"
+          },
+          {
+            "id": 4,
+            "name": "HTML",
+            "tag": "iconhtml",
+            "icon": "fab fa-html5 fa-3x"
+          },
+          {
+            "id": 5,
+            "name": "CSS/SASS/SCSS",
+            "tag": "iconcss",
+            "icon": "fab fa-sass fa-3x"
+          },
+          {
+            "id": 6,
+            "name": "JQuery",
+            "tag": "iconjquery",
+            "icon": "fas fa-rss fa-3x"
+          },
+          {
+            "id": 7,
+            "name": "JS Bibliotecas de cartas",
+            "tag": "iconcharts",
+            "icon": "fas fa-chart-bar fa-3x"
+          },
+          {
+            "id": 8,
+            "name": "Git",
+            "tag": "icongit",
+            "icon": "fab fa-github fa-3x"
+          },
+          {
+            "id": 9,
+            "name": "SQL",
+            "tag": "iconsql",
+            "icon": "fas fa-database fa-3x"
+          },
+          {
+            "id": 10,
+            "name": "Laravel",
+            "tag": "iconlaravel",
+            "icon": "fab fa-laravel fa-3x"
+          },
+          {
+            "id": 11,
+            "name": "React",
+            "tag": "iconreact",
+            "icon": "fab fa-react fa-3x"
+          }
+        ]
+      }
+    ],
+    "fr": [
+      {
+        "about": "jeune ingénieur logiciel de Nairobi, Kenya. J'ai une riche expérience dans la visualisation de données, le développement de logiciels et de sites Web. Je suis passionné par ce que je fais et toujours soucieux d'améliorer chaque jour",
+        "age": "Milieu-20",
+        "marital": "aventureux",
+        "services": [
+          { "id": 1, "name": "Développement de site web" },
+          { "id": 2, "name": "Visualisation de données" },
+          { "id": 3, "name": "Développement API" },
+          { "id": 4, "name": "Analyse et conception du système" }
+        ],
+        "clients": [
+          { "id": 1, "name": "Nations Unies CEPAL" },
+          { "id": 2, "name": "Banque mondiale" },
+          { "id": 3, "name": "CICT-GOV" },
+          { "id": 4, "name": "Techhsoll" }
+        ],
+        "coding": [
+          {
+            "id": 1,
+            "name": "Python",
+            "tag": "iconpython",
+            "icon": "fab fa-python fa-3x"
+          },
+          {
+            "id": 2,
+            "name": "PhP",
+            "tag": "iconphp",
+            "icon": "fab fa-php fa-3x"
+          },
+          {
+            "id": 3,
+            "name": "Javascript ES5, ES6+",
+            "tag": "iconjs",
+            "icon": "fab fa-js-square fa-3x"
+          },
+          {
+            "id": 4,
+            "name": "HTML",
+            "tag": "iconhtml",
+            "icon": "fab fa-html5 fa-3x"
+          },
+          {
+            "id": 5,
+            "name": "CSS/SASS/SCSS",
+            "tag": "iconcss",
+            "icon": "fab fa-sass fa-3x"
+          },
+          {
+            "id": 6,
+            "name": "JQuery",
+            "tag": "iconjquery",
+            "icon": "fas fa-rss fa-3x"
+          },
+          {
+            "id": 7,
+            "name": "JS Bibliothèques de cartes",
+            "tag": "iconcharts",
+            "icon": "fas fa-chart-bar fa-3x"
+          },
+          {
+            "id": 8,
+            "name": "Git",
+            "tag": "icongit",
+            "icon": "fab fa-github fa-3x"
+          },
+          {
+            "id": 9,
+            "name": "SQL",
+            "tag": "iconsql",
+            "icon": "fas fa-database fa-3x"
+          },
+          {
+            "id": 10,
+            "name": "Laravel",
+            "tag": "iconlaravel",
+            "icon": "fab fa-laravel fa-3x"
+          },
+          {
+            "id": 11,
+            "name": "React",
+            "tag": "iconreact",
+            "icon": "fab fa-react fa-3x"
+          }
+        ]
+      }
+    ],
+    "swa": [
+      {
+        "about": "mhandisi wa programu mchanga kutoka Nairobi, Kenya. Nina uzoefu mkubwa katika taswira ya data, programu na ukuzaji wa wavuti. Nina shauku juu ya kile ninafanya na nina hamu ya kuboresha kila siku",
+        "age": "Kati ya miaka 20 na 30",
+        "marital": "mbunifu",
+        "services": [
+          { "id": 1, "name": "Kutengeneza tovuti" },
+          { "id": 2, "name": "Taswira ya data" },
+          { "id": 3, "name": "Maendeleo ya API" },
+          { "id": 4, "name": "Uchambuzi wa mfumo na muundo" }
+        ],
+        "clients": [
+          { "id": 1, "name": "Umoja wa Mataifa ECLAC" },
+          { "id": 2, "name": "Benki ya Dunia" },
+          { "id": 3, "name": "CICT-GOV" },
+          { "id": 4, "name": "Techhsoll" }
+        ],
+        "coding": [
+          {
+            "id": 1,
+            "name": "Python",
+            "tag": "iconpython",
+            "icon": "fab fa-python fa-3x"
+          },
+          {
+            "id": 2,
+            "name": "PhP",
+            "tag": "iconphp",
+            "icon": "fab fa-php fa-3x"
+          },
+          {
+            "id": 3,
+            "name": "Javascript ES5, ES6+",
+            "tag": "iconjs",
+            "icon": "fab fa-js-square fa-3x"
+          },
+          {
+            "id": 4,
+            "name": "HTML",
+            "tag": "iconhtml",
+            "icon": "fab fa-html5 fa-3x"
+          },
+          {
+            "id": 5,
+            "name": "CSS/SASS/SCSS",
+            "tag": "iconcss",
+            "icon": "fab fa-sass fa-3x"
+          },
+          {
+            "id": 6,
+            "name": "JQuery",
+            "tag": "iconjquery",
+            "icon": "fas fa-rss fa-3x"
+          },
+          {
+            "id": 7,
+            "name": "JS Maktaba za chati",
+            "tag": "iconcharts",
+            "icon": "fas fa-chart-bar fa-3x"
+          },
+          {
+            "id": 8,
+            "name": "Git",
+            "tag": "icongit",
+            "icon": "fab fa-github fa-3x"
+          },
+          {
+            "id": 9,
+            "name": "SQL",
+            "tag": "iconsql",
+            "icon": "fas fa-database fa-3x"
+          },
+          {
+            "id": 10,
+            "name": "Laravel",
+            "tag": "iconlaravel",
+            "icon": "fab fa-laravel fa-3x"
+          },
+          {
+            "id": 11,
+            "name": "React",
+            "tag": "iconreact",
+            "icon": "fab fa-react fa-3x"
+          }
+        ]
+      }
+    ],
+    "port": [
+      {
+        "about": "jovem engenheiro de software de Nairobi, Quênia. Tenho uma rica experiência em visualização de dados, software e desenvolvimento web. Sou apaixonado pelo que faço e sempre interessado em melhorar diariamente",
+        "age": "Meio-20",
+        "marital": "aventureiro",
+        "services": [
+          { "id": 1, "name": "Desenvolvimento de sites" },
+          { "id": 2, "name": "Visualização de dados" },
+          { "id": 3, "name": "Desenvolvimento de API" },
+          { "id": 4, "name": "Análise e design de sistemas" }
+        ],
+        "clients": [
+          { "id": 1, "name": "CEPAL das Nações Unidas" },
+          { "id": 2, "name": "Banco Mundial" },
+          { "id": 3, "name": "CICT-GOV" },
+          { "id": 4, "name": "Techhsoll" }
+        ],
+        "coding": [
+          {
+            "id": 1,
+            "name": "Python",
+            "tag": "iconpython",
+            "icon": "fab fa-python fa-3x"
+          },
+          {
+            "id": 2,
+            "name": "PhP",
+            "tag": "iconphp",
+            "icon": "fab fa-php fa-3x"
+          },
+          {
+            "id": 3,
+            "name": "Javascript ES5, ES6+",
+            "tag": "iconjs",
+            "icon": "fab fa-js-square fa-3x"
+          },
+          {
+            "id": 4,
+            "name": "HTML",
+            "tag": "iconhtml",
+            "icon": "fab fa-html5 fa-3x"
+          },
+          {
+            "id": 5,
+            "name": "CSS/SASS/SCSS",
+            "tag": "iconcss",
+            "icon": "fab fa-sass fa-3x"
+          },
+          {
+            "id": 6,
+            "name": "JQuery",
+            "tag": "iconjquery",
+            "icon": "fas fa-rss fa-3x"
+          },
+          {
+            "id": 7,
+            "name": "JS Bibliotecas de gráficos",
+            "tag": "iconcharts",
+            "icon": "fas fa-chart-bar fa-3x"
+          },
+          {
+            "id": 8,
+            "name": "Git",
+            "tag": "icongit",
+            "icon": "fab fa-github fa-3x"
+          },
+          {
+            "id": 9,
+            "name": "SQL",
+            "tag": "iconsql",
+            "icon": "fas fa-database fa-3x"
+          },
+          {
+            "id": 10,
+            "name": "Laravel",
+            "tag": "iconlaravel",
+            "icon": "fab fa-laravel fa-3x"
+          },
+          {
+            "id": 11,
+            "name": "React",
+            "tag": "iconreact",
+            "icon": "fab fa-react fa-3x"
+          }
+        ]
+      }
+    ]
+  }
+]

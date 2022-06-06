@@ -9,3 +9,44 @@
 //   text-decoration: none;
 //   font-size: 17px;
 // }
+.fa-house-chimney-user:hover{
+  color: aquamarine;
+  transform: scale(1.1);
+  transition: 250ms;
+}
+.mainContent{
+  width: 100%;
+}
+.comingSoon{
+  color: aliceblue;
+  min-width: 200px;
+  width: 100%;
+  font-size: 20px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center !important;
+  align-self: center;
+}
+
+@media (min-width: 576px){
+  .navbar-expand-sm {
+    flex-wrap: nowrap;
+  }
+  .mainContent {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px){
+  .navbar-expand-sm {
+      flex-wrap: nowrap;
+  }
+  .mainContent {
+    display: flex;
+    justify-content: space-between !important;
+    flex-wrap: nowrap;
+  }
+  .container-fluid {
+    flex-wrap: wrap !important;
+  }
+}

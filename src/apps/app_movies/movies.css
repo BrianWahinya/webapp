@@ -1,0 +1,56 @@
+p{
+  margin: 0;
+  padding: 0;
+}
+.moviesDiv{
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px 10px;
+  justify-content: space-evenly;
+}
+.movie{
+  display: block;
+  /* margin: 5px; */
+  width: 185px;
+  height: 350px;
+  background-color: rgb(222, 245, 220);
+  border-radius: 5px;
+  transition: 500ms;
+}
+.movie:hover{
+  opacity: 0.7;
+  cursor: pointer;
+  transform: scale(0.95);
+}
+.moviePoster{
+  border-radius: 5px;
+}
+.movieTitle{
+  font-size: 14px;
+  font-family: cursive;
+}
+.movieReleaseDate{
+  font-style: italic;
+  font-size: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.movieTitle, .movieReleaseDate {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-top: 5%;
+    width: 100%;
+  }
+
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
+
+.pagination{
+  justify-content: center;
+}

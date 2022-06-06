@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseChimneyUser } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
 
-export default function Navbar({ routesObj }) {
+export default function Navbar({ appsRoutes }) {
   return (
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          Profile
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavbar"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div className="mainContent">
+          <a className="navbar-brand" href="/">
+            <FontAwesomeIcon icon={faHouseChimneyUser} />
+          </a>
+          <p className="comingSoon">Coming Soon &#128521;</p>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
         <div
           className="collapse navbar-collapse text-right"
           id="collapsibleNavbar"
@@ -24,7 +29,7 @@ export default function Navbar({ routesObj }) {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
               >
@@ -32,43 +37,33 @@ export default function Navbar({ routesObj }) {
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
                 <li className="nav-item">
-                  <a
-                    className=""
-                    href="https://brianwebportal.netlify.app/"
-                    target="_blank"
-                  >
+                  <a className="" href="/current">
                     Current Web-Version
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a
-                    className=""
-                    href="https://brianwebportal.netlify.app/"
-                    target="_blank"
-                  >
+                {/* <li className="nav-item">
+                  <a className="" href="/maiden">
                     Maiden Web-Version
                   </a>
-                </li>
+                </li> */}
               </ul>
             </li>
 
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
               >
                 Apps
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
-                {routesObj.map((robj) => {
-                  const { id, path } = robj;
+                {appsRoutes.map((appRoute) => {
+                  const { id, path } = appRoute;
                   return (
-                    <li>
-                      <Link key={id} to={path}>
-                        {id}
-                      </Link>
+                    <li key={id}>
+                      <Link to={path}>{id}</Link>
                     </li>
                   );
                 })}

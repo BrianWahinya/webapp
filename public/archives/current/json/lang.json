@@ -1,0 +1,26 @@
+[
+    {
+        "id":"about",
+        "eng":"About",
+        "swa":"Kunihusu",
+        "portugeese":"Sobre",
+        "french":"Sur",
+        "esp":"Acerca De"
+    },
+    {
+        "id":"resume",
+        "eng":"Resume",
+        "swa":"Rejea",
+        "portugeese":"Currículo",
+        "french":"Résumer",
+        "esp":"Currículum"
+    },
+    {
+        "id":"projects",
+        "eng":"Projects",
+        "swa":"Miradi",
+        "portugeese":"Projetos",
+        "french":"Projets",
+        "esp":"Proyectos"
+    }
+]

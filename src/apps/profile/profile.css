@@ -1,0 +1,60 @@
+.bgimg {
+  height: 92vh !important;
+  width: 100% !important;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.bgimg h1 {
+  font-weight: bold;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.bgimg p{
+  font-size: 25px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.bgimg a{
+  color: white;
+  font-family: cursive;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.bgimg a:hover{
+  color: #ffc400;
+  font-size: 14px;
+  transition: 250ms;
+}
+
+.bgimg hr {
+  margin: auto;
+  width: 40%;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

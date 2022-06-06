@@ -1,0 +1,256 @@
+<!-- 
+// Coder:Brian Wahinya
+// Purpose: Personal website
+// Date: 08/08/2019
+// Version:bngure.001a
+ -->
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Brian Wahinya personal profile website">
+    <meta name="keywords" content="Brian,Wahinya,Ngure,Website,Profile">
+    <meta name="author" content="Brian Wahinya">
+    <link rel="icon" type="image/png" href="./assets/img/brian.png" sizes="196x196" />
+    <title>Brian Wahinya</title>
+    <link rel="stylesheet" type="text/css" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="./assets/jquery-3.4.1.js"></script>    
+    <script type="text/javascript" src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link href="./assets/fontawesome-5.9.0/css/all.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/commonFunctions.js?v=15"></script>
+    <script type="text/javascript" src="./js/index.js?v=15"></script>
+     
+    <link rel="stylesheet" type="text/css" href="./assets/index.css?v=15">    
+</head>
+<body onload="loaderSpin()" class="color-change-5x">
+<div class="loader" id="loader"></div>
+<div id='main' class='row animate-bottom'>
+    <!-- PROFILE DIVS -->
+    <div id='profile' class="row">
+    <div id="navThis" style="width: 15%; height: 100%;">
+        <nav id="myNav" class="nav" style="margin:auto">
+                <button class="btn navB fill" id="btnAbout" onclick="openDiv('mainAbout', 'btnAbout')"></button>
+                <button class="btn navB fill" id="btnResume" onclick="openDiv('mainResume', 'btnResume')"></button>
+                <button class="btn navB fill" id="btnProjects" onclick="openDiv('mainProjects', 'btnProjects')"></button>
+                <button class="btn navB fill" id="btnBlog" onclick="openDiv('mainBlog', 'btnBlog')"></button>
+                <button class="btn navB fill" id="btnGallery" onclick="openDiv('mainGallery', 'btnGallery')"></button>
+                <button class="btn navB fill" id="btnContact" onclick="openDiv('mainContact', 'btnContact')"></button>
+                <button class="btn navB fill" id="btnAmbitions" onclick="openDiv('mainAmbitions', 'btnAmbitions')"></button>
+        </nav>
+        <div id="ideas" style="width: 100%; height: 50%;">
+            <p id="profQuote" style="font-size:11px; color: aliceblue; justify-content: center"></p>
+        </div>
+    </div>
+    <div class="" id="pInfo">
+        <div id="profPic">
+            <div class="box" id='lang'>
+              <select name="languages" id="selectLang" style="font-size:9px">
+                <option value="lang_eng">English</option>
+                <option value="lang_swahili">Kiswahili</option>
+                <option value="lang_espanol">Espanol</option>
+                <option value="lang_french">French</option>
+                <option value="lang_portugeese">Portugeese</option>
+              </select>
+            </div>
+            <div id="profImage" class="scale-up-center scale-down-center"><img id="picha" src="./assets/img/f.jpg"></div>
+        </div>
+        <div id="socialMedia">
+            <div id="divName">
+                <div id="spa">
+                        <div class="card" id="cardProfDetails">
+                            <h3 class="tracking-in-expand spaCon nameOfficial" id="profName" style="margin:auto"></h3>
+                            <p class="spaCon" id="profCareer" style="margin:auto"></p>
+                            <div class="row" style="margin:auto;">
+                                    <a id="aSocial" target="_blank" href="https://www.facebook.com/yobra.wahinya"><i class="fab fa-facebook-square" id="fb"></i></a>
+                                    <a id="aSocial" target="_blank" href="https://github.com/BrianWahinya"><i class="fab fa-github" id="git"></i></a>
+                                    <a id="aSocial" target="_blank" href="https://stackoverflow.com/users/10642716/wahinya-brian"><i class="fab fa-stack-overflow" id="stack"></i></a>
+                                    <a id="aSocial" target="_blank" href="https://twitter.com/BrianWahinya"><i class="fab fa-twitter" id="twi"></i></a>
+                                    <a id="aSocial" target="_blank" href=""><i class="fab fa-instagram" id="inst"></i></a>
+                                    <a id="aSocial" target="_blank" href="https://www.linkedin.com/in/brian-wahinya-051b0b138/"><i class="fab fa-linkedin-in" id="link"></i></a>
+                                    <a id="aSocial" target="_blank" href=""><i class="fab fa-whatsapp" id="whatsapp"></i></a>
+                            </div>
+                        </div>
+                </div>
+                <div id="advice" class="row">
+                    <div class="thought" id="thoughtDiv">
+                        <p style="font-size:13px; margin:auto;" id="thoughtPg"></p>
+                        <p style="font-size:12px; margin:auto;" id="authorThoughtPg"></p>
+                    </div>
+                </div>                               
+            </div>
+            <div class="row" id="divButtons">
+                <a class="btns btn-1 btn-1d" href="./assets/pdf/resumebrianwahinya.pdf" download="resumebrianwahinya" style="padding-top: 5px; text-decoration: none" id="downloadCV"></a>
+                <button class="btns btn-1 btn-1d" onclick="openDiv('mainContact', 'btnContact')" id="contactME"></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- CONTENT DIVS -->
+    <div class="content mainContent slide-right" id='mainAbout'>
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="About" class="divContent" style="overflow-y:scroll;">
+            <!-- Container -->
+            <div class="container-fluid">
+            <!-- <div class="text-center">
+                <h4>About Me</h4>
+            </div> -->
+            <div class="row slideanim">
+                <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default text-center" style="margin-bottom:10px;">
+                    <div class="panel-heading">
+                    <h6 id="aboutme"></h6>
+                    </div>
+                    <div class="panel-body">
+                        <p id="aboutMain"></p>
+                    </div>
+                </div>      
+                </div>     
+                <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default text-center" style="margin-bottom:10px;">
+                    <div class="panel-heading">
+                        <h6 id="myservices"></h6>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="aboutServices" style="list-style-type:none; padding-left: 0">
+                        </ul>
+                    </div>
+                </div>      
+                </div>       
+                <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default text-center" style="margin-bottom:10px;">
+                    <div class="panel-heading">
+                        <h6 id="clients"></h6>
+                    </div>
+                    <ul id="aboutClients" style="list-style-type:none; padding-left: 0">
+                    </ul>
+                </div>      
+                </div>
+                <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default text-center" style="margin-bottom:10px;">
+                    <div class="panel-heading">
+                        <h6 id="codingskills"></h6>
+                    </div>
+                    <div class="panel-body">
+                        <div id="pricing" class="container-fluid">
+                        <div class="row slideanim" id="aboutSkillss">
+                            
+                        </div>
+                        </div>
+                        <i class="fab fa-python"></i>
+                        <i class="fab fa-php"></i>
+                        <i class="fab fa-js-square"></i>
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3"></i>
+                        <i class="fab fa-sass"></i>
+                        <i class="fas fa-rss"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fas fa-chart-bar"></i>
+                        <i class="fab fa-github-square"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                </div>      
+                </div>     
+            </div>
+            </div>
+        </div> 
+    </div>    
+    </div>
+
+    <div class="content mainContent slide-right" id='mainResume' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Resume" class="divContent" style="overflow-y:scroll;">
+        <div class="resume" >
+            <div class="container-fluid">
+            <div class="row slideanim">
+                <div class="col-sm-6 col-xs-12" style="padding-left: 2px;padding-right: 2px;">
+                <div class="panel panel-default" style="margin-bottom:10px;">
+                    <div class="panel-heading">
+                    <h6 id="resumeTitleWork"></h6>
+                    </div>
+                    <div class="containerTimeline">
+                        <div class="timeline" id="kazitu"></div>
+                    </div>
+                </div>      
+                </div>     
+                <div class="col-sm-6 col-xs-12" style="padding-left: 2px;padding-right: 2px;">
+                <div class="panel panel-default" style="margin-bottom:10px;padding-top:10px; ">
+                    <div class="col-sm-12 col-xs-12">
+                    <div class="panel panel-default" style="margin-bottom:10px;">
+                        <div class="panel-heading">
+                        <h6 id="resumeTitleEducation"></h6>
+                        </div>
+                        <div class="containerTimeline">
+                            <div class="timeline" id="kusoma"></div>
+                        </div>
+                    </div>      
+                    </div>
+
+                    <div class="col-sm-12 col-xs-12">
+                    <div class="panel panel-default text-center" style="margin-bottom:10px;">
+                        <div class="panel-heading">
+                        <h6 id="resumeTitleAchieve"></h6>
+                        </div>
+                        <div id="kuachieve"></div>
+                    </div>      
+                    </div>
+                </div>      
+                </div>     
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="content mainContent slide-right" id='mainProjects' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Projects" class="divContent" style="overflow-y:scroll;">
+            <div class="row" id="projectsList"></div>
+
+            
+        </div>
+    </div>
+    </div>
+    <div class="content mainContent slide-right" id='mainBlog' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Blog" class="divContent" style="width:100%; overflow-y:scroll;">
+            <!-- <div id="btnBlogs" class="row">
+                <button class="blogBtn">Icons</button>
+                <button class="blogBtn">Mysteries</button>
+                <button class="blogBtn">I.T</button>
+            </div> -->                
+            <div class="row" id="blogDiv" style="width:100%; "></div>
+        </div>        
+    </div>
+    </div>
+    <div class="content mainContent slide-right" id='mainGallery' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Gallery" class="divContent">
+            <div class="card" id="divGallery">
+                <h4 id="headGallery">Gallery</h4>
+                <p id="pGallery">Coming soon</p> 
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="content mainContent slide-right" id='mainContact' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Contact" class="divContent">
+            <div class="card" id="divContacts"></div>
+        </div>
+    </div>
+    </div>
+    <div class="content mainContent slide-right" id='mainAmbitions' style="display:none;overflow: none;">
+    <div style="margin-left:2%; width:98%; height:100%">
+        <div id="Ambitions" class="divContent" style="overflow-y:scroll;">
+            <div id="divAmbitions" style="width:99%;"></div>
+        </div>
+    </div>
+    </div>
+</div>
+<div id="copyrightDiv" style="margin:auto; color:white; text-align: center;"><h4 id="copyright"></h4></div>
+<div id="modals"></div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aspirations</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="anim/css/font-awesome.css">
+	<link rel="stylesheet" href="anim/css/animate.css">
+  	
+	<style type="text/css">
+
+	#pachieve{
+  		padding-left: 20%;
+	 	padding-right: 20%;
+  	}
+  	p:hover{
+  		background-color: ;
+  		font-color: ;
+  		border-color: #009688;
+  		border: 1px;
+  		border-style: solid;
+
+  	}
+
+
+
+
+  	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+    	height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: 60px;
+
+	}
+		/* Modal Content/Box */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* Modal Content/Box */
+	.modal-contents {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 50px;
+	    top: 0px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #000;
+	}
+
+	.close:hover, .close:focus {
+	    color: #f44336;
+	    cursor: pointer;
+	}
+
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+		/* Add Zoom Animation */
+	.animate {
+	    -webkit-animation: animatezoom 0.6s;
+	    animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	    from {-webkit-transform: scale(0)} 
+	    to {-webkit-transform: scale(1)}
+	}
+	    
+	@keyframes animatezoom {
+	    from {transform: scale(0)} 
+	    to {transform: scale(1)}
+	}
+
+		/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    span.psw {
+	       display: block;
+	       float: none;
+	    }
+	    .cancelbtn {
+	       width: 50%;
+	    }
+	}
+
+
+
+	</style>	
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="container-fluid">
+    	<div class="navbar-header">
+      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      	</button>
+	  
+	    <a class="navbar-brand" href="aspirations.html">BRIAN / MY ASPIRATIONS</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	   
+	    <ul class="nav navbar-nav navbar-right">
+	      <li class=""><a href="index.html">BACK TO HOME</a></li>
+	      <li class=""><a class="" href="index.html#bio">BIOGRAPHY</a></li>
+	      <li class=""><a class="" href="index.html#achieve">ACHIEVEMENTS</a></li>
+	       <li class=""><a class="" href="#aspire">ASPIRATIONS</a></li>
+	      <li class=""><a class="" href="index.html#family">FAMILY&FRIENDS</a></li>
+	      <li><a href="#id03" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PHOTOS</a></li>
+	      <li class=""><a class="" href="index.html#contact">CONTACT</a></li> 
+	    </ul>
+	    
+	    </div>    
+    </div>
+	</nav>
+
+
+
+
+
+	<div id="id03" class="modal">
+  
+	  	<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>      	
+	    	</div>
+
+	    <div class="container" style="background-color:#f1f1f1"><center>	      	
+	      	<a id="abtnhome" class="btn btn-success" href="familypics.html">FAMILY</a>
+	      	<a id="abtnhome" class="btn btn-danger" href="classmates.html">CLASSMATES</a>
+	      	<a id="abtnhome" class="btn btn-info" href="friends.html">FRIENDS</a></center>
+	      	
+	    </div>
+	    	<script>
+			// Get the modal
+			var modal = document.getElementById('id03');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    			}
+				}
+			</script>
+
+	  	</form>
+		</div>
+
+
+
+	<br><br>
+	<section id="aspire" class="row text-center">
+	
+		<h2><b>PERSONAL ASPIRATIONS</b></h2>
+		<p id="pachieve">Some may think you are crazy, but always go for what you want in life. It doesnt matter the route you will go through as long as you get where your heart desires. Passion, resilience and being smart are key to you achieving your dreams. Going into the small details here, my heart desires of how my personal future life will be looking at. This is in a nutshell</p>
+		<hr>
+		<div class="col-md-4 wow bounceInRight" data-wow-delay="0.6s" data-wow-duration="2s">
+			<img src="images/home/room.jpg" width="400" height="250">
+			<h3>My Mansion</h3>
+			<p style="background-color: #d7ffd9">Lets not talk of the Dream-house for now...that will come at a later date. As for now I wanna focus on my first house. At least it must have ground-floor and 1st floor; 2 tablerooms, 1 dining room/kitchen, small playstation room, small office, 5 bedrooms, small gym room and a small meeting room(incase I've got a political/normal meetting with delegates). Outside; a swimming pool,small basketball court and a small vineyard.<br>Some think its never achievable...already the design is in progress and a video of it will drop soon as its complete. Approximate cost of architectural design,building, interior and external elements, plus interior designing will cost an approximate 15 Million Kshs.
+			</p>
+		</div>
+		<div class="col-md-4 wow bounceInDown" data-wow-delay="0.6s" data-wow-duration="2s">
+			<img src="images/cars/h2.jpg"  width="400" height="250">
+			<h3>First Cars & Dream Cars</h3>
+			<p style="background-color: #eeffff"> Men toys...I hear thats what the female gender refer them to. My first car will be either of this; Subaru Forester(All Black Old Model) or Mistubishi Lancer or BmW X6 or Harrier Lexus....after this I can now upgrade and save for my dream rides; Hummer H2, VX 8, Range Sport or Mercedes G Class.<br> Many people say that in some few years time all this will be old-fashioned, but my challenge is; have you bought any yet? I dont care whether they will be old-fashion or not, as long as I achieve my desires. 
+			</p>
+		</div>
+		<div class="col-md-4 wow bounceInLeft" data-wow-delay="0.6s" data-wow-duration="2s">
+			<img src="images/business/bs1.jpg" width="400" height="250">
+			<h3>Business</h3>
+			<p style="background-color: #d7ffd9">Something small about this...I know it doesnt sound very sensible but I dont aspire to set up businesses for money profit...always my desire is to feel that i own something big. I will purchase 3 Mathree operating in Nairobi, pimp them out hard. My issue will not be profit, my issue will be- is there any other better pimped out Mathree in town? <br> Finally I wanna setup try and develop my own village; 3 6-storey flats, 15 indepedent bungalows, hotel and supermarket inside one compound. Any profits gained from all this will hopefully go to a children orphanage.
+			</p>
+		</div>		
+	</section>
+	<br><br>
+
+	<footer class="container-fluid row text-center" style="background-color:black">  
+
+			
+	  		<p id="pwhite"><a href="index.html" title="Visit my website">www.brianwahinya.com</a><br>&#169;BrianWahinya</p> 
+
+	</footer>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="anim/js/jquery-2.1.1.min.js"></script>
+	<script src="anim/js/bootstrap.min.js"></script>
+	<script src="anim/js/parallax.min.js"></script>
+	<script src="anim/js/wow.min.js"></script>
+	<script src="anim/js/jquery.easing.min.js"></script>
+	<script src="anim/js/fliplightbox.min.js"></script>
+	<script src="anim/js/functions.js"></script>
+
+
+
+	
+</body>
+</html>

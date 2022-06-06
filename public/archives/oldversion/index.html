@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>brianprofile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="profile, brian, wahinya, ngure">
+	<meta name="author" content="brian wahinya ngure">
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="anim/css/font-awesome.css">
+	<link rel="stylesheet" href="anim/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="B4/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="B4/js/bootstrap.js">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="color/default.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+
+
+				/*css for general*/
+	h3 {
+  	font-family: monotype corsiva;
+  	}
+  	
+  	p:hover{
+  		background-color: ;
+  		font-color: ;
+  		border-color: #009688;
+  		border: 1px;
+  		border-style: solid;
+
+  	}
+
+
+				/*css for navbar*/
+	.navbar{
+
+	}
+
+
+
+
+				/*css for home*/
+	#imgYB{
+		opacity: 0.8;
+		border-radius: 100px;
+	}
+	#pHome{
+		color: white;
+		font-size: 20px;
+	}
+	#h1Home{
+		color: white;
+		font-size: 40px;
+		font-family: Cooper Black;
+	}
+	#h2Home{
+		font-family: Forte;
+		font-size: 40px;
+
+	}
+	#aHome{
+		outline: none;
+  		text-decoration: none;
+  		display: inline-block;
+  		width: %;
+  		margin-right: 0.625%;
+  		text-align: center;
+  		line-height: 1;
+  		color: #1E88E5;
+	}	
+	#aHome:hover{
+		background-color: #bbdefb;
+   		opacity: 0.6;
+    	filter: alpha(opacity=100);
+
+	}
+	#home{
+		text-align: center;
+  		padding: 15%;  		
+  		background-repeat: no-repeat;
+		background-size: cover;
+		background-position:center;
+		backface-visibility: ;
+		font-family: ;
+		font-weight: 1000;
+	}
+
+	#abtnhome{
+		border-radius: 10px;
+	}
+	#abtnhome:hover{
+		opacity: 0.6;
+	    border-radius: 15px 50px;
+	}
+
+
+			/*css for biography*/
+	#pBio{
+		text-align: justify;
+	}
+
+
+
+
+			/*css for achievements*/
+	#pachieve{
+  		padding-left: 20%;
+	 	padding-right: 20%;
+  	}
+
+  			/*css for aspirations*/
+
+
+
+
+
+  			/*css for contacts*/
+  	#contact{
+  		background-color: #eeffff; 
+  	}
+  	#a1{
+		outline: none;
+  		text-decoration: none;
+  		display: inline-block;
+  		width: 15%;
+  		margin-right: 0.625%;
+  		text-align: center;
+  		line-height: 3;
+  		color: #001970;
+	}	
+	#a1:hover{
+		background-color: #bbdefb;
+		border-radius: ;
+   		opacity: 0.6;
+    	filter: alpha(opacity=100);
+	}
+
+
+
+
+			/*css for FOOTER*/
+
+	#hr1{
+		border: 1px solid #f1f1f1;
+    	margin-bottom: 25px;
+	}
+	#pwhite{
+		color: #ffffff;
+		font-family: "monotype corsiva";
+		font-style: "oblique";
+		font-size: 20px;
+	}
+	footer .glyphicon {
+	    font-size: 20px;
+	    margin-bottom: 05px;
+	    color: #f4511e;
+	}
+			/*css for SIGNUP in footer*/
+
+	input[type=text], input[type=password] {
+	    width: 100%;
+	    padding: 12px 20px;
+	    margin: 5px 0;
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+    }
+
+	/* Add a background color when the inputs get focus */
+	input[type=text]:focus, input[type=password]:focus {
+	    background-color: #ddd;
+	    outline: none;
+	}
+
+	/* Set a style for all buttons */
+	button {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 0px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 50%;
+	    border-radius: 10px;
+	}
+
+	button:hover {
+	    opacity: 0.4;
+	    border-radius: 15px 50px;
+	}
+
+
+
+	/* Center the image and position the close button */
+	.imgcontainer {
+	    text-align: center;
+	    margin: 24px 0 12px 0;
+	    position: relative;
+	}
+
+	img.avatar {
+	    width: 10%;
+	    border-radius: 50%;
+	}
+
+	/* Extra styles for the cancel button */
+	.cancelbtn {
+	    padding: 14px 20px;
+	    background-color: #f44336;
+	}
+
+	/* Float cancel and signup buttons and add an equal width */
+	.cancelbtn, .signupbtn, .submitbtn {
+	  float: left;
+	  width: 50%;
+	  border-radius: 15px 50px;
+	}
+
+	/* Add padding to container elements */
+	.container {
+	    padding: 16px;
+
+	}
+	span.psw {
+    	float: right;
+    	padding-top: 16px;
+	}
+
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+    	height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: 60px;
+
+	}
+		/* Modal Content/Box */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* Modal Content/Box */
+	.modal-contents {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 50px;
+	    top: 0px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #000;
+	}
+
+	.close:hover, .close:focus {
+	    color: #f44336;
+	    cursor: pointer;
+	}
+
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+		/* Add Zoom Animation */
+	.animate {
+	    -webkit-animation: animatezoom 0.6s;
+	    animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	    from {-webkit-transform: scale(0)} 
+	    to {-webkit-transform: scale(1)}
+	}
+	    
+	@keyframes animatezoom {
+	    from {transform: scale(0)} 
+	    to {transform: scale(1)}
+	}
+
+		/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    span.psw {
+	       display: block;
+	       float: none;
+	    }
+	    .cancelbtn {
+	       width: 50%;
+	    }
+	}
+
+
+
+
+
+	#i input[type=text], select, textarea{
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    resize: vertical;
+	}
+
+	label {
+	    padding: 12px 12px 12px 0;
+	    display: inline-block;
+	}
+
+	#i input[type=submit] {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 10px;
+	    cursor: pointer;
+	    float: right;
+	}
+
+	#i input[type=submit]:hover {
+	    background-colr: #45a049;
+	    opacity: 0.4;
+	    border-radius: 15px 50px;
+	}
+
+	.container {
+	    border-radius: 5px;
+	    background-color: #f2f2f2;
+	    padding: 20px;
+	}
+
+	.col-25 {
+	    float: left;
+	    width: 25%;
+	    margin-top: 6px;
+	}
+
+	.col-75 {
+	    float: left;
+	    width: 75%;
+	    margin-top: 6px;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+
+	/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+	@media (max-width: 600px) {
+	    .col-25, .col-75, input[type=submit] {
+	        width: 100%;
+	        margin-top: 0;
+	    }
+	}
+
+
+
+ #navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display:block;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+
+
+
+.parallax {
+    /* The image used */
+    background-image: url('images/bg/try.jpg');
+
+    /* Full height */
+    height: 100%;
+    width: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+
+
+/*PROGRESS BAR*/
+
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.header h2 {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: black;
+}
+
+.progress-bar {
+  height: 8px;
+  background:;
+  width: 0%;
+}
+
+		
+	</style>
+
+
+
+	<link rel="stylesheet" href="anim/css/font-awesome.css">  
+  <link rel="stylesheet" href="anim/css/animate.css">  
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">	
+
+		
+	<nav class="navbar navbar-expand-xl navbar-inverse navbar-fixed-top">
+  	<div class="container-fluid">
+    	
+	    <div class="navbar-header">
+      <div class="navbar-toggle" onclick="myFunction4(this)" data-toggle="collapse" data-target="#collapsibleNavbar" >
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>                        
+      </div>
+    
+        <a class="navbar-brand" href="index.html">BRIAN</a>
+      </div>
+
+	    <div class="collapse navbar-collapse" id="cllapsibleNavbar">
+	   
+	    <nav class="nav navbar-nav navbar-right">
+	      <li><a class="" href="#home">HOME</a></li>
+	      <li><a class="" href="#bio">BIOGRAPHY</a></li>
+	      <li><a class="" href="#achieve">ACHIEVEMENTS</a></li>
+	      <li><a class="" href="#aspire">ASPIRATIONS</a></li>
+	      <li><a class="" href="#family">FAMILY&amp;FRIENDS</a></li>
+	      <li><a href="#id03" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PHOTOS</a></li>		           
+	     <li><a class="" href="#contact">CONTACT</a></li>
+
+	    </nav>
+	    <nav class="nav navbar-nav navbar-left">
+      	<li><a href="#id01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#id02" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </nav>
+	    </div>
+	    </div>
+
+	    <div class="header fixed-top">  
+  <div class="progress-container">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" id="myBar"></div>
+  </div>  
+</div>    
+    
+	</nav>
+
+	
+
+	<div id="id03" class="modal">
+  
+	  	<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>      	
+	    	</div>
+
+	    <div class="container" style="background-color:#f1f1f1"><center>	      	
+	      	<a id="abtnhome" class="btn btn-success" href="familypics.html">FAMILY</a>
+	      	<a id="abtnhome" class="btn btn-danger" href="classmates.html">CLASSMATES</a>
+	      	<a id="abtnhome" class="btn btn-info" href="friends.html">FRIENDS</a></center>
+	      	
+	    </div>
+	    	<script>
+			// Get the modal
+			var modal = document.getElementById('id03');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    			}
+				}
+			</script>
+
+	  	</form>
+		</div>
+
+
+
+
+
+
+			  <!--section home page-->
+<div class="parallax">
+		<section id="home" class="Hero" >
+		
+			<img id="imgYB" src="images/me/suit.jpg" width="150" height="220">
+			<h4 id="pHome"><b>OLD VERSION WEBSITE</b></h4>
+			<h1 id="h1Home"><b>NGURE BRIAN WAHINYA</b></h1>
+			<b>
+			<h2 id="h2Home"><a id="aHome" href="index.html#achieve">POLITICS</a> | <a id="aHome" href="index.html#aspire" >COMPUTERS</a> | <a id="aHome" href="#id03" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PHOTOS</a> | <a id="aHome" href="">HOBBIES</a></h2>
+			<p id="pHome"> Life is always short, time  will never be ready for anyone, chances come once and if they come for a second time, then it isn't in the same circumstance. Look for it, Grab it and Own it. Thats my policy.</p>
+			<br>
+			</b>
+			<a id="abtnhome" class="btn btn-success" href="briancv.html">CHECK MY CV</a>
+		
+		</section>
+	</div>
+
+
+
+
+
+		<!--section bio page-->
+
+
+
+	<section id="bio" class="row text-align" background="images/bg/signature.jpg">
+		<hr><br><br>
+		
+		
+		<div class="col-md-8 wow rollIn" data-wow-delay="0.1s" data-wow-duration="1s" style="background-color: #d7ffd9">
+			<center><h2><b>WHO IS BRIAN?</b></h2></center><p id="pBio">
+			Be who you are and say what you feel, because those who mind dont matter and those who matter dont mind.Be willing to go all out, in pursuit of your dream. Ultimately it will pay off. You are more powerful than you think you are.Dont worry what others are doing. Dont at all!<br>There is only one thing that makes a dream impossible to achieve: the fear of failure. You cannot control everything that happens to you; you can only control the way you respond to what happens. In your response is your power. Stay strong. Even when it feels like everything is falling apart.<br>Failure is a prerequisite for great success. If you want to succeed faster, double your rate of failure. Dont make friends who are comfortable to be with. Make friends who will force you to lever yourself up. Dont be pushed by your problems. Be led by your dreams. If you really want to do something you will find a way, if you dont, you will find an excuse.<br>Dont allow your past or present condition to control you. It is just a process that you are going through to get you to the next level. Never forget to say thanks to God for giving you another chance. Thats basically me.</p><br>
+
+			<center><h4><b>Strive to be Bigger than your Dream</b></h4>
+			<img src="images/bg/signature.jpg" width="80%"></center>
+			
+			
+		</div>
+
+		<div id="check" class="col-md-4 wow fadeInRight" data-wow-delay="0.1s" data-wow-duration="1s" style=";">
+			<img src="images/me/office.jpg" width="430" height="560">
+		</div>
+	</section>
+	<br>
+
+
+
+		<!--section ACHIEVE page-->
+
+<br><hr><br>
+
+	<section id="achieve" class="row text-center">
+		
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><h2><b>ACHIEVEMENTS</b></h2></div>
+		<div class="col-md-4"></div>
+		<p id="pachieve">Ever noted that the harder you work smart, the more you achieve your goals. To be an achiever you have to see the bigger picture. It's never about winning and losing only, it's about being resilient come rain come shine. Consistency is key. There are no two ways about it.</p>
+		<div class="col-md-4 wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/campaignbanner.jpg" width="400" height="250">
+			<h3>Secretary General</h3>
+			<p style="background-color: #d7ffd9"> 2015/2016 SecGen of the Students Association of Jaramogi Oginga Odinga University of Science and Technology (SAJOOUST). During that duration, I had a real good opportunity to sharpen my leadership skills by being the comrades' chosen voice. There were so many challenges to solve especially when it came to balancing between my education and representing comrades. Politics is tough, how I got to that position is by God's mercy and grace. At the beginning it was unimaginable especially when I recalled that so many had discouraged me citing how tribal and dirty politics is. That didnt demoralise me, I wanted to prove them wrong and decided to do my campaign in a whole different way. Thanks to all those who believed in my agenda and voted for me selflessly That's past...I soldier on looking for more opportunities in the future.
+			</p>
+		</div>
+		<div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/class2.jpg" width="400" height="250">
+			<h3>Bachelor's Degree</h3>
+			<p style="background-color: #eeffff">Information Communication Technology...doing that course in JOOUST was the best decision. Im hopeful to graduate around March 23rd 2018. I thank God for that far because He opened the door and 4 yrs down the line He is closing the same door and opening another. Big up to my lecturers who always kept me on my toes even though the journey aint over yet because I may be going back there for a Masters Degree.<br> My classmates...I will surely be missing them, can forget borrowing one another notes, past papers...let me not be too official...we also exchanged movies,series, cracked jokes, argued about politics and obviously about soccer.
+			<br>Edward Snowden story was the most exciting story in my four years of higher education and I desire to follow his steps.
+			
+			<br><a id="abtnhome" class="btn btn-success" href="classmates.html">Photos</a>
+			</p>			
+
+		</div>
+		<div class="col-md-4 wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/nbk2.jpg" width="400" height="250">
+			<h3>National Bank Intern</h3>
+			<p style="background-color: #d7ffd9">NBK...never thought one day i would land there. I always prayed for an opportunity to work in a banking company or an I.T firm. I recall how I was so committed to look for an internship position in so many companies until I almost lost hope, then came the call of me reporting to NBK as an ICT intern. God's mercy in work. Here i interacted with some very good brains in the IT field. Network Installation and Troubleshooting, Computer Hardware Repair & Maintenance, Windows Server installation and assigning of the domain were the major jobs that I was given.<br>Definitely in such an institution you get to gain a lot more than u can give. Im really humbled that I came out of there more empowered with I.T. knowledge. I got my eyes wide open looking for a chance to get back there very soon.
+			</p>			
+
+		</div>		
+	</section>
+
+
+
+		<!--section ASPIRE page-->
+<br><hr><br>
+
+	<section id="aspire" class="row text-center">
+	
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><h2><b>ASPIRATIONS</b></h2></div>
+		<div class="col-md-4"></div>
+		<br>
+		<p id="pachieve">There will be OBSTACLES | There will be DOUBTERS | There will be MISTAKES | But with HARDWORK & FOCUS & PERSISTENCE & PATIENCE....There will be NO LIMITS. You got no shortcuts, you better start working for it as early as now. There are no secrets to achieve all my dreams. They will be as a result of preparation, hardwork and learning from failure. </p>
+		<div class="col-md-4 wow flipInX" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/samia.jpg" width="400" height="250">
+			<h3>Politics</h3>
+			<p style="background-color: #d7ffd9">Many will say its a dirty game, but did you know everything is political no matter where you are. Barack Obama once said, "We need to reject any politics that targets people because of race or religion. This isn't a matter of political correctness. It's a matter of understanding what makes us strong. The world respects us not just for our arsenal; it respects us for our diversity and our openness and the way we respect every faith."<br> "In politics, nothing happens by accident. If it happens, you can bet it was planned that way,"by Franklin D. Roosevelt.
+
+			
+			</p>
+		</div>
+		<div class="col-md-4 wow rotateInDownRight" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/nbk3.jpg"  width="400" height="250">
+			<h3>Computer Maniac</h3>
+			<p style="background-color: #eeffff"> Programming is one of my biggest passions. Its a hard task, because obviously you wont sleep espicially is you make a mistake of forgetting to put a comma, but that wont make me stop from venturing deeper into it. My end game in the computer world is becoming a reliable White-Hacker. I started small and Im slowly making progress. I know this will take time but persistence and patience are key.<br> No hurry in Africa, there are no shortcuts in such fields. 
+			</p>
+		</div>
+		<div class="col-md-4 wow flipInX" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/me/HummerH2.jpg" width="400" height="250">
+			<h3>Personal</h3>
+			<p style="background-color: #d7ffd9">Personal aspirations regards those issues that will directly affect me and my family. These include my rides, where I'm gonna be living, what I will be doing when Im off from job and any other source of income Im looking forward to setup.<br>
+				I know so many will not take this seriously because they think Im dreaming, yes I am dreaming but that helps me stay focused and committed to my daily commitments. Any slight progress is a plus for me. Stay positive.<br><a id="abtnhome" class="btn btn-success" href="aspirations.html">Get More Info</a>
+			</p>
+		</div>
+			<b><h4 id="h4family"></h4></b>
+        			
+	</section>
+
+
+
+		<!--section FAMILY AND FRIENDS page-->
+
+
+<br><hr><br>
+
+	<section id="family" class="row text-center">		
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><h2><b>FAMILY & FRIENDS</b></h2></div>
+		<div class="col-md-4"></div>
+		<p id="pachieve">No man is an island, entire of itself; every man is a part of the main. This is where my family and friends come in. Ever thought of a life with no family or friends...that aint possible at all. They are like your backbone, they will always support you even when u least need it.</p>
+		<div class="col-md-3 wow fadeInDownBig" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/mom/mom2.jpg" width="330" height="250" alt="Mom">
+			<h3>Mom and Dad</h3>
+			<p style="background-color: #d7ffd9">You need a strong family because at the end, they will love you and support you unconditionally. Luckily, I have my dad, mom and brother. One of the greatest titles in the world is parent, and one of the biggest blessings in the world is to have parents to call mom and dad.My parents had a great deal of trouble with me during my childhood days, but I think they enjoyed it. Today I'm proud of the path they showed me.
+
+			<br><a id="abtnhome" class="btn btn-success" href="family.html">Get More Info</a>
+			</p>
+		</div>
+		<div class="col-md-3 wow fadeInUpBig" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/bro/bro1.jpg" width="330" height="250" alt="Bro">
+			<h3>Big Bro</h3>
+			<p style="background-color: #eeffff">Everyone knows that if you have got a brother, you are going to fight especially during your childhood days.My brother is one of my true heroes. Brothers are what best friends can never be.The greatest gift my parents ever gave me was my brother SO how do people make it through life without a brother? If you have a brother, you know exactly how important he is to you.Whether you want to admit it or not, thats the truth!
+
+
+			<br><a id="abtnhome" class="btn btn-success" href="family.html">Get More Info</a>
+			</p>			
+
+		</div>
+
+		<div class="col-md-3 wow fadeInDownBig" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/family/rela1.jpg" width="330" height="250" alt="Relatives">
+			<h3>Relatives</h3>
+			<p style="background-color: #eeffff">Our relatives form the natural setting of our childhood. We understand ourselves best and are best understood by others through the persons who came nearest to us in our earliest years.Nobody has ever before asked the nuclear family to live all by itself in a box. With no relatives, no support, we have put it in an impossible situation. The overwhelming support and concern my relatives give me will always enhance my confidence to achieve more.
+			<br><a id="abtnhome" class="btn btn-success" href="family.html">Get More Info</a>
+			</p>			
+
+		</div>
+
+		<div class="col-md-3 wow fadeInUpBig" data-wow-delay="0.2s" data-wow-duration="1s">
+			<img src="images/friends/runda1.jpg" width="330" height="250" alt="Friends">
+			<h3>Friends</h3>
+			<p style="background-color: #d7ffd9">Friends show their love in times of trouble, not in happiness.
+				Martin Luther King, Jr. ,"In the end, we will remember not the words of our enemies, but the silence of our friends."<br>Friends are the siblings God never gave us. The love of family and the admiration of friends is much more important than wealth and privilege.
+				Old friends pass away, new friends appear. It's just like the days. An old day passes, a new day arrives. Important thing is to make it meaningful.
+				<br><a id="abtnhome" class="btn btn-success" href="friends.html">Check Their Photos</a>
+
+			</p>			
+
+		</div>
+
+    		<b><h4 id="h4family"></h4></b>
+        	
+	</section>
+
+
+
+		<!--section CONTACTS page-->
+
+
+
+	<section id="contact" class="center wow bounceInRight" data-wow-delay="0.3s" data-wow-duration="2s">
+		<hr><br>
+			<center><h3>Follow Me For More</h3>
+				<a id="a1" href="https://www.facebook.com/yobra.wahinya" class="wow flip swing " data-wow-delay="4s" data-wow-duration="5s" ><img src="images/icons/facebook-128.png"></a>
+				
+				<a id="a1" href="https://twitter.com/BrianWahinya" class="wow flip wobble" data-wow-delay="2s" data-wow-duration="10s"><img src="images/icons/twitter-128.png"></a>
+				
+				<a id="a1" href="https://www.linkedin.com/in/brian-wahinya-051b0b138/" class="wow flip swing" data-wow-delay="4s" data-wow-duration="5s"><img src="images/icons/linkedin-128.png"></a>
+
+				<a id="a1" href="https://www.instagram.com/wahinyayobra/" class="wow flip wobble" data-wow-delay="2s" data-wow-duration="10s"><img src="images/icons/instagram-128.png"></a>
+			</center>
+
+	</section>
+				<br><hr><br>
+
+
+
+		<!--section FOOTER page-->
+
+
+
+
+	<footer class="container-fluid row text-center" style="background-color:black">  
+  
+	  <div class="col-md-4 wow bounceInLeft" data-wow-delay="0.3s" data-wow-duration="2s">
+	  		<p id="pwhite">In need of such and more better websites...you can kindly get in touch with me using the contacts below. Im also good at Android Programming alongside Computer Hardware Repair and Troubleshooting. My passion to venture into this computer field has made me gain alot even though it hasnt been easy. Thank you all for your prayers and support. May God Bless Us All!
+	  			<br><br>brianwahinyangure@gmail.com
+	  			<br><br>+254701062151
+	  		</p>
+
+	  	</div>
+
+
+  		<div class="col-md-4">
+	  		<h4 id="pwhite">SignUp For Regular Updates</h4>
+			<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+		<div id="id01" class="modal">
+	  		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	  		<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	      	<img id="imgLogin" src="images/icons/avatar.png" alt="Avatar" class="avatar">
+	      	<h3>Sign Up</h3>
+	    	
+	      	<label><b>Email</b></label>
+	      	<input type="text" placeholder="Enter Email" name="email" required>
+
+	      	<label><b>Password</b></label>
+	      	<input type="password" placeholder="Enter Password" name="psw" required>
+
+	      	<label><b>Repeat Password</b></label>
+	      	<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+	      
+	      	<label>
+	        <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
+	      	</label>      
+	      	
+	       	<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+	      	<div class="clearfix">
+	        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+	        <button type="submit" class="signupbtn">Sign Up</button>
+	      	</div>
+	      	</div>
+	      	</form>
+	    	</div>
+
+	  	
+
+			<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    		}
+			}
+			</script>
+			
+
+
+			<br><br><br><hr id="hr1"><br><br>
+
+			<h4 id="pwhite">Already Registered....Login Below</h4>
+			<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+
+		<div id="id02" class="modal">
+  
+	  	<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+	      	<img id="imgLogin" src="images/icons/avatar.png" alt="Avatar" class="avatar"><br>
+	    	    	
+	      	<label><b>Username</b></label>
+	      	<input type="text" placeholder="Enter Username" name="uname" required>
+
+	      	<label><b>Password</b></label>
+	      	<input type="password" placeholder="Enter Password" name="psw" required>
+	        
+	      	<label>
+	        <input type="checkbox" checked="checked"> Remember me
+	      	</label>
+	    	</div>
+
+	    <div class="container" style="background-color:#f1f1f1">
+	      	<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+	      	<button id="submit" class="submitbtn" type="submit">Login</button>
+	      	<center class="psw" ><center>Forgot <a href="#">Password?</a></center>
+	    </div>
+	    	<script>
+			// Get the modal
+			var modal = document.getElementById('id02');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    			}
+				}
+			</script>
+
+	  	</form>
+		</div>
+	</div>		
+	
+
+  		<div class="col-md-4 wow bounceInRight" data-wow-delay="0.1s" data-wow-duration="2s">
+  	
+	  	<form action="action_page.php">
+	    	<div class="row">
+	      	<div class="col-25">
+	        	<label id="pwhite" for="fname">First Name</label>
+	      	</div>
+	      	<div class="col-75" id="i">
+	        	<input type="text" id="fname" name="firstname" placeholder="Your name..">
+	      	</div>
+	    	</div>
+	    	<div class="row">
+	      	<div class="col-25">
+	        	<label id="pwhite" for="lname">Last Name</label>
+	      	</div>
+	      	<div class="col-75" id="i">
+	        	<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	      	</div>
+	    	</div>
+	    	<div class="row">
+	      	<div class="col-25">
+	        	<label id="pwhite" for="country">Country</label>
+	      	</div>
+	      	<div class="col-75" id="i">
+	        <select id="country" name="country">
+	          <option value="kenya">Kenya</option>
+	          <option value="uganda">Uganda</option>
+	          <option value="restoftheworld">Rest of the World</option>
+	        </select>
+	      	</div>
+	    	</div>
+	    	<div class="row">
+	      	<div class="col-25">
+	        	<label id="pwhite" for="subject">Subject</label>
+	      	</div>
+	      	<div class="col-75" id="i">
+	        	<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+	      	</div>
+	    	</div>
+	    	<div class="row" id="i">
+	      		<input type="submit" value="Submit">
+	    	</div>
+	  	</form>
+		</div> 
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+				<a href="index.html#home" title="To Top">
+	    		<span class="glyphicon glyphicon-chevron-up"></span>
+	  		</a>
+	  		<br>
+	  		<p id="pwhite"><a href="https://brianwahinya.com/index.html" title="Visit my website">brianwahinya.com</a><br>&#169;BrianWahinya</p> 
+
+
+		</div>
+		<div class="col-md-4"></div>
+		   
+	  	
+	</footer>
+
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="anim/js/jquery-2.1.1.min.js"></script>
+	<script src="anim/js/bootstrap.min.js"></script>
+	<script src="anim/js/parallax.min.js"></script>
+	<script src="anim/js/wow.min.js"></script>
+	<script src="anim/js/jquery.easing.min.js"></script>
+	<script src="anim/js/fliplightbox.min.js"></script>
+	<script src="anim/js/functions.js"></script>
+	<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="anim/js/jquery-2.1.1.min.js"></script>      
+  <script src="anim/js/bootstrap.min.js"></script>   
+  <script src="anim/js/parallax.min.js"></script>  
+  <script src="anim/js/wow.min.js"></script>  
+  <script src="anim/js/jquery.easing.min.js"></script>  
+  <script src="anim/js/fliplightbox.min.js"></script>  
+  <script src="anim/js/functions.js"></script> 
+  
+
+
+ <script>
+	var prevScrollpos = window.pageYOffset;
+	window.onscroll = function() {
+	var currentScrollPos = window.pageYOffset;
+	  if (prevScrollpos > currentScrollPos) {
+	    document.getElementById("navbar").style.top = "0";
+	  } else {
+	    document.getElementById("navbar").style.top = "-50px";
+	  }
+	  prevScrollpos = currentScrollPos;
+	}
+</script>
+
+<!-- SCROLLBAR js start-->
+
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction2()};
+
+function myFunction2() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+
+
+<script>
+	function myFunction4(x) {
+	    x.classList.toggle("change");
+	}
+</script>
+	
+</body>
+</html>

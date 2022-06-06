@@ -1,0 +1,84 @@
+[
+    {
+        "en": [
+          {
+            "mobile":[
+                {"id": 1, "name":"+254701062151"}
+            ],
+            "email":[
+                {"id": 1, "name":"brianwahinyangure@gmail.com"}
+            ],
+            "workMail":[
+                {"id": 1, "name":"Dag Hammarskjold 3477 Vitacura, Santiago, Chile"}
+            ],
+            "personalMail":[
+                {"id": 1, "name":"140-20319 South Kinangop, Kenya"}
+            ]
+          }
+        ],
+        "es": [
+            {
+                "mobile":[
+                    {"id": 1, "name":"+254701062151"}
+                ],
+                "email":[
+                    {"id": 1, "name":"brianwahinyangure@gmail.com"}
+                ],
+                "workMail":[
+                    {"id": 1, "name":"Dag Hammarskjold 3477 Vitacura, Santiago, Chile"}
+                ],
+                "personalMail":[
+                    {"id": 1, "name":"140-20319 South Kinangop, Kenya"}
+                ]
+            }
+        ],
+        "fr": [
+            {
+                "mobile":[
+                    {"id": 1, "name":"+254701062151"}
+                ],
+                "email":[
+                    {"id": 1, "name":"brianwahinyangure@gmail.com"}
+                ],
+                "workMail":[
+                    {"id": 1, "name":"Dag Hammarskjold 3477 Vitacura, Santiago, Chile"}
+                ],
+                "personalMail":[
+                    {"id": 1, "name":"140-20319 South Kinangop, Kenya"}
+                ]
+            }
+        ],
+        "swa": [
+            {
+                "mobile":[
+                    {"id": 1, "name":"+254701062151"}
+                ],
+                "email":[
+                    {"id": 1, "name":"brianwahinyangure@gmail.com"}
+                ],
+                "workMail":[
+                    {"id": 1, "name":"Dag Hammarskjold 3477 Vitacura, Santiago, Chile"}
+                ],
+                "personalMail":[
+                    {"id": 1, "name":"140-20319 South Kinangop, Kenya"}
+                ]
+            }
+        ],
+        "port": [
+            {
+                "mobile":[
+                    {"id": 1, "name":"+254701062151"}
+                ],
+                "email":[
+                    {"id": 1, "name":"brianwahinyangure@gmail.com"}
+                ],
+                "workMail":[
+                    {"id": 1, "name":"Dag Hammarskjold 3477 Vitacura, Santiago, Chile"}
+                ],
+                "personalMail":[
+                    {"id": 1, "name":"140-20319 South Kinangop, Kenya"}
+                ]
+            }
+        ]
+    }
+]

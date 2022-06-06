@@ -1,0 +1,74 @@
+[
+    {
+        "en": [
+          {
+            "nav":[{"id": 1, "about":"About", "resume":"Resume", "projects":"Projects", "blog":"Blogs", "gallery":"Gallery", "contact":"Contact", "ambitions":"Ambitions"}],
+            "contentTitles":[{
+                "aboutme":[{"id": 1, "about":"About Me", "myservices":"My Services", "clients":"Clients", "codingskills":"Coding Skills"}],
+                "resume":[{"id": 1, "work":"Work Experience", "education":"Education", "achievements":"Achievements"}],
+                "gallery":[{"id": 1, "name":"Gallery", "content":"Coming Soon"}],
+                "contacts":[{"id": 1, "name":"Contacts", "mobile":"Mobile", "email":"Email", "personalmail":"Personal Mail", "workmail":"Work Mail"}],
+                "ambitions":[{"id": 1, "career":"Career", "education":"Education", "family":"Family", "house":"House", "cars":"Cars"}]
+            }],
+            "quotes":[{"id": 1, "content":"Current world population is 7,346,235,000 as at 2016. UN projects that by 2030 it will be about 8.5 Billion"}],
+            "buttons":[{"id": 1, "downloadCV":"DOWNLOAD CV", "contactME":"CONTACT ME"}]
+          }
+        ],
+        "es": [
+            {
+                "nav":[{"id": 1, "about":"Sobre", "resume":"Currículum", "projects":"Proyectos", "blog":"Blogs", "gallery":"Galería", "contact":"Contactos", "ambitions":"Ambiciones"}],
+                "contentTitles":[{
+                    "aboutme":[{"id": 1, "about":"Sobre Mi", "myservices":"Mis servicios", "clients":"Clientela", "codingskills":"Habilidades de codificación"}],
+                    "resume":[{"id": 1, "work":"Experiencia laboral", "education":"Educación", "achievements":"Logros"}],
+                    "gallery":[{"id": 1, "name":"Galería", "content":"Próximamente"}],
+                    "contacts":[{"id": 1, "name":"Contactos", "mobile":"Móvil", "email":"Email", "personalmail":"Correo personal", "workmail":"Correo de trabajo"}],
+                    "ambitions":[{"id": 1, "career":"Carrera", "education":"Educación", "family":"Familia", "house":"Casa", "cars":"Coches"}]
+                }],
+                "quotes":[{"id": 1, "content":"La población mundial actual es de 7,346,235,000 en 2016. La ONU proyecta que para 2030 será de aproximadamente 8,5 mil millones"}],
+                "buttons":[{"id": 1, "downloadCV":"DESCARGAR CV", "contactME":"CONTÁCTAME"}]
+            }
+        ],
+        "fr": [
+            {
+                "nav":[{"id": 1, "about":"Au sujet de", "resume":"Reprendre", "projects":"Projets", "blog":"Les blogs", "gallery":"Galerie", "contact":"Contact", "ambitions":"Ambitions"}],
+                "contentTitles":[{
+                    "aboutme":[{"id": 1, "about":"À propos de moi", "myservices":"Mes services", "clients":"Les clients", "codingskills":"Compétences de codage"}],
+                    "resume":[{"id": 1, "work":"L'expérience professionnelle", "education":"Éducation", "achievements":"Réalisations"}],
+                    "gallery":[{"id": 1, "name":"Galerie", "content":"Arrive bientôt"}],
+                    "contacts":[{"id": 1, "name":"Contacts", "mobile":"Mobile", "email":"Email", "personalmail":"Courrier personnel", "workmail":"Courrier de travail"}],
+                    "ambitions":[{"id": 1, "career":"Carrière", "education":"Éducation", "family":"Famille", "house":"Maison", "cars":"Des voitures"}]
+                }],
+                "quotes":[{"id": 1, "content":"La population mondiale actuelle est de 7 346 235 000 en 2016. Les Nations Unies prévoient que d'ici 2030, ce sera environ 8,5 milliards"}],
+                "buttons":[{"id": 1, "downloadCV":"TELECHARGER LE CV", "contactME":"CONTACTEZ MOI"}]
+            }
+        ],
+        "swa": [
+            {
+                "nav":[{"id": 1, "about":"Kunihusu", "resume":"Rejea", "projects":"Miradi", "blog":"Blogi", "gallery":"Matunzio", "contact":"Anwani", "ambitions":"Matamanio"}],
+                "contentTitles":[{
+                    "aboutme":[{"id": 1, "about":"Kunihusu Mimi", "myservices":"Huduma Zangu", "clients":"Wateja", "codingskills":"Ujuzi"}],
+                    "resume":[{"id": 1, "work":"Uzoefu wa kazi", "education":"Elimu", "achievements":"Mafanikio"}],
+                    "gallery":[{"id": 1, "name":"Matunzio", "content":"Inakuja Hivi Punde"}],
+                    "contacts":[{"id": 1, "name":"Anwani", "mobile":"Rununu", "email":"Barua pepe", "personalmail":"Barua ya kibinafsi", "workmail":"Barua ya Kazi"}],
+                    "ambitions":[{"id": 1, "career":"Kazi", "education":"Elimu", "family":"Familia", "house":"Nyumba", "cars":"Magari"}]
+                }],
+                "quotes":[{"id": 1, "content":"Idadi ya watu wa sasa ni 7,346,235,000 kama ilivyokuwa mwaka wa 2016. Utabiri wa UN ni kwamba ifikapo 2030 itakuwa karibu bilioni 8.5"}],
+                "buttons":[{"id": 1, "downloadCV":"Pakua CV", "contactME":"WASILIANA NAMI"}]
+            }
+        ],
+        "port": [
+            {
+                "nav":[{"id": 1, "about":"Acerca de", "resume":"Currículo", "projects":"Projetos", "blog":"Blogs", "gallery":"Galeria", "contact":"Contatos", "ambitions":"Ambições"}],
+                "contentTitles":[{
+                    "aboutme":[{"id": 1, "about":"Sobre Mim", "myservices":"Meus serviços", "clients":"Clientes", "codingskills":"Habilidades de codificação"}],
+                    "resume":[{"id": 1, "work":"Experiência de trabalho", "education":"Educação", "achievements":"Conquistas"}],
+                    "gallery":[{"id": 1, "name":"Galeria", "content":"Em breve"}],
+                    "contacts":[{"id": 1, "name":"Contatos", "mobile":"Móvel", "email":"O email", "personalmail":"Correio Pessoal", "workmail":"Correio Comercial"}],
+                    "ambitions":[{"id": 1, "career":"Carreira", "education":"Educação", "family":"Família", "house":"Casa", "cars":"Carros"}]
+                }],
+                "quotes":[{"id": 1, "content":"A população mundial atual é de 7.346.235.000 em 2016. A ONU projeta que em 2030 será de cerca de 8,5 bilhões"}],
+                "buttons":[{"id": 1, "downloadCV":"DOWNLOAD DO CV", "contactME":"CONTATE-ME"}]
+            }
+        ]
+    }
+]

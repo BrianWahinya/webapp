@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>friends</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+
+
+	<style type="text/css">
+
+	#pachieve{
+  		padding-left: 20%;
+	 	padding-right: 20%;
+  	}
+
+
+	/* Set a style for all buttons */
+	button {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 0px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 50%;
+	    border-radius: 10px;
+	}
+
+	button:hover {
+	    opacity: 0.4;
+	    border-radius: 15px 50px;
+	}
+
+	
+	
+	    a.fancybox img {
+	        border: none;
+	        box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+	        -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+	    } 
+	    a.fancybox:hover img {
+	        position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+	    }
+
+	    /* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+    	height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: 60px;
+
+	}
+		/* Modal Content/Box */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* Modal Content/Box */
+	.modal-contents {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 90%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 50px;
+	    top: 0px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #000;
+	}
+
+	.close:hover, .close:focus {
+	    color: #f44336;
+	    cursor: pointer;
+	}
+
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+		/* Add Zoom Animation */
+	.animate {
+	    -webkit-animation: animatezoom 0.6s;
+	    animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	    from {-webkit-transform: scale(0)} 
+	    to {-webkit-transform: scale(1)}
+	}
+	    
+	@keyframes animatezoom {
+	    from {transform: scale(0)} 
+	    to {transform: scale(1)}
+	}
+
+		/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    span.psw {
+	       display: block;
+	       float: none;
+	    }
+	    .cancelbtn {
+	       width: 50%;
+	    }
+	}
+
+
+
+	    
+
+
+	    
+		
+
+	</style>	
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="container-fluid">
+    	<div class="navbar-header">
+      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      	</button>
+	  
+	    <a class="navbar-brand" href="friends.html">BRIAN / MY FRIENDS</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	   
+	    <ul class="nav navbar-nav navbar-right">
+	      <li class=""><a href="index.html">BACK TO HOME</a></li>
+	      <li class=""><a class="" href="index.html#bio">BIOGRAPHY</a></li>
+	      <li class=""><a class="" href="index.html#achieve">ACHIEVEMENTS</a></li>
+	       <li class=""><a class="" href="index.html#aspire">ASPIRATIONS</a></li>
+	      <li class=""><a class="" href="index.html#family">FAMILY&FRIENDS</a></li>
+	      <li><a href="#id03" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PHOTOS</a></li>
+	      <li class=""><a class="" href="index.html#contact">CONTACT</a></li> 
+	    </ul>
+	    
+	    </div>    
+    </div>
+	</nav>
+
+
+
+
+
+
+	<div id="id03" class="modal">
+  
+	  	<form class="modal-content animate" action="/action_page.php">
+	    	<div class="container">
+	      	<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>      	
+	    	</div>
+
+	    <div class="container" style="background-color:#f1f1f1"><center>	      	
+	      	<a id="abtnhome" class="btn btn-success" href="familypics.html">FAMILY</a>
+	      	<a id="abtnhome" class="btn btn-danger" href="classmates.html">CLASSMATES</a>
+	      	<a id="abtnhome" class="btn btn-info" href="friends.html">FRIENDS</a></center>
+	      	
+	    </div>
+	    	<script>
+			// Get the modal
+			var modal = document.getElementById('id03');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+	    	if (event.target == modal) {
+	        modal.style.display = "none";
+	    			}
+				}
+			</script>
+
+	  	</form>
+		</div>
+
+
+
+
+
+	<section id="one" class="row text-center">
+		<hr><hr>
+		<h2><b>MY AMAZING FRIENDS</b></h2><p>
+		These are few among the many-more who support me and give me a smile.<br><i>For those who havent appeared in the list, its coz i dont have a snap we've taken together...but you are still in my heart.</i><br>
+		For a better view...click the photos to zoom and scroll</p>
+			
+		
+		
+		<div class="col-md-2">
+
+			<img id="myImg" alt="HANNAH" src="images/friends/ann1.jpg" width="150" height="200">
+			
+			
+	  		</div>
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="ASWAN" src="images/friends/aswan.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="BRIDGIT" src="images/friends/bridgit.jpg" width="200" height="180">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="WENDY" src="images/friends/wendy.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MAGGIE" src="images/friends/maggie2.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JANE" src="images/friends/jane.jpg" width="150" height="200">
+			
+		</div>
+	</section>
+
+
+
+	<section id="two" class="row text-center">
+		<hr><hr>					
+		<div class="col-md-2">
+			<img id="myImg" alt="HANNAH" src="images/friends/ann3.jpg" width="180" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MEDITATION" src="images/friends/img1.jpg" width="180" height="160">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MERCY-ASWAN" src="images/friends/mercy-aswan.jpg" width="180" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JUDY" src="images/friends/judy.jpg" width="120" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JOY" src="images/friends/joy.jpg" width="140" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="SAJOOUST" src="images/friends/sajooust.jpg" width="180" height="160">
+			
+		</div>
+	</section>
+
+
+
+	<section id="three" class="row text-center">
+		<hr><hr>			
+		<div class="col-md-2">
+			<img id="myImg" alt="MIKE HOUSE" src="images/friends/mike1.jpg" width="200" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="EVA" src="images/friends/eva.jpg" width="190" height="160">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JUDY" src="images/friends/judy2.jpg" width="200" height="160">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MAGGIE" src="images/friends/maggiemod.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="WENDY" src="images/friends/wendy4.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MAGGIE" src="images/friends/kinuthia.jpg" width="150" height="200">
+			
+		</div>
+	</section>
+
+
+
+	<section id="four" class="row text-center">
+		<hr><hr>			
+		<div class="col-md-2">
+			<img id="myImg" alt="MARY" src="images/friends/mary.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MAGGIE" src="images/friends/maggie.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="HANNAH" src="images/friends/ann2.jpg" width="220" height="180">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="CAVE" src="images/friends/cave-mercy.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="ESTHER" src="images/friends/esther.jpg" width="140" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JAZZ" src="images/friends/jazz.jpg" width="180" height="180">
+			
+		</div>
+	</section>
+
+
+	<section id="five" class="row text-center">
+		<hr><hr>					
+		<div class="col-md-2">
+			<img id="myImg" alt="JOY" src="images/friends/joykui.jpg" width="200" height="160">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="VERO" src="images/friends/vero.jpg" width="140" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MIKE" src="images/friends/mike2.jpg" width="180" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="MARIAM" src="images/friends/mariam.jpg" width="180" height="180">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="KINYATI" src="images/friends/kinyati.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="BEN" src="images/friends/ben.jpg" width="150" height="200">
+			
+		</div>
+	</section>
+
+	<section id="six" class="row text-center">
+		<hr><hr>					
+		<div class="col-md-2">
+			<img id="myImg" alt="JOHN" src="images/friends/john.jpg" width="170" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="CAROL" src="images/friends/carol.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="HIKE" src="images/friends/hiking.jpg" width="180" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="WALK" src="images/friends/walk.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="BEACH" src="images/friends/beach.jpg" width="190" height="180">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="LADIES" src="images/friends/ladies.jpg" width="170" height="200">
+						
+		</div>
+		
+		
+	</section>
+
+
+	<section id="seven" class="row text-center">
+		<hr><hr>					
+		<div class="col-md-2">
+			<img id="myImg" alt="MCA" src="images/friends/mca.jpg" width="200" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="JUDY" src="images/friends/judyeva.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="KCCA" src="images/friends/kca.jpg" width="200" height="160">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="VIRGINIA" src="images/friends/virginia.jpg" width="150" height="200">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="VEE" src="images/friends/vee.jpg" width="160" height="180">
+			
+		</div>
+		<div class="col-md-2">
+			<img id="myImg" alt="DORAH" src="images/friends/dorah.jpg" width="170" height="200">
+						
+		</div>
+		
+		
+	</section>
+	<br><br>
+
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+		<script type="text/javascript">
+		    $(function($){
+		        var addToAll = true;
+		        var gallery = true;
+		        
+		        var titlePosition = 'inside';
+		        $(addToAll ? 'img' : 'img.fancybox').each(function(){
+		            var $this = $(this);
+		            var title = $this.attr('title');
+		            var src = $this.attr('data-big') || $this.attr('src');
+		            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+		            $this.wrap(a);
+		        });
+		        if (gallery)
+		            $('a.fancybox').attr('rel', 'fancyboxgallery');
+		        $('a.fancybox').fancybox({
+		            titlePosition: titlePosition
+		        });
+		    });
+		    $.noConflict();
+		</script>
+
+
+		<footer class="container-fluid row text-center" style="background-color:black">  
+
+			<a href="one" title="To Top">
+	    		<span class="glyphicon glyphicon-chevron-up"></span>
+	  		</a>
+	  		<p id="pwhite"><a href="index.html" title="Visit my website">www.brianwahinya.com</a><br>&#169;BrianWahinya</p> 
+
+		</footer>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

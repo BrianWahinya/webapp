@@ -1,1 +1,58 @@
-/* No CSS *//*# sourceMappingURL=navbar.css.map */
+.fa-house-chimney-user:hover {
+  color: aquamarine;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.comingSoon {
+  color: aliceblue;
+  min-width: 200px;
+  width: 100%;
+  font-size: 20px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center !important;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (min-width: 576px) {
+  .navbar-expand-sm {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .mainContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-expand-sm {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .mainContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .container-fluid {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */

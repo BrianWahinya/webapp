@@ -1,0 +1,82 @@
+[
+    {
+        "en": [
+            {
+              "name":"Brian Wahinya",
+              "profession":"Software Engineer",
+              "quotes":[
+                {"id": 1, "author":"Virginia Satir", "name":"We must not allow other people’s limited perceptions to define us"},
+                {"id": 2, "author":"Chinese Proverb", "name":"The person who says it cannot be done should not interrupt the person who is doing it"},
+                {"id": 3, "author":"Carl Bard", "name":"Though no one can go back and make a brand new start, anyone can start from now and make a brand new ending"},
+                {"id": 4, "author":"Les Brown", "name":"Life has no limitations, except the ones you make"},
+                {"id": 5, "author":"Bill Murray", "name":"The best way to teach your kids about taxes is by eating 30 percent of their ice cream"},
+                {"id": 6, "author":"Steve Wright", "name":"I’m writing a book. I’ve got the page numbers done"},
+                {"id": 7, "author":"George Bernard Shaw", "name":"A pessimist is a man who thinks everybody is as nasty as himself, and hates them for it"}
+              ]         
+            }
+        ],
+        "es": [
+            {
+              "name":"Brian Wahinya",
+              "profession":"Ingeniero de software",
+              "quotes":[
+                {"id": 1, "author":"Virginia Satir", "name":"No debemos permitir que las percepciones limitadas de otras personas nos definan"},
+                {"id": 2, "author":"Chinese Proverb", "name":"La persona que dice que no se puede hacer no debe interrumpir a la persona que lo está haciendo"},
+                {"id": 3, "author":"Carl Bard", "name":"Aunque nadie puede regresar y comenzar de nuevo, cualquiera puede comenzar desde ahora y hacer un nuevo final"},
+                {"id": 4, "author":"Les Brown", "name":"La vida no tiene limitaciones, excepto las que haces"},
+                {"id": 5, "author":"Bill Murray", "name":"La mejor manera de enseñarles a sus hijos sobre los impuestos es comiendo el 30 por ciento de sus helados"},
+                {"id": 6, "author":"Steve Wright", "name":"Estoy escribiendo un libro Ya tengo los números de página"},
+                {"id": 7, "author":"George Bernard Shaw", "name":"Un pesimista es un hombre que piensa que todos son tan desagradables como él y los odia por eso"}
+              ]   
+            }
+        ],
+        "fr": [
+            {
+              "name":"Brian Wahinya",
+              "profession":"Ingénieur logiciel",
+              "quotes":[
+                {"id": 1, "author":"Virginia Satir", "name":"Nous ne devons pas laisser les perceptions limitées des autres nous définir"},
+                {"id": 2, "author":"Chinese Proverb", "name":"La personne qui dit que cela ne peut pas être fait ne devrait pas interrompre la personne qui le fait"},
+                {"id": 3, "author":"Carl Bard", "name":"Bien que personne ne puisse revenir en arrière et faire un nouveau départ, tout le monde peut commencer à partir de maintenant et se faire une toute nouvelle fin"},
+                {"id": 4, "author":"Les Brown", "name":"La vie n'a pas de limites, sauf celles que vous faites"},
+                {"id": 5, "author":"Bill Murray", "name":"La meilleure façon de renseigner vos enfants sur les taxes est de manger 30% de leur glace"},
+                {"id": 6, "author":"Steve Wright", "name":"J'écris un livre. J'ai les numéros de page faits"},
+                {"id": 7, "author":"George Bernard Shaw", "name":"Un pessimiste est un homme qui pense que tout le monde est aussi méchant que lui-même et qui le déteste"}
+              ]   
+            }
+        ],
+        "swa": [
+            {
+              "name":"Brian Wahinya",
+              "profession":"Mhandisi wa Programu",
+              "quotes":[
+                {"id": 1, "author":"Virginia Satir", "name":"Hatupaswi kuruhusu maoni ya watu wengine kutufafanua"},
+                {"id": 2, "author":"Chinese Proverb", "name":"Mtu anayesema kuwa haiwezi kufanywa haipaswi kumsumbua mtu anayeifanya"},
+                {"id": 3, "author":"Carl Bard", "name":"Ingawa hakuna mtu anayeweza kurudi nyuma na kutengeneza chapa mpya, mtu yeyote anaweza kuanza kutoka sasa na kufanya mwisho mpya wa bidhaa"},
+                {"id": 4, "author":"Les Brown", "name":"Maisha hayana mapungufu, isipokuwa yale unayotengeneza"},
+                {"id": 5, "author":"Bill Murray", "name":"Njia bora ya kufundisha watoto wako kuhusu kodi ni kula asilimia 30 ya aiskrimu yao"},
+                {"id": 6, "author":"Steve Wright", "name":"Ninaandika kitabu. Nishaandika nambari za ukurasa"},
+                {"id": 7, "author":"George Bernard Shaw", "name":"Pessimist ni mtu ambaye anafikiria kila mtu ni mchafu kama yeye, na anawachukia"}
+              ]   
+            }
+        ],
+        "port": [
+            {
+              "name":"Brian Wahinya",
+              "profession":"Engenheiro de software",
+              "quotes":[
+                {"id": 1, "author":"Virginia Satir", "name":"Não devemos permitir que as percepções limitadas de outras pessoas nos definam"},
+                {"id": 2, "author":"Chinese Proverb", "name":"A pessoa que diz que não pode ser feita não deve interromper a pessoa que está fazendo"},
+                {"id": 3, "author":"Carl Bard", "name":"Embora ninguém possa voltar e dar um novo começo, qualquer um pode começar a partir de agora e fazer um novo final"},
+                {"id": 4, "author":"Les Brown", "name":"A vida não tem limitações, exceto as que você cria"},
+                {"id": 5, "author":"Bill Murray", "name":"A melhor maneira de ensinar seus filhos sobre impostos é comer 30% do sorvete"},
+                {"id": 6, "author":"Steve Wright", "name":"Estou escrevendo um livro Eu tenho os números de página prontos"},
+                {"id": 7, "author":"George Bernard Shaw", "name":"Um pessimista é um homem que pensa que todos são tão desagradáveis quanto ele e os odeia por isso"}
+              ]   
+            }
+        ]
+    }
+
+
+
+]
