@@ -1,43 +1,74 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./conwaygameoflife.css";
 
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 export default function ConwayGameOfLife() {
+  const [arr2D, setArr2D] = useState([]);
+  const [canvasSize, setCanvasSize] = useState(0);
+  const grid_size = 20;
   const canvasRef = useRef();
-  useEffect(() => {
+
+  const canvasAdjust = () => {
+    setCanvasSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
     createCanvas(canvasRef.current);
-  }, []);
+  };
+
+  useEffect(() => {
+    canvasAdjust();
+    const debouncedHandleResize = debounce(function handleResize() {
+      canvasAdjust();
+    }, 1000);
+
+    window.addEventListener("resize", debouncedHandleResize);
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  }, [canvasSize]);
+
   const createCanvas = (cref) => {
     const canvas = cref;
     const context = canvas.getContext("2d");
 
     const width = canvas.width;
     const height = canvas.height;
-    const grid_size = 20;
-    const x_grid_lines = Math.floor(height / grid_size);
-    const y_grid_lines = Math.floor(width / grid_size);
+    context.clearRect(0, 0, width, height);
 
-    for (let i = 0; i <= x_grid_lines; i++) {
-      context.beginPath();
-      context.lineWidth = 1;
-      context.strokeStyle = "#000000";
-      context.moveTo(0, grid_size * i);
-      context.lineTo(width, grid_size * i);
-      context.stroke();
-    }
+    const rows = Math.floor(height / grid_size) - 1;
+    // console.log(rows);
 
-    for (let i = 0; i <= y_grid_lines; i++) {
-      context.beginPath();
-      context.lineWidth = 1;
-      context.strokeStyle = "#000000";
-      context.moveTo(grid_size * i, 0);
-      context.lineTo(grid_size * i, height);
-      context.stroke();
+    for (let i = 0; i <= rows; i++) {
+      for (let j = 0; j <= rows; j++) {
+        const random = Math.floor(Math.random() * 2);
+        context.beginPath();
+        context.rect(i * grid_size, j * grid_size, grid_size, grid_size);
+        // context.fillText(random, i * grid_size, j * grid_size);
+        context.fillStyle = random ? "#000" : "#FFF";
+        context.fillRect(i * grid_size, j * grid_size, grid_size, grid_size);
+        context.stroke();
+      }
     }
   };
+
   return (
     <>
       <h5>ConwayGameOfLife (coding in progress)</h5>
-      <canvas className="canvas" ref={canvasRef} width={400} height={400} />
+      <canvas
+        className="canvas"
+        id="canv"
+        ref={canvasRef}
+        height={canvasSize}
+        width={canvasSize}
+      />
     </>
   );
 }
