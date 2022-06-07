@@ -51,9 +51,9 @@ export default function ConwayGameOfLife() {
         const random = Math.floor(Math.random() * 2);
         context.beginPath();
         context.rect(i * grid_size, j * grid_size, grid_size, grid_size);
-        // context.fillText(random, i * grid_size, j * grid_size);
         context.fillStyle = random ? "#000" : "#FFF";
         context.fillRect(i * grid_size, j * grid_size, grid_size, grid_size);
+        context.strokeStyle = "#BFBFBF";
         context.stroke();
       }
     }
