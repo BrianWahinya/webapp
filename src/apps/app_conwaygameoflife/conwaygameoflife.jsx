@@ -15,10 +15,10 @@ function debounce(fn, ms) {
 export default function ConwayGameOfLife() {
   const [arr2D, setArr2D] = useState([]);
   const [canvasSize, setCanvasSize] = useState(0);
-  const grid_size = 20;
-  const canvasRef = useRef();
+  const [cellSize, setCellSize] = useState(10);
   const [animId, setAnimId] = useState(0);
-  const [animTime, setAnimTime] = useState(1000);
+  const [animTime, setAnimTime] = useState(500);
+  const canvasRef = useRef();
 
   const canvasAdjust = () => {
     setCanvasSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
@@ -35,7 +35,7 @@ export default function ConwayGameOfLife() {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-  }, [canvasSize]);
+  }, [canvasSize, cellSize]);
 
   const createCanvas = (cref) => {
     const canvas = cref;
@@ -45,7 +45,7 @@ export default function ConwayGameOfLife() {
     const height = canvas.height;
     context.clearRect(0, 0, width, height);
 
-    const rows = Math.floor(height / grid_size) - 1;
+    const rows = Math.floor(height / cellSize) - 1;
     const cols = rows;
     // console.log(rows);
 
@@ -57,9 +57,9 @@ export default function ConwayGameOfLife() {
         const cell_value = Math.floor(Math.random() * 2);
         rowArr.push(cell_value);
         context.beginPath();
-        context.rect(j * grid_size, i * grid_size, grid_size, grid_size);
+        context.rect(j * cellSize, i * cellSize, cellSize, cellSize);
         context.fillStyle = cell_value ? "#000" : "#FFF";
-        context.fillRect(j * grid_size, i * grid_size, grid_size, grid_size);
+        context.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
         context.strokeStyle = "#BFBFBF";
         context.stroke();
       }
@@ -69,6 +69,8 @@ export default function ConwayGameOfLife() {
     // console.table("prev", prevArr);
     // console.table("curr", currArr);
   };
+
+  const play = (arr) => {};
 
   const animControl = (e) => {
     if (e.target.id === "start") {
@@ -86,14 +88,21 @@ export default function ConwayGameOfLife() {
   };
 
   const changeTime = (e) => {
+    const timeInterval = e.target.value || animTime;
     clearInterval(animId);
     setAnimId(0);
-    setAnimTime(e.target.value);
+    setAnimTime(timeInterval);
     setAnimId(
       setInterval(() => {
         canvasAdjust();
-      }, e.target.value),
+      }, timeInterval),
     );
+  };
+
+  const changeCellSize = (e) => {
+    setCellSize(e.target.value);
+    clearInterval(animId);
+    setAnimId(0);
   };
 
   return (
@@ -106,6 +115,12 @@ export default function ConwayGameOfLife() {
         <option value={1000}>1s</option>
         <option value={2000}>2s</option>
         <option value={5000}>5s</option>
+      </select>
+      <label htmlFor="animTime">Cell-Size:</label>
+      <select name="animTime" onChange={changeCellSize} value={cellSize}>
+        <option value={8}>8px</option>
+        <option value={10}>10px</option>
+        <option value={20}>20px</option>
       </select>
       <br />
       <canvas
