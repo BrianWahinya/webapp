@@ -17,6 +17,7 @@ export default function ConwayGameOfLife() {
   const [canvasSize, setCanvasSize] = useState(0);
   const grid_size = 20;
   const canvasRef = useRef();
+  const [animId, setAnimId] = useState(0);
 
   const canvasAdjust = () => {
     setCanvasSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
@@ -44,18 +45,42 @@ export default function ConwayGameOfLife() {
     context.clearRect(0, 0, width, height);
 
     const rows = Math.floor(height / grid_size) - 1;
+    const cols = rows;
     // console.log(rows);
 
-    for (let i = 0; i <= rows; i++) {
+    const prevArr = [...arr2D];
+    const currArr = [];
+    for (let i = 0; i <= cols; i++) {
+      const rowArr = [];
       for (let j = 0; j <= rows; j++) {
-        const random = Math.floor(Math.random() * 2);
+        const cell_value = Math.floor(Math.random() * 2);
+        rowArr.push(cell_value);
         context.beginPath();
-        context.rect(i * grid_size, j * grid_size, grid_size, grid_size);
-        context.fillStyle = random ? "#000" : "#FFF";
-        context.fillRect(i * grid_size, j * grid_size, grid_size, grid_size);
+        context.rect(j * grid_size, i * grid_size, grid_size, grid_size);
+        context.fillStyle = cell_value ? "#000" : "#FFF";
+        context.fillRect(j * grid_size, i * grid_size, grid_size, grid_size);
         context.strokeStyle = "#BFBFBF";
         context.stroke();
       }
+      currArr.push(rowArr);
+    }
+    setArr2D(currArr);
+    // console.table("prev", prevArr);
+    // console.table("curr", currArr);
+  };
+
+  const animControl = (e) => {
+    if (e.target.id === "start") {
+      if (!animId) {
+        setAnimId(
+          setInterval(() => {
+            canvasAdjust();
+          }, 1000),
+        );
+      }
+    } else {
+      clearInterval(animId);
+      setAnimId(0);
     }
   };
 
@@ -69,6 +94,13 @@ export default function ConwayGameOfLife() {
         height={canvasSize}
         width={canvasSize}
       />
+      <br />
+      <button id="start" onClick={animControl}>
+        Start
+      </button>
+      <button id="stop" onClick={animControl}>
+        Stop
+      </button>
     </>
   );
 }
