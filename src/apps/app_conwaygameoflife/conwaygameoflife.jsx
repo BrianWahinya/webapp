@@ -86,6 +86,8 @@ export default function ConwayGameOfLife() {
   };
 
   const changeTime = (e) => {
+    clearInterval(animId);
+    setAnimId(0);
     setAnimTime(e.target.value);
     setAnimId(
       setInterval(() => {
