@@ -18,6 +18,7 @@ export default function ConwayGameOfLife() {
   const grid_size = 20;
   const canvasRef = useRef();
   const [animId, setAnimId] = useState(0);
+  const [animTime, setAnimTime] = useState(1000);
 
   const canvasAdjust = () => {
     setCanvasSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
@@ -75,7 +76,7 @@ export default function ConwayGameOfLife() {
         setAnimId(
           setInterval(() => {
             canvasAdjust();
-          }, 1000),
+          }, animTime),
         );
       }
     } else {
@@ -84,9 +85,27 @@ export default function ConwayGameOfLife() {
     }
   };
 
+  const changeTime = (e) => {
+    setAnimTime(e.target.value);
+    setAnimId(
+      setInterval(() => {
+        canvasAdjust();
+      }, e.target.value),
+    );
+  };
+
   return (
     <>
       <h5>ConwayGameOfLife (coding in progress)</h5>
+      <label htmlFor="animTime">Speed:</label>
+      <select name="animTime" onChange={changeTime} value={animTime}>
+        <option value={100}>100ms</option>
+        <option value={500}>500ms</option>
+        <option value={1000}>1s</option>
+        <option value={2000}>2s</option>
+        <option value={5000}>5s</option>
+      </select>
+      <br />
       <canvas
         className="canvas"
         id="canv"
