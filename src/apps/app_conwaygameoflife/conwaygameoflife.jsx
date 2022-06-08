@@ -39,6 +39,11 @@ export default function ConwayGameOfLife() {
 
   const createCanvas = (cref) => {
     const canvas = cref;
+    if (!canvas) {
+      clearInterval(animId);
+      setAnimId(0);
+      return;
+    }
     const context = canvas.getContext("2d");
 
     const width = canvas.width;

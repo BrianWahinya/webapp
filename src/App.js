@@ -40,6 +40,7 @@ function App() {
       path: "/app/conwaygameoflife",
     },
   ];
+
   return (
     <Router>
       <Navbar appsRoutes={appsRoutes} />
