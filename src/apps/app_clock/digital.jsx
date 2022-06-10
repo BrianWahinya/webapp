@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import "./digital.css";
+
 export default function DigitalClock() {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
@@ -42,16 +44,18 @@ export default function DigitalClock() {
 
   return (
     <>
-      <select onChange={selectHourSys}>
-        <option key="12hrs" value="12hrs">
-          12 hrs
-        </option>
-        <option key="24hrs" value="24hrs">
-          24 hrs
-        </option>
-      </select>
-      <p>{time}</p>
-      <p>{date}</p>
+      <div className="digitalClock">
+        <select onChange={selectHourSys}>
+          <option key="12hrs" value="12hrs">
+            12 hrs
+          </option>
+          <option key="24hrs" value="24hrs">
+            24 hrs
+          </option>
+        </select>
+        <p className="digitalTime">{time}</p>
+        <p className="digitalDate">{date}</p>
+      </div>
     </>
   );
 }

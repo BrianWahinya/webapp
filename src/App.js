@@ -20,6 +20,11 @@ import {
 function App() {
   // Various route objects with their configs
   const appsRoutes = [
+    {
+      id: "conwaygameoflife",
+      comp: <ConwayGameOfLife />,
+      path: "/app/conwaygameoflife",
+    },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },
     { id: "movies", comp: <Movies />, path: "/app/movies" },
@@ -33,11 +38,6 @@ function App() {
       id: "rockpaperscissors",
       comp: <RockPaperScissors />,
       path: "/app/rockpaperscissors",
-    },
-    {
-      id: "conwaygameoflife",
-      comp: <ConwayGameOfLife />,
-      path: "/app/conwaygameoflife",
     },
   ];
 

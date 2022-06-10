@@ -1,0 +1,15 @@
+.digitalClock {
+  margin: 20px auto;
+  text-align: center;
+}
+.digitalTime {
+  font-family:cursive;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.digitalDate {
+  font-family:cursive;
+  font-weight: bold;
+  font-size: 15px;
+}

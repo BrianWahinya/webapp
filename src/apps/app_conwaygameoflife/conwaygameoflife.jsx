@@ -14,19 +14,147 @@ function debounce(fn, ms) {
 
 export default function ConwayGameOfLife() {
   const [arr2D, setArr2D] = useState([]);
-  const [canvasSize, setCanvasSize] = useState(0);
+  const [size, setSize] = useState(
+    Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95),
+  );
   const [cellSize, setCellSize] = useState(10);
-  const [animId, setAnimId] = useState(0);
-  const [animTime, setAnimTime] = useState(500);
+  const [intFunc, setIntFunc] = useState(0);
+  const [intTime, setIntTime] = useState(500);
   const canvasRef = useRef();
 
+  const neighbours = [
+    [0, -1],
+    [0, 1],
+    [-1, 0],
+    [-1, -1],
+    [-1, 1],
+    [1, -1],
+    [1, 1],
+    [1, 0],
+  ];
+
   const canvasAdjust = () => {
-    setCanvasSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
-    createCanvas(canvasRef.current);
+    setSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
+    setArr2D([]);
+    clearInterval(intFunc);
+    setIntFunc(0);
+  };
+
+  const genArr2D = () => {
+    const arr = [];
+    const num_cells = Math.floor(size / cellSize);
+    for (let i = 0; i < num_cells; i++) {
+      const row = [];
+      for (let j = 0; j < num_cells; j++) {
+        row.push(Math.floor(Math.random() * 2));
+      }
+      arr.push(row);
+    }
+    setArr2D(arr);
+  };
+
+  const nextGeneration = () => {
+    setArr2D((curr) => {
+      const arr = [];
+      const num_cells = Math.floor(size / cellSize);
+      for (let i = 0; i < num_cells; i++) {
+        const row = [];
+        for (let j = 0; j < num_cells; j++) {
+          row.push(conwayRules(curr, i, j));
+        }
+        arr.push(row);
+      }
+      return arr;
+    });
+  };
+
+  const conwayRules = (arr, i, j) => {
+    const curr_val = arr[i][j];
+    const neigh_val = neighbours.reduce((sum, nei) => {
+      const n1 = nei[0];
+      const n2 = nei[1];
+      const val = arr[i + n1]
+        ? arr[i + n1][j + n2]
+          ? arr[i + n1][j + n2]
+          : 0
+        : 0;
+      sum += val;
+      return sum;
+    }, 0);
+    // Rules
+    const cell_val =
+      curr_val === 1
+        ? neigh_val === 2 || neigh_val === 3
+          ? 1
+          : 0
+        : neigh_val === 3
+        ? 1
+        : 0;
+    return cell_val;
+  };
+
+  const drawCells = (arr, rows) => {
+    const cv = canvasRef.current;
+    if (!cv) {
+      clearInterval(intFunc);
+      setIntFunc(0);
+    }
+    const ctx = cv.getContext("2d");
+    ctx.clearRect(0, 0, size, size);
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < rows; j++) {
+        const cell_value = arr[i][j];
+        ctx.beginPath();
+        ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
+        ctx.fillStyle = cell_value === 0 ? "#FFF" : "#000";
+        ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+        ctx.strokeStyle = "#BFBFBF";
+        ctx.stroke();
+      }
+    }
+  };
+
+  const play = (e) => {
+    if (e.target.id === "play") {
+      if (!intFunc) {
+        setIntFunc(
+          setInterval(() => {
+            nextGeneration();
+          }, intTime),
+        );
+      }
+    } else {
+      clearInterval(intFunc);
+      setIntFunc(0);
+    }
+  };
+
+  const changeCellSize = (e) => {
+    setCellSize(e.target.value);
+    setArr2D([]);
+    clearInterval(intFunc);
+    setIntFunc(0);
+  };
+
+  const changeTime = (e) => {
+    const timeInterval = e.target.value || intTime;
+    clearInterval(intFunc);
+    setIntFunc(0);
+    setIntTime(timeInterval);
+    setIntFunc(
+      setInterval(() => {
+        nextGeneration();
+      }, timeInterval),
+    );
   };
 
   useEffect(() => {
-    canvasAdjust();
+    if (arr2D.length < 1) {
+      genArr2D();
+    } else {
+      drawCells(arr2D, Math.floor(size / cellSize));
+    }
+
     const debouncedHandleResize = debounce(function handleResize() {
       canvasAdjust();
     }, 1000);
@@ -35,112 +163,33 @@ export default function ConwayGameOfLife() {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-  }, [canvasSize, cellSize]);
-
-  const createCanvas = (cref) => {
-    const canvas = cref;
-    if (!canvas) {
-      clearInterval(animId);
-      setAnimId(0);
-      return;
-    }
-    const context = canvas.getContext("2d");
-
-    const width = canvas.width;
-    const height = canvas.height;
-    context.clearRect(0, 0, width, height);
-
-    const rows = Math.floor(height / cellSize) - 1;
-    const cols = rows;
-    // console.log(rows);
-
-    const prevArr = [...arr2D];
-    const currArr = [];
-    for (let i = 0; i <= cols; i++) {
-      const rowArr = [];
-      for (let j = 0; j <= rows; j++) {
-        const cell_value = Math.floor(Math.random() * 2);
-        rowArr.push(cell_value);
-        context.beginPath();
-        context.rect(j * cellSize, i * cellSize, cellSize, cellSize);
-        context.fillStyle = cell_value ? "#000" : "#FFF";
-        context.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
-        context.strokeStyle = "#BFBFBF";
-        context.stroke();
-      }
-      currArr.push(rowArr);
-    }
-    setArr2D(currArr);
-    // console.table("prev", prevArr);
-    // console.table("curr", currArr);
-  };
-
-  const play = (arr) => {};
-
-  const animControl = (e) => {
-    if (e.target.id === "start") {
-      if (!animId) {
-        setAnimId(
-          setInterval(() => {
-            canvasAdjust();
-          }, animTime),
-        );
-      }
-    } else {
-      clearInterval(animId);
-      setAnimId(0);
-    }
-  };
-
-  const changeTime = (e) => {
-    const timeInterval = e.target.value || animTime;
-    clearInterval(animId);
-    setAnimId(0);
-    setAnimTime(timeInterval);
-    setAnimId(
-      setInterval(() => {
-        canvasAdjust();
-      }, timeInterval),
-    );
-  };
-
-  const changeCellSize = (e) => {
-    setCellSize(e.target.value);
-    clearInterval(animId);
-    setAnimId(0);
-  };
-
+  }, [size, arr2D, cellSize, intTime]);
   return (
     <>
-      <h5>ConwayGameOfLife (coding in progress)</h5>
-      <label htmlFor="animTime">Speed:</label>
-      <select name="animTime" onChange={changeTime} value={animTime}>
-        <option value={100}>100ms</option>
+      <h5>ConwayGameOfLife</h5>
+      <label htmlFor="intTime">Speed:</label>
+      <select name="intTime" onChange={changeTime} value={intTime}>
         <option value={500}>500ms</option>
         <option value={1000}>1s</option>
         <option value={2000}>2s</option>
-        <option value={5000}>5s</option>
       </select>
-      <label htmlFor="animTime">Cell-Size:</label>
-      <select name="animTime" onChange={changeCellSize} value={cellSize}>
+      &nbsp;
+      <label htmlFor="cellsize">Cell-Size:</label>
+      <select name="cellsize" onChange={changeCellSize} value={cellSize}>
         <option value={8}>8px</option>
         <option value={10}>10px</option>
+        <option value={15}>15px</option>
         <option value={20}>20px</option>
+        <option value={30}>30px</option>
       </select>
       <br />
-      <canvas
-        className="canvas"
-        id="canv"
-        ref={canvasRef}
-        height={canvasSize}
-        width={canvasSize}
-      />
+      <canvas ref={canvasRef} height={size} width={size} />
       <br />
-      <button id="start" onClick={animControl}>
-        Start
+      <button id="play" onClick={play}>
+        Play
       </button>
-      <button id="stop" onClick={animControl}>
-        Stop
+      <button id="pause" onClick={play}>
+        Pause
       </button>
     </>
   );

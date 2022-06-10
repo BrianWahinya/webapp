@@ -49,7 +49,7 @@ export default function AnalogClock() {
 
   return (
     <>
-      <p>{date}</p>
+      <p className="analogDate">{date}</p>
       <div className={`clock ${amPm}`}>
         <div
           className="hand hour"

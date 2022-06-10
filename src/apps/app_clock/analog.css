@@ -6,6 +6,14 @@
   font-family: Gotham Rounded, sans-serif;
 }
 
+.analogDate {
+  font-family:cursive;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .clock {
   width: 300px;
   height: 300px;
