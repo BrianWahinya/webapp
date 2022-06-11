@@ -14,9 +14,10 @@ function debounce(fn, ms) {
 
 export default function ConwayGameOfLife() {
   const [arr2D, setArr2D] = useState([]);
-  const [size, setSize] = useState(
-    Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95),
-  );
+  const [size, setSize] = useState({
+    height: window.innerHeight * 0.7,
+    width: window.innerWidth * 0.95,
+  });
   const [cellSize, setCellSize] = useState(10);
   const [intFunc, setIntFunc] = useState(0);
   const [intTime, setIntTime] = useState(500);
@@ -34,7 +35,10 @@ export default function ConwayGameOfLife() {
   ];
 
   const canvasAdjust = () => {
-    setSize(Math.min(window.innerHeight * 0.7, window.innerWidth * 0.95));
+    setSize({
+      height: window.innerHeight * 0.7,
+      width: window.innerWidth * 0.95,
+    });
     setArr2D([]);
     clearInterval(intFunc);
     setIntFunc(0);
@@ -42,10 +46,11 @@ export default function ConwayGameOfLife() {
 
   const genArr2D = () => {
     const arr = [];
-    const num_cells = Math.floor(size / cellSize);
-    for (let i = 0; i < num_cells; i++) {
+    const num_rows = Math.floor(size.height / cellSize);
+    const num_cols = Math.floor(size.width / cellSize);
+    for (let i = 0; i < num_rows; i++) {
       const row = [];
-      for (let j = 0; j < num_cells; j++) {
+      for (let j = 0; j < num_cols; j++) {
         row.push(Math.floor(Math.random() * 2));
       }
       arr.push(row);
@@ -56,10 +61,11 @@ export default function ConwayGameOfLife() {
   const nextGeneration = () => {
     setArr2D((curr) => {
       const arr = [];
-      const num_cells = Math.floor(size / cellSize);
-      for (let i = 0; i < num_cells; i++) {
+      const num_rows = Math.floor(size.height / cellSize);
+      const num_cols = Math.floor(size.width / cellSize);
+      for (let i = 0; i < num_rows; i++) {
         const row = [];
-        for (let j = 0; j < num_cells; j++) {
+        for (let j = 0; j < num_cols; j++) {
           row.push(conwayRules(curr, i, j));
         }
         arr.push(row);
@@ -93,16 +99,16 @@ export default function ConwayGameOfLife() {
     return cell_val;
   };
 
-  const drawCells = (arr, rows) => {
+  const drawCells = (arr, rows, cols) => {
     const cv = canvasRef.current;
     if (!cv) {
       clearInterval(intFunc);
       setIntFunc(0);
     }
     const ctx = cv.getContext("2d");
-    ctx.clearRect(0, 0, size, size);
+    ctx.clearRect(0, 0, size.width, size.height);
     for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < rows; j++) {
+      for (let j = 0; j < cols; j++) {
         const cell_value = arr[i][j];
         ctx.beginPath();
         ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
@@ -110,6 +116,22 @@ export default function ConwayGameOfLife() {
         ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
         ctx.strokeStyle = "#BFBFBF";
         ctx.stroke();
+        if (i === 0) {
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(cols * cellSize, 0);
+          ctx.lineTo(cols * cellSize, rows * cellSize);
+          ctx.strokeStyle = "#000";
+          ctx.stroke();
+        }
+        if (j === 0) {
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(0, rows * cellSize);
+          ctx.lineTo(cols * cellSize, rows * cellSize);
+          ctx.strokeStyle = "#000";
+          ctx.stroke();
+        }
       }
     }
   };
@@ -162,7 +184,11 @@ export default function ConwayGameOfLife() {
     if (arr2D.length < 1) {
       genArr2D();
     } else {
-      drawCells(arr2D, Math.floor(size / cellSize));
+      drawCells(
+        arr2D,
+        Math.floor(size.height / cellSize),
+        Math.floor(size.width / cellSize),
+      );
     }
 
     const debouncedHandleResize = debounce(function handleResize() {
@@ -194,7 +220,12 @@ export default function ConwayGameOfLife() {
           <option value={30}>30px</option>
         </select>
       </div>
-      <canvas ref={canvasRef} height={size} width={size} className="canvas" />
+      <canvas
+        ref={canvasRef}
+        height={size.height}
+        width={size.width}
+        className="canvas"
+      />
       <div>
         <button className="btn btn-sm btn-primary" id="play" onClick={play}>
           Play
