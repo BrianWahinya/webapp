@@ -123,6 +123,16 @@ export default function ConwayGameOfLife() {
           }, intTime),
         );
       }
+    } else if (e.target.id === "restart") {
+      setArr2D([]);
+      const curr_time_int = intTime;
+      clearInterval(intFunc);
+      setIntFunc(0);
+      setIntFunc(
+        setInterval(() => {
+          nextGeneration();
+        }, curr_time_int),
+      );
     } else {
       clearInterval(intFunc);
       setIntFunc(0);
@@ -165,32 +175,37 @@ export default function ConwayGameOfLife() {
     };
   }, [size, arr2D, cellSize, intTime]);
   return (
-    <>
-      <h5>ConwayGameOfLife</h5>
-      <label htmlFor="intTime">Speed:</label>
-      <select name="intTime" onChange={changeTime} value={intTime}>
-        <option value={500}>500ms</option>
-        <option value={1000}>1s</option>
-        <option value={2000}>2s</option>
-      </select>
-      &nbsp;
-      <label htmlFor="cellsize">Cell-Size:</label>
-      <select name="cellsize" onChange={changeCellSize} value={cellSize}>
-        <option value={8}>8px</option>
-        <option value={10}>10px</option>
-        <option value={15}>15px</option>
-        <option value={20}>20px</option>
-        <option value={30}>30px</option>
-      </select>
-      <br />
-      <canvas ref={canvasRef} height={size} width={size} />
-      <br />
-      <button id="play" onClick={play}>
-        Play
-      </button>
-      <button id="pause" onClick={play}>
-        Pause
-      </button>
-    </>
+    <div className="conwayDiv">
+      <div>
+        <h5>Conway Game Of Life</h5>
+        <label htmlFor="intTime">Speed:</label>
+        <select name="intTime" onChange={changeTime} value={intTime}>
+          <option value={500}>500ms</option>
+          <option value={1000}>1s</option>
+          <option value={2000}>2s</option>
+        </select>
+        &nbsp;
+        <label htmlFor="cellsize">Cell-Size:</label>
+        <select name="cellsize" onChange={changeCellSize} value={cellSize}>
+          <option value={8}>8px</option>
+          <option value={10}>10px</option>
+          <option value={15}>15px</option>
+          <option value={20}>20px</option>
+          <option value={30}>30px</option>
+        </select>
+      </div>
+      <canvas ref={canvasRef} height={size} width={size} className="canvas" />
+      <div>
+        <button className="btn btn-sm btn-primary" id="play" onClick={play}>
+          Play
+        </button>
+        <button className="btn btn-sm btn-info" id="pause" onClick={play}>
+          Pause
+        </button>
+        <button className="btn btn-sm btn-success" id="restart" onClick={play}>
+          Restart
+        </button>
+      </div>
+    </div>
   );
 }

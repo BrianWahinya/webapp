@@ -1,5 +1,8 @@
-.canvas{
-  /* border: 2px solid #bb20da; */
-  /* height: 400px;
-  width: 90%; */
+.conwayDiv{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.conwayDiv .btn {
+  margin: 2px;
 }
