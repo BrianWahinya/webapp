@@ -32,10 +32,11 @@ export default function Gallery() {
           {
             method: "GET",
             // mode: "no-cors",
-            // credentials: "same-origin",
-            // referrerPolicy: "no-referrer",
+            credentials: "same-origin",
+            referrerPolicy: "no-referrer",
             headers: {
               Accept: "application/json",
+              // "Access-Control-Allow-Origin": "*",
               Authorization: process.env.REACT_APP_PEXELS_API,
             },
           },
