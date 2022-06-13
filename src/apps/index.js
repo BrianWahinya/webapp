@@ -7,3 +7,4 @@ export { default as QouteGenerator } from "./app_quotegenerator/quotegenerator";
 export { default as Movies } from "./app_movies/movies";
 export { default as RockPaperScissors } from "./app_rockpaperscissors/rockpaperscissors";
 export { default as ConwayGameOfLife } from "./app_conwaygameoflife/conwaygameoflife";
+export { default as StopWatch } from "./app_stopwatch/stopwatch";

@@ -15,6 +15,7 @@ import {
   QouteGenerator,
   RockPaperScissors,
   ConwayGameOfLife,
+  StopWatch,
 } from "./apps";
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
       id: "rockpaperscissors",
       comp: <RockPaperScissors />,
       path: "/app/rockpaperscissors",
+    },
+    {
+      id: "stopwatch",
+      comp: <StopWatch />,
+      path: "/app/stopwatch",
     },
   ];
 

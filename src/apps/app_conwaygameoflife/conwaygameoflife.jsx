@@ -210,7 +210,7 @@ export default function ConwayGameOfLife() {
           <option value={1000}>1s</option>
           <option value={2000}>2s</option>
         </select>
-        &nbsp;
+        &nbsp; &nbsp;
         <label htmlFor="cellsize">Cell-Size:</label>
         <select name="cellsize" onChange={changeCellSize} value={cellSize}>
           <option value={8}>8px</option>
