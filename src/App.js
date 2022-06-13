@@ -16,6 +16,7 @@ import {
   RockPaperScissors,
   ConwayGameOfLife,
   StopWatch,
+  Gallery,
 } from "./apps";
 
 function App() {
@@ -44,6 +45,11 @@ function App() {
       id: "stopwatch",
       comp: <StopWatch />,
       path: "/app/stopwatch",
+    },
+    {
+      id: "gallery",
+      comp: <Gallery />,
+      path: "/app/gallery",
     },
   ];
 
