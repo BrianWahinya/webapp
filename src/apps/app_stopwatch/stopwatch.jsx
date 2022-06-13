@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./stopwatch.css";
 
 export default function StopWatch() {
-  const [time, setTime] = useState(3599990);
+  const [time, setTime] = useState(0);
   const [timerOn, setTimerOn] = useState(false);
   const [timer, setTimer] = useState(0);
 
