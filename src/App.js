@@ -24,6 +24,11 @@ function App() {
   // Various route objects with their configs
   const appsRoutes = [
     {
+      id: "worldstatistics",
+      comp: <WorldStatistics />,
+      path: "/app/worldstatistics",
+    },
+    {
       id: "conwaygameoflife",
       comp: <ConwayGameOfLife />,
       path: "/app/conwaygameoflife",
@@ -51,11 +56,6 @@ function App() {
       id: "gallery",
       comp: <Gallery />,
       path: "/app/gallery",
-    },
-    {
-      id: "worldstatistics",
-      comp: <WorldStatistics />,
-      path: "/app/worldstatistics",
     },
   ];
 
