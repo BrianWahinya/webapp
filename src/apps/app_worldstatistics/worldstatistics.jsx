@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
-import { BarChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import "./worldstatistics.css";
 import * as world from "./world.geo.json";
 
