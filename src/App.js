@@ -17,6 +17,7 @@ import {
   ConwayGameOfLife,
   StopWatch,
   Gallery,
+  WorldStatistics,
 } from "./apps";
 
 function App() {
@@ -50,6 +51,11 @@ function App() {
       id: "gallery",
       comp: <Gallery />,
       path: "/app/gallery",
+    },
+    {
+      id: "worldstatistics",
+      comp: <WorldStatistics />,
+      path: "/app/worldstatistics",
     },
   ];
 

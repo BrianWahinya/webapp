@@ -9,3 +9,4 @@ export { default as RockPaperScissors } from "./app_rockpaperscissors/rockpapers
 export { default as ConwayGameOfLife } from "./app_conwaygameoflife/conwaygameoflife";
 export { default as StopWatch } from "./app_stopwatch/stopwatch";
 export { default as Gallery } from "./app_gallery/gallery";
+export { default as WorldStatistics } from "./app_worldstatistics/worldstatistics";
