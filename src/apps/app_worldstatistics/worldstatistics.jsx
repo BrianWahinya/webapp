@@ -39,21 +39,22 @@ export default function WorldStatistics() {
     },
     visualMap: {
       left: "right",
-      min: 500000,
-      max: 380000000,
+      min: 10000000,
+      max: 200000000,
+      formatter: function (value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      },
       inRange: {
+        // color: ["#b4c7ad", "#86a879", "#629150", "#396e25", "#1c4d0b"],
         color: [
-          "#313695",
-          "#4575b4",
-          "#74add1",
-          "#abd9e9",
-          "#e0f3f8",
-          "#ffffbf",
-          "#fee090",
-          "#fdae61",
-          "#f46d43",
-          "#d73027",
-          "#a50026",
+          "#f0efeb",
+          "#E9E5D6",
+          "#ACB992",
+          "#a6bd60",
+          "#6f7d46",
+          "#566e27",
+          "#464E2E",
+          "#362706",
         ],
       },
       text: ["High", "Low"],
@@ -65,9 +66,21 @@ export default function WorldStatistics() {
         type: "map",
         roam: true,
         map: "world",
+        zoom: 1,
+        colorBy: "data",
+        left: "5%",
+        scaleLimit: {
+          min: 0.7,
+          max: 4,
+        },
+        aspectScale: 1,
         emphasis: {
           label: {
             show: true,
+            color: "#012940",
+          },
+          itemStyle: {
+            areaColor: "#dcecf5",
           },
         },
         data: datos.map((dt) => {
