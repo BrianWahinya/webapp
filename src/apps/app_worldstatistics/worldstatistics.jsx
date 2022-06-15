@@ -89,6 +89,8 @@ export default function WorldStatistics() {
           },
           itemStyle: {
             areaColor: "#dcecf5",
+            borderColor: "#026b31",
+            borderWidth: 1.2,
           },
         },
         data: datos.map((dt) => {
