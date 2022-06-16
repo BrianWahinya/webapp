@@ -18,6 +18,7 @@ import {
   StopWatch,
   Gallery,
   WorldStatistics,
+  Calculator,
 } from "./apps";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       comp: <ConwayGameOfLife />,
       path: "/app/conwaygameoflife",
     },
+    { id: "calculator", comp: <Calculator />, path: "/app/calculator" },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },
     { id: "movies", comp: <Movies />, path: "/app/movies" },

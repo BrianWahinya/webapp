@@ -10,3 +10,4 @@ export { default as ConwayGameOfLife } from "./app_conwaygameoflife/conwaygameof
 export { default as StopWatch } from "./app_stopwatch/stopwatch";
 export { default as Gallery } from "./app_gallery/gallery";
 export { default as WorldStatistics } from "./app_worldstatistics/worldstatistics";
+export { default as Calculator } from "./app_calculator/calculator";
