@@ -21,6 +21,10 @@
   word-break: break-all;
 }
 
+.numbersDiv {
+  margin: 0 auto;
+}
+
 .calcDiv {
   background-color: #1f1f1f;
   margin: 0 auto;
@@ -35,6 +39,10 @@
 
 .btn:hover {
   border-radius: 5px;
+}
+
+.btn-primary {
+  width: 50px;
 }
 
 .btn-warning {
