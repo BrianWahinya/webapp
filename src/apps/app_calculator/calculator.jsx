@@ -6,6 +6,7 @@ import "./calculator.css";
 export default function Calculator() {
   const [result, setResult] = useState(0);
   const [chars, setChars] = useState("");
+  const [prevInputs, setPrevInputs] = useState([]);
   let computation = "";
 
   const checkParenthesisValid = (str) => {
@@ -51,6 +52,15 @@ export default function Calculator() {
     // multiply
     const multiplyRegex = /\*/g;
     formattedStr = formattedStr.replaceAll(multiplyRegex, `x`);
+    // square
+    const squareRegex = /\^2/g;
+    formattedStr = formattedStr.replaceAll(squareRegex, `&sup2;`);
+    // cube
+    const cubeRegex = /\^3/g;
+    formattedStr = formattedStr.replaceAll(cubeRegex, `&sup3;`);
+    // quad
+    const quadRegex = /\^4/g;
+    formattedStr = formattedStr.replaceAll(quadRegex, `&#8308;`);
 
     // console.log(formattedStr);
     return parse(formattedStr);
@@ -79,15 +89,22 @@ export default function Calculator() {
       case val === "clear":
         setChars("");
         setResult(0);
+        setPrevInputs([]);
         break;
       case val === "back":
-        chars.length > 0 && setChars(chars.slice(0, -1));
+        if (chars.length > 0) {
+          const prev = prevInputs;
+          const popItem = prev.pop();
+          setChars(chars.slice(0, -popItem.length));
+          setPrevInputs(prev);
+        }
         break;
       case val === "enter":
         compute();
         break;
       default:
         if (val === "sqrt" || val === "cbrt") {
+          setPrevInputs([...prevInputs, val + "("]);
           setChars(`${chars}${val}(`);
           return;
         }
@@ -103,10 +120,12 @@ export default function Calculator() {
           ) {
             return;
           } else {
+            setPrevInputs([...prevInputs, val]);
             setChars(`${chars}${val}`);
           }
         } else {
           if (parseInt(val) || val === "(" || val === "0") {
+            setPrevInputs([...prevInputs, val]);
             setChars(`${chars}${val}`);
           }
         }
@@ -115,10 +134,12 @@ export default function Calculator() {
 
   return (
     <>
-      <h5>Calculator (coding in progress)</h5>
+      <h5>Calculator</h5>
       <div className="calcGrid">
         <div className="results">{result}</div>
-        <div className="calc-inputs">{formatInputStr(chars)}</div>
+        <div className="calc-inputs">
+          <p>{formatInputStr(chars)}</p>
+        </div>
         <div className="top">
           <button className="btn btn-sm btn-warning" onClick={getChar} id="(">
             (
@@ -198,24 +219,17 @@ export default function Calculator() {
           </button>
         </div>
         <div className="down2">
-          <button className="btn btn-sm btn-warning" onClick={getChar} id="^">
-            ^
+          <button className="btn btn-sm btn-info" onClick={getChar} id="^">
+            y^
           </button>
-          <button className="btn btn-sm btn-warning" onClick={getChar} id="^2">
-            ^2
+          <button className="btn btn-sm btn-info" onClick={getChar} id="^2">
+            {/* ^2 */}
+            y&sup2;
           </button>
-          <button
-            className="btn btn-sm btn-warning"
-            onClick={getChar}
-            id="sqrt"
-          >
+          <button className="btn btn-sm btn-info" onClick={getChar} id="sqrt">
             &#8730;
           </button>
-          <button
-            className="btn btn-sm btn-warning"
-            onClick={getChar}
-            id="cbrt"
-          >
+          <button className="btn btn-sm btn-info" onClick={getChar} id="cbrt">
             &#8731;
           </button>
         </div>
