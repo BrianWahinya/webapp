@@ -22,10 +22,16 @@ export default function Calculator() {
   };
   const compute = () => {
     if (checkParenthesisValid(chars)) {
-      const res = evaluate(chars).toString();
-      setResult(res);
+      // console.log(evaluate(chars).toString());
+      try {
+        const res = evaluate(chars).toString();
+        setResult(res);
+      } catch (err) {
+        // console.log(err);
+        setResult("syntax error");
+      }
     } else {
-      setResult("error - missing ( or )");
+      setResult("missing ( or )");
     }
   };
   const formatInputStr = (str) => {
@@ -75,7 +81,7 @@ export default function Calculator() {
         setResult(0);
         break;
       case val === "back":
-        chars && setChars(chars.slice(0, -1));
+        chars.length > 0 && setChars(chars.slice(0, -1));
         break;
       case val === "enter":
         compute();
@@ -85,7 +91,7 @@ export default function Calculator() {
           setChars(`${chars}${val}(`);
           return;
         }
-        if (chars) {
+        if (chars.length > 0) {
           const lastChar = chars.split("").pop();
           if (
             Number.isNaN(parseInt(lastChar)) &&
@@ -100,7 +106,7 @@ export default function Calculator() {
             setChars(`${chars}${val}`);
           }
         } else {
-          if (parseInt(val) || val === "(") {
+          if (parseInt(val) || val === "(" || val === "0") {
             setChars(`${chars}${val}`);
           }
         }
@@ -110,113 +116,117 @@ export default function Calculator() {
   return (
     <>
       <h5>Calculator (coding in progress)</h5>
-      <div className="calcDiv">
-        <div className="resultsDiv">{result}</div>
-        <div className="charsDiv">{formatInputStr(chars)}</div>
-        <div>
-          <div className="formatDiv">
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="^">
-              ^
-            </button>
-            <button
-              className="btn btn-sm btn-warning"
-              onClick={getChar}
-              id="^2"
-            >
-              ^2
-            </button>
-            <button
-              className="btn btn-sm btn-secondary"
-              onClick={getChar}
-              id="clear"
-            >
-              C
-            </button>
-            <button
-              className="btn btn-sm btn-secondary"
-              onClick={getChar}
-              id="back"
-            >
-              &#8592;
-            </button>
-          </div>
-          <div className="numbersDiv">
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="0">
-              0
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="1">
-              1
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="2">
-              2
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="3">
-              3
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="4">
-              4
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="5">
-              5
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="6">
-              6
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="7">
-              7
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="8">
-              8
-            </button>
-            <button className="btn btn-sm btn-primary" onClick={getChar} id="9">
-              9
-            </button>
-          </div>
-          <div className="computingDiv">
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="+">
-              +
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="-">
-              &minus;
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="/">
-              &#247;
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="*">
-              X
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id=".">
-              .
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id="(">
-              (
-            </button>
-            <button className="btn btn-sm btn-warning" onClick={getChar} id=")">
-              )
-            </button>
-            <button
-              className="btn btn-sm btn-warning"
-              onClick={getChar}
-              id="sqrt"
-            >
-              &#8730;
-            </button>
-            <button
-              className="btn btn-sm btn-warning"
-              onClick={getChar}
-              id="cbrt"
-            >
-              &#8731;
-            </button>
-            <button
-              className="btn btn-sm btn-success"
-              onClick={getChar}
-              id="enter"
-            >
-              Enter
-              <br />=
-            </button>
-          </div>
+      <div className="calcGrid">
+        <div className="results">{result}</div>
+        <div className="calc-inputs">{formatInputStr(chars)}</div>
+        <div className="top">
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="(">
+            (
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id=")">
+            )
+          </button>
+          <button
+            className="btn btn-sm btn-secondary"
+            onClick={getChar}
+            id="clear"
+          >
+            C
+          </button>
+          <button
+            className="btn btn-sm btn-secondary"
+            onClick={getChar}
+            id="back"
+          >
+            &#8592;
+          </button>
+        </div>
+        <div className="nums1">
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="7">
+            7
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="8">
+            8
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="9">
+            9
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="+">
+            +
+          </button>
+        </div>
+        <div className="nums2">
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="4">
+            4
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="5">
+            5
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="6">
+            6
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="-">
+            &minus;
+          </button>
+        </div>
+        <div className="nums3">
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="1">
+            1
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="2">
+            2
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="3">
+            3
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="*">
+            X
+          </button>
+        </div>
+        <div className="down1">
+          <button className="btn btn-sm btn-primary" onClick={getChar} id="0">
+            0
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id=".">
+            .
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="%">
+            %
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="/">
+            &#247;
+          </button>
+        </div>
+        <div className="down2">
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="^">
+            ^
+          </button>
+          <button className="btn btn-sm btn-warning" onClick={getChar} id="^2">
+            ^2
+          </button>
+          <button
+            className="btn btn-sm btn-warning"
+            onClick={getChar}
+            id="sqrt"
+          >
+            &#8730;
+          </button>
+          <button
+            className="btn btn-sm btn-warning"
+            onClick={getChar}
+            id="cbrt"
+          >
+            &#8731;
+          </button>
+        </div>
+        <div className="side-down">
+          <button
+            className="btn btn-sm btn-success"
+            onClick={getChar}
+            id="enter"
+          >
+            =
+          </button>
         </div>
       </div>
     </>

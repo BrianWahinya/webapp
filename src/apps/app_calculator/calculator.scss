@@ -1,49 +1,65 @@
-.resultsDiv{
-  width: 98%;
-  height: 50px;
-  color: aliceblue;
-  background-color: #3b3b3b;
-  text-align:right;
-  font-size: 20px;
-  margin: 0 auto;
-  padding: 5px;
-}
-.charsDiv{
-  background-color: #505050;
-  width: 98%;
-  min-height: 25px;
-  text-align:right;
-  font-size: 15px;
-  margin: 0 auto;
-  color: aliceblue;
-  padding: 4px;
-  word-break: break-all;
-}
-.numbersDiv{
-  margin: 0 auto;
-}
-.calcDiv{
+.results { grid-area: results; min-height: 50px;}
+.calc-inputs { grid-area: calc-inputs; min-height: 24px;}
+.top { grid-area: top; }
+.nums1 { grid-area: nums1; }
+.nums2 { grid-area: nums2; }
+.nums3 { grid-area: nums3; }
+.down1 { grid-area: down1; }
+.down2 { grid-area: down2; }
+.side-down {grid-area: side-down;}
+
+.calcGrid {
+  display: grid;
+  grid-template-areas:
+    'results results results results results results'
+    'calc-inputs calc-inputs calc-inputs calc-inputs calc-inputs calc-inputs'
+    'top top top top top top'
+    'nums1 nums1 nums1 nums1 nums1 nums1'
+    'nums2 nums2 nums2 nums2 nums2 nums2'
+    'nums3 nums3 nums3 nums3 nums3 nums3'
+    'down1 down1 down1 down1 down1 side-down'
+    'down2 down2 down2 down2 down2 side-down';
+  gap: 10px;
+  min-width: 250px;
+  width: 50%;
   background-color: #1f1f1f;
+  padding: 10px;
   margin: 0 auto;
-  width: 300px;
   border-radius: 5px;
-  height: 500px;
 }
-.btn{
-  margin: 2px;
+.calcGrid > div{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.results, .calc-inputs {
+  display: block !important;
+  color: #e8f2fc;
+  text-align: right;
+}
+.results {
+  background-color: #3b3b3b;
+  padding: 2.5px;
+}
+.calc-inputs {
+  background-color: #505050;
+  padding-right: 2.5px;
+}
+
+.btn {
+  width: 24% !important;  
+  transition: 1s ease;
+}
+#enter{
+  width: 99% !important;
+  height: 99% !important;
 }
 .btn:hover{
-  border-radius: 5px;
+  border-radius: 10px;
 }
-.btn-primary{
-  width: 50px;
-}
-.btn-warning{
-  width: 50px;
+.btn:visited, .btn:focus{
+  box-shadow: none !important;
 }
 .btn-warning:hover{
   background-color: #cca01c;
-}
-.btn-secondary{
-  width: 70px;
 }
