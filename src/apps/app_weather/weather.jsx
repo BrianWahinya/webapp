@@ -67,7 +67,9 @@ export default function Weather() {
         onChange={(e) => setLocation(e.target.value)}
         onKeyPress={getWeather}
       />
-      <button onClick={getWeather}>Submit</button>
+      <button className="btn btn-sm btn-outline-info" onClick={getWeather}>
+        Submit
+      </button>
       <br />
 
       {loading ? (

@@ -63,7 +63,7 @@ export default function TaskManager() {
       </div>
       <CreateTask addTask={addTask} />
       <button
-        className="btn btn-outline-danger btn-sm"
+        className="btn btn-outline-danger btn-sm btn-tasks"
         onClick={deleteAllTasks}
       >
         Delete All Tasks

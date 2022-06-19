@@ -130,16 +130,28 @@ export default function Movies() {
         Current Page: {moviesData.page}, Total Pages: {moviesData.total_pages}
       </p>
       <div className="pagination">
-        <button onClick={pageChange} id="start">
+        <button
+          className="btn btn-sm btn-primary"
+          onClick={pageChange}
+          id="start"
+        >
           Start
         </button>
-        <button onClick={pageChange} id="previous">
+        <button
+          className="btn btn-sm btn-secondary"
+          onClick={pageChange}
+          id="previous"
+        >
           Previous
         </button>
-        <button onClick={pageChange} id="next">
+        <button
+          className="btn btn-sm btn-success"
+          onClick={pageChange}
+          id="next"
+        >
           Next
         </button>
-        <button onClick={pageChange} id="end">
+        <button className="btn btn-sm btn-info" onClick={pageChange} id="end">
           End
         </button>
       </div>

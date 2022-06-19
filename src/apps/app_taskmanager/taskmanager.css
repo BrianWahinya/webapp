@@ -14,3 +14,12 @@
 .modal-content{
   background-color:rgba(255,255,255,0.92)
 }
+
+.task .btn{
+  margin: 5px;
+  float: right;
+}
+
+.btn-tasks{
+  margin: 5px;
+}

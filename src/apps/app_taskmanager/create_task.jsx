@@ -33,7 +33,10 @@ export default function CreateTask({ addTask }) {
 
   return (
     <>
-      <button className="btn btn-outline-info btn-sm" onClick={toggle}>
+      <button
+        className="btn btn-outline-info btn-sm btn-tasks"
+        onClick={toggle}
+      >
         Create Task
       </button>
       <Modal isOpen={modal}>

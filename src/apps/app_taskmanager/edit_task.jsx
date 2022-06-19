@@ -29,7 +29,9 @@ export default function EditTask({ task, editTask, icon }) {
 
   return (
     <>
-      <button onClick={toggle}>{icon}</button>
+      <button className="btn btn-sm btn-outline-info" onClick={toggle}>
+        {icon}
+      </button>
       <Modal isOpen={modal}>
         <ModalHeader toggle={toggle}>Edit Task</ModalHeader>
         <ModalBody>

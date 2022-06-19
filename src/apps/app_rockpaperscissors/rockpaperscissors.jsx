@@ -60,18 +60,20 @@ export default function RockPaperScissors() {
         </div>
         <div>Winner: {winner}</div>
         <div>
-          <button id="1" onClick={userClick}>
+          <button className="btn btn-sm btn-primary" id="1" onClick={userClick}>
             Rock <FontAwesomeIcon icon={faHandBackFist} />
           </button>
-          <button id="2" onClick={userClick}>
+          <button className="btn btn-sm btn-warning" id="2" onClick={userClick}>
             Paper <FontAwesomeIcon icon={faToiletPaper} />
           </button>
-          <button id="3" onClick={userClick}>
+          <button className="btn btn-sm btn-info" id="3" onClick={userClick}>
             Scissors <FontAwesomeIcon icon={faScissors} />
           </button>
         </div>
         <div>
-          <button onClick={reset}>Reset</button>
+          <button className="btn btn-sm btn-secondary" onClick={reset}>
+            Reset
+          </button>
         </div>
         <div>
           Previous results:
