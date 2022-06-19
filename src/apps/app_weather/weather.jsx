@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { data } from "autoprefixer";
+import { useEffect, useState } from "react";
 import { Loader } from "../../components";
+import WeatherDisplay from "./weatherdisplay";
 
 export default function Weather() {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Nairobi");
   const [weatherData, setWeatherData] = useState([]);
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -12,12 +14,12 @@ export default function Weather() {
     const weather_api_key = process.env.REACT_APP_WEATHER_API_KEY;
     fetch(
       encodeURI(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weather_api_key}`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weather_api_key}&units=metric`,
       ),
     )
       .then((data) => data.json())
       .then((jsondata) => {
-        console.log(jsondata);
+        // console.log(jsondata);
         setLoading(false);
         if (parseInt(jsondata.cod) >= 200 && parseInt(jsondata.cod) < 300) {
           setWeatherData([jsondata]);
@@ -50,6 +52,11 @@ export default function Weather() {
     }
   };
 
+  useEffect(() => {
+    setLoading(true);
+    dataFetch();
+  }, []);
+
   return (
     <>
       <h5>Weather app</h5>
@@ -67,12 +74,10 @@ export default function Weather() {
         <Loader />
       ) : (
         <div>
-          {weatherData.length > 0 ? (
-            <code>{JSON.stringify(weatherData)}</code>
-          ) : (
-            ""
-          )}
-          {errors.length > 0 ? errors.map((err) => <p>{err}</p>) : ""}
+          {weatherData.length > 0 ? <WeatherDisplay data={weatherData} /> : ""}
+          {errors.length > 0
+            ? errors.map((err, index) => <p key={index}>{err}</p>)
+            : ""}
         </div>
       )}
     </>
