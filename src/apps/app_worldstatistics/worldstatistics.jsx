@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { Loader } from "../../components";
 import * as echarts from "echarts";
 import "./worldstatistics.css";
 import * as world from "./world.geo.json";
 
 export default function WorldStatistics() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const echartsRef = useRef();
 
   echarts.registerMap("world", world);
@@ -109,6 +111,7 @@ export default function WorldStatistics() {
   };
 
   useEffect(() => {
+    setLoading(true);
     const getData = async () => {
       const response = await fetch(
         "https://restcountries.com/v3/all?fields=name,population",
@@ -116,6 +119,7 @@ export default function WorldStatistics() {
       const jsonData = await response.json();
       // console.log(jsonData);
       setData(jsonData);
+      setLoading(false);
       renderMap(option(jsonData));
     };
     getData();
@@ -138,6 +142,7 @@ export default function WorldStatistics() {
     <>
       <h5>World Statistics</h5>
       <p>Population</p>
+      {loading ? <Loader /> : <></>}
       <div ref={echartsRef} className="echartsDiv"></div>
       {/* {data.length && dataFormat(data)} */}
     </>

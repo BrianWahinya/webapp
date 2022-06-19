@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Loader } from "../../components";
 
 export default function Weather() {
   const [location, setLocation] = useState("");
@@ -61,9 +62,19 @@ export default function Weather() {
       />
       <button onClick={getWeather}>Submit</button>
       <br />
-      {weatherData.length > 0 ? <code>{JSON.stringify(weatherData)}</code> : ""}
-      {errors.length > 0 ? errors.map((err) => <p>{err}</p>) : ""}
-      {loading ? <p>Loading...</p> : ""}
+
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          {weatherData.length > 0 ? (
+            <code>{JSON.stringify(weatherData)}</code>
+          ) : (
+            ""
+          )}
+          {errors.length > 0 ? errors.map((err) => <p>{err}</p>) : ""}
+        </div>
+      )}
     </>
   );
 }

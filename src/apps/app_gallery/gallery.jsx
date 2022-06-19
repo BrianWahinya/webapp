@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Loader } from "../../components";
 import "./gallery.css";
 
 export default function Gallery() {
@@ -46,6 +47,7 @@ export default function Gallery() {
         const jsonData = await response.json();
         return jsonData;
       } catch (e) {
+        setLoading(false);
         console.error(e);
       }
     };
@@ -82,24 +84,12 @@ export default function Gallery() {
     setTopic(e.target.value);
     setPage(1);
   };
-  const loader = (
-    <div className="lds-roller">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
   return (
     <div className="mainGalDiv">
       <h5>Gallery (coding in progress)</h5>
       <p>From Pexels API</p>
       {loading ? (
-        loader
+        <Loader />
       ) : (
         <>
           <p>Total: {data.total_results}</p>

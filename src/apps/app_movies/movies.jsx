@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
+import { Loader } from "../../components";
 import "./movies.css";
 export default function Movies() {
+  const [loading, setLoading] = useState(false);
   const [year, setYear] = useState("2022");
   // const [search, setSearch] = useState("");
   const [moviesData, setMoviesData] = useState({});
@@ -28,6 +30,7 @@ export default function Movies() {
         // console.log(jsondata);
         // setLoading(false);
         setMoviesData(jsondata);
+        setLoading(false);
         // if (parseInt(jsondata.cod) >= 200 && parseInt(jsondata.cod) < 300) {
         //   setMoviesData([jsondata]);
         //   setErrors([]);
@@ -37,7 +40,7 @@ export default function Movies() {
         // setSearch("");
       })
       .catch((err) => {
-        // setLoading(false);
+        setLoading(false);
         // setErrors(["An error occurred in loading the data"]);
         console.log(err);
       });
@@ -95,6 +98,7 @@ export default function Movies() {
   };
 
   useEffect(() => {
+    setLoading(true);
     getMovies();
     // console.log("page", page);
     // console.log("moviesdata", moviesData);
@@ -139,31 +143,35 @@ export default function Movies() {
           End
         </button>
       </div>
-      <div className="moviesDiv">
-        {moviesData.results
-          ? moviesData.results.map((movie) => (
-              <div key={movie.id} className="movie">
-                <img
-                  className="moviePoster"
-                  alt={movie.original_title}
-                  src={
-                    movie.poster_path
-                      ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
-                      : ""
-                  }
-                />
-                <div>
-                  <p className="movieTitle">
-                    {movie.original_title && movie.original_title.length > 20
-                      ? movie.original_title.slice(0, 40) + "..."
-                      : movie.original_title}
-                  </p>
-                  <p className="movieReleaseDate">{movie.release_date}</p>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="moviesDiv">
+          {moviesData.results
+            ? moviesData.results.map((movie) => (
+                <div key={movie.id} className="movie">
+                  <img
+                    className="moviePoster"
+                    alt={movie.original_title}
+                    src={
+                      movie.poster_path
+                        ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
+                        : ""
+                    }
+                  />
+                  <div>
+                    <p className="movieTitle">
+                      {movie.original_title && movie.original_title.length > 20
+                        ? movie.original_title.slice(0, 40) + "..."
+                        : movie.original_title}
+                    </p>
+                    <p className="movieReleaseDate">{movie.release_date}</p>
+                  </div>
                 </div>
-              </div>
-            ))
-          : ""}
-      </div>
+              ))
+            : ""}
+        </div>
+      )}
     </>
   );
 }
