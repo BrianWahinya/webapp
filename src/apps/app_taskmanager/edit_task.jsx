@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 
-export default function EditTask({ task, editTask, icon }) {
+export default function EditTask({ task, editTask, icon, color }) {
   const [title, setTitle] = useState(task.title);
   const [description, setDescription] = useState(task.description);
   const [modal, setModal] = useState(false);
@@ -22,14 +22,18 @@ export default function EditTask({ task, editTask, icon }) {
 
   const updateListener = () => {
     if (title && description) {
-      editTask({ id: task.id, title, description });
+      editTask({ id: task.id, title, description, color: task.color });
       toggle();
     }
   };
 
   return (
     <>
-      <button className="btn btn-sm btn-outline-info" onClick={toggle}>
+      <button
+        className="btn btn-sm btn-outline btn-tasks-func"
+        onClick={toggle}
+        style={{ color: color, borderColor: color }}
+      >
         {icon}
       </button>
       <Modal isOpen={modal}>

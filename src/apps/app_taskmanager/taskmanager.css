@@ -6,9 +6,15 @@
 
 .task{
   width: 200px;
-  height: 100px;
+  /* height: 100px; */
   /* border-top: 5px solid blue; */
   margin: 5px;
+}
+.taskContent{
+  width: 100%;
+  max-height: 70px;
+  overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .modal-content{
@@ -18,8 +24,13 @@
 .task .btn{
   margin: 5px;
   float: right;
+  transition: 0.2s ease;
 }
 
 .btn-tasks{
   margin: 5px;
+}
+
+.btn-tasks-func:hover{
+  border-width: 2px;
 }

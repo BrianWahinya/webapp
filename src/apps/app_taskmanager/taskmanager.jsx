@@ -20,10 +20,10 @@ export default function TaskManager() {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   };
 
-  const editTask = ({ id, title, description }) => {
+  const editTask = ({ id, title, description, color }) => {
     const updatedTasks = tasks.map((task) => {
       if (task.id === id) {
-        return { id, title, description };
+        return { id, title, description, color };
       } else {
         return task;
       }
@@ -41,15 +41,6 @@ export default function TaskManager() {
   const deleteAllTasks = () => {
     setTasks([]);
     localStorage.setItem("tasks", JSON.stringify([]));
-  };
-
-  const genColor = () => {
-    const randomBetween = (min, max) =>
-      min + Math.floor(Math.random() * (max - min + 1));
-    const r = randomBetween(0, 255);
-    const g = randomBetween(0, 255);
-    const b = randomBetween(0, 255);
-    return `rgb(${r},${g},${b})`;
   };
 
   useEffect(() => {
@@ -75,7 +66,7 @@ export default function TaskManager() {
             task_obj={task}
             editTask={editTask}
             deleteTask={deleteTask}
-            border_color={genColor()}
+            border_color={task.color}
           />
         ))}
       </div>
