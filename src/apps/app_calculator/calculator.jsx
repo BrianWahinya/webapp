@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { evaluate } from "mathjs";
 import parse from "html-react-parser";
 import "./calculator.css";
@@ -25,7 +25,7 @@ export default function Calculator() {
     if (checkParenthesisValid(chars)) {
       // console.log(evaluate(chars).toString());
       try {
-        const res = evaluate(chars).toString();
+        const res = chars ? evaluate(chars).toString() : 0;
         setResult(res);
       } catch (err) {
         // console.log(err);
@@ -131,6 +131,46 @@ export default function Calculator() {
         }
     }
   };
+
+  const keyboardEnter = (event) => {
+    // console.log(event);
+    event.preventDefault();
+    event.stopPropagation();
+    const ky = event.code;
+    switch (true) {
+      case ky === "Enter":
+        compute();
+        break;
+      case ky === "Backspace":
+        if (chars.length > 0) {
+          const prev = prevInputs;
+          const popItem = prev.pop();
+          setChars(chars.slice(0, -popItem.length));
+          setPrevInputs(prev);
+        }
+        break;
+      case ky === "Delete":
+        setChars("");
+        setResult(0);
+        setPrevInputs([]);
+        break;
+      case ky.includes("Digit") && !Number.isNaN(parseInt(event.key)):
+        const num = ky.slice(5);
+        setPrevInputs([...prevInputs, num]);
+        setChars(`${chars}${num}`);
+        break;
+      default:
+        return;
+    }
+  };
+
+  useEffect(() => {
+    console.log(window);
+    window.document.addEventListener("keydown", keyboardEnter);
+    return () => {
+      window.document.removeEventListener("keydown", keyboardEnter);
+    };
+  }, [chars]);
 
   return (
     <>
