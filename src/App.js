@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.js";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar, Footer, ErrorPage, WebArchiveIframe } from "./components";
+import { Register } from "./entities";
 import {
   Profile,
   AppMain,
@@ -68,6 +69,7 @@ function App() {
         <Routes>
           <Route key="profile" path="/" element={<Profile />} />
           <Route key="app" path="app" element={<AppMain />} />
+          <Route key="register" path="register" element={<Register />} />
           <Route
             key="current"
             path="current"

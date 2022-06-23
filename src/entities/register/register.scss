@@ -1,0 +1,36 @@
+#sectionRegister{
+  width: 90%;
+  min-width: 250px;
+  
+  > p, > h5{
+    text-align: center;
+  }
+}
+.formRegister {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-width: 400px;
+  .btn{
+    margin-top: 8px;
+  }
+  .btnShowPassword{
+    width: fit-content;
+  }
+  .errMsg{
+    display: block;
+  }
+  .showElem{
+    display: block;
+    // visibility: visible;
+  }
+  .hideElem{
+    display: none;
+    // visibility: hidden;
+  }
+  #uidnote, #passnote, #matchnote {
+    background-color: #333333;
+    color: aliceblue;
+  }
+}
