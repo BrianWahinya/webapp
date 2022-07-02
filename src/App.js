@@ -20,6 +20,7 @@ import {
   Gallery,
   WorldStatistics,
   Calculator,
+  Wordle,
 } from "./apps";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       comp: <ConwayGameOfLife />,
       path: "/app/conwaygameoflife",
     },
+    { id: "wordle-game", comp: <Wordle />, path: "/app/wordle" },
     { id: "calculator", comp: <Calculator />, path: "/app/calculator" },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },
