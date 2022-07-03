@@ -103,7 +103,7 @@ export default function Wordle() {
     const getKey = (e) => {
       e.preventDefault();
       // e.stopPropagation();
-      // e.stopImmediatePropagation();
+      e.stopImmediatePropagation();
       // Alpha keys
       if (
         e.key.match(ALPHA_REGEX) &&
@@ -167,16 +167,18 @@ export default function Wordle() {
   };
 
   const inputsChange = (e) => {
+    console.log(e);
     e.preventDefault();
-    const val = e.target.value;
-    const lng = val.length;
-    const ltr = val[lng - 1];
+
     if (
-      ltr.match(ALPHA_REGEX) &&
+      e.target.value.match(ALPHA_REGEX) &&
       input.length < word.length &&
       row < guesses.length &&
       gameOn
     ) {
+      const val = e.target.value;
+      const lng = val.length;
+      const ltr = val[lng - 1];
       setInput((j) => `${j}${ltr}`);
       const currRow = guesses[row];
       const idx = currRow.indexOf(null);
