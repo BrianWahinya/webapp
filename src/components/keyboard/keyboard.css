@@ -1,0 +1,64 @@
+.keyboard {
+  max-width: 90vw;
+  min-width: 290px;
+  margin: 5px auto;
+}
+
+.keyboard code {
+  font-size: 0.7em;
+  font-weight: bold;
+  line-height: 5px;
+}
+
+.keyboard code br {
+  display: block;
+  /* makes it have a width */
+  content: "";
+  /* clears default height */
+  margin-top: -12px;
+  /* change this to whatever height you want it */
+}
+
+.keyboard .keysGrid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'row1 row1 row1 row1 row1 row1' 'row2 row2 row2 row2 row2 row2' 'row3 row3 row3 row3 row3 row3';
+  gap: 5px;
+  min-width: 290px;
+  width: 50%;
+  max-width: 400px;
+  background-color: #f8f8f8;
+  border: 0.1px solid #002747;
+  -webkit-box-shadow: 5px 10px 18px #888888;
+          box-shadow: 5px 10px 18px #888888;
+  margin: 0 auto;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.keyboard .keysGrid .row1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: row1;
+}
+
+.keyboard .keysGrid .row2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: row2;
+}
+
+.keyboard .keysGrid .row3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: row3;
+}
+
+.keyboard .keysGrid .keys {
+  margin: 0 1.5px;
+  min-width: 25px;
+}
+/*# sourceMappingURL=keyboard.css.map */

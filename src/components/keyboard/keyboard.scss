@@ -1,0 +1,42 @@
+.keyboard{
+  max-width: 90vw;
+  min-width: 290px;
+  // border: 2px solid #575757;
+  margin: 5px auto;
+  code{
+    font-size: 0.7em;
+    font-weight: bold;
+    line-height: 5px;
+    br {
+      display: block; /* makes it have a width */
+      content: ""; /* clears default height */
+      margin-top: -12px; /* change this to whatever height you want it */
+    }
+  }
+
+  .keysGrid{
+      .row1 { grid-area: row1; }
+      .row2 { grid-area: row2; }
+      .row3 { grid-area: row3; }
+    
+      display: grid;
+      grid-template-areas:
+        'row1 row1 row1 row1 row1 row1'
+        'row2 row2 row2 row2 row2 row2'
+        'row3 row3 row3 row3 row3 row3';
+      gap: 5px;
+      min-width: 290px;
+      width: 50%;
+      max-width: 400px;
+      background-color: #f8f8f8;
+      border: 0.1px solid #002747;
+      box-shadow: 5px 10px 18px #888888;
+      margin: 0 auto;
+      padding: 5px 0;
+      border-radius: 5px;
+      .keys{
+        margin: 0 1.5px;
+        min-width: 25px;
+      }
+  }
+}

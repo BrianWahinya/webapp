@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Loader } from "../../components";
+import { Keyboard, Loader } from "../../components";
 import "./wordle.css";
 
 const wordsApiUrl = "https://random-word-api.herokuapp.com/word";
@@ -248,7 +248,7 @@ export default function Wordle() {
           />
           <button
             onClick={clickedEnter}
-            className="btn btn-sm btn-warning"
+            className="btn btn-sm btn-warning btnEnter"
             disabled={loading || correct || tryAgain}
           >
             Enter
@@ -270,13 +270,14 @@ export default function Wordle() {
       </div>
       {(correct || tryAgain) && (
         <button
-          className="btn btn-sm btn-primary"
+          className="btn btn-sm btn-primary btnNextWord"
           onClick={nextWord}
           disabled={disableBtn}
         >
           Try Next
         </button>
       )}
+      <Keyboard />
     </div>
   );
 }

@@ -51,7 +51,7 @@
       align-content: center;
 }
 
-.wordle .btn-primary {
+.wordle .btnNextWord {
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -96,7 +96,7 @@
   height: 30px;
 }
 
-.wordle .btn-warning {
+.wordle .btnEnter {
   margin-left: 5px;
 }
 /*# sourceMappingURL=wordle.css.map */
