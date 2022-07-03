@@ -66,7 +66,7 @@ export default function Wordle() {
     const response = await fetch(url);
     const jsonResponse = await response.json();
     const wd = jsonResponse[0];
-
+    console.log("word", wd);
     setGuesses((arr) => {
       const defArr = [];
       for (let i = 0; i < numOfTrials(wd); i++) {
@@ -154,9 +154,8 @@ export default function Wordle() {
       return "null";
     }
     const present = wd.includes(ltr);
-    const whichInd = wd.indexOf(ltr);
     if (present) {
-      if (whichInd === ind) {
+      if (wd[ind] === ltr) {
         return "exact";
       }
       return "close";
@@ -205,10 +204,13 @@ export default function Wordle() {
         <p>
           {tryAgain && (
             <>
-              <span>&#128518;Failed!!&#128569;</span>
+              <span className="failed">&#128518;Failed!!&#128569;</span>
               <br />
               <span>Word is: {word}</span>
             </>
+          )}
+          {correct && (
+            <span className="correct">&#128521;Correct!!&#128526;</span>
           )}
         </p>
       </div>

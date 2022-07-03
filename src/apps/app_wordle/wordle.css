@@ -51,6 +51,11 @@
       align-content: center;
 }
 
+.wordle .btn {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 .wordle .null {
   background-color: #f8f8f8;
 }
@@ -65,5 +70,13 @@
 
 .wordle .exact {
   background-color: lightgreen;
+}
+
+.wordle .failed {
+  color: red;
+}
+
+.wordle .correct {
+  color: green;
 }
 /*# sourceMappingURL=wordle.css.map */
