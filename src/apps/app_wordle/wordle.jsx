@@ -131,7 +131,7 @@ export default function Wordle() {
       gameOn
     ) {
       e.stopPropagation();
-      console.log("window", e);
+      // console.log("window", e);
       setInput((j) => `${j}${e.key}`);
       const currRow = guesses[row];
       const idx = currRow.indexOf(null);
@@ -244,7 +244,7 @@ export default function Wordle() {
             value={input}
             placeholder="Enter a word"
             onChange={inputsChange}
-            // disabled={loading || correct || tryAgain}
+            disabled={loading || correct || tryAgain}
           />
           <button
             onClick={clickedEnter}
