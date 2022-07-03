@@ -102,8 +102,8 @@ export default function Wordle() {
   useEffect(() => {
     const getKey = (e) => {
       e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+      // e.stopPropagation();
+      // e.stopImmediatePropagation();
       // Alpha keys
       if (
         e.key.match(ALPHA_REGEX) &&
@@ -168,7 +168,6 @@ export default function Wordle() {
 
   const inputsChange = (e) => {
     e.preventDefault();
-    e.nativeEvent.stopImmediatePropagation();
     const val = e.target.value;
     const lng = val.length;
     const ltr = val[lng - 1];
@@ -237,7 +236,7 @@ export default function Wordle() {
             value={input}
             placeholder="Enter a word"
             onChange={inputsChange}
-            disabled={loading || correct || tryAgain}
+            // disabled={loading || correct || tryAgain}
           />
           <button
             onClick={clickedEnter}
