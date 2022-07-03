@@ -51,7 +51,7 @@
       align-content: center;
 }
 
-.wordle .btn {
+.wordle .btn-primary {
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -74,9 +74,29 @@
 
 .wordle .failed {
   color: red;
+  font-weight: bold;
 }
 
 .wordle .correct {
   color: green;
+  font-weight: bold;
+}
+
+.wordle .inputs {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wordle .textInput {
+  height: 30px;
+}
+
+.wordle .btn-warning {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=wordle.css.map */

@@ -163,6 +163,10 @@ export default function Wordle() {
     return "far";
   };
 
+  const clickedEnter = (e) => {
+    const ev = new KeyboardEvent("keydown", { key: "Enter", isTrusted: true });
+    window.document.dispatchEvent(ev);
+  };
   return (
     <div className="wordle">
       <h5>Wordle Game</h5>
@@ -201,6 +205,18 @@ export default function Wordle() {
           </div>
         ))}
       <div>
+        <div className="inputs">
+          <input
+            className="textInput"
+            value={input}
+            placeholder="Enter a word"
+            readOnly
+          />
+          <button onClick={clickedEnter} className="btn btn-sm btn-warning">
+            Enter
+          </button>
+        </div>
+
         <p>
           {tryAgain && (
             <>

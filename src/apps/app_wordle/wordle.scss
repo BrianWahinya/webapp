@@ -31,7 +31,7 @@
     justify-content: center;
     align-content: center;
   }
-  .btn{
+  .btn-primary{
     margin-top: 5px;
     margin-bottom: 10px;
   }
@@ -49,8 +49,21 @@
   }
   .failed{
     color: red;
+    font-weight: bold;
   }
   .correct{
     color: green;
+    font-weight: bold;
+  }
+  .inputs{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  .textInput{
+    height: 30px;
+  }
+  .btn-warning{
+    margin-left: 5px;
   }
 }
