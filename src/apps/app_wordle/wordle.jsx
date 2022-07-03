@@ -99,43 +99,70 @@ export default function Wordle() {
     setInput(e.target.value);
   };
 
-  useEffect(() => {
-    const getKey = (e) => {
-      e.preventDefault();
-      // e.stopPropagation();
-      e.stopImmediatePropagation();
-      // Alpha keys
-      if (
-        e.key.match(ALPHA_REGEX) &&
-        input.length < word.length &&
-        row < guesses.length &&
-        gameOn
-      ) {
-        setInput((j) => `${j}${e.key}`);
+  const inputsChange = (e) => {
+    // e.stopPropagation();
+    // console.log(e);
+    // inputbox
+    if (
+      e.target?.className?.includes("textInput") &&
+      input.length < word.length &&
+      row < guesses.length &&
+      gameOn
+    ) {
+      // console.log("inputs", e);
+      const val = e.target.value;
+      const lng = val.length;
+      const ltr = val[lng - 1];
+      if (ltr.match(ALPHA_REGEX)) {
+        setInput((j) => `${j}${ltr}`);
         const currRow = guesses[row];
         const idx = currRow.indexOf(null);
-        currRow.splice(idx, 1, e.key);
+        currRow.splice(idx, 1, ltr);
         setGuesses((g) => {
           g.splice(row, 1, currRow);
           return g;
         });
       }
-
-      // Enter key
-      if (
-        e.key.match("Enter") &&
-        input.length === word.length &&
-        row < guesses.length &&
-        gameOn
-      ) {
-        if (input === word) {
-          setCorrect(true);
-          setGameOn(false);
-        } else {
-          setRow((r) => r + 1);
-          setInput("");
-        }
+    } else if (
+      !e.target?.className?.includes("textInput") &&
+      e.key.match(ALPHA_REGEX) &&
+      input.length < word.length &&
+      row < guesses.length &&
+      gameOn
+    ) {
+      e.stopPropagation();
+      console.log("window", e);
+      setInput((j) => `${j}${e.key}`);
+      const currRow = guesses[row];
+      const idx = currRow.indexOf(null);
+      currRow.splice(idx, 1, e.key);
+      setGuesses((g) => {
+        g.splice(row, 1, currRow);
+        return g;
+      });
+    } else if (
+      !e.target?.className?.includes("textInput") &&
+      e.key.match("Enter") &&
+      input.length === word.length &&
+      row < guesses.length &&
+      gameOn
+    ) {
+      // console.log("enter", e);
+      if (input === word) {
+        setCorrect(true);
+        setGameOn(false);
+      } else {
+        setRow((r) => r + 1);
+        setInput("");
       }
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    const getKey = (e) => {
+      !e.target?.className?.includes("textInput") && inputsChange(e);
       if (
         input.length === word.length &&
         row === guesses.length - 1 &&
@@ -166,32 +193,11 @@ export default function Wordle() {
     return "far";
   };
 
-  const inputsChange = (e) => {
-    console.log(e);
-    e.preventDefault();
-
-    if (
-      e.target.value.match(ALPHA_REGEX) &&
-      input.length < word.length &&
-      row < guesses.length &&
-      gameOn
-    ) {
-      const val = e.target.value;
-      const lng = val.length;
-      const ltr = val[lng - 1];
-      setInput((j) => `${j}${ltr}`);
-      const currRow = guesses[row];
-      const idx = currRow.indexOf(null);
-      currRow.splice(idx, 1, ltr);
-      setGuesses((g) => {
-        g.splice(row, 1, currRow);
-        return g;
-      });
-    }
-  };
-
   const clickedEnter = (e) => {
-    const ev = new KeyboardEvent("keydown", { key: "Enter", isTrusted: true });
+    const ev = new KeyboardEvent("keydown", {
+      key: "Enter",
+      isTrusted: true,
+    });
     window.document.dispatchEvent(ev);
   };
   return (
