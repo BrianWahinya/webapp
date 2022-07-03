@@ -210,7 +210,6 @@ export default function Wordle() {
             className="textInput"
             value={input}
             placeholder="Enter a word"
-            readOnly
           />
           <button onClick={clickedEnter} className="btn btn-sm btn-warning">
             Enter
