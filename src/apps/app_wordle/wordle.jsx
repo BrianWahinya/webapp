@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Loader } from "../../components";
 import "./wordle.css";
 
 const wordsApiUrl = "https://random-word-api.herokuapp.com/word";
@@ -14,6 +15,7 @@ export default function Wordle() {
   const [lang, setLang] = useState("en");
   const [level, setLevel] = useState("easy");
   const [word, setWord] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [input, setInput] = useState("");
   const [guesses, setGuesses] = useState([]);
@@ -58,6 +60,7 @@ export default function Wordle() {
     setGameOn(false);
     setCorrect(false);
     setTryAgain(false);
+    setLoading(true);
 
     const url = `${wordsApiUrl}?length=${randomLen(level)}&lang=${lang}`;
     const response = await fetch(url);
@@ -77,6 +80,7 @@ export default function Wordle() {
     });
     setWord(wd);
     setGameOn(true);
+    setLoading(false);
   };
 
   const nextWord = () => {
@@ -186,17 +190,27 @@ export default function Wordle() {
         <br />
         <span className="exact">green:</span> present &amp; correct position
       </p>
-      {guesses.map((ges, i) => (
-        <div key={i} className="guess">
-          {ges.map((letter, j) => (
-            <div key={j} className={`letter ${letterClass(word, letter, j)}`}>
-              {letter}
-            </div>
-          ))}
-        </div>
-      ))}
+      {loading && <Loader />}
+      {!loading &&
+        guesses.map((ges, i) => (
+          <div key={i} className="guess">
+            {ges.map((letter, j) => (
+              <div key={j} className={`letter ${letterClass(word, letter, j)}`}>
+                {letter}
+              </div>
+            ))}
+          </div>
+        ))}
       <div>
-        <p>{tryAgain && word}</p>
+        <p>
+          {tryAgain && (
+            <>
+              <span>&#128518;Failed!!&#128569;</span>
+              <br />
+              <span>Word is: {word}</span>
+            </>
+          )}
+        </p>
       </div>
       {(correct || tryAgain) && (
         <button

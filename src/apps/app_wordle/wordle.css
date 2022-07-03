@@ -6,15 +6,24 @@
   text-align: center;
 }
 
-.instructions {
+.wordle h5 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wordle select {
   font-size: 12px;
 }
 
-.hints {
+.wordle .instructions {
+  font-size: 12px;
+}
+
+.wordle .hints {
   font-size: 10px;
 }
 
-.guess {
+.wordle .guess {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,7 +38,7 @@
           justify-content: center;
 }
 
-.letter {
+.wordle .letter {
   width: 40px;
   height: 40px;
   font-size: 25px;
@@ -42,19 +51,19 @@
       align-content: center;
 }
 
-.null {
+.wordle .null {
   background-color: #f8f8f8;
 }
 
-.far {
+.wordle .far {
   background-color: #d3d3d3;
 }
 
-.close {
+.wordle .close {
   background-color: yellow;
 }
 
-.exact {
+.wordle .exact {
   background-color: lightgreen;
 }
 /*# sourceMappingURL=wordle.css.map */
