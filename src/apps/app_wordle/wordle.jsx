@@ -66,7 +66,7 @@ export default function Wordle() {
     const response = await fetch(url);
     const jsonResponse = await response.json();
     const wd = jsonResponse[0];
-    console.log("word", wd);
+    // console.log("word", wd);
     setGuesses((arr) => {
       const defArr = [];
       for (let i = 0; i < numOfTrials(wd); i++) {
@@ -101,6 +101,9 @@ export default function Wordle() {
 
   useEffect(() => {
     const getKey = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
       // Alpha keys
       if (
         e.key.match(ALPHA_REGEX) &&
@@ -163,6 +166,29 @@ export default function Wordle() {
     return "far";
   };
 
+  const inputsChange = (e) => {
+    e.preventDefault();
+    e.nativeEvent.stopImmediatePropagation();
+    const val = e.target.value;
+    const lng = val.length;
+    const ltr = val[lng - 1];
+    if (
+      ltr.match(ALPHA_REGEX) &&
+      input.length < word.length &&
+      row < guesses.length &&
+      gameOn
+    ) {
+      setInput((j) => `${j}${ltr}`);
+      const currRow = guesses[row];
+      const idx = currRow.indexOf(null);
+      currRow.splice(idx, 1, ltr);
+      setGuesses((g) => {
+        g.splice(row, 1, currRow);
+        return g;
+      });
+    }
+  };
+
   const clickedEnter = (e) => {
     const ev = new KeyboardEvent("keydown", { key: "Enter", isTrusted: true });
     window.document.dispatchEvent(ev);
@@ -210,8 +236,14 @@ export default function Wordle() {
             className="textInput"
             value={input}
             placeholder="Enter a word"
+            onChange={inputsChange}
+            disabled={loading || correct || tryAgain}
           />
-          <button onClick={clickedEnter} className="btn btn-sm btn-warning">
+          <button
+            onClick={clickedEnter}
+            className="btn btn-sm btn-warning"
+            disabled={loading || correct || tryAgain}
+          >
             Enter
           </button>
         </div>
