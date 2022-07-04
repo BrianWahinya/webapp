@@ -60,6 +60,10 @@
   background-color: #f8f8f8;
 }
 
+.wordle .active {
+  background-color: #e1eefa;
+}
+
 .wordle .far {
   background-color: #d3d3d3;
 }

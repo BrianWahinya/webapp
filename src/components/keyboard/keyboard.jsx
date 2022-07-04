@@ -1,8 +1,9 @@
 import "./keyboard.css";
 
-export default function Keyboard() {
+export default function Keyboard({ getKeyPressed }) {
   const getChar = (e) => {
-    console.log(e.target.id);
+    getKeyPressed(e.target.id);
+    // console.log(e.target.id);
   };
   const genBtn = (lst) => {
     return (
@@ -11,9 +12,10 @@ export default function Keyboard() {
           <button
             key={ls}
             id={ls}
-            className="btn btn-sm btn-primary keys"
+            className={`btn btn-sm ${
+              ls === "Del" ? "btn-danger" : "btn-primary"
+            } keys`}
             onClick={getChar}
-            disabled
           >
             {ls}
           </button>
@@ -23,13 +25,13 @@ export default function Keyboard() {
   };
   return (
     <div className="keyboard">
-      <code>
+      {/* <code>
         On-Screen-Keyboard
         <br />
         (Coding in progress)
         <br />
         Coming soon!!!
-      </code>
+      </code> */}
       <div className="keysGrid">
         <div className="rows row1">
           {genBtn(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"])}
@@ -38,7 +40,7 @@ export default function Keyboard() {
           {genBtn(["a", "s", "d", "f", "g", "h", "j", "k", "l"])}
         </div>
         <div className="rows row3">
-          {genBtn(["z", "x", "c", "v", "b", "n", "m"])}
+          {genBtn(["Del", "z", "x", "c", "v", "b", "n", "m"])}
         </div>
       </div>
     </div>

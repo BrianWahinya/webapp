@@ -1,185 +1,187 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Keyboard, Loader } from "../../components";
 import "./wordle.css";
 
 const wordsApiUrl = "https://random-word-api.herokuapp.com/word";
 
-function randomInteger(min, max) {
+const randomLen = (lvl) => {
+  let trials;
+  switch (lvl) {
+    case "easy":
+      trials = randomInteger(3, 4);
+      break;
+    case "beginner":
+      trials = randomInteger(4, 6);
+      break;
+    case "intermediate":
+      trials = randomInteger(6, 8);
+      break;
+    case "expert":
+      trials = randomInteger(8, 11);
+      break;
+    default:
+      trials = randomInteger(4, 6);
+  }
+  return trials;
+};
+
+const randomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 const ALPHA_REGEX = /^[a-z][A-Z]{0,1}$/;
 
+const numOfTrials = (wd) => {
+  const num = Math.floor((wd.length * 4) / 3);
+  return num > 8 ? 9 : num;
+};
+
+const genEmptyBoxes = (r, c) => {
+  /**
+   * return Array(r).fill(Array(c).fill(null));
+   * This is evaluated just once.
+   * Each row is a reference to the rest of the columns
+   * Updating one row updates the rest
+   * Use Array.from to avoid this
+   */
+  return Array.from({ length: r }, () => Array.from({ length: c }, () => null));
+};
+
+const initialState = {
+  lang: "en",
+  level: "easy",
+  word: "",
+  userInput: "",
+  rows: 0,
+  cols: 0,
+  loading: false,
+  correct: false,
+  playing: true,
+  guesses: [],
+  guessesColored: <></>,
+  activeRow: 0,
+  disableBtn: false,
+};
+
+const reducer = (state, action) => {
+  if (action.type === "reset") {
+    return initialState;
+  }
+
+  const result = { ...state };
+  result[action.type] = action.value;
+  return result;
+};
+
+/******* WORDLE *******/
 export default function Wordle() {
-  const [lang, setLang] = useState("en");
-  const [level, setLevel] = useState("easy");
-  const [word, setWord] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [
+    {
+      lang,
+      level,
+      word,
+      userInput,
+      rows,
+      cols,
+      loading,
+      correct,
+      playing,
+      guesses,
+      guessesColored,
+      activeRow,
+      disableBtn,
+    },
+    setState,
+  ] = useState(initialState);
 
-  const [input, setInput] = useState("");
-  const [guesses, setGuesses] = useState([]);
-  const [row, setRow] = useState(0);
-  const [disableBtn, setDisableBtn] = useState(false);
-  const [correct, setCorrect] = useState(false);
-  const [gameOn, setGameOn] = useState(true);
-  const [tryAgain, setTryAgain] = useState(false);
-
-  const randomLen = (lv) => {
-    let v;
-    switch (lv) {
-      case "easy":
-        v = randomInteger(3, 4);
-        break;
-      case "beginner":
-        v = randomInteger(4, 6);
-        break;
-      case "intermediate":
-        v = randomInteger(6, 8);
-        break;
-      case "expert":
-        v = randomInteger(8, 11);
-        break;
-      default:
-        v = randomInteger(4, 6);
-    }
-    return v;
-  };
-
-  const numOfTrials = (wd) => {
-    const num = Math.floor((wd.length * 4) / 3);
-    setDisableBtn(false);
-    return num > 8 ? 9 : num;
+  const resetState = () => {
+    setState((prevState) => ({
+      ...initialState,
+      lang: prevState.lang,
+      level: prevState.level,
+    }));
   };
 
   const fetchWords = async () => {
-    setDisableBtn(true);
-    setGuesses([]);
-    setInput("");
-    setRow(0);
-    setGameOn(false);
-    setCorrect(false);
-    setTryAgain(false);
-    setLoading(true);
+    resetState();
+    setState((prevState) => ({
+      ...prevState,
+      disableBtn: true,
+      loading: true,
+    }));
 
     const url = `${wordsApiUrl}?length=${randomLen(level)}&lang=${lang}`;
-    const response = await fetch(url);
-    const jsonResponse = await response.json();
-    const wd = jsonResponse[0];
-    // console.log("word", wd);
-    setGuesses((arr) => {
-      const defArr = [];
-      for (let i = 0; i < numOfTrials(wd); i++) {
-        const rw = [];
-        for (let j = 0; j < wd.length; j++) {
-          rw.push(null);
-        }
-        defArr.push(rw);
-      }
-      return defArr;
-    });
-    setWord(wd);
-    setGameOn(true);
-    setLoading(false);
+    const resp = await fetch(url);
+    const respJson = await resp.json();
+    const respWord = respJson[0];
+    const trials = numOfTrials(respWord);
+    const lettersNum = respWord.length;
+    // console.log("respWord", respWord);
+
+    setState((prevState) => ({
+      ...prevState,
+      word: respWord,
+      rows: trials,
+      cols: lettersNum,
+      guesses: genEmptyBoxes(trials, lettersNum),
+      disableBtn: false,
+      loading: false,
+    }));
   };
 
-  const nextWord = () => {
+  const nextWord = (e) => {
     fetchWords();
   };
 
   const changeLevel = (e) => {
-    setLevel(e.target.value);
+    setState((prevState) => ({ ...prevState, level: e.target.value }));
   };
 
   const changeLang = (e) => {
-    setLang(e.target.value);
+    setState((prevState) => ({ ...prevState, lang: e.target.value }));
   };
 
-  const updateInput = (e) => {
-    setInput(e.target.value);
-  };
-
-  const inputsChange = (e) => {
-    // e.stopPropagation();
-    // console.log(e);
-    // inputbox
-    if (
-      e.target?.className?.includes("textInput") &&
-      input.length < word.length &&
-      row < guesses.length &&
-      gameOn
-    ) {
-      // console.log("inputs", e);
-      const val = e.target.value;
-      const lng = val.length;
-      const ltr = val[lng - 1];
-      if (ltr.match(ALPHA_REGEX)) {
-        setInput((j) => `${j}${ltr}`);
-        const currRow = guesses[row];
-        const idx = currRow.indexOf(null);
-        currRow.splice(idx, 1, ltr);
-        setGuesses((g) => {
-          g.splice(row, 1, currRow);
-          return g;
-        });
-      }
-    } else if (
-      !e.target?.className?.includes("textInput") &&
-      e.key.match(ALPHA_REGEX) &&
-      input.length < word.length &&
-      row < guesses.length &&
-      gameOn
-    ) {
-      e.stopPropagation();
-      // console.log("window", e);
-      setInput((j) => `${j}${e.key}`);
-      const currRow = guesses[row];
-      const idx = currRow.indexOf(null);
-      currRow.splice(idx, 1, e.key);
-      setGuesses((g) => {
-        g.splice(row, 1, currRow);
-        return g;
-      });
-    } else if (
-      !e.target?.className?.includes("textInput") &&
-      e.key.match("Enter") &&
-      input.length === word.length &&
-      row < guesses.length &&
-      gameOn
-    ) {
-      // console.log("enter", e);
-      if (input === word) {
-        setCorrect(true);
-        setGameOn(false);
-      } else {
-        setRow((r) => r + 1);
-        setInput("");
-      }
-    } else {
+  const getKeyPressed = (keyPressed) => {
+    // console.log("key pressed: ", keyPressed);
+    if (!playing) {
       return;
     }
+    if (keyPressed.toLowerCase() === "del") {
+      removeChar();
+      return;
+    }
+
+    const updateGuesses = [...guesses];
+    const currRow = updateGuesses[activeRow];
+    const currInput = userInput;
+
+    // console.log("******Before*******");
+    // console.log("updateGuesses", updateGuesses);
+    // console.log("currRow", currRow);
+
+    const nullIdx = currRow.indexOf(null);
+    if (nullIdx !== -1) {
+      const updateInput = `${currInput}${keyPressed}`;
+      currRow.splice(nullIdx, 1, keyPressed);
+      updateGuesses.splice(activeRow, 1, currRow);
+
+      // console.log("******After*******");
+      // console.log("currRow", currRow);
+      // console.log("updateGuesses", updateGuesses);
+
+      setState((prevState) => ({
+        ...prevState,
+        userInput: updateInput,
+        guesses: updateGuesses,
+      }));
+    }
+    return;
   };
 
-  useEffect(() => {
-    const getKey = (e) => {
-      !e.target?.className?.includes("textInput") && inputsChange(e);
-      if (
-        input.length === word.length &&
-        row === guesses.length - 1 &&
-        gameOn
-      ) {
-        setTryAgain(true);
-      }
-    };
-    window.document.addEventListener("keydown", getKey);
-    return () => window.document.removeEventListener("keydown", getKey);
-  }, [word, input]);
-
-  useEffect(() => {
-    fetchWords();
-  }, [lang, level]);
-
-  const letterClass = (wd, ltr, ind) => {
+  const letterClass = (wd, ltr, ind, row) => {
+    if (playing && row === activeRow) {
+      return "active";
+    }
     if (ltr === null) {
       return "null";
     }
@@ -193,13 +195,120 @@ export default function Wordle() {
     return "far";
   };
 
-  const clickedEnter = (e) => {
-    const ev = new KeyboardEvent("keydown", {
-      key: "Enter",
-      isTrusted: true,
-    });
-    window.document.dispatchEvent(ev);
+  const assignColors = () => {
+    const displayGuesses = (
+      <>
+        {guesses.map((guess, i) => (
+          <div key={i} className="guess">
+            {guess.map((letter, j) => (
+              <div
+                key={j}
+                className={`letter ${letterClass(word, letter, j, i)}`}
+              >
+                {letter}
+              </div>
+            ))}
+          </div>
+        ))}
+      </>
+    );
+    // console.log(displayGuesses);
+    setState((prevState) => ({ ...prevState, guessesColored: displayGuesses }));
   };
+
+  const checkCorrect = (ui, wd) => {
+    return ui === wd;
+  };
+
+  const enterClicked = () => {
+    // console.log("Enter Clicked");
+    const nextRow = activeRow + 1;
+    if (nextRow < rows && !guesses[activeRow].includes(null)) {
+      // console.log("next", nextRow);d
+      const isCorrect = checkCorrect(userInput, word);
+      setState((prevState) => {
+        return {
+          ...prevState,
+          activeRow: nextRow,
+          userInput: "",
+          correct: isCorrect,
+          playing: !isCorrect,
+        };
+      });
+      assignColors();
+    }
+
+    if (nextRow === rows && !guesses[activeRow].includes(null)) {
+      const isCorrect = checkCorrect(userInput, word);
+      setState((prevState) => ({
+        ...prevState,
+        playing: false,
+        correct: isCorrect,
+        userInput: "",
+      }));
+    }
+  };
+
+  const removeChar = () => {
+    if (!playing) return;
+
+    const updateGuesses = [...guesses];
+    const currRow = updateGuesses[activeRow];
+
+    // console.log("******Before*******");
+    // console.log("updateGuesses", updateGuesses);
+    // console.log("currRow", currRow);
+
+    const nullIdx = currRow.indexOf(null);
+    if (nullIdx !== -1) {
+      currRow.splice(nullIdx - 1, 1, null);
+    } else {
+      currRow.splice(currRow.length - 1, 1, null);
+    }
+
+    // console.log("******After*******");
+    // console.log("currRow", currRow);
+    // console.log("updateGuesses", updateGuesses);
+    updateGuesses.splice(activeRow, 1, currRow);
+    setState((prevState) => ({
+      ...prevState,
+      userInput: userInput.slice(0, -1),
+      guesses: updateGuesses,
+    }));
+  };
+
+  const phycKeyboardClick = (e) => {
+    e.preventDefault();
+    const clickedKey = e.key.toLowerCase();
+    switch (true) {
+      case clickedKey === "enter":
+        enterClicked();
+        break;
+      case clickedKey === "backspace" || clickedKey === "delete":
+        removeChar();
+        break;
+      case ALPHA_REGEX.test(clickedKey):
+        getKeyPressed(clickedKey);
+        break;
+      default:
+        return;
+    }
+  };
+
+  useEffect(() => {
+    window.document.addEventListener("keydown", phycKeyboardClick);
+    return () =>
+      window.document.removeEventListener("keydown", phycKeyboardClick);
+  }, [word, activeRow, userInput]);
+
+  useEffect(() => {
+    fetchWords();
+  }, [lang, level]);
+
+  useEffect(() => {
+    assignColors();
+  }, [guesses, activeRow, playing]);
+
   return (
     <div className="wordle">
       <h5>Wordle Game</h5>
@@ -227,48 +336,39 @@ export default function Wordle() {
         <span className="exact">green:</span> present &amp; correct position
       </p>
       {loading && <Loader />}
-      {!loading &&
-        guesses.map((ges, i) => (
-          <div key={i} className="guess">
-            {ges.map((letter, j) => (
-              <div key={j} className={`letter ${letterClass(word, letter, j)}`}>
-                {letter}
-              </div>
-            ))}
-          </div>
-        ))}
+      {!loading && guessesColored}
       <div>
         <div className="inputs">
-          <input
-            className="textInput"
-            value={input}
-            placeholder="Enter a word"
-            onChange={inputsChange}
-            disabled={loading || correct || tryAgain}
-          />
           <button
-            onClick={clickedEnter}
+            onClick={enterClicked}
             className="btn btn-sm btn-warning btnEnter"
-            disabled={loading || correct || tryAgain}
+            disabled={loading || !playing}
           >
             Enter
           </button>
+          {/* <button
+            onClick={removeChar}
+            className="btn btn-sm btn-danger btnEnter"
+            disabled={loading || !playing}
+          >
+            Del
+          </button> */}
         </div>
 
         <p>
-          {tryAgain && (
+          {!correct && !playing && (
             <>
               <span className="failed">&#128518;Failed!!&#128569;</span>
               <br />
               <span>Word is: {word}</span>
             </>
           )}
-          {correct && (
+          {correct && !playing && (
             <span className="correct">&#128521;Correct!!&#128526;</span>
           )}
         </p>
       </div>
-      {(correct || tryAgain) && (
+      {!playing && (
         <button
           className="btn btn-sm btn-primary btnNextWord"
           onClick={nextWord}
@@ -277,7 +377,7 @@ export default function Wordle() {
           Try Next
         </button>
       )}
-      <Keyboard />
+      <Keyboard getKeyPressed={getKeyPressed} />
     </div>
   );
 }
