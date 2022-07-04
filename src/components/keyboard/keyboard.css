@@ -57,6 +57,10 @@
   grid-area: row3;
 }
 
+.keyboard .keysGrid .btn-primary {
+  background-color: #416497;
+}
+
 .keyboard .keysGrid .keys {
   margin: 0 1.5px;
   min-width: 25px;

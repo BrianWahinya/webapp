@@ -377,7 +377,7 @@ export default function Wordle() {
           Try Next
         </button>
       )}
-      <Keyboard getKeyPressed={getKeyPressed} />
+      <Keyboard getKeyPressed={getKeyPressed} disabled={!playing} />
     </div>
   );
 }

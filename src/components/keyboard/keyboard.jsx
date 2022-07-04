@@ -1,6 +1,7 @@
 import "./keyboard.css";
 
-export default function Keyboard({ getKeyPressed }) {
+export default function Keyboard({ getKeyPressed, disabled }) {
+  console.log(disabled);
   const getChar = (e) => {
     getKeyPressed(e.target.id);
     // console.log(e.target.id);
@@ -16,6 +17,7 @@ export default function Keyboard({ getKeyPressed }) {
               ls === "Del" ? "btn-danger" : "btn-primary"
             } keys`}
             onClick={getChar}
+            disabled={disabled}
           >
             {ls}
           </button>

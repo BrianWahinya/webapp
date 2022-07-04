@@ -31,7 +31,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 5px;
   margin-top: 5px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -42,7 +41,9 @@
   width: 40px;
   height: 40px;
   font-size: 25px;
+  margin: 2px;
   border: 1px solid darkblue;
+  border-radius: 2px;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
