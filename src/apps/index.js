@@ -12,3 +12,4 @@ export { default as Gallery } from "./app_gallery/gallery";
 export { default as WorldStatistics } from "./app_worldstatistics/worldstatistics";
 export { default as Calculator } from "./app_calculator/calculator";
 export { default as Wordle } from "./app_wordle/wordle";
+export { default as Snakegame } from "./app_snakegame/snakegame";

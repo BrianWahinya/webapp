@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACN,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAWvB;;AAbD,AAGE,QAHM,CAGN,MAAM,CAAA;EACJ,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,KAAK;EACjB,SAAS,EAAE,MAAM;EACjB,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,MAAM;CACf",
+    "sources": [
+        "snakegame.scss"
+    ],
+    "names": [],
+    "file": "snakegame.css"
+}

@@ -21,6 +21,7 @@ import {
   WorldStatistics,
   Calculator,
   Wordle,
+  Snakegame,
 } from "./apps";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       path: "/app/conwaygameoflife",
     },
     { id: "wordle-game", comp: <Wordle />, path: "/app/wordle" },
+    { id: "snake-game", comp: <Snakegame />, path: "/app/snakegame" },
     { id: "calculator", comp: <Calculator />, path: "/app/calculator" },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },

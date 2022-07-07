@@ -1,0 +1,14 @@
+.gameDiv{
+  display: flex;
+  flex-direction: column;
+  canvas{
+    background-color: #c4d7fa;
+    width: 90vw;
+    height: 70vh;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 1200px;
+    max-height: 900px;
+    margin: 0 auto;
+  }
+}
