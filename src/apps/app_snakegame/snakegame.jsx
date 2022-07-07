@@ -1,8 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import "./snakegame.css";
+
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 export default function Snakegame() {
   const [arr2D, setArr2D] = useState([]);
-  const cellSize = 5;
+  const [size, setSize] = useState({
+    height: window.innerHeight * 0.7,
+    width: window.innerWidth * 0.95,
+  });
+  const cellSize = 20;
   const canvasRef = useRef();
 
   const genArr2D = (rows, cols) => {
@@ -38,21 +54,77 @@ export default function Snakegame() {
     }
   };
 
+  const canvasAdjust = () => {
+    setSize({
+      height: window.innerHeight * 0.7,
+      width: window.innerWidth * 0.95,
+    });
+  };
+
   useEffect(() => {
     const canv = canvasRef.current;
     const ctx = canv.getContext("2d");
-    ctx.clearRect(0, 0, canv.width, canv.height);
+    ctx.clearRect(0, 0, size.width, size.height);
 
-    const rows = canv.height / cellSize;
-    const cols = canv.width / cellSize;
+    const rows = Math.floor(size.height / cellSize) - 1;
+    const cols = Math.floor(size.width / cellSize) - 1;
     const arr = genArr2D(rows, cols);
     drawCanvas(ctx, rows, cols, arr);
-  }, []);
+
+    const debouncedHandleResize = debounce(function handleResize() {
+      canvasAdjust();
+    }, 1000);
+
+    window.addEventListener("resize", debouncedHandleResize);
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  }, [size]);
+
+  const getControl = (e) => {
+    console.log(e.target.id);
+  };
 
   return (
-    <div className="gameDiv">
+    <div className="snakeDiv">
       Snakegame
-      <canvas ref={canvasRef} />
+      <canvas ref={canvasRef} height={size.height} width={size.width} />
+      <div className="snakeControlsGrid">
+        <div className="up">
+          <button
+            className="btn btn-sm btn-warning snakeControls"
+            onClick={getControl}
+            id="up"
+          >
+            Up
+          </button>
+        </div>
+        <div className="left-right">
+          <button
+            className="btn btn-sm btn-info snakeControls"
+            onClick={getControl}
+            id="left"
+          >
+            Left
+          </button>
+          <button
+            className="btn btn-sm btn-info snakeControls"
+            onClick={getControl}
+            id="right"
+          >
+            Right
+          </button>
+        </div>
+        <div className="down">
+          <button
+            className="btn btn-sm btn-warning snakeControls"
+            onClick={getControl}
+            id="down"
+          >
+            Down
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

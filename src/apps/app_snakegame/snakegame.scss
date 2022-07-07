@@ -1,14 +1,30 @@
-.gameDiv{
+.snakeDiv{
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
   canvas{
-    background-color: #c4d7fa;
-    width: 90vw;
-    height: 70vh;
-    min-width: 200px;
-    min-height: 200px;
-    max-width: 1200px;
-    max-height: 900px;
     margin: 0 auto;
+  }
+  .snakeControlsGrid{
+    display: grid;
+    min-width: 150px;
+    gap: 5px;
+    .up {grid-area: up;}
+    .left-right {grid-area: left-right;}
+    .down {grid-area: down;}
+
+    grid-template-areas: 
+      'up up up up up up'
+      'left-right left-right left-right left-right left-right left-right'
+      'down down down down down down';
+
+    #left, #right{
+      margin: 0 7px;
+    }
+    // .snakeControls{
+    //   margin: 5px;
+    // }
   }
 }

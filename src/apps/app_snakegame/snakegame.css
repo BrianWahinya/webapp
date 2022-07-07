@@ -1,4 +1,4 @@
-.gameDiv {
+.snakeDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,16 +6,45 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.gameDiv canvas {
-  background-color: #c4d7fa;
-  width: 90vw;
-  height: 70vh;
-  min-width: 200px;
-  min-height: 200px;
-  max-width: 1200px;
-  max-height: 900px;
+.snakeDiv canvas {
   margin: 0 auto;
+}
+
+.snakeDiv .snakeControlsGrid {
+  display: -ms-grid;
+  display: grid;
+  min-width: 150px;
+  gap: 5px;
+      grid-template-areas: 'up up up up up up' 'left-right left-right left-right left-right left-right left-right' 'down down down down down down';
+}
+
+.snakeDiv .snakeControlsGrid .up {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: up;
+}
+
+.snakeDiv .snakeControlsGrid .left-right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: left-right;
+}
+
+.snakeDiv .snakeControlsGrid .down {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: down;
+}
+
+.snakeDiv .snakeControlsGrid #left, .snakeDiv .snakeControlsGrid #right {
+  margin: 0 7px;
 }
 /*# sourceMappingURL=snakegame.css.map */
