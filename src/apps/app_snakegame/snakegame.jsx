@@ -13,12 +13,14 @@ function debounce(fn, ms) {
 }
 
 export default function Snakegame() {
+  const ratio = { h: 0.65, w: 0.95 };
   const [arr2D, setArr2D] = useState([]);
   const [size, setSize] = useState({
-    height: window.innerHeight * 0.7,
-    width: window.innerWidth * 0.95,
+    height: window.innerHeight * ratio.h,
+    width: window.innerWidth * ratio.w,
   });
-  const cellSize = 20;
+  const [cellSize, setCellSize] = useState(15);
+  const [score, setScore] = useState(0);
   const canvasRef = useRef();
 
   const genArr2D = (rows, cols) => {
@@ -56,8 +58,8 @@ export default function Snakegame() {
 
   const canvasAdjust = () => {
     setSize({
-      height: window.innerHeight * 0.7,
-      width: window.innerWidth * 0.95,
+      height: window.innerHeight * ratio.h,
+      width: window.innerWidth * ratio.w,
     });
   };
 
@@ -79,24 +81,58 @@ export default function Snakegame() {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-  }, [size]);
+  }, [size, cellSize]);
 
   const getControl = (e) => {
     console.log(e.target.id);
   };
 
+  const changeCellSize = (e) => {
+    setCellSize(e.target.value);
+  };
+
   return (
     <div className="snakeDiv">
-      Snakegame
+      Snakegame <code>(Still in coding stage)</code>
+      <div>
+        <label htmlFor="cellSize">CellSize:</label>
+        <select
+          id="cellSize"
+          name="cellSize"
+          onChange={changeCellSize}
+          value={cellSize}
+        >
+          <option value={10}>10</option>
+          <option value={15}>15</option>
+          <option value={20}>20</option>
+          <option value={25}>25</option>
+        </select>
+        &nbsp;
+        <span>Score: {score}</span>
+      </div>
       <canvas ref={canvasRef} height={size.height} width={size.width} />
       <div className="snakeControlsGrid">
         <div className="up">
           <button
             className="btn btn-sm btn-warning snakeControls"
             onClick={getControl}
+            id="upleft"
+          >
+            &#8598;
+          </button>
+          <button
+            className="btn btn-sm btn-primary snakeControls"
+            onClick={getControl}
             id="up"
           >
-            Up
+            &#8593;
+          </button>
+          <button
+            className="btn btn-sm btn-warning snakeControls"
+            onClick={getControl}
+            id="upright"
+          >
+            &#8599;
           </button>
         </div>
         <div className="left-right">
@@ -105,23 +141,37 @@ export default function Snakegame() {
             onClick={getControl}
             id="left"
           >
-            Left
+            &#8592;
           </button>
           <button
             className="btn btn-sm btn-info snakeControls"
             onClick={getControl}
             id="right"
           >
-            Right
+            &#8594;
           </button>
         </div>
         <div className="down">
           <button
             className="btn btn-sm btn-warning snakeControls"
             onClick={getControl}
+            id="downleft"
+          >
+            &#8601;
+          </button>
+          <button
+            className="btn btn-sm btn-primary snakeControls"
+            onClick={getControl}
             id="down"
           >
-            Down
+            &#8595;
+          </button>
+          <button
+            className="btn btn-sm btn-warning snakeControls"
+            onClick={getControl}
+            id="downright"
+          >
+            &#8600;
           </button>
         </div>
       </div>

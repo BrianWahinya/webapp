@@ -11,6 +11,7 @@
     display: grid;
     min-width: 150px;
     gap: 5px;
+    margin-top: 5px;
     .up {grid-area: up;}
     .left-right {grid-area: left-right;}
     .down {grid-area: down;}
@@ -20,11 +21,12 @@
       'left-right left-right left-right left-right left-right left-right'
       'down down down down down down';
 
-    #left, #right{
-      margin: 0 7px;
+    .snakeControls{
+      margin: 0 5px;
+      font-weight: bold;
+      font-size: 15px;
+      width: 2.5rem;
+      padding: 0 0.1em;
     }
-    // .snakeControls{
-    //   margin: 5px;
-    // }
   }
 }

@@ -20,6 +20,7 @@
   display: grid;
   min-width: 150px;
   gap: 5px;
+  margin-top: 5px;
       grid-template-areas: 'up up up up up up' 'left-right left-right left-right left-right left-right left-right' 'down down down down down down';
 }
 
@@ -44,7 +45,11 @@
   grid-area: down;
 }
 
-.snakeDiv .snakeControlsGrid #left, .snakeDiv .snakeControlsGrid #right {
-  margin: 0 7px;
+.snakeDiv .snakeControlsGrid .snakeControls {
+  margin: 0 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 2.5rem;
+  padding: 0 0.1em;
 }
 /*# sourceMappingURL=snakegame.css.map */
