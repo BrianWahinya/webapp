@@ -21,24 +21,29 @@ export default function Snakegame() {
   });
   const [cellSize, setCellSize] = useState(15);
   const [score, setScore] = useState(0);
+  const [timer, setTimer] = useState("");
+  const [snake, setSnake] = useState([
+    [0, 0], // tail
+    [0, 1],
+    [0, 2], // head
+  ]);
   const canvasRef = useRef();
 
   const genArr2D = (rows, cols) => {
     const arr = [];
-    // const snake = [1, 1, 1]
-    const positionA = [
-      Math.floor(Math.random() * (rows - 2)),
-      Math.floor(Math.random() * (cols - 2)),
-    ];
     for (let i = 0; i <= rows; i++) {
       const rowArr = [];
       for (let j = 0; j <= cols; j++) {
-        rowArr.push(0);
+        const snakeStr = `-${snake.join("-")}-`;
+        if (snakeStr.includes(`-${i},${j}-`)) {
+          rowArr.push(1);
+        } else {
+          rowArr.push(0);
+        }
       }
       arr.push(rowArr);
     }
-    arr[positionA[0]].splice(3, 3, 1, 1, 1);
-    console.log(arr);
+    // console.log(arr);
     return arr;
   };
 
@@ -71,6 +76,7 @@ export default function Snakegame() {
     const rows = Math.floor(size.height / cellSize) - 1;
     const cols = Math.floor(size.width / cellSize) - 1;
     const arr = genArr2D(rows, cols);
+    setArr2D(arr);
     drawCanvas(ctx, rows, cols, arr);
 
     const debouncedHandleResize = debounce(function handleResize() {
@@ -91,6 +97,49 @@ export default function Snakegame() {
     setCellSize(e.target.value);
   };
 
+  const ctxManipulate = () => {
+    const canv = canvasRef.current;
+    const ctx = canv.getContext("2d");
+    ctx.clearRect(0, 0, size.width, size.height);
+
+    const rows = Math.floor(size.height / cellSize) - 1;
+    const cols = Math.floor(size.width / cellSize) - 1;
+    const arr = genArr2D(rows, cols);
+    drawCanvas(ctx, rows, cols, arr);
+  };
+
+  const snakeMove = () => {
+    setSnake((pos) => {
+      const oldPos = [...pos];
+      const oldHead = oldPos[oldPos.length - 1];
+      // console.log(oldHead);
+      const newHead = [oldHead[0], oldHead[1] + 1];
+      oldPos.shift();
+      // console.log("oldPos", oldPos);
+      const newPos = [...oldPos, newHead];
+      // console.log("newPos", newPos);
+      return newPos;
+    });
+  };
+
+  useEffect(() => {
+    ctxManipulate();
+  }, [snake]);
+
+  const play = (e) => {
+    if (!timer) {
+      const playTimer = setInterval(() => {
+        snakeMove();
+      }, 500);
+      setTimer(playTimer);
+    }
+  };
+
+  const pause = (e) => {
+    clearInterval(timer);
+    setTimer("");
+  };
+
   return (
     <div className="snakeDiv">
       Snakegame <code>(Still in coding stage)</code>
@@ -109,6 +158,14 @@ export default function Snakegame() {
         </select>
         &nbsp;
         <span>Score: {score}</span>
+      </div>
+      <div>
+        <button className="btn btn-sm btn-outline-success play" onClick={play}>
+          Play
+        </button>
+        <button className="btn btn-sm btn-outline-danger stop" onClick={pause}>
+          Pause
+        </button>
       </div>
       <canvas ref={canvasRef} height={size.height} width={size.width} />
       <div className="snakeControlsGrid">
