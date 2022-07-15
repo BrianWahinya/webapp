@@ -27,16 +27,28 @@ export default function Snakegame() {
     [0, 1],
     [0, 2], // head
   ]);
+  const [food, setFood] = useState([]);
   const [direction, setDirection] = useState("right");
   const canvasRef = useRef();
+
+  const genFood = (rows, cols) => {
+    setFood((fd) => [
+      Math.floor(Math.random() * rows),
+      Math.floor(Math.random() * cols),
+    ]);
+  };
 
   const genArr2D = (rows, cols) => {
     const arr = [];
     for (let i = 0; i <= rows; i++) {
       const rowArr = [];
       for (let j = 0; j <= cols; j++) {
+        const tgt = `-${i},${j}-`;
         const snakeStr = `-${snake.join("-")}-`;
-        if (snakeStr.includes(`-${i},${j}-`)) {
+        const foodStr = `-${food.join(",")}-`;
+        if (foodStr.includes(tgt)) {
+          rowArr.push(2);
+        } else if (snakeStr.includes(tgt)) {
           rowArr.push(1);
         } else {
           rowArr.push(0);
@@ -44,7 +56,7 @@ export default function Snakegame() {
       }
       arr.push(rowArr);
     }
-    // console.log(arr);
+    console.log(arr);
     return arr;
   };
 
@@ -54,7 +66,8 @@ export default function Snakegame() {
         const cell_value = arr[i][j];
         ctx.beginPath();
         ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
-        ctx.fillStyle = cell_value === 0 ? "#FFF" : "#000";
+        ctx.fillStyle =
+          cell_value === 2 ? "#7d7d02" : cell_value === 1 ? "#000" : "#FFF";
         ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
         ctx.strokeStyle = "#BFBFBF";
         ctx.stroke();
@@ -77,6 +90,7 @@ export default function Snakegame() {
     const rows = Math.floor(size.height / cellSize) - 1;
     const cols = Math.floor(size.width / cellSize) - 1;
     const arr = genArr2D(rows, cols);
+    genFood(rows, cols);
     setArr2D(arr);
     drawCanvas(ctx, rows, cols, arr);
 
@@ -148,7 +162,7 @@ export default function Snakegame() {
 
   useEffect(() => {
     ctxManipulate();
-  }, [snake]);
+  }, [snake, food]);
 
   useEffect(() => {
     if (timer) {
