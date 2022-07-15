@@ -39,13 +39,13 @@ export default function Snakegame() {
   };
 
   const genArr2D = (rows, cols) => {
+    const snakeStr = `-${snake.join("-")}-`;
+    const foodStr = `-${food.join(",")}-`;
     const arr = [];
     for (let i = 0; i <= rows; i++) {
       const rowArr = [];
       for (let j = 0; j <= cols; j++) {
         const tgt = `-${i},${j}-`;
-        const snakeStr = `-${snake.join("-")}-`;
-        const foodStr = `-${food.join(",")}-`;
         if (foodStr.includes(tgt)) {
           rowArr.push(2);
         } else if (snakeStr.includes(tgt)) {
@@ -56,7 +56,7 @@ export default function Snakegame() {
       }
       arr.push(rowArr);
     }
-    console.log(arr);
+    // console.log(arr);
     return arr;
   };
 
@@ -105,7 +105,6 @@ export default function Snakegame() {
   }, [size, cellSize]);
 
   const getControl = (e) => {
-    console.log(e.target.id);
     setDirection(e.target.id);
   };
 
@@ -146,13 +145,24 @@ export default function Snakegame() {
         return;
     }
   };
+
+  const addScore = () => {
+    setScore((scr) => scr + 1);
+  };
   const snakeMove = (dir) => {
     setSnake((pos) => {
       const oldPos = [...pos];
       const oldHead = oldPos[oldPos.length - 1];
       // console.log(oldHead);
       const newHead = checkDirection(oldHead, dir);
-      oldPos.shift();
+      if (oldHead.join("") === food.join("")) {
+        addScore();
+        const rows = Math.floor(size.height / cellSize) - 1;
+        const cols = Math.floor(size.width / cellSize) - 1;
+        genFood(rows, cols);
+      } else {
+        oldPos.shift();
+      }
       // console.log("oldPos", oldPos);
       const newPos = [...oldPos, newHead];
       // console.log("newPos", newPos);
