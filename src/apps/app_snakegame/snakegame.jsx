@@ -115,7 +115,7 @@ export default function Snakegame() {
       case "right":
         return [ohead[0], ohead[1] + 1];
       case "left":
-        return [ohead[0] - 1, ohead[1]];
+        return [ohead[0], ohead[1] - 1];
       case "up":
         return [ohead[0] - 1, ohead[1]];
       case "upright":
@@ -127,7 +127,7 @@ export default function Snakegame() {
       case "downright":
         return [ohead[0] + 1, ohead[1] + 1];
       case "downleft":
-        return [ohead[0] - 1, ohead[1] - 1];
+        return [ohead[0] + 1, ohead[1] - 1];
       default:
         return;
     }
