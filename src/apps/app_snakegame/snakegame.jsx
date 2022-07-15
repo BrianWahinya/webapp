@@ -27,6 +27,7 @@ export default function Snakegame() {
     [0, 1],
     [0, 2], // head
   ]);
+  const [direction, setDirection] = useState("right");
   const canvasRef = useRef();
 
   const genArr2D = (rows, cols) => {
@@ -91,6 +92,7 @@ export default function Snakegame() {
 
   const getControl = (e) => {
     console.log(e.target.id);
+    setDirection(e.target.id);
   };
 
   const changeCellSize = (e) => {
@@ -108,12 +110,34 @@ export default function Snakegame() {
     drawCanvas(ctx, rows, cols, arr);
   };
 
-  const snakeMove = () => {
+  const checkDirection = (ohead, dir) => {
+    switch (dir) {
+      case "right":
+        return [ohead[0], ohead[1] + 1];
+      case "left":
+        return [ohead[0] - 1, ohead[1]];
+      case "up":
+        return [ohead[0] - 1, ohead[1]];
+      case "upright":
+        return [ohead[0] - 1, ohead[1] + 1];
+      case "upleft":
+        return [ohead[0] - 1, ohead[1] - 1];
+      case "down":
+        return [ohead[0] + 1, ohead[1]];
+      case "downright":
+        return [ohead[0] + 1, ohead[1] + 1];
+      case "downleft":
+        return [ohead[0] - 1, ohead[1] - 1];
+      default:
+        return;
+    }
+  };
+  const snakeMove = (dir) => {
     setSnake((pos) => {
       const oldPos = [...pos];
       const oldHead = oldPos[oldPos.length - 1];
       // console.log(oldHead);
-      const newHead = [oldHead[0], oldHead[1] + 1];
+      const newHead = checkDirection(oldHead, dir);
       oldPos.shift();
       // console.log("oldPos", oldPos);
       const newPos = [...oldPos, newHead];
@@ -126,12 +150,22 @@ export default function Snakegame() {
     ctxManipulate();
   }, [snake]);
 
+  useEffect(() => {
+    if (timer) {
+      clearInterval(timer);
+      const playTimer = setInterval(() => {
+        snakeMove(direction);
+      }, 500);
+      setTimer((tm) => playTimer);
+    }
+  }, [direction]);
+
   const play = (e) => {
     if (!timer) {
       const playTimer = setInterval(() => {
-        snakeMove();
+        snakeMove(direction);
       }, 500);
-      setTimer(playTimer);
+      setTimer((tm) => playTimer);
     }
   };
 
