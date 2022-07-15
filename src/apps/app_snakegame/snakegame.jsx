@@ -13,7 +13,7 @@ function debounce(fn, ms) {
 }
 
 export default function Snakegame() {
-  const ratio = { h: 0.65, w: 0.95 };
+  const ratio = { h: 0.6, w: 0.95 };
   const [arr2D, setArr2D] = useState([]);
   const [size, setSize] = useState({
     height: window.innerHeight * ratio.h,
@@ -23,8 +23,7 @@ export default function Snakegame() {
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState("");
   const [snake, setSnake] = useState([
-    [0, 0], // tail
-    [0, 1],
+    [0, 1], // tail
     [0, 2], // head
   ]);
   const [food, setFood] = useState([]);
