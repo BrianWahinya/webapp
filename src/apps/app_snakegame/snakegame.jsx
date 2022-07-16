@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import SnakeCanvas from "./snakecanvas";
+import SnakeControls from "./snakecontrols";
+import SnakeDefaults from "./snakedefaults";
 import "./snakegame.css";
+
+const ratio = { h: 0.55, w: 0.95 };
 
 function debounce(fn, ms) {
   let timer;
@@ -12,87 +17,202 @@ function debounce(fn, ms) {
   };
 }
 
-export default function Snakegame() {
-  const ratio = { h: 0.6, w: 0.95 };
-  const [arr2D, setArr2D] = useState([]);
-  const [size, setSize] = useState({
-    height: window.innerHeight * ratio.h,
-    width: window.innerWidth * ratio.w,
-  });
-  const [cellSize, setCellSize] = useState(15);
-  const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState("");
-  const [snake, setSnake] = useState([
+const genArr2D = (snake, food, rows, cols) => {
+  // console.log("snake", snake);
+  const snakeStr = `-${snake.join("-")}-`;
+  const foodStr = `-${food.join(",")}-`;
+  const arr = [];
+  for (let i = 0; i <= rows - 1; i++) {
+    const rowArr = [];
+    for (let j = 0; j <= cols - 1; j++) {
+      const tgt = `-${i},${j}-`;
+      if (snakeStr.includes(tgt)) {
+        rowArr.push(1);
+      } else if (foodStr.includes(tgt)) {
+        rowArr.push(2);
+      } else {
+        rowArr.push(0);
+      }
+    }
+    arr.push(rowArr);
+  }
+  // console.log(arr);
+  return arr;
+};
+
+const genFood = (rows, cols) => {
+  return [
+    Math.floor(Math.random() * (rows - 1)),
+    Math.floor(Math.random() * (cols - 1)),
+  ];
+};
+
+const drawCanvas = (ctx, rows, cols, arr, cellSize) => {
+  for (let i = 0; i <= rows - 1; i++) {
+    for (let j = 0; j <= cols - 1; j++) {
+      const cell_value = arr[i][j];
+      ctx.beginPath();
+      ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
+      ctx.fillStyle =
+        cell_value === 2 ? "#7d7d02" : cell_value === 1 ? "#000" : "#FFF";
+      ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+      ctx.strokeStyle = "#BFBFBF";
+      ctx.stroke();
+    }
+  }
+};
+
+const checkDirection = (ohead, dir) => {
+  switch (dir) {
+    case "right":
+      return [ohead[0], ohead[1] + 1];
+    case "left":
+      return [ohead[0], ohead[1] - 1];
+    case "up":
+      return [ohead[0] - 1, ohead[1]];
+    case "upright":
+      return [ohead[0] - 1, ohead[1] + 1];
+    case "upleft":
+      return [ohead[0] - 1, ohead[1] - 1];
+    case "down":
+      return [ohead[0] + 1, ohead[1]];
+    case "downright":
+      return [ohead[0] + 1, ohead[1] + 1];
+    case "downleft":
+      return [ohead[0] + 1, ohead[1] - 1];
+    default:
+      return;
+  }
+};
+
+const defaultState = {
+  score: 0,
+  cellSize: 15,
+  timer: "",
+  snake: [
     [0, 1], // tail
     [0, 2], // head
-  ]);
-  const [food, setFood] = useState([]);
-  const [direction, setDirection] = useState("right");
+  ],
+  food: [],
+  direction: "right",
+  arr2D: [],
+  size: {
+    height: window.innerHeight * ratio.h,
+    width: window.innerWidth * ratio.w,
+  },
+  rows: (window.innerHeight * ratio.h) / 15,
+  cols: (window.innerWidth * ratio.w) / 15,
+  error: false,
+  playing: false,
+};
+
+const reducer = (state, elem, vals) => {
+  return { ...state, [elem]: vals };
+};
+
+export default function Snakegame() {
   const canvasRef = useRef();
-
-  const genFood = (rows, cols) => {
-    setFood((fd) => [
-      Math.floor(Math.random() * rows),
-      Math.floor(Math.random() * cols),
-    ]);
-  };
-
-  const genArr2D = (rows, cols) => {
-    const snakeStr = `-${snake.join("-")}-`;
-    const foodStr = `-${food.join(",")}-`;
-    const arr = [];
-    for (let i = 0; i <= rows; i++) {
-      const rowArr = [];
-      for (let j = 0; j <= cols; j++) {
-        const tgt = `-${i},${j}-`;
-        if (foodStr.includes(tgt)) {
-          rowArr.push(2);
-        } else if (snakeStr.includes(tgt)) {
-          rowArr.push(1);
-        } else {
-          rowArr.push(0);
-        }
-      }
-      arr.push(rowArr);
-    }
-    // console.log(arr);
-    return arr;
-  };
-
-  const drawCanvas = (ctx, rows, cols, arr) => {
-    for (let i = 0; i <= rows; i++) {
-      for (let j = 0; j <= cols; j++) {
-        const cell_value = arr[i][j];
-        ctx.beginPath();
-        ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
-        ctx.fillStyle =
-          cell_value === 2 ? "#7d7d02" : cell_value === 1 ? "#000" : "#FFF";
-        ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
-        ctx.strokeStyle = "#BFBFBF";
-        ctx.stroke();
-      }
-    }
-  };
+  const [state, setState] = useState(defaultState);
 
   const canvasAdjust = () => {
-    setSize({
-      height: window.innerHeight * ratio.h,
-      width: window.innerWidth * ratio.w,
+    setState((curr) => ({
+      ...curr,
+      size: {
+        height: window.innerHeight * ratio.h,
+        width: window.innerWidth * ratio.w,
+      },
+      rows: (window.innerHeight * ratio.h) / curr.cellSize,
+      cols: (window.innerWidth * ratio.w) / curr.cellSize,
+    }));
+  };
+
+  const getControl = (e) => {
+    setState(reducer(state, "direction", e.target.id));
+  };
+
+  const changeCellSize = (e) => {
+    setState(reducer(state, "cellSize", e.target.value));
+  };
+
+  const snakeMove = () => {
+    setState((st) => {
+      const { snake, food, rows, cols, score, direction } = st;
+      let currFood = food;
+      let currScore = score;
+      const oldPos = [...snake];
+      const oldHead = oldPos[oldPos.length - 1];
+      const newHead = checkDirection(oldHead, direction);
+      if (
+        newHead[0] < 0 ||
+        newHead[1] < 0 ||
+        newHead[0] > rows - 1 ||
+        newHead[1] > cols - 1
+      ) {
+        return {
+          ...st,
+          error: true,
+        };
+      } else {
+        if (newHead.join("") === food.join("")) {
+          currScore = currScore + 1;
+          currFood = genFood(rows, cols);
+        } else {
+          oldPos.shift();
+        }
+        // console.log("oldPos", oldPos);
+        const newPos = [...oldPos, newHead];
+        // console.log("newPos", newPos);
+        return {
+          ...st,
+          snake: newPos,
+          food: currFood,
+          score: currScore,
+        };
+      }
+    });
+  };
+
+  const ctxManipulate = () => {
+    const { size, cellSize, rows, cols, arr2D } = state;
+    const canv = canvasRef.current;
+    const ctx = canv.getContext("2d");
+    ctx.clearRect(0, 0, size.width, size.height);
+    drawCanvas(ctx, rows, cols, arr2D, cellSize);
+  };
+
+  const play = (e) => {
+    const { timer, direction, error } = state;
+    if (!timer && !error) {
+      const playTimer = setInterval(() => {
+        snakeMove(direction);
+      }, 500);
+      setState((st) => ({ ...st, timer: playTimer, playing: true }));
+    }
+  };
+
+  const pause = (e) => {
+    clearInterval(state.timer);
+    setState((st) => ({ ...st, timer: "", playing: false }));
+  };
+
+  const restart = (e) => {
+    setState((st) => {
+      const { rows, cols, timer } = st;
+      clearInterval(timer);
+      return {
+        ...st,
+        timer: "",
+        food: genFood(rows, cols),
+        snake: defaultState.snake,
+        error: false,
+        playing: false,
+        direction: "right",
+        score: 0,
+      };
     });
   };
 
   useEffect(() => {
-    const canv = canvasRef.current;
-    const ctx = canv.getContext("2d");
-    ctx.clearRect(0, 0, size.width, size.height);
-
-    const rows = Math.floor(size.height / cellSize) - 1;
-    const cols = Math.floor(size.width / cellSize) - 1;
-    const arr = genArr2D(rows, cols);
-    genFood(rows, cols);
-    setArr2D(arr);
-    drawCanvas(ctx, rows, cols, arr);
-
     const debouncedHandleResize = debounce(function handleResize() {
       canvasAdjust();
     }, 1000);
@@ -101,193 +221,59 @@ export default function Snakegame() {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-  }, [size, cellSize]);
-
-  const getControl = (e) => {
-    setDirection(e.target.id);
-  };
-
-  const changeCellSize = (e) => {
-    setCellSize(e.target.value);
-  };
-
-  const ctxManipulate = () => {
-    const canv = canvasRef.current;
-    const ctx = canv.getContext("2d");
-    ctx.clearRect(0, 0, size.width, size.height);
-
-    const rows = Math.floor(size.height / cellSize) - 1;
-    const cols = Math.floor(size.width / cellSize) - 1;
-    const arr = genArr2D(rows, cols);
-    drawCanvas(ctx, rows, cols, arr);
-  };
-
-  const checkDirection = (ohead, dir) => {
-    switch (dir) {
-      case "right":
-        return [ohead[0], ohead[1] + 1];
-      case "left":
-        return [ohead[0], ohead[1] - 1];
-      case "up":
-        return [ohead[0] - 1, ohead[1]];
-      case "upright":
-        return [ohead[0] - 1, ohead[1] + 1];
-      case "upleft":
-        return [ohead[0] - 1, ohead[1] - 1];
-      case "down":
-        return [ohead[0] + 1, ohead[1]];
-      case "downright":
-        return [ohead[0] + 1, ohead[1] + 1];
-      case "downleft":
-        return [ohead[0] + 1, ohead[1] - 1];
-      default:
-        return;
-    }
-  };
-
-  const addScore = () => {
-    setScore((scr) => scr + 1);
-  };
-  const snakeMove = (dir) => {
-    setSnake((pos) => {
-      const oldPos = [...pos];
-      const oldHead = oldPos[oldPos.length - 1];
-      // console.log(oldHead);
-      const newHead = checkDirection(oldHead, dir);
-      if (oldHead.join("") === food.join("")) {
-        addScore();
-        const rows = Math.floor(size.height / cellSize) - 1;
-        const cols = Math.floor(size.width / cellSize) - 1;
-        genFood(rows, cols);
-      } else {
-        oldPos.shift();
-      }
-      // console.log("oldPos", oldPos);
-      const newPos = [...oldPos, newHead];
-      // console.log("newPos", newPos);
-      return newPos;
-    });
-  };
+  }, [state.size, state.cellSize]);
 
   useEffect(() => {
-    ctxManipulate();
-  }, [snake, food]);
+    const { snake, rows, cols } = state;
+    const food = genFood(rows, cols);
+    setState((st) => ({
+      ...st,
+      arr2D: genArr2D(snake, food, rows, cols),
+      food: food,
+    }));
+  }, [state.rows, state.cols]);
 
   useEffect(() => {
-    if (timer) {
-      clearInterval(timer);
-      const playTimer = setInterval(() => {
-        snakeMove(direction);
-      }, 500);
-      setTimer((tm) => playTimer);
+    if (state.arr2D.length > 0) {
+      ctxManipulate();
     }
-  }, [direction]);
+  }, [state.arr2D]);
 
-  const play = (e) => {
-    if (!timer) {
-      const playTimer = setInterval(() => {
-        snakeMove(direction);
-      }, 500);
-      setTimer((tm) => playTimer);
+  useEffect(() => {
+    const { snake, food, rows, cols } = state;
+    setState((st) => ({
+      ...st,
+      arr2D: genArr2D(snake, food, rows, cols),
+    }));
+  }, [state.snake]);
+
+  useEffect(() => {
+    if (state.error) {
+      pause();
     }
-  };
-
-  const pause = (e) => {
-    clearInterval(timer);
-    setTimer("");
-  };
+  }, [state.error]);
 
   return (
     <div className="snakeDiv">
       Snakegame <code>(Still in coding stage)</code>
-      <div>
-        <label htmlFor="cellSize">CellSize:</label>
-        <select
-          id="cellSize"
-          name="cellSize"
-          onChange={changeCellSize}
-          value={cellSize}
-        >
-          <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
-          <option value={25}>25</option>
-        </select>
-        &nbsp;
-        <span>Score: {score}</span>
-      </div>
-      <div>
-        <button className="btn btn-sm btn-outline-success play" onClick={play}>
-          Play
-        </button>
-        <button className="btn btn-sm btn-outline-danger stop" onClick={pause}>
-          Pause
-        </button>
-      </div>
-      <canvas ref={canvasRef} height={size.height} width={size.width} />
+      <SnakeDefaults
+        score={state.score}
+        play={play}
+        pause={pause}
+        restart={restart}
+        changeCellSize={changeCellSize}
+        cellSize={state.cellSize}
+        error={state.error}
+        playing={state.playing}
+      />
+      <SnakeCanvas
+        canvasRef={canvasRef}
+        height={state.size.height}
+        width={state.size.width}
+        error={state.error}
+      />
       <div className="snakeControlsGrid">
-        <div className="up">
-          <button
-            className="btn btn-sm btn-warning snakeControls"
-            onClick={getControl}
-            id="upleft"
-          >
-            &#8598;
-          </button>
-          <button
-            className="btn btn-sm btn-primary snakeControls"
-            onClick={getControl}
-            id="up"
-          >
-            &#8593;
-          </button>
-          <button
-            className="btn btn-sm btn-warning snakeControls"
-            onClick={getControl}
-            id="upright"
-          >
-            &#8599;
-          </button>
-        </div>
-        <div className="left-right">
-          <button
-            className="btn btn-sm btn-info snakeControls"
-            onClick={getControl}
-            id="left"
-          >
-            &#8592;
-          </button>
-          <button
-            className="btn btn-sm btn-info snakeControls"
-            onClick={getControl}
-            id="right"
-          >
-            &#8594;
-          </button>
-        </div>
-        <div className="down">
-          <button
-            className="btn btn-sm btn-warning snakeControls"
-            onClick={getControl}
-            id="downleft"
-          >
-            &#8601;
-          </button>
-          <button
-            className="btn btn-sm btn-primary snakeControls"
-            onClick={getControl}
-            id="down"
-          >
-            &#8595;
-          </button>
-          <button
-            className="btn btn-sm btn-warning snakeControls"
-            onClick={getControl}
-            id="downright"
-          >
-            &#8600;
-          </button>
-        </div>
+        <SnakeControls getControl={getControl} playing={state.playing} />
       </div>
     </div>
   );
