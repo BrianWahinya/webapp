@@ -47,14 +47,20 @@ const genFood = (rows, cols) => {
   ];
 };
 
-const drawCanvas = (ctx, rows, cols, arr, cellSize) => {
+const drawCanvas = (ctx, rows, cols, arr, cellSize, snakeHead) => {
   for (let i = 0; i <= rows - 1; i++) {
     for (let j = 0; j <= cols - 1; j++) {
       const cell_value = arr[i][j];
       ctx.beginPath();
       ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
       ctx.fillStyle =
-        cell_value === 2 ? "#7d7d02" : cell_value === 1 ? "#000" : "#FFF";
+        cell_value === 2
+          ? "#408201"
+          : cell_value === 1
+          ? i === snakeHead[0] && j === snakeHead[1]
+            ? "#636363"
+            : "#000"
+          : "#FFF";
       ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
       ctx.strokeStyle = "#BFBFBF";
       ctx.stroke();
@@ -201,11 +207,11 @@ export default function Snakegame() {
   };
 
   const ctxManipulate = () => {
-    const { size, cellSize, rows, cols, arr2D } = state;
+    const { size, cellSize, rows, cols, arr2D, snake } = state;
     const canv = canvasRef.current;
     const ctx = canv.getContext("2d");
     ctx.clearRect(0, 0, size.width, size.height);
-    drawCanvas(ctx, rows, cols, arr2D, cellSize);
+    drawCanvas(ctx, rows, cols, arr2D, cellSize, snake[snake.length - 1]);
   };
 
   const play = (e) => {
