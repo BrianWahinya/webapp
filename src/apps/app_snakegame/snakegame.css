@@ -44,7 +44,7 @@
   display: grid;
   min-width: 150px;
   gap: 5px;
-  margin-top: 8px;
+  margin: 10px 0;
       grid-template-areas: 'up up up up up up' 'left-right left-right left-right left-right left-right left-right' 'down down down down down down';
 }
 
@@ -73,8 +73,16 @@
   margin: 0 5px;
   font-weight: bold;
   font-size: 15px;
-  width: 2.5rem;
-  padding: 0 0.1em;
+  width: 3.5rem;
+  padding: 0.1em 0.3em;
+}
+
+.snakeDiv .snakeControlsGrid #upright, .snakeDiv .snakeControlsGrid #downright {
+  margin-left: 15px;
+}
+
+.snakeDiv .snakeControlsGrid #upleft, .snakeDiv .snakeControlsGrid #downleft {
+  margin-right: 15px;
 }
 
 @-webkit-keyframes shake {

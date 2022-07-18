@@ -29,7 +29,7 @@
     display: grid;
     min-width: 150px;
     gap: 5px;
-    margin-top: 8px;
+    margin: 10px 0;
     .up {grid-area: up;}
     .left-right {grid-area: left-right;}
     .down {grid-area: down;}
@@ -43,8 +43,14 @@
       margin: 0 5px;
       font-weight: bold;
       font-size: 15px;
-      width: 2.5rem;
-      padding: 0 0.1em;
+      width: 3.5rem;
+      padding: 0.1em 0.3em;
+    }
+    #upright, #downright{
+      margin-left: 15px;
+    }
+    #upleft, #downleft{
+      margin-right: 15px;
     }
   }
 }
