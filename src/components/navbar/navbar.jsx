@@ -37,7 +37,11 @@ export default function Navbar({ appsRoutes }) {
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
                 <li className="nav-item">
-                  <a className="" href="/current">
+                  <a
+                    href={`${window.location.origin}/archives/current`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     Current Web-Version
                   </a>
                 </li>
