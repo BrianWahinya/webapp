@@ -18,7 +18,7 @@ import {
   ConwayGameOfLife,
   StopWatch,
   Gallery,
-  WorldStatistics,
+  Statistics,
   Calculator,
   Wordle,
   Snakegame,
@@ -28,9 +28,9 @@ function App() {
   // Various route objects with their configs
   const appsRoutes = [
     {
-      id: "worldstatistics",
-      comp: <WorldStatistics />,
-      path: "/app/worldstatistics",
+      id: "statistics",
+      comp: <Statistics />,
+      path: "/app/statistics",
     },
     {
       id: "conwaygameoflife",

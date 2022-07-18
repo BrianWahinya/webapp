@@ -9,7 +9,7 @@ export { default as RockPaperScissors } from "./app_rockpaperscissors/rockpapers
 export { default as ConwayGameOfLife } from "./app_conwaygameoflife/conwaygameoflife";
 export { default as StopWatch } from "./app_stopwatch/stopwatch";
 export { default as Gallery } from "./app_gallery/gallery";
-export { default as WorldStatistics } from "./app_worldstatistics/worldstatistics";
+export { default as Statistics } from "./app_statistics/statistics";
 export { default as Calculator } from "./app_calculator/calculator";
 export { default as Wordle } from "./app_wordle/wordle";
 export { default as Snakegame } from "./app_snakegame/snakegame";

@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Loader } from "../../components";
+import { Loader } from "../../../components";
 import * as echarts from "echarts";
 import "./worldstatistics.css";
 import * as world from "./world.geo.json";
 
-export default function WorldStatistics() {
+export default function Population() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const echartsRef = useRef();
+  let myChart;
 
   echarts.registerMap("world", world);
   const option = (datos) => ({
@@ -103,7 +104,10 @@ export default function WorldStatistics() {
   });
 
   const renderMap = (option) => {
-    const myChart = echarts.init(echartsRef.current);
+    if (myChart) {
+      myChart.dispose();
+    }
+    myChart = echarts.init(echartsRef.current);
     myChart.setOption(option);
     window.onresize = function () {
       myChart.resize();
@@ -140,8 +144,7 @@ export default function WorldStatistics() {
 
   return (
     <>
-      <h5>World Statistics</h5>
-      <p>Population</p>
+      <p>World Population</p>
       {loading ? <Loader /> : <></>}
       <div ref={echartsRef} className="echartsDiv"></div>
       {/* {data.length && dataFormat(data)} */}
