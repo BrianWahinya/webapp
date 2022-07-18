@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SnakeCanvas from "./snakecanvas";
 import SnakeControls from "./snakecontrols";
 import SnakeDefaults from "./snakedefaults";
@@ -85,6 +85,19 @@ const checkDirection = (ohead, dir) => {
   }
 };
 
+const retrieveKeyBoardDirection = (key) => {
+  switch (key) {
+    case "ArrowUp":
+      return "up";
+    case "ArrowDown":
+      return "down";
+    case "ArrowLeft":
+      return "left";
+    default:
+      return "right";
+  }
+};
+
 const defaultState = {
   score: 0,
   cellSize: 15,
@@ -104,6 +117,7 @@ const defaultState = {
   cols: (window.innerWidth * ratio.w) / 15,
   error: false,
   playing: false,
+  speed: 500,
 };
 
 const reducer = (state, elem, vals) => {
@@ -134,9 +148,21 @@ export default function Snakegame() {
     setState(reducer(state, "cellSize", e.target.value));
   };
 
+  const getSpeed = (scr) => {
+    return scr <= 3
+      ? 500
+      : scr <= 6
+      ? 400
+      : scr <= 9
+      ? 300
+      : scr <= 12
+      ? 200
+      : 100;
+  };
+
   const snakeMove = () => {
     setState((st) => {
-      const { snake, food, rows, cols, score, direction } = st;
+      const { snake, food, rows, cols, score, direction, speed } = st;
       let currFood = food;
       let currScore = score;
       const oldPos = [...snake];
@@ -151,6 +177,7 @@ export default function Snakegame() {
         return {
           ...st,
           error: true,
+          playing: false,
         };
       } else {
         if (newHead.join("") === food.join("")) {
@@ -167,6 +194,7 @@ export default function Snakegame() {
           snake: newPos,
           food: currFood,
           score: currScore,
+          speed: getSpeed(currScore),
         };
       }
     });
@@ -181,11 +209,11 @@ export default function Snakegame() {
   };
 
   const play = (e) => {
-    const { timer, direction, error } = state;
+    const { timer, direction, error, speed } = state;
     if (!timer && !error) {
       const playTimer = setInterval(() => {
         snakeMove(direction);
-      }, 500);
+      }, speed);
       setState((st) => ({ ...st, timer: playTimer, playing: true }));
     }
   };
@@ -208,9 +236,32 @@ export default function Snakegame() {
         playing: false,
         direction: "right",
         score: 0,
+        speed: defaultState.speed,
       };
     });
   };
+
+  const keyboardDirections = (e) => {
+    e.preventDefault();
+    setState((st) => {
+      const { timer, playing, error } = st;
+      if (e.key.includes("Arrow") && timer && playing && !error) {
+        return { ...st, direction: retrieveKeyBoardDirection(e.key) };
+      }
+      return st;
+    });
+  };
+
+  useEffect(() => {
+    const { timer, direction, speed, error } = state;
+    clearInterval(timer);
+    if (!error) {
+      const playTimer = setInterval(() => {
+        snakeMove(direction);
+      }, speed);
+      setState((st) => ({ ...st, timer: playTimer, playing: true }));
+    }
+  }, [state.speed]);
 
   useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {
@@ -221,7 +272,12 @@ export default function Snakegame() {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-  }, [state.size, state.cellSize]);
+  }, [state.size]);
+
+  useEffect(() => {
+    canvasAdjust();
+    restart();
+  }, [state.cellSize]);
 
   useEffect(() => {
     const { snake, rows, cols } = state;
@@ -237,6 +293,9 @@ export default function Snakegame() {
     if (state.arr2D.length > 0) {
       ctxManipulate();
     }
+    window.document.addEventListener("keydown", keyboardDirections);
+    return () =>
+      window.document.removeEventListener("keydown", keyboardDirections);
   }, [state.arr2D]);
 
   useEffect(() => {
@@ -245,7 +304,7 @@ export default function Snakegame() {
       ...st,
       arr2D: genArr2D(snake, food, rows, cols),
     }));
-  }, [state.snake]);
+  }, [state.snake, state.food]);
 
   useEffect(() => {
     if (state.error) {
@@ -255,7 +314,7 @@ export default function Snakegame() {
 
   return (
     <div className="snakeDiv">
-      Snakegame <code>(Still in coding stage)</code>
+      <h5>SNAKE - GAME</h5>
       <SnakeDefaults
         score={state.score}
         play={play}
@@ -265,12 +324,14 @@ export default function Snakegame() {
         cellSize={state.cellSize}
         error={state.error}
         playing={state.playing}
+        speed={state.speed}
       />
       <SnakeCanvas
         canvasRef={canvasRef}
         height={state.size.height}
         width={state.size.width}
         error={state.error}
+        key="canvas"
       />
       <div className="snakeControlsGrid">
         <SnakeControls getControl={getControl} playing={state.playing} />

@@ -7,6 +7,7 @@ export default function SnakeDefaults({
   cellSize,
   error,
   playing,
+  speed,
 }) {
   return (
     <>
@@ -23,7 +24,20 @@ export default function SnakeDefaults({
           <option value={20}>20</option>
           <option value={25}>25</option>
         </select>
-        &nbsp;
+        &nbsp;&nbsp;
+        <span>
+          Speed:{" "}
+          {
+            {
+              500: "Very Slow",
+              400: "Slow",
+              300: "Fast",
+              200: "Very Fast",
+              100: "Super-Fast",
+            }[speed]
+          }
+        </span>
+        &nbsp;&nbsp;
         <span>Score: {score}</span>
       </div>
       <div>
