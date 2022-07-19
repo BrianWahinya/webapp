@@ -24,14 +24,13 @@ export default function Elections() {
     return (
       <>
         {rowdata.map((rd) => (
-          <>
-            <tr key={rd.code}>
-              <td>{rd.code}</td> <td>{rd.county}</td>
-              <td>{rd[2013]}</td>
-              <td>{rd[2017]}</td>
-              <td>{rd[2022]}</td>
-            </tr>
-          </>
+          <tr key={rd.code}>
+            <td>{rd.code}</td>
+            <td>{rd.county}</td>
+            <td>{rd[2013]}</td>
+            <td>{rd[2017]}</td>
+            <td>{rd[2022]}</td>
+          </tr>
         ))}
       </>
     );
@@ -44,8 +43,8 @@ export default function Elections() {
       Kenya Elections: Registered Voters
       {regvoters.length && (
         <table>
-          {tableHeaders(regvoters)}
-          {tableRows(regvoters)}
+          <thead>{tableHeaders(regvoters)}</thead>
+          <tbody>{tableRows(regvoters)}</tbody>
         </table>
       )}
     </>

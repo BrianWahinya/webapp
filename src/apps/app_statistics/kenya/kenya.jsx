@@ -10,7 +10,7 @@ const topics = {
 };
 
 export default function Kenya() {
-  const [topic, setTopic] = useState("population");
+  const [topic, setTopic] = useState("elections");
   const changeTopic = (e) => {
     setTopic(e.target.value);
   };
