@@ -1,7 +1,6 @@
 import "./keyboard.css";
 
 export default function Keyboard({ getKeyPressed, disabled }) {
-  console.log(disabled);
   const getChar = (e) => {
     getKeyPressed(e.target.id);
     // console.log(e.target.id);

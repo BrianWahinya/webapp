@@ -2,6 +2,8 @@ import { useState } from "react";
 import Population from "./population";
 import Elections from "./elections";
 
+import "./kenya.css";
+
 const topics = {
   population: <Population />,
   elections: <Elections />,
