@@ -14,7 +14,7 @@ export default function Elections() {
   };
   const tableHeaders = (data) => {
     // console.log(data);
-    const headers = ["code", "county", 2013, 2017, 2022];
+    const headers = ["code", "county", 2022, 2017, 2013];
     return (
       <tr>
         {headers.map((td) => (
@@ -30,9 +30,9 @@ export default function Elections() {
           <tr key={rd.code}>
             <td>{rd.code}</td>
             <td>{rd.county}</td>
-            <td>{rd[2013]}</td>
-            <td>{rd[2017]}</td>
             <td>{rd[2022]}</td>
+            <td>{rd[2017]}</td>
+            <td>{rd[2013]}</td>
           </tr>
         ))}
       </>
@@ -72,7 +72,7 @@ export default function Elections() {
       {regvoters.length && <Choice op={dataOrient} />}
       {regvoters.length && (
         <details>
-          <summary>Table List</summary>
+          <summary>Data-Table List</summary>
           <table>
             <thead>{tableHeaders(regvoters)}</thead>
             <tbody>{tableRows(regvoters)}</tbody>
