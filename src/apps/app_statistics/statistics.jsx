@@ -8,7 +8,7 @@ const options = {
 };
 
 export default function Statistics() {
-  const [option, setOption] = useState("world");
+  const [option, setOption] = useState("kenya");
   const changeOption = (e) => {
     setOption(e.target.id);
   };

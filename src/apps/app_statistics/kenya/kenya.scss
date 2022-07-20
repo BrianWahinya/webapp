@@ -13,3 +13,10 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.chartDiv{
+  width: 90vw;
+  height: 70vh;
+  min-width: 250px;
+  min-height: 250px;
+}

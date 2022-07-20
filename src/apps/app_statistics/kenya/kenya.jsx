@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Population from "./population";
-import Elections from "./elections";
+import Elections from "./elections/elections";
 
 import "./kenya.css";
 
 const topics = {
-  population: <Population />,
+  // population: <Population />,
   elections: <Elections />,
 };
 
@@ -15,16 +15,18 @@ export default function Kenya() {
     setTopic(e.target.value);
   };
   return (
-    <div>
-      <label htmlFor="topics">Topic: </label>
-      <select name="topics" id="topics" value={topic} onChange={changeTopic}>
-        {Object.keys(topics).map((op) => (
-          <option key={op} value={op}>
-            {op}
-          </option>
-        ))}
-      </select>
-      <div>{topics[topic]}</div>
+    <div className="kenyaDiv">
+      <div className="dataSelectors">
+        <label htmlFor="topics">Topic: </label>
+        <select name="topics" id="topics" value={topic} onChange={changeTopic}>
+          {Object.keys(topics).map((op) => (
+            <option key={op} value={op}>
+              {op}
+            </option>
+          ))}
+        </select>
+      </div>
+      {topics[topic]}
     </div>
   );
 }
