@@ -68,6 +68,7 @@ export default function Bar({ datos, title, main, x }) {
         focus: "series",
       },
       data: serieData,
+      large: true,
     };
     acc.push(serie);
     return acc;
@@ -77,6 +78,7 @@ export default function Bar({ datos, title, main, x }) {
     grid: {
       left: 80,
       right: 0,
+      bottom: xData.length > 8 ? 100 : 70,
     },
     title: {
       show: false,
@@ -92,6 +94,17 @@ export default function Bar({ datos, title, main, x }) {
     legend: {
       data: arrToStr(legendData),
     },
+    dataZoom: xData.length > 8 && [
+      {
+        type: "inside",
+        start: 0,
+        end: xData.length < 15 ? 50 : 30,
+      },
+      {
+        start: 0,
+        end: xData.length < 15 ? 50 : 30,
+      },
+    ],
     toolbox: {
       show: true,
       orient: "vertical",

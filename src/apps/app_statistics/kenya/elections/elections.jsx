@@ -1,46 +1,30 @@
 import { useEffect, useState, Fragment } from "react";
+import SelectMultiple from "../../../../components/selectmultiple/selectmultiple";
 import RegVotersPerCounty from "./regvoterspercounty";
 
 const url = `${window.location.origin}/data/kenya/elections/registered_voters.json`;
-const dataOrients = ["top", "bottom"];
+const dataOrients = ["ascending", "descending"];
 
 export default function Elections() {
   const [regvoters, setRegVoters] = useState([]);
-  const [dataOrient, setDataOrient] = useState("top");
+  const [dataOrient, setDataOrient] = useState("descending");
+  const [counties, setCounties] = useState([]);
+  const [selectCounties, setSelectCounties] = useState([]);
+
   const fetchData = async () => {
     const data = await fetch(url);
     const jsonData = await data.json();
+    const jsonCounties = [...new Set(jsonData.data.map((jd) => jd.county))];
+    setCounties(jsonCounties);
     setRegVoters(jsonData.data);
   };
-  const tableHeaders = (data) => {
-    // console.log(data);
-    const headers = ["code", "county", 2022, 2017, 2013];
-    return (
-      <tr>
-        {headers.map((td) => (
-          <th key={td}>{td}</th>
-        ))}
-      </tr>
-    );
-  };
-  const tableRows = (rowdata) => {
-    return (
-      <>
-        {rowdata.map((rd) => (
-          <tr key={rd.code}>
-            <td>{rd.code}</td>
-            <td>{rd.county}</td>
-            <td>{rd[2022]}</td>
-            <td>{rd[2017]}</td>
-            <td>{rd[2013]}</td>
-          </tr>
-        ))}
-      </>
-    );
+
+  const selectCallback = (selected) => {
+    setSelectCounties((sc) => [...selected]);
   };
 
-  const Choice = ({ op }) => {
-    return <RegVotersPerCounty data={regvoters} option={op} />;
+  const Choice = ({ rg, op, sc }) => {
+    return <RegVotersPerCounty data={rg} option={op} selected={sc} />;
   };
 
   const changeOrient = (e) => {
@@ -68,16 +52,10 @@ export default function Elections() {
             &nbsp;
           </Fragment>
         ))}
+        <SelectMultiple selectData={counties} callback={selectCallback} />
       </div>
-      {regvoters.length && <Choice op={dataOrient} />}
       {regvoters.length && (
-        <details>
-          <summary>Data-Table List</summary>
-          <table>
-            <thead>{tableHeaders(regvoters)}</thead>
-            <tbody>{tableRows(regvoters)}</tbody>
-          </table>
-        </details>
+        <Choice rg={regvoters} op={dataOrient} sc={selectCounties} />
       )}
     </>
   );

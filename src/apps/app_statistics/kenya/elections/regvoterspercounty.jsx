@@ -1,13 +1,16 @@
 import Bar from "../../charts/bar";
+import Table from "../../charts/table";
 
-export default function RegVotersPerCounty({ data, option }) {
+export default function RegVotersPerCounty({ data, option, selected }) {
+  const filteredData =
+    selected.length < 1
+      ? data
+      : data.filter((dt) => selected.includes(dt.county));
   const yearSort = 2022;
-  const numShow = 10;
-  const sortedData = (
-    option === "top"
-      ? data.sort((a, b) => b[yearSort] - a[yearSort])
-      : data.sort((a, b) => a[yearSort] - b[yearSort])
-  ).slice(0, numShow);
+  const sortedData =
+    option === "descending"
+      ? filteredData.sort((a, b) => b[yearSort] - a[yearSort])
+      : filteredData.sort((a, b) => a[yearSort] - b[yearSort]);
 
   const years = [2013, 2017, 2022];
   const reformattedData = [
@@ -22,5 +25,10 @@ export default function RegVotersPerCounty({ data, option }) {
     return acc;
   }, []);
 
-  return <Bar datos={reformattedData} main="year" x="name" />;
+  return (
+    <>
+      <Bar datos={reformattedData} main="year" x="name" />
+      <Table data={sortedData} cols={["code", "county", 2022, 2017, 2013]} />
+    </>
+  );
 }
