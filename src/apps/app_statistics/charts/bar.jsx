@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
 import {
   ToolboxComponent,
@@ -9,7 +9,6 @@ import {
 import { BarChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 
-import { useEffect } from "react";
 import { renderChart, getTitle, arrToStr } from "./chartUtils";
 
 /** Datos example

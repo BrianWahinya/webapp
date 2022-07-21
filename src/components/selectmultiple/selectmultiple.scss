@@ -1,5 +1,8 @@
+$width: 200px;
+
 .multiselect {
-  width: 200px;
+  width: $width;
+  font-size: 12px;
 }
 
 .selectBox {
@@ -24,7 +27,8 @@
   position: absolute;
   z-index: 1000;
   max-height: 300px;
-  overflow: auto;
+  width: $width;
+  overflow-y: auto;
 }
 
 #checkboxes label {
@@ -37,7 +41,7 @@
 
 .showCheckboxes{
   display: block;
-  background-color: #ffffff
+  background-color: #ffffff;
 }
 .hideCheckboxes{
   display: none;

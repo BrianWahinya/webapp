@@ -1,5 +1,6 @@
 .multiselect {
   width: 200px;
+  font-size: 12px;
 }
 
 .selectBox {
@@ -24,7 +25,8 @@
   position: absolute;
   z-index: 1000;
   max-height: 300px;
-  overflow: auto;
+  width: 200px;
+  overflow-y: auto;
 }
 
 #checkboxes label {

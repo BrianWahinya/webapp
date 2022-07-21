@@ -34,6 +34,7 @@ export default function Elections() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <>
       Kenya Elections: Registered Voters

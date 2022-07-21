@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import "./selectmultiple.css";
 
@@ -28,6 +29,7 @@ export default function SelectMultiple({ selectData, callback }) {
       </>
     );
   };
+
   useEffect(() => {
     callback(checked);
   }, [checked]);
