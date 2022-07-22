@@ -31,18 +31,18 @@ export default function RegVotersPerCounty({ data, option, selected }) {
   );
 
   const mapData = reformattedData.filter((rd) => rd.year === years[0]);
-  console.log("map", mapData);
+
   return (
     <>
       To view more visualizations select at least two counties.
       <Table data={sortedData} cols={["code", "county", 2022, 2017, 2013]} />
-      <details>
-        <summary>Map Chart</summary>
-        <Map datos={mapData} />
-      </details>
-      <details open={counties.length > 8 || counties.length < 2}>
+      <details open={counties.length === 1}>
         <summary>Bar Chart</summary>
         <Bar datos={reformattedData} main="year" x="name" />
+      </details>
+      <details open={counties.length > 8 || counties.length < 1}>
+        <summary>Map Chart</summary>
+        <Map datos={mapData} />
       </details>
       {counties.length < 14 && counties.length > 1 && (
         <details open>

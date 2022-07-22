@@ -2,27 +2,36 @@ import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import * as kenya from "../charts/json_maps/kenya-counties.geo.json";
 
-import { firstLetterUpper, renderChart } from "./chartUtils";
+import { firstLetterUpper, renderChart, valReplaceComma } from "./chartUtils";
 
 export default function Map({ datos }) {
   const mapRef = useRef();
+  const values = [];
+  const convertedData = datos.map((dt) => {
+    const val = dt.value;
+    values.push(val);
+    return { name: firstLetterUpper(dt.name), value: val };
+  });
+  const max = Math.max(...values);
+  const min = Math.min(...values);
 
   echarts.registerMap("kenya", kenya);
   const option = {
     title: {
       text: "Kenya Registered Voters (2022)",
-      subtext: "<<<<-- Still being coded -->>>>",
+      left: "center",
     },
     tooltip: {
       trigger: "item",
       showDelay: 0,
       transitionDuration: 0.2,
+      confine: true,
     },
     toolbox: {
       show: true,
-      //orient: 'vertical',
+      orient: "vertical",
       left: "right",
-      top: "top",
+      top: 20,
       feature: {
         restore: {},
         saveAsImage: {
@@ -32,25 +41,18 @@ export default function Map({ datos }) {
     },
     visualMap: {
       left: "right",
-      min: 70000,
-      max: 3000000,
+      min: min,
+      max: max,
       formatter: function (value) {
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return valReplaceComma(value);
       },
       inRange: {
-        color: [
-          "#f0efeb",
-          "#d6e3e9",
-          "#92adb9",
-          "#6090bd",
-          "#46487d",
-          "#27286e",
-          "#2f2e4e",
-          "#0d0636",
-        ],
+        symbolSize: [10, 40],
+        color: ["lightskyblue", "yellow", "orange", "red"],
       },
       text: ["High", "Low"],
       calculable: true,
+      realtime: true,
     },
     series: [
       {
@@ -60,7 +62,6 @@ export default function Map({ datos }) {
         map: "kenya",
         zoom: 1,
         colorBy: "data",
-        left: "5%",
         scaleLimit: {
           min: 0.7,
           max: 4,
@@ -77,10 +78,7 @@ export default function Map({ datos }) {
             borderWidth: 1.2,
           },
         },
-        data: datos.map((dt) => {
-          console.log(dt);
-          return { name: firstLetterUpper(dt.name), value: dt.value };
-        }),
+        data: convertedData,
       },
     ],
   };
