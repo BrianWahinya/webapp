@@ -1,4 +1,5 @@
 import Bar from "../../charts/bar";
+import Map from "../../charts/map";
 import Nightingale from "../../charts/nightingale";
 import Table from "../../charts/table";
 
@@ -29,10 +30,16 @@ export default function RegVotersPerCounty({ data, option, selected }) {
     (rd) => rd.year === years[0] || rd.year === years[1],
   );
 
+  const mapData = reformattedData.filter((rd) => rd.year === years[0]);
+  console.log("map", mapData);
   return (
     <>
       To view more visualizations select at least two counties.
       <Table data={sortedData} cols={["code", "county", 2022, 2017, 2013]} />
+      <details>
+        <summary>Map Chart</summary>
+        <Map datos={mapData} />
+      </details>
       <details open={counties.length > 8 || counties.length < 2}>
         <summary>Bar Chart</summary>
         <Bar datos={reformattedData} main="year" x="name" />

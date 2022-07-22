@@ -13,3 +13,7 @@ export const getTitle = (title) => {
 export const arrToStr = (arr) => {
   return arr.map((elem) => elem.toString());
 };
+
+export const firstLetterUpper = (name) => {
+  return `${name[0].toUpperCase()}${name.substr(1)}`;
+};
