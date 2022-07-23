@@ -20,7 +20,7 @@
   background-color: #dddddd;
 }
 
-.kenyaDiv .tableDiv table thead {
+.kenyaDiv .tableDiv table thead tr {
   position: -webkit-sticky;
   position: sticky;
   top: 0;

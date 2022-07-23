@@ -55,7 +55,7 @@ export default function Map({ datos }) {
         symbolSize: [10, 40],
         color: ["lightskyblue", "yellow", "orange", "red"],
       },
-      text: [max, min],
+      text: [valReplaceComma(max), valReplaceComma(min)],
       calculable: true,
       realtime: true,
     },

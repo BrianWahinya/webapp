@@ -1,4 +1,5 @@
 import { useEffect, useState, Fragment } from "react";
+import { Loader } from "../../../../components";
 import SelectMultiple from "../../../../components/selectmultiple/selectmultiple";
 import RegVotersPerCounty from "./regvoterspercounty";
 
@@ -10,13 +11,16 @@ export default function Elections() {
   const [dataOrient, setDataOrient] = useState("descending");
   const [counties, setCounties] = useState([]);
   const [selectCounties, setSelectCounties] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
+    setLoading(true);
     const data = await fetch(url);
     const jsonData = await data.json();
     const jsonCounties = [...new Set(jsonData.data.map((jd) => jd.county))];
     setCounties(jsonCounties);
     setRegVoters(jsonData.data);
+    setLoading(false);
   };
 
   const selectCallback = (selected) => {
@@ -55,7 +59,9 @@ export default function Elections() {
         ))}
         <SelectMultiple selectData={counties} callback={selectCallback} />
       </div>
-      {regvoters.length && (
+      {loading ? (
+        <Loader />
+      ) : (
         <Choice rg={regvoters} op={dataOrient} sc={selectCounties} />
       )}
     </>
