@@ -44,13 +44,18 @@ export default function Map({ datos }) {
       min: min,
       max: max,
       formatter: function (value) {
-        return valReplaceComma(value);
+        return value === max || value === min
+          ? ""
+          : valReplaceComma(value.toFixed(0));
+      },
+      textStyle: {
+        fontSize: 11,
       },
       inRange: {
         symbolSize: [10, 40],
         color: ["lightskyblue", "yellow", "orange", "red"],
       },
-      text: ["High", "Low"],
+      text: [max, min],
       calculable: true,
       realtime: true,
     },

@@ -26,10 +26,12 @@ export default function Table({ data, cols }) {
   return (
     <details>
       <summary>Data-Table List</summary>
-      <table>
-        <thead>{tableHeaders(cols)}</thead>
-        <tbody>{tableRows(cols, data)}</tbody>
-      </table>
+      <div className="tableDiv">
+        <table>
+          <thead>{tableHeaders(cols)}</thead>
+          <tbody>{tableRows(cols, data)}</tbody>
+        </table>
+      </div>
     </details>
   );
 }

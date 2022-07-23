@@ -1,17 +1,32 @@
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+.kenyaDiv {
+  .tableDiv {
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 5px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      thead {
+        position: sticky;
+        top: 0;
+        background-color: #eeeeee;
+      }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 5px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+      tbody tr:hover{
+        background-color: #d3e1ff;
+      }
+    }
+  }
 }
 
 .chartDiv{
