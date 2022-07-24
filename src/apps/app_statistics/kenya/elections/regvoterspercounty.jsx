@@ -29,27 +29,28 @@ export default function RegVotersPerCounty({ data, option, selected }) {
   const nightingaleData = reformattedData.filter(
     (rd) => rd.year === years[0] || rd.year === years[1],
   );
-
+  const nightCounties = counties.slice(0, 13);
+  const nightingaleDatos =
+    selected.length > 0
+      ? nightingaleData
+      : nightingaleData.filter((nd) => nightCounties.includes(nd.name));
   const mapData = reformattedData.filter((rd) => rd.year === years[0]);
 
   return (
     <>
-      To view more visualizations select at least two counties.
       <Table data={sortedData} cols={["code", "county", 2022, 2017, 2013]} />
       <details open={counties.length === 1}>
         <summary>Bar Chart</summary>
         <Bar datos={reformattedData} main="year" x="name" />
       </details>
+      <details open={counties.length < 13 || counties.length > 1}>
+        <summary>Nightingale Chart</summary>
+        <Nightingale datos={nightingaleDatos} main="year" x="name" />
+      </details>
       <details open={counties.length > 8 || counties.length < 1}>
         <summary>Map Chart</summary>
         <Map datos={mapData} />
       </details>
-      {counties.length < 14 && counties.length > 1 && (
-        <details open>
-          <summary>Nightingale Chart</summary>
-          <Nightingale datos={nightingaleData} main="year" x="name" />
-        </details>
-      )}
     </>
   );
 }
