@@ -43,7 +43,7 @@ export default function RegVotersPerCounty({ data, option, selected }) {
         <summary>Bar Chart</summary>
         <Bar datos={reformattedData} main="year" x="name" />
       </details>
-      <details open={counties.length < 13 || counties.length > 1}>
+      <details open={counties.length < 13 && counties.length > 1}>
         <summary>Nightingale Chart</summary>
         <Nightingale datos={nightingaleDatos} main="year" x="name" />
       </details>
