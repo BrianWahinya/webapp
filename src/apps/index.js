@@ -13,3 +13,4 @@ export { default as Statistics } from "./app_statistics/statistics";
 export { default as Calculator } from "./app_calculator/calculator";
 export { default as Wordle } from "./app_wordle/wordle";
 export { default as Snakegame } from "./app_snakegame/snakegame";
+export { default as Concepts } from "./app_concepts/concepts";

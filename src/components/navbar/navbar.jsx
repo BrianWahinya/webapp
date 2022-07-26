@@ -60,7 +60,7 @@ export default function Navbar({ appsRoutes }) {
                 role="button"
                 data-bs-toggle="dropdown"
               >
-                Apps
+                Mini-Apps
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
                 {appsRoutes.map((appRoute) => {

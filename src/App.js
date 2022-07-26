@@ -22,6 +22,7 @@ import {
   Calculator,
   Wordle,
   Snakegame,
+  Concepts,
 } from "./apps";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
     },
     { id: "wordle-game", comp: <Wordle />, path: "/app/wordle" },
     { id: "snake-game", comp: <Snakegame />, path: "/app/snakegame" },
+    { id: "coding-concepts", comp: <Concepts />, path: "/app/concepts" },
     { id: "calculator", comp: <Calculator />, path: "/app/calculator" },
     { id: "clock", comp: <Clock />, path: "/app/clock" },
     { id: "weather", comp: <Weather />, path: "/app/weather" },
