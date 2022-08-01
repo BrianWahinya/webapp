@@ -24,6 +24,7 @@ function debounce(fn, ms) {
 }
 
 const arrBarWidth = [
+  { id: 3, name: "3px" },
   { id: 5, name: "5px" },
   { id: 7, name: "7px" },
   { id: 10, name: "10px" },
@@ -33,6 +34,8 @@ const arrBarWidth = [
 ];
 
 const sortSpeed = [
+  { id: 0, name: "0ms" },
+  { id: 50, name: "50ms" },
   { id: 100, name: "100ms" },
   { id: 250, name: "250ms" },
   { id: 350, name: "350ms" },
