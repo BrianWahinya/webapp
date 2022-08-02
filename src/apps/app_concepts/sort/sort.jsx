@@ -137,6 +137,90 @@ export default function SortAlgo() {
     return await val;
   };
 
+  const mergeSort = async (arr) => {
+    const arrLen = arr.length;
+    if (arrLen <= 1) return arr;
+    const left = arr.slice(0, Math.floor(arrLen / 2));
+    const right = arr.slice(Math.floor(arrLen / 2));
+    // mergeSort(left);
+    // mergeSort(right);
+    // console.log("left", left);
+    // console.log("right", right);
+
+    const x = [...(await merge(await mergeSort(left), await mergeSort(right)))];
+
+    // console.log("x", await x);
+    return await x;
+  };
+
+  const merge = async (left, right) => {
+    setComparing([]);
+    const leftLn = left.length;
+    const rightLn = right.length;
+    let i = 0;
+    let j = 0;
+    let k = 0;
+    const subarr = [];
+    while (i < leftLn && j < rightLn) {
+      const leftElem = left[i];
+      const rightElem = right[j];
+      setComparing([leftElem.id, rightElem.id]);
+      let sub;
+      let inc;
+      if (leftElem.value > rightElem.value) {
+        subarr.push(rightElem);
+        sub = rightElem;
+        inc = "right";
+      } else {
+        subarr.push(leftElem);
+        sub = leftElem;
+        inc = "left";
+      }
+      setInputs((main) => {
+        const idx1 =
+          main.findIndex((mn) => mn.id === left[0].id) + subarr.length;
+        const filtered = main.filter((mn) => mn.id !== sub.id);
+        filtered.splice(idx1, 0, sub);
+        return filtered;
+      });
+      await sleep(speed);
+      if (inc === "right") {
+        j++;
+      } else {
+        i++;
+      }
+    }
+    while (i < leftLn && j >= rightLn) {
+      setComparing([left[i].id]);
+      setInputs((main) => {
+        // console.log(main, left[i]);
+        const idx1 =
+          main.findIndex((mn) => mn.id === left[0].id) + subarr.length;
+        const filtered = main.filter((mn) => mn.id !== left[i].id);
+        filtered.splice(idx1, 0, left[i]);
+        return filtered;
+      });
+      subarr.push(left[i]);
+      await sleep(speed);
+      i++;
+    }
+    while (j < rightLn && i >= leftLn) {
+      setComparing([right[j].id]);
+      setInputs((main) => {
+        const idx1 =
+          main.findIndex((mn) => mn.id === left[0].id) + subarr.length;
+        const filtered = main.filter((mn) => mn.id !== right[j].id);
+        filtered.splice(idx1, 0, right[j]);
+        return filtered;
+      });
+      subarr.push(right[j]);
+      await sleep(speed);
+      j++;
+    }
+    setComparing([]);
+    return subarr;
+  };
+
   const sleep = async (ms) => {
     return new Promise((resolve) => {
       const tm = setTimeout(resolve, ms);
@@ -144,9 +228,24 @@ export default function SortAlgo() {
     });
   };
 
-  const beginSort = () => {
+  const beginQuickSort = () => {
     const arr = [...inputs];
+    clearTimeout(tmout);
+    setTmout("");
+    setPivots([]);
+    setActivePivot("");
+    setComparing([]);
     quickSort(arr);
+  };
+
+  const beginMergeSort = () => {
+    const arr = [...inputs];
+    clearTimeout(tmout);
+    setTmout("");
+    setPivots([]);
+    setActivePivot("");
+    setComparing([]);
+    mergeSort(arr);
   };
 
   const genNewArr = (bw) => {
@@ -216,8 +315,18 @@ export default function SortAlgo() {
         Generate Array
       </button>
       &nbsp;
-      <button className="btn btn-sm btn-outline-secondary" onClick={beginSort}>
+      <button
+        className="btn btn-sm btn-outline-secondary"
+        onClick={beginQuickSort}
+      >
         Quick Sort
+      </button>
+      &nbsp;
+      <button
+        className="btn btn-sm btn-outline-secondary"
+        onClick={beginMergeSort}
+      >
+        Merge Sort
       </button>
       <div className="showDiv">
         {inputs.map((inp, idx) => (
