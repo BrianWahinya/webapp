@@ -260,6 +260,38 @@ export default function SortAlgo() {
     }
   };
 
+  const selectionSort = async (selectionArr) => {
+    const arr = [...selectionArr];
+    const arrLen = arr.length;
+
+    const foo = [];
+    let newArr;
+    for (let i = 0; i < arrLen; i++) {
+      arr.slice(i);
+      let smallestNum;
+      for (let j = 0; j < arr.length; j++) {
+        setComparing([arr[j].id]);
+        await sleep(speed);
+        const jVal = arr[j].value;
+        if (j === 0) {
+          smallestNum = await jVal;
+        }
+        if (jVal < smallestNum) {
+          smallestNum = await jVal;
+        }
+      }
+
+      const itemIdx = arr.findIndex((foo) => foo.value === smallestNum);
+      const item = arr[itemIdx];
+
+      arr.splice(itemIdx, 1);
+      foo.push(item);
+      newArr = [...foo, ...arr];
+      setInputs((inp) => newArr);
+      setPivots((piv) => [...piv, item.id]);
+    }
+  };
+
   const sleep = async (ms) => {
     return new Promise((resolve) => {
       const tm = setTimeout(resolve, ms);
@@ -295,6 +327,16 @@ export default function SortAlgo() {
     setActivePivot("");
     setComparing([]);
     bubbleSort(arr);
+  };
+
+  const beginSelectionSort = () => {
+    const arr = [...inputs];
+    clearTimeout(tmout);
+    setTmout("");
+    setPivots([]);
+    setActivePivot("");
+    setComparing([]);
+    selectionSort(arr);
   };
 
   const genNewArr = (bw) => {
@@ -386,6 +428,13 @@ export default function SortAlgo() {
         onClick={beginBubbleSort}
       >
         Bubble Sort
+      </button>
+      &nbsp;
+      <button
+        className="btn btn-sm btn-outline-secondary"
+        onClick={beginSelectionSort}
+      >
+        Selection Sort
       </button>
       <div className="showDiv">
         {inputs.map((inp, idx) => (
