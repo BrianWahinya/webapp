@@ -292,6 +292,50 @@ export default function SortAlgo() {
     }
   };
 
+  const insertionSort = async (insertionArr) => {
+    const arr = [...insertionArr];
+    const arrLen = arr.length;
+    const foo = [];
+    for (let i = 0; i < arrLen; i++) {
+      const curr = arr[i];
+      if (i === 0) {
+        foo.push(curr);
+        continue;
+      }
+      for (let j = 0; j < foo.length; j++) {
+        const before = foo[j];
+        const after = foo[j + 1];
+        setComparing([curr.id, before.id]);
+        await sleep(speed);
+        if (curr.value === before.value) {
+          foo.splice(j, 0, curr);
+          setComparing([]);
+          break;
+        }
+        if (curr.value < before.value) {
+          foo.splice(j, 0, curr);
+          setComparing([]);
+          break;
+        }
+        if (j === foo.length - 1) {
+          if (before.value < curr.value) {
+            foo[j + 1] = curr;
+          } else {
+            foo.splice(j, 0, curr);
+          }
+          setComparing([]);
+          break;
+        }
+        if (curr.value >= before.value && curr.value < after.value) {
+          foo.splice(j + 1, 0, curr);
+          setComparing([]);
+          break;
+        }
+      }
+      setInputs((inp) => [...foo, ...arr.slice(i + 1)]);
+    }
+  };
+
   const sleep = async (ms) => {
     return new Promise((resolve) => {
       const tm = setTimeout(resolve, ms);
@@ -337,6 +381,16 @@ export default function SortAlgo() {
     setActivePivot("");
     setComparing([]);
     selectionSort(arr);
+  };
+
+  const beginInsertionSort = () => {
+    const arr = [...inputs];
+    clearTimeout(tmout);
+    setTmout("");
+    setPivots([]);
+    setActivePivot("");
+    setComparing([]);
+    insertionSort(arr);
   };
 
   const genNewArr = (bw) => {
@@ -435,6 +489,13 @@ export default function SortAlgo() {
         onClick={beginSelectionSort}
       >
         Selection Sort
+      </button>
+      &nbsp;
+      <button
+        className="btn btn-sm btn-outline-secondary"
+        onClick={beginInsertionSort}
+      >
+        Insertion Sort
       </button>
       <div className="showDiv">
         {inputs.map((inp, idx) => (
