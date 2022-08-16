@@ -15,7 +15,6 @@ export default function Statistics() {
   return (
     <div className="statistics">
       <h5>Statistics</h5>
-      <code>Men at work!! &#128187;Coding in progress</code>
       <div>
         {Object.keys(options).map((op) => (
           <React.Fragment key={op}>

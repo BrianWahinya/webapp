@@ -149,6 +149,7 @@ export default function SortAlgo() {
 
     const x = [...(await merge(await mergeSort(left), await mergeSort(right)))];
 
+    setPivots((piv) => x.map((itm) => itm.id));
     // console.log("x", await x);
     return await x;
   };
@@ -230,6 +231,7 @@ export default function SortAlgo() {
     return subarr;
   };
 
+  // Bubble Sort
   const bubbleSort = async (bubbleArr) => {
     const arr = [...bubbleArr];
     const arrLen = arr.length;
@@ -237,7 +239,8 @@ export default function SortAlgo() {
     let isSorted = true;
     for (let i = 0; i < arrLen; i++) {
       await sleep(speed);
-      for (let j = 0; j < arrLen - (1 + i); j++) {
+      const idx = arrLen - (1 + i);
+      for (let j = 0; j < idx; j++) {
         setComparing([arr[j].id, arr[j + 1].id]);
         await sleep(speed);
         if (arr[j].value > arr[j + 1].value) {
@@ -256,10 +259,16 @@ export default function SortAlgo() {
         }
         setComparing([]);
       }
-      if (isSorted) return;
+
+      if (isSorted) {
+        setPivots((piv) => arr.map((itm) => itm.id));
+        return;
+      }
+      setPivots((piv) => arr.slice(idx).map((itm) => itm.id));
     }
   };
 
+  // Selection Sort
   const selectionSort = async (selectionArr) => {
     const arr = [...selectionArr];
     const arrLen = arr.length;
@@ -292,6 +301,7 @@ export default function SortAlgo() {
     }
   };
 
+  // Insertion Sort
   const insertionSort = async (insertionArr) => {
     const arr = [...insertionArr];
     const arrLen = arr.length;
@@ -334,6 +344,7 @@ export default function SortAlgo() {
       }
       setInputs((inp) => [...foo, ...arr.slice(i + 1)]);
     }
+    setPivots((piv) => arr.map((itm) => itm.id));
   };
 
   const sleep = async (ms) => {
