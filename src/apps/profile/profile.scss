@@ -15,23 +15,22 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.bgimg p {
+.bgimg p{
   font-size: 25px;
   color: white;
   font-family: "Courier New", Courier, monospace;
 }
 
-.bgimg a {
+.bgimg a{
   color: white;
   font-family: cursive;
   font-size: 15px;
   font-style: italic;
 }
 
-.bgimg a:hover {
+.bgimg a:hover{
   color: #ffc400;
   font-size: 14px;
-  -webkit-transition: 250ms;
   transition: 250ms;
 }
 
@@ -57,35 +56,28 @@
   top: 40%;
   left: 50%;
   width: 120px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: left;
+  // border: 2px solid red;
+  .profile-icons{
+    margin: 2.5px;
+    font-size: 40px;
+    .txt{
+      display: none;
+      font-size: 12px;
+    }
+    &:hover{
+      color: #ffc400;
+      cursor: pointer;
+      .txt{
+        display: block;
+      }
+    }
+    &.position1, &.position5{
+      text-align: right;
+    }
+    &.position2, &.position4{
+      text-align: center;
+    }
+  }
 }
-
-.middle .profile-icons {
-  margin: 2.5px;
-  font-size: 40px;
-}
-
-.middle .profile-icons .txt {
-  display: none;
-  font-size: 12px;
-}
-
-.middle .profile-icons:hover {
-  color: #ffc400;
-  cursor: pointer;
-}
-
-.middle .profile-icons:hover .txt {
-  display: block;
-}
-
-.middle .profile-icons.position1, .middle .profile-icons.position5 {
-  text-align: right;
-}
-
-.middle .profile-icons.position2, .middle .profile-icons.position4 {
-  text-align: center;
-}
-/*# sourceMappingURL=profile.css.map */

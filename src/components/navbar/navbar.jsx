@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouseChimneyUser } from "@fortawesome/free-solid-svg-icons";
+import FaIcon from "../icons/icons";
 import "./navbar.css";
 
 export default function Navbar({ appsRoutes }) {
@@ -9,7 +8,7 @@ export default function Navbar({ appsRoutes }) {
       <div className="container-fluid">
         <div className="mainContent">
           <a className="navbar-brand" href="/">
-            <FontAwesomeIcon icon={faHouseChimneyUser} />
+            <FaIcon name="home" />
           </a>
           <p className="comingSoon">Coming Soon &#128521;</p>
           <button
