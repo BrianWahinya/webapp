@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  min-width: 250px;
 }
 
 code {
@@ -17,9 +18,5 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.content{
-  flex: 1 0 auto;
-  min-width: 100%;
+  min-width: 250px;
 }

@@ -10,19 +10,6 @@
   width: 100%;
 }
 
-.comingSoon {
-  color: aliceblue;
-  min-width: 200px;
-  width: 100%;
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center !important;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 @media (min-width: 576px) {
   .navbar-expand-sm {
     -ms-flex-wrap: nowrap;
@@ -54,5 +41,12 @@
     -ms-flex-wrap: wrap !important;
         flex-wrap: wrap !important;
   }
+}
+
+code {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=navbar.css.map */

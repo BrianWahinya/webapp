@@ -2,6 +2,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import comingSoonPic from "./assets/images/comingsoon.jpg";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar, Footer, ErrorPage, WebArchiveIframe } from "./components";
@@ -24,6 +25,7 @@ import {
   Snakegame,
   Concepts,
 } from "./apps";
+import FloatBar from "./components/floatbar/floatbar";
 
 function App() {
   // Various route objects with their configs
@@ -71,27 +73,33 @@ function App() {
   return (
     <Router>
       <Navbar appsRoutes={appsRoutes} />
-      <div className="content">
-        <Routes>
-          <Route key="profile" path="/" element={<Profile />} />
-          <Route key="app" path="app" element={<AppMain />} />
-          <Route key="register" path="register" element={<Register />} />
-          <Route
-            key="current"
-            path="current"
-            element={<WebArchiveIframe archive="current" scroll="no" />}
-          />
-          <Route
-            key="maiden"
-            path="maiden"
-            element={<WebArchiveIframe archive="oldversion" scroll={true} />}
-          />
-          {appsRoutes.map((robj) => {
-            const { id, path, comp } = robj;
-            return <Route key={id} path={path} element={comp} />;
-          })}
-          <Route key="error" path="*" element={<ErrorPage />} />
-        </Routes>
+      <div
+        className="content"
+        style={{ backgroundImage: `url("${comingSoonPic}")` }}
+      >
+        <div className="subcontent">
+          <FloatBar />
+          <Routes>
+            <Route key="profile" path="/" element={<Profile />} />
+            <Route key="app" path="app" element={<AppMain />} />
+            <Route key="register" path="register" element={<Register />} />
+            <Route
+              key="current"
+              path="current"
+              element={<WebArchiveIframe archive="current" scroll="no" />}
+            />
+            <Route
+              key="maiden"
+              path="maiden"
+              element={<WebArchiveIframe archive="oldversion" scroll={true} />}
+            />
+            {appsRoutes.map((robj) => {
+              const { id, path, comp } = robj;
+              return <Route key={id} path={path} element={comp} />;
+            })}
+            <Route key="error" path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
       </div>
       <Footer />
     </Router>
