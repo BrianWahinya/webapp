@@ -1,9 +1,15 @@
 .floatbar{
-  z-index: 3;
+  z-index: 5;
   display: flex;
-  float: right;
   color:#cce0f1;
   text-align: center;
+  position: fixed;
+  top: 55px;
+  justify-content: center;
+  // border: 1px green solid;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  min-width: 100vw;
   .openItems{
     visibility: visible;
     opacity: 1;
@@ -13,6 +19,9 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.9s ease;
+  }
+  .semibar{
+    width: fit-content;
   }
   .floatIconsDiv{
     display: flex;
@@ -81,12 +90,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
+    width: fit-content;
   }
   .floatIconsDiv{
     margin: 5px 2px;
     font-size: 20px;
   }
 }
+// @media (max-width:300px){
+//   .floatbar{
+//     min-width: 100vw;
+//   }
+// }
 // @mixin transition($duration) {
 //   -webkit-transition: $duration;
 //   -moz-transition: $duration;

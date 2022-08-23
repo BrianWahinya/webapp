@@ -3,7 +3,7 @@ import { FaIcon } from "..";
 import "./floatbar.css";
 
 export default function FloatBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const openBar = () => {
     setIsOpen(!isOpen);
   };

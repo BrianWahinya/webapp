@@ -1,11 +1,19 @@
 .floatbar {
-  z-index: 3;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  float: right;
   color: #cce0f1;
   text-align: center;
+  position: fixed;
+  top: 55px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  min-width: 100vw;
 }
 
 .floatbar .openItems {
@@ -20,6 +28,12 @@
   opacity: 0;
   -webkit-transition: all 0.9s ease;
   transition: all 0.9s ease;
+}
+
+.floatbar .semibar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .floatbar .floatIconsDiv {
@@ -127,6 +141,9 @@
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .floatIconsDiv {
     margin: 5px 2px;

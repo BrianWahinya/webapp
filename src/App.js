@@ -79,26 +79,30 @@ function App() {
       >
         <div className="subcontent">
           <FloatBar />
-          <Routes>
-            <Route key="profile" path="/" element={<Profile />} />
-            <Route key="app" path="app" element={<AppMain />} />
-            <Route key="register" path="register" element={<Register />} />
-            <Route
-              key="current"
-              path="current"
-              element={<WebArchiveIframe archive="current" scroll="no" />}
-            />
-            <Route
-              key="maiden"
-              path="maiden"
-              element={<WebArchiveIframe archive="oldversion" scroll={true} />}
-            />
-            {appsRoutes.map((robj) => {
-              const { id, path, comp } = robj;
-              return <Route key={id} path={path} element={comp} />;
-            })}
-            <Route key="error" path="*" element={<ErrorPage />} />
-          </Routes>
+          <div className="subdiv">
+            <Routes>
+              <Route key="profile" path="/" element={<Profile />} />
+              <Route key="app" path="app" element={<AppMain />} />
+              <Route key="register" path="register" element={<Register />} />
+              <Route
+                key="current"
+                path="current"
+                element={<WebArchiveIframe archive="current" scroll="no" />}
+              />
+              <Route
+                key="maiden"
+                path="maiden"
+                element={
+                  <WebArchiveIframe archive="oldversion" scroll={true} />
+                }
+              />
+              {appsRoutes.map((robj) => {
+                const { id, path, comp } = robj;
+                return <Route key={id} path={path} element={comp} />;
+              })}
+              <Route key="error" path="*" element={<ErrorPage />} />
+            </Routes>
+          </div>
         </div>
       </div>
       <Footer />
