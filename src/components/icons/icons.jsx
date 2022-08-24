@@ -8,7 +8,21 @@ import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import { faOpencart } from "@fortawesome/free-brands-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faGears } from "@fortawesome/free-solid-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faRodSnake } from "@fortawesome/free-solid-svg-icons";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons";
+import { faCloudSunRain } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faCalculator } from "@fortawesome/free-solid-svg-icons";
+import { faImages } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faChessBoard } from "@fortawesome/free-solid-svg-icons";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons";
+import { faScissors } from "@fortawesome/free-solid-svg-icons";
 const icons = {
   home: faHouseChimneyUser,
   apps: faCubesStacked,
@@ -17,7 +31,22 @@ const icons = {
   projects: faDiagramProject,
   contact: faAddressCard,
   gears: faGears,
-  code: faLaptopCode,
+  code: faCode,
+
+  weather: faCloudSunRain,
+  wordle: faBuilding,
+  snake: faRodSnake,
+  clock: faClock,
+  stopwatch: faStopwatch,
+  quotes: faCommentDots,
+  movies: faVideo,
+  calculator: faCalculator,
+  gallery: faImages,
+  statistics: faChartLine,
+  conway: faChessBoard,
+  taskmanager: faListCheck,
+  rockpaperscissors: faScissors,
+  coding: faLaptopCode,
 };
 
 const spinning = ["gears"];

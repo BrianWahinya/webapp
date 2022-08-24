@@ -18,16 +18,19 @@ export default function FloatBar() {
   return (
     <div className="floatbar">
       <div className="semibar">
-        {semibars.map((sm) => (
-          <Link key={sm.name} to={sm.link}>
-            <div
-              className={`floatIconsDiv ${isOpen ? "openItems" : "closeItems"}`}
-            >
-              <FaIcon name={sm.name} />
-              <p className="txt">{sm.txt}</p>
-            </div>
-          </Link>
-        ))}
+        {isOpen &&
+          semibars.map((sm) => (
+            <Link key={sm.name} to={sm.link}>
+              <div
+                className={`floatIconsDiv ${
+                  isOpen ? "openItems" : "closeItems"
+                }`}
+              >
+                <FaIcon name={sm.name} />
+                <p className="txt">{sm.txt}</p>
+              </div>
+            </Link>
+          ))}
       </div>
       <div className="floatIconsDiv toggleItems" onClick={openBar}>
         {isOpen ? <FaIcon name="gears" /> : <FaIcon name="code" />}

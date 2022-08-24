@@ -11,12 +11,14 @@
   transform: translate(-50%, 0%);
   min-width: 100vw;
   .openItems{
-    visibility: visible;
+    // visibility: visible;
+    display: block;
     opacity: 1;
     transition: all 0.9s ease;
   }
   .closeItems{
-    visibility: hidden;
+    // visibility: hidden;
+    display: none;
     opacity: 0;
     transition: all 0.9s ease;
   }
