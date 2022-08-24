@@ -7,6 +7,7 @@ import comingSoonPic from "./assets/images/comingsoon.jpg";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar, Footer, ErrorPage, WebArchiveIframe } from "./components";
 import { Register } from "./entities";
+import { About, Resume, Projects, Contact } from "./main";
 import {
   Profile,
   AppMain,
@@ -30,11 +31,11 @@ import FloatBar from "./components/floatbar/floatbar";
 function App() {
   // Various route objects with their configs
   const appsRoutes = [
-    {
-      id: "statistics",
-      comp: <Statistics />,
-      path: "/app/statistics",
-    },
+    { id: "about", comp: <About />, path: "/about" },
+    { id: "resume", comp: <Resume />, path: "/resume" },
+    { id: "projects", comp: <Projects />, path: "/projects" },
+    { id: "contact", comp: <Contact />, path: "/contact" },
+    { id: "statistics", comp: <Statistics />, path: "/app/statistics" },
     {
       id: "conwaygameoflife",
       comp: <ConwayGameOfLife />,
@@ -58,16 +59,8 @@ function App() {
       comp: <RockPaperScissors />,
       path: "/app/rockpaperscissors",
     },
-    {
-      id: "stopwatch",
-      comp: <StopWatch />,
-      path: "/app/stopwatch",
-    },
-    {
-      id: "gallery",
-      comp: <Gallery />,
-      path: "/app/gallery",
-    },
+    { id: "stopwatch", comp: <StopWatch />, path: "/app/stopwatch" },
+    { id: "gallery", comp: <Gallery />, path: "/app/gallery" },
   ];
 
   return (

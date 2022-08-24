@@ -22,6 +22,9 @@
   }
   .semibar{
     width: fit-content;
+    a{
+      text-decoration: none;
+    }
   }
   .floatIconsDiv{
     display: flex;
@@ -35,6 +38,7 @@
     border-radius: 5px;
     align-self:flex-start;
     animation: fade_in_show 0.5s;
+    color:#cce0f1;
     &.toggleItems{
       border: 1px #b37a74 solid;
     }

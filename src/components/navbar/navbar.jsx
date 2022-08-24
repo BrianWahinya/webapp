@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import FaIcon from "../icons/icons";
-import FloatBar from "../floatbar/floatbar";
 import "./navbar.css";
 
 export default function Navbar({ appsRoutes }) {

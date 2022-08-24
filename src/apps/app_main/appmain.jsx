@@ -16,8 +16,8 @@ export default function AppMain() {
   ];
   return (
     <>
-      <h3>Main App Page</h3>
-      <h5>Projects: </h5>
+      <h5>Mini-Apps: </h5>
+      <code>Still in coding &amp; design stages</code>
       <ul>
         {apps.map((app) => (
           <li key={app.name}>{app.title}</li>
