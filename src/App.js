@@ -96,9 +96,9 @@ function App() {
               <Route key="error" path="*" element={<ErrorPage />} />
             </Routes>
           </div>
+          <Footer />
         </div>
       </div>
-      <Footer />
     </Router>
   );
 }

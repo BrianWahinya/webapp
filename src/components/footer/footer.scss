@@ -1,31 +1,35 @@
 footer{
   flex-shrink: 0;
   text-align: center;
-}
-
-.socialMediaLinks{
-  padding: 0 5px;
-  cursor: pointer;
-  color: #161616cc;
-}
-
-.fa-facebook:hover, .fa-stack-overflow:hover, .fa-linkedin:hover, .fa-github:hover{
-  transform: scale(1.2);
-  transition: 250ms;
-}
-
-.fa-facebook:hover{
-  color: blue;
-}
-
-.fa-stack-overflow:hover{
-  color: #978100d8;
-}
-
-.fa-linkedin:hover{
-  color: #007497d8;
-}
-
-.fa-github:hover{
-  color: #970083d8;
+  background-color: #27272785;
+  color: #9c9c9c;
+  a{
+    text-decoration: none;
+  }
+  
+  .socialMediaLinks{
+    padding: 0 5px;
+    cursor: pointer;
+    color: #9c9c9c;
+  }
+  .fa-facebook:hover, .fa-stack-overflow:hover, .fa-linkedin:hover, .fa-github:hover{
+    transform: scale(1.2);
+    transition: 250ms;
+  }
+  
+  .fa-facebook:hover{
+    color: #7878f0;
+  }
+  
+  .fa-stack-overflow:hover{
+    color: #978100d8;
+  }
+  
+  .fa-linkedin:hover{
+    color: #007497d8;
+  }
+  
+  .fa-github:hover{
+    color: #e774d8;
+  }
 }

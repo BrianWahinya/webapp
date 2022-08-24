@@ -2,34 +2,40 @@ footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   text-align: center;
+  background-color: #27272785;
+  color: #9c9c9c;
 }
 
-.socialMediaLinks {
+footer a {
+  text-decoration: none;
+}
+
+footer .socialMediaLinks {
   padding: 0 5px;
   cursor: pointer;
-  color: #161616cc;
+  color: #9c9c9c;
 }
 
-.fa-facebook:hover, .fa-stack-overflow:hover, .fa-linkedin:hover, .fa-github:hover {
+footer .fa-facebook:hover, footer .fa-stack-overflow:hover, footer .fa-linkedin:hover, footer .fa-github:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-.fa-facebook:hover {
-  color: blue;
+footer .fa-facebook:hover {
+  color: #7878f0;
 }
 
-.fa-stack-overflow:hover {
+footer .fa-stack-overflow:hover {
   color: #978100d8;
 }
 
-.fa-linkedin:hover {
+footer .fa-linkedin:hover {
   color: #007497d8;
 }
 
-.fa-github:hover {
-  color: #970083d8;
+footer .fa-github:hover {
+  color: #e774d8;
 }
 /*# sourceMappingURL=footer.css.map */
