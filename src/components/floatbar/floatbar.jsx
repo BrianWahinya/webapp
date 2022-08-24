@@ -19,7 +19,7 @@ export default function FloatBar() {
     <div className="floatbar">
       <div className="semibar">
         {semibars.map((sm) => (
-          <Link to={sm.link}>
+          <Link key={sm.name} to={sm.link}>
             <div
               className={`floatIconsDiv ${isOpen ? "openItems" : "closeItems"}`}
             >

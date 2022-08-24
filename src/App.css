@@ -49,6 +49,7 @@
 
 .subcontent{
   max-width: 60vw;
+  min-height: 75vh;
   background-color: rgba(90, 90, 90, 0.274);
   margin: 0 auto;
   color: aliceblue;
@@ -60,6 +61,7 @@
 .subdiv{
   margin-top: 50px;
   width: 100%;
+  min-height: 75vh;
   /* border: 1px #28a393 solid; */
 }
 
