@@ -31,10 +31,6 @@ import FloatBar from "./components/floatbar/floatbar";
 function App() {
   // Various route objects with their configs
   const appsRoutes = [
-    { id: "about", comp: <About />, path: "/about" },
-    { id: "resume", comp: <Resume />, path: "/resume" },
-    { id: "projects", comp: <Projects />, path: "/projects" },
-    { id: "contact", comp: <Contact />, path: "/contact" },
     { id: "statistics", comp: <Statistics />, path: "/app/statistics" },
     {
       id: "conwaygameoflife",
@@ -75,6 +71,10 @@ function App() {
           <div className="subdiv">
             <Routes>
               <Route key="profile" path="/" element={<Profile />} />
+              <Route key="about" path="about" element={<About />} />
+              <Route key="resume" path="resume" element={<Resume />} />
+              <Route key="projects" path="projects" element={<Projects />} />
+              <Route key="contact" path="contact" element={<Contact />} />
               <Route key="app" path="app" element={<AppMain />} />
               <Route key="register" path="register" element={<Register />} />
               <Route
