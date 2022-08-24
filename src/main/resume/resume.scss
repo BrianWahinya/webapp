@@ -1,0 +1,22 @@
+.nav-link {
+  background: #8f8f8f00 !important;
+  color: #b1b1b1;
+  border: none !important;
+  &.active{
+    background-color: #8f8f8f60 !important;
+    border-bottom: #8f8f8f60 !important;
+    color: #f0f8ff !important;
+  }
+  &:hover{
+    color: #dfdfdf !important;
+    text-decoration: line-through;
+  }
+}
+.nav-tabs{
+  border: none !important;
+}
+.tab-content{
+  background-color: #8f8f8f60;
+  border: none !important;
+  margin-top: 1px;
+}
