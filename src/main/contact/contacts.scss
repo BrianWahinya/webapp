@@ -1,0 +1,17 @@
+.contactsDiv{
+  text-align: center;
+  justify-content: center;
+  .contactDetails{
+    margin: 0 auto;
+    background-color: rgba(92, 92, 92, 0.514);
+    border-radius: 3px;
+    padding: 5px;
+    width: fit-content;
+    .pTitles{
+      font-weight: bold;
+    }
+    .pDetails{
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }
+}

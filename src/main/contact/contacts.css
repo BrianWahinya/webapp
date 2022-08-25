@@ -1,0 +1,25 @@
+.contactsDiv {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contactsDiv .contactDetails {
+  margin: 0 auto;
+  background-color: rgba(92, 92, 92, 0.514);
+  border-radius: 3px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.contactsDiv .contactDetails .pTitles {
+  font-weight: bold;
+}
+
+.contactsDiv .contactDetails .pDetails {
+  font-family: 'Courier New', Courier, monospace;
+}
+/*# sourceMappingURL=contacts.css.map */

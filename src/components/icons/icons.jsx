@@ -5,6 +5,7 @@ import {
   faCubesStacked,
   faUserSecret,
   faNewspaper,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faAddressCard,
@@ -15,8 +16,13 @@ import {
   faDiagramProject,
   faGraduationCap,
   faPersonDigging,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { faOpencart, faStudiovinari } from "@fortawesome/free-brands-svg-icons";
+import {
+  faOpencart,
+  faStudiovinari,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
 // Mini-Apps
 import {
@@ -64,6 +70,9 @@ const icons = {
   code: faMosquito,
   education: faGraduationCap,
   work: faPersonDigging,
+  whatsapp: faWhatsapp,
+  email: faEnvelope,
+  mailbox: faPaperPlane,
 
   weather: faCloudSunRain,
   wordle: faBuilding,
