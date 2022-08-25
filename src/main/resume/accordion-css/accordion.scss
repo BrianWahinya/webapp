@@ -1,0 +1,17 @@
+.accordion-item{
+  background-color: #74747454 !important;
+  color: #c5c5c5 !important;
+  .accordion-button{
+    background-color: #74747454 !important;
+    border-color: none !important ;
+    &::after, &:focus, &:not(.collapsed){
+      border-color: #747474 !important;
+      box-shadow: none !important;
+      outline: none !important;
+      color: #eeeeee !important;
+    }
+    &.collapsed{
+      color: #272727 !important;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { FaIcon } from "../../components";
+import Education from "./education";
 import "./resume.css";
 
 export default function Resume() {
@@ -44,7 +45,9 @@ export default function Resume() {
           role="tabpanel"
           aria-labelledby="nav-edu-tab"
         >
-          This will display education details
+          {/* Education */}
+          <Education />
+          {/* Education End */}
         </div>
         <div
           className="tab-pane fade"
