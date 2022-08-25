@@ -1,13 +1,20 @@
-.fa-house-chimney-user:hover {
+.mainContent {
+  width: 100%;
+}
+
+.mainContent .svg-inline--fa {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.mainContent .svg-inline--fa:hover {
   color: aquamarine;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: 250ms;
   transition: 250ms;
-}
-
-.mainContent {
-  width: 100%;
 }
 
 @media (min-width: 576px) {

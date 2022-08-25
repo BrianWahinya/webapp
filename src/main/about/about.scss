@@ -1,0 +1,59 @@
+.codingToolsDiv{
+  display: flex;
+  flex-wrap: wrap;
+  width: 99%;
+  margin: 0 auto;
+  .codingTool{
+    min-width: 80px;
+    height: fit-content;
+    text-align: center;
+    margin: 5px;
+    font-size: 40px;
+    border-radius: 3px;
+    .codingToolName{
+      font-size: 13px;
+      padding: 0;
+      margin: 0;
+      visibility: visible;
+    }
+    &:hover{
+      background-color: rgba(247, 237, 225, 0.39);
+      cursor: pointer;
+      transform: scale(0.9);
+      transition: all 250ms ease;
+      .codingToolName{
+        visibility: visible;
+      }
+      .codingIcons{
+        color: white !important;
+      }
+    }
+  }
+  #iconpython{
+    color:#009ADC;
+  }
+  #iconjs{
+      color:#f1ee19;
+  }
+  #iconhtml{
+      color:#ff822f;
+  }
+  #iconcss{
+      color:#aa00c0;
+  }
+  #iconcharts{
+      color:#925268;
+  }
+  #icongit{
+      color:#2fb3ff;
+  }
+  #iconsql{
+      color:#2fffe3;
+  }
+  #icondocker{
+      color:#ff5f2f;
+  }
+  #iconreact{
+      color:#6f8ee6;
+  }
+}

@@ -1,37 +1,64 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouseChimneyUser } from "@fortawesome/free-solid-svg-icons";
-import { faCubesStacked } from "@fortawesome/free-solid-svg-icons";
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
-import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
-import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
-import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
-import { faOpencart } from "@fortawesome/free-brands-svg-icons";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faGears } from "@fortawesome/free-solid-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
-import { faRodSnake } from "@fortawesome/free-solid-svg-icons";
-import { faBuilding } from "@fortawesome/free-solid-svg-icons";
-import { faCloudSunRain } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
-import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
-import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faCalculator } from "@fortawesome/free-solid-svg-icons";
-import { faImages } from "@fortawesome/free-solid-svg-icons";
-import { faChartLine } from "@fortawesome/free-solid-svg-icons";
-import { faChessBoard } from "@fortawesome/free-solid-svg-icons";
-import { faListCheck } from "@fortawesome/free-solid-svg-icons";
-import { faScissors } from "@fortawesome/free-solid-svg-icons";
+// General
+import {
+  faHouseChimneyUser,
+  faCubesStacked,
+  faUserSecret,
+  faNewspaper,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faMosquito,
+  faGear,
+  faGears,
+  faCode,
+  faDiagramProject,
+} from "@fortawesome/free-solid-svg-icons";
+import { faOpencart, faStudiovinari } from "@fortawesome/free-brands-svg-icons";
+
+// Mini-Apps
+import {
+  faLaptopCode,
+  faRodSnake,
+  faBuilding,
+  faCloudSunRain,
+  faClock,
+  faStopwatch,
+  faScissors,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCommentDots,
+  faVideo,
+  faCalculator,
+  faImages,
+  faChartLine,
+  faChessBoard,
+  faListCheck,
+} from "@fortawesome/free-solid-svg-icons";
+
+// Brands
+import {
+  faPython,
+  faJs,
+  faNodeJs,
+  faReact,
+  faHtml5,
+  faSass,
+  faGithub,
+  faDocker,
+  faLinux,
+} from "@fortawesome/free-brands-svg-icons";
+import { faDatabase, faChartColumn } from "@fortawesome/free-solid-svg-icons";
+
 const icons = {
-  home: faHouseChimneyUser,
+  home: faStudiovinari,
   apps: faCubesStacked,
   about: faUserSecret,
   cv: faNewspaper,
   projects: faDiagramProject,
   contact: faAddressCard,
   gears: faGears,
-  code: faCode,
+  code: faMosquito,
 
   weather: faCloudSunRain,
   wordle: faBuilding,
@@ -47,6 +74,18 @@ const icons = {
   taskmanager: faListCheck,
   rockpaperscissors: faScissors,
   coding: faLaptopCode,
+
+  python: faPython,
+  js: faJs,
+  node: faNodeJs,
+  sql: faDatabase,
+  react: faReact,
+  html: faHtml5,
+  css: faSass,
+  git: faGithub,
+  charts: faChartColumn,
+  docker: faDocker,
+  linux: faLinux,
 };
 
 const spinning = ["gears"];

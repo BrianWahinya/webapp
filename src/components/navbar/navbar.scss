@@ -10,13 +10,18 @@
 //   font-size: 17px;
 // }
 
-.fa-house-chimney-user:hover{
-  color: aquamarine;
-  transform: scale(1.1);
-  transition: 250ms;
-}
+
 .mainContent{
   width: 100%;
+  .svg-inline--fa{
+    transform: scale(1.5);
+    transition: 250ms;
+  }
+  .svg-inline--fa:hover{
+    color: aquamarine;
+    transform: scale(1.1);
+    transition: 250ms;
+  }
 }
 // .comingSoon{
 //   color: aliceblue;
