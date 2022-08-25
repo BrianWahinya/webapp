@@ -13,6 +13,8 @@ import {
   faGears,
   faCode,
   faDiagramProject,
+  faGraduationCap,
+  faPersonDigging,
 } from "@fortawesome/free-solid-svg-icons";
 import { faOpencart, faStudiovinari } from "@fortawesome/free-brands-svg-icons";
 
@@ -60,6 +62,8 @@ const icons = {
   contact: faAddressCard,
   gears: faGears,
   code: faMosquito,
+  education: faGraduationCap,
+  work: faPersonDigging,
 
   weather: faCloudSunRain,
   wordle: faBuilding,

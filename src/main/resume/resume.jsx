@@ -1,3 +1,4 @@
+import { FaIcon } from "../../components";
 import "./resume.css";
 
 export default function Resume() {
@@ -16,6 +17,8 @@ export default function Resume() {
             aria-controls="nav-edu"
             aria-selected="true"
           >
+            <FaIcon name="education" />
+            <br />
             Education
           </button>
           <button
@@ -28,6 +31,8 @@ export default function Resume() {
             aria-controls="nav-work"
             aria-selected="false"
           >
+            <FaIcon name="work" />
+            <br />
             Work Experience
           </button>
         </div>
