@@ -6,11 +6,13 @@
     background-color: #8f8f8f60 !important;
     border: none !important;
     color: #f0f8ff !important;
+    outline: none;
   }
   &:hover{
     color: #dfdfdf !important;
     text-decoration: line-through;
     border: none !important;
+    outline: none;
   }
 }
 .nav-tabs{
