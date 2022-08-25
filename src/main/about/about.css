@@ -1,3 +1,7 @@
+.aboutDiv {
+  color: #cecece;
+}
+
 .codingToolsDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +27,6 @@
   font-size: 13px;
   padding: 0;
   margin: 0;
-  visibility: visible;
 }
 
 .codingToolsDiv .codingTool:hover {
@@ -36,11 +39,11 @@
 }
 
 .codingToolsDiv .codingTool:hover .codingToolName {
-  visibility: visible;
+  color: #ffffff !important;
 }
 
 .codingToolsDiv .codingTool:hover .codingIcons {
-  color: white !important;
+  color: #ffffff !important;
 }
 
 .codingToolsDiv #iconpython {
