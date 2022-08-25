@@ -3,14 +3,16 @@ import "./about.css";
 
 const codingTools = [
   { id: "python", name: "Python" },
-  { id: "js", name: "Javascript ES5, ES6+" },
+  { id: "js", name: "ES5, ES6+" },
   { id: "react", name: "React" },
-  { id: "css", name: "Css/Sass/Sccs" },
   { id: "git", name: "Git" },
   { id: "sql", name: "Sql" },
   { id: "charts", name: "JsChartLibs" },
   { id: "docker", name: "Docker" },
+  { id: "css", name: "Css/Sccs" },
+  { id: "bootstrap", name: "Bootstrap" },
   { id: "html", name: "Html" },
+  { id: "linux", name: "Linux-basics" },
 ];
 export default function About() {
   return (

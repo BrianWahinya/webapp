@@ -56,7 +56,7 @@
 }
 
 .codingToolsDiv #iconcss {
-  color: #aa00c0;
+  color: #b159bd;
 }
 
 .codingToolsDiv #iconcharts {
@@ -72,10 +72,18 @@
 }
 
 .codingToolsDiv #icondocker {
-  color: #ff5f2f;
+  color: #ff7950;
 }
 
 .codingToolsDiv #iconreact {
   color: #6f8ee6;
+}
+
+.codingToolsDiv #iconbootstrap {
+  color: #7952B3;
+}
+
+.codingToolsDiv #iconlinux {
+  color: #1C89BB;
 }
 /*# sourceMappingURL=about.css.map */

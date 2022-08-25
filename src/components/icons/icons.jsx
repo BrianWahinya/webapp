@@ -47,6 +47,7 @@ import {
   faGithub,
   faDocker,
   faLinux,
+  faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase, faChartColumn } from "@fortawesome/free-solid-svg-icons";
 
@@ -86,6 +87,7 @@ const icons = {
   charts: faChartColumn,
   docker: faDocker,
   linux: faLinux,
+  bootstrap: faBootstrap,
 };
 
 const spinning = ["gears"];
