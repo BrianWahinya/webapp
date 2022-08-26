@@ -50,3 +50,19 @@
 //   bottom: 0;
 //   left: 16px;
 // }
+
+.profileDiv{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  min-height: 60vh !important;
+  // border: 2px red solid;
+  span{
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 30px !important;
+    font-weight: bold;
+  }
+  
+}
