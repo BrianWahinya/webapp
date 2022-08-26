@@ -35,7 +35,7 @@ jobs:
           REACT_APP_MOVIE_API_KEY_v3: ${{ secrets.REACT_APP_MOVIE_API_KEY_v3 }}
       - name: npm install, build and test
         run: |
-          npm install --legacy-peer-deps
+          npm install
       #    npm run build --if-present
       #    npm test
       # - run: npm ci
