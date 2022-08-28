@@ -1,83 +1,60 @@
 import "./accordion-css/accordion.css";
+const eduInfo = [
+  {
+    id: "mse",
+    title: "2022 Sep: Masters Software Engineering",
+    subtitle: "Jomo Kenyatta University of Science and Technology",
+    details: "Details of the degree will appear here",
+  },
+  {
+    id: "dsm",
+    title:
+      "2021 March: Data Science, Artificial Intelligence and Machine Learning",
+    subtitle: "African Data School",
+    details: "Details of the degree will appear here",
+  },
+  {
+    id: "ict",
+    title: "2014 - 2018: BSc. Information Communication Technology",
+    subtitle: "Jaramogi Oginga Odinga University of Technology",
+    details: "Details of the degree will appear here",
+  },
+];
 export default function Education() {
   return (
     <div className="accordion" id="accordionEducation">
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="headingOne">
-          <button
-            className="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            2022 Sep: Masters Software Engineering
-          </button>
-        </h2>
-        <div
-          id="collapseOne"
-          className="accordion-collapse collapse show"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionEducation"
-        >
-          <div className="accordion-body">
-            <strong>Jomo Kenyatta University of Science and Technology</strong>
-            <p>Details of the degree will appear here</p>
+      {eduInfo.map((info, idx) => {
+        const { id, title, subtitle, details } = info;
+        return (
+          <div key={id} className="accordion-item">
+            <h2 className="accordion-header" id={`heading${idx}`}>
+              <button
+                className={`accordion-button ${idx !== 0 ? "collapsed" : ""}`}
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={`#collapse${idx}`}
+                aria-expanded={`${idx === 0 ? "true" : "false"}`}
+                aria-controls={`collapse${idx}`}
+              >
+                {title}
+              </button>
+            </h2>
+            <div
+              id={`collapse${idx}`}
+              className={`accordion-collapse collapse ${
+                idx === 0 ? "show" : ""
+              }`}
+              aria-labelledby={`heading${idx}`}
+              data-bs-parent="#accordionEducation"
+            >
+              <div className="accordion-body">
+                <strong>{subtitle}</strong>
+                <p>{details}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="headingTwo">
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
-          >
-            2014 - 2018: BSc. Information Communication Technology
-          </button>
-        </h2>
-        <div
-          id="collapseTwo"
-          className="accordion-collapse collapse"
-          aria-labelledby="headingTwo"
-          data-bs-parent="#accordionEducation"
-        >
-          <div className="accordion-body">
-            <strong>Jaramogi Oginga Odinga University of Technology</strong>
-            <p>Details of the degree will appear here</p>
-          </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="headingThree">
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
-          >
-            2021 March: Data Science, Artificial Intelligence and Machine
-            Learning
-          </button>
-        </h2>
-        <div
-          id="collapseThree"
-          className="accordion-collapse collapse"
-          aria-labelledby="headingThree"
-          data-bs-parent="#accordionEducation"
-        >
-          <div className="accordion-body">
-            <strong>African Data School</strong>
-            <p>Details of the degree will appear here</p>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }
