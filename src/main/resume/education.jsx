@@ -2,20 +2,22 @@ import "./accordion-css/accordion.css";
 const eduInfo = [
   {
     id: "mse",
-    title: "2022 Sep: Masters Software Engineering",
+    date: "2022 Sep",
+    title: "Masters Software Engineering",
     subtitle: "Jomo Kenyatta University of Science and Technology",
     details: "Details of the degree will appear here",
   },
   {
     id: "dsm",
-    title:
-      "2021 March: Data Science, Artificial Intelligence and Machine Learning",
+    date: "2021 March",
+    title: "Data Science, Artificial Intelligence and Machine Learning",
     subtitle: "African Data School",
     details: "Details of the degree will appear here",
   },
   {
     id: "ict",
-    title: "2014 - 2018: BSc. Information Communication Technology",
+    date: "2014 - 2018",
+    title: "BSc. Information Communication Technology",
     subtitle: "Jaramogi Oginga Odinga University of Technology",
     details: "Details of the degree will appear here",
   },
@@ -24,25 +26,25 @@ export default function Education() {
   return (
     <div className="accordion" id="accordionEducation">
       {eduInfo.map((info, idx) => {
-        const { id, title, subtitle, details } = info;
+        const { id, date, title, subtitle, details } = info;
         return (
           <div key={id} className="accordion-item">
             <h2 className="accordion-header" id={`heading${idx}`}>
               <button
-                className={`accordion-button ${idx !== 0 ? "collapsed" : ""}`}
+                className={`accordion-button ${idx !== 4 ? "collapsed" : ""}`}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#collapse${idx}`}
                 aria-expanded={`${idx === 0 ? "true" : "false"}`}
                 aria-controls={`collapse${idx}`}
               >
-                {title}
+                {date}:<br /> {title}
               </button>
             </h2>
             <div
               id={`collapse${idx}`}
               className={`accordion-collapse collapse ${
-                idx === 0 ? "show" : ""
+                idx === 4 ? "show" : ""
               }`}
               aria-labelledby={`heading${idx}`}
               data-bs-parent="#accordionEducation"
