@@ -1,3 +1,8 @@
+.accordion-button {
+  --bs-accordion-btn-icon: url("./btn-icon.svg") !important;
+  --bs-accordion-btn-active-icon: url("./btn-icon.svg") !important;
+}
+
 .accordion-item {
   background-color: #74747454 !important;
   color: #c5c5c5 !important;
@@ -15,7 +20,6 @@
 .accordion-item .accordion-button {
   background-color: #74747454 !important;
   border-color: none !important;
-  background-image: url("./btn-icon.svg") !important;
 }
 
 .accordion-item .accordion-button::after, .accordion-item .accordion-button:focus, .accordion-item .accordion-button:not(.collapsed) {
