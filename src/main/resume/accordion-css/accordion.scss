@@ -1,6 +1,12 @@
+.accordion{
+  --bs-accordion-btn-icon: url("./btn-icon.svg") !important;
+  --bs-accordion-btn-active-icon: url("./btn-icon.svg") !important;
+}
+
 .accordion-item{
   background-color: #74747454 !important;
   color: #c5c5c5 !important;
+  border: 1px #fff solid;
   &:hover{
     background-color: #747474a2 !important;
     transform: scale(1.005);
@@ -11,14 +17,10 @@
     border-color: none !important ;
     
     &::after, &:focus, &:not(.collapsed){
-      border-color: #747474 !important;
+      // border-color: #747474 !important;
       box-shadow: none !important;
       outline: none !important;
-      color: #eeeeee !important;
-    }
-    &::after{
-      background-image: var(--bs-accordion-btn-icon);
-      background-repeat: no-repeat;
+      color: #0c0c0c !important;
     }
     &.collapsed{
       color: #272727 !important;
