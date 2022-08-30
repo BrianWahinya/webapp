@@ -26,5 +26,10 @@
   background-color: #8f8f8f60;
   border: none !important;
   margin-top: 1px;
+  border-radius: 0 0 5px 5px;
+}
+
+.tab-content .tab-pane {
+  padding: 5px;
 }
 /*# sourceMappingURL=resume.css.map */

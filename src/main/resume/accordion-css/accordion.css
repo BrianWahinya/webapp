@@ -3,6 +3,14 @@
   color: #c5c5c5 !important;
 }
 
+.accordion-item:hover {
+  background-color: #747474a2 !important;
+  -webkit-transform: scale(1.005);
+          transform: scale(1.005);
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
 .accordion-item .accordion-button {
   background-color: #74747454 !important;
   border-color: none !important;
@@ -14,6 +22,11 @@
           box-shadow: none !important;
   outline: none !important;
   color: #eeeeee !important;
+}
+
+.accordion-item .accordion-button::after {
+  background-image: var(--bs-accordion-btn-icon);
+  background-repeat: no-repeat;
 }
 
 .accordion-item .accordion-button.collapsed {

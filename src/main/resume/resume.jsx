@@ -1,6 +1,7 @@
 import { FaIcon } from "../../components";
 import Education from "./education";
 import "./resume.css";
+import Work from "./work";
 
 export default function Resume() {
   return (
@@ -45,9 +46,7 @@ export default function Resume() {
           role="tabpanel"
           aria-labelledby="nav-edu-tab"
         >
-          {/* Education */}
           <Education />
-          {/* Education End */}
         </div>
         <div
           className="tab-pane fade"
@@ -55,7 +54,7 @@ export default function Resume() {
           role="tabpanel"
           aria-labelledby="nav-work-tab"
         >
-          This will display work-experience details
+          <Work />
         </div>
       </div>
     </div>
