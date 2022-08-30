@@ -1,1 +1,149 @@
-.EventsTimeline__timeline--30thw{position:relative}.EventsTimeline__timeline--30thw:before{content:'';position:absolute;top:10px;left:34px;height:100%;width:4px;background:#e7eaec}.EventsTimeline__timeline--30thw.EventsTimeline__green--31WXV .EventsTimeline__title--1HDmr .EventsTimeline__icon--1POlx{color:#40bea9}.EventsTimeline__timeline--30thw.EventsTimeline__green--31WXV .EventsTimeline__date--NM_00{background:#40bea9}.EventsTimeline__timeline--30thw.EventsTimeline__green--31WXV .EventsTimeline__itemLabel--19U8U{color:#40bea9}.EventsTimeline__timeline--30thw.EventsTimeline__blue--3JC9_ .EventsTimeline__title--1HDmr .EventsTimeline__icon--1POlx{color:#0079c1}.EventsTimeline__timeline--30thw.EventsTimeline__blue--3JC9_ .EventsTimeline__date--NM_00{background:#0079c1}.EventsTimeline__timeline--30thw.EventsTimeline__blue--3JC9_ .EventsTimeline__itemLabel--19U8U{color:#0079c1}.EventsTimeline__timeline--30thw.EventsTimeline__orange--1YNlG .EventsTimeline__title--1HDmr .EventsTimeline__icon--1POlx{color:#fba51a}.EventsTimeline__timeline--30thw.EventsTimeline__orange--1YNlG .EventsTimeline__date--NM_00{background:#fba51a}.EventsTimeline__timeline--30thw.EventsTimeline__orange--1YNlG .EventsTimeline__itemLabel--19U8U{color:#fba51a}.EventsTimeline__title--1HDmr{min-height:40px;display:flex;flex-flow:row;align-items:center;position:relative;z-index:3;margin:0 1px;padding-bottom:10px}.EventsTimeline__titleText--2mXcA{padding:10px 0;font-size:22px;margin:0 20px}.EventsTimeline__icon--1POlx{width:60px;background-color:#fff;min-width:60px;height:60px;min-height:60px;text-align:center;line-height:60px;font-size:24px;border-radius:50%;color:#333;border:4px solid #e7eaec}.EventsTimeline__event--2gJyx{width:100%;position:relative;display:flex;flex-flow:row;z-index:2}.EventsTimeline__date--NM_00{width:50px;min-width:50px;height:50px;min-height:50px;text-align:center;line-height:50px;background:#333;color:#fff;border-radius:50%;margin:10px}.EventsTimeline__content--pMXNv{position:relative;margin:10px;width:100%;background:white;border-radius:2.5px;padding:20px;margin-right:0;box-sizing:border-box;box-shadow:1px 1px 2px rgba(0,0,0,0.12)}.EventsTimeline__content--pMXNv:before{content:'';position:absolute;top:16.66667px;right:100%;height:0;width:0;border:7px solid transparent;border-right:7px solid white}.EventsTimeline__itemTitle--W7MOV{font-size:18px;line-height:18px;margin-bottom:5px}.EventsTimeline__itemContent--zKA9-{line-height:19px;font-size:13px;color:rgba(0,0,0,0.6)}.EventsTimeline__itemContent--zKA9- ul,.EventsTimeline__itemContent--zKA9- ol{margin-top:5px;margin-bottom:5px;margin-left:17px}.EventsTimeline__itemLocation--3yhZz{margin-bottom:5px;font-size:13px;color:rgba(0,0,0,0.4)}.EventsTimeline__itemLabel--19U8U{font-weight:700}@media (max-width: 480px){.EventsTimeline__timeline--30thw:before{left:50%;margin-left:-2px;top:50px}.EventsTimeline__title--1HDmr{text-align:center;flex-flow:column}.EventsTimeline__title--1HDmr span{display:none}.EventsTimeline__event--2gJyx{flex-flow:column;align-items:center}.EventsTimeline__event--2gJyx .EventsTimeline__content--pMXNv{margin:10px 0}.EventsTimeline__event--2gJyx .EventsTimeline__content--pMXNv:before{display:none}}
+$bg-color: #7e7e7e59;
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  max-height: 70vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  /* The actual timeline (the vertical ruler) */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100vh;
+    // background-color: white;
+    background-color: $bg-color;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  /* tm-Container around tm-content */
+  .tm-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    max-width: 50%;
+    /* The circles on the timeline */
+    &::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: $bg-color;
+      border: 4px solid #c4c4c4;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+
+  /* Place the tm-container to the left */
+  .left {
+    left: 0;
+    /* Add arrows to the left tm-container (pointing right) */
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent $bg-color;
+    }
+  }
+
+  /* Place the tm-container to the right */
+  .right {
+    left: 50%;
+    /* Add arrows to the right tm-container (pointing left) */
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent $bg-color transparent transparent;
+    }
+      /* Fix the circle for tm-containers on the right side */
+    &::after {
+      left: -16px;
+    }
+  }
+
+  /* The actual tm-content */
+  .tm-content {
+    padding: 20px 30px;
+    background-color: $bg-color;
+    position: relative;
+    border-radius: 6px;
+    min-width: fit-content;
+  }
+
+  /*
+  *  SCROLLBAR
+  */
+
+  &::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #fafafa;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 10px;
+    background-color: #fafafa;
+  }
+  
+  &::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.20, #a1a1a1),color-stop(0.45, #747474),color-stop(0.66, #3a3a3a));
+  }
+}
+
+/* Media queries - Responsive timeline on screens less than 350px wide */
+@media screen and (max-width: 350px) {
+  .timeline{
+    /* Place the timelime to the left */
+    &::after {
+      left: 31px;
+      height: 100vh;
+    }
+    /* Full-width tm-containers */
+    .tm-container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+      /* Make sure that all arrows are pointing leftwards */
+      &::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent $bg-color transparent transparent;
+      }
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+    
+    /* Make all right tm-containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
+}

@@ -36,19 +36,42 @@
     transform: rotate(360deg);
   }
 } */
-
-.content{
-  flex: 1 0 auto;
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   min-width: 90vw;
   margin-top: 55px;
   /* border: 2px salmon solid; */
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3d3d3d), color-stop(#3f3f3f), color-stop(#414141), color-stop(#434343), color-stop(#454545), color-stop(#4f4f4f), color-stop(#595959), color-stop(#636363), color-stop(#787878), color-stop(#8e8e8e), color-stop(#a5a5a5), to(#bcbcbc));
   background-image: linear-gradient(to right top, #3d3d3d, #3f3f3f, #414141, #434343, #454545, #4f4f4f, #595959, #636363, #787878, #8e8e8e, #a5a5a5, #bcbcbc);
   background-position: center;
   background-size: cover;
   position: relative;
+  /*
+  *  SCROLLBAR
+  */
 }
 
-.subcontent{
+.content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fafafa;
+  border-radius: 10px;
+}
+
+.content::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.2, #a1a1a1), color-stop(0.45, #747474), color-stop(0.66, #3a3a3a));
+}
+
+.subcontent {
   max-width: 60vw;
   min-height: 75vh;
   background-color: rgba(90, 90, 90, 0.274);
@@ -59,7 +82,7 @@
   /* position: relative; */
 }
 
-.subdiv{
+.subdiv {
   margin-top: 50px;
   width: 100%;
   min-height: 75vh;
@@ -67,7 +90,7 @@
   /* border: 1px #28a393 solid; */
 }
 
-code{
+code {
   font-size: 11px;
   font-weight: bold;
   padding: 0;
@@ -75,18 +98,21 @@ code{
   line-height: 1;
 }
 
-@media (max-width: 576px){
-  .subcontent{
+@media (max-width: 576px) {
+  .subcontent {
     max-width: 80vw;
   }
 }
-@media (max-width: 500px){
-  .subcontent{
+
+@media (max-width: 500px) {
+  .subcontent {
     max-width: 90vw;
   }
 }
-@media (max-width: 350px){
-  .subcontent{
+
+@media (max-width: 350px) {
+  .subcontent {
     max-width: 99vw;
   }
 }
+/*# sourceMappingURL=app.css.map */

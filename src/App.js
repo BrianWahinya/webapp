@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "./App.css";
+import "./css/app/app.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import comingSoonPic from "./assets/images/comingsoon.jpg";
