@@ -1,3 +1,4 @@
+import "./table.css";
 export default function Table({ data, cols }) {
   const tableHeaders = (headers) => {
     // console.log(data);

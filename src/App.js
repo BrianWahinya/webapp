@@ -25,6 +25,7 @@ import {
   Wordle,
   Snakegame,
   Concepts,
+  Betting,
 } from "./apps";
 import FloatBar from "./components/floatbar/floatbar";
 
@@ -77,6 +78,7 @@ function App() {
               <Route key="contact" path="contact" element={<Contact />} />
               <Route key="app" path="app" element={<AppMain />} />
               <Route key="register" path="register" element={<Register />} />
+              <Route key="betting" path="betting" element={<Betting />} />
               <Route
                 key="current"
                 path="current"

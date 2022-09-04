@@ -1,7 +1,7 @@
 import Bar from "../../charts/bar";
 import Map from "../../charts/map";
 import Nightingale from "../../charts/nightingale";
-import Table from "../../charts/table";
+import { Table } from "../../../../components";
 
 export default function RegVotersPerCounty({ data, option, selected }) {
   const filteredData =

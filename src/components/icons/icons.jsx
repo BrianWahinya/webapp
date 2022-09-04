@@ -6,6 +6,7 @@ import {
   faUserSecret,
   faNewspaper,
   faPaperPlane,
+  faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faAddressCard,
@@ -73,6 +74,7 @@ const icons = {
   whatsapp: faWhatsapp,
   email: faEnvelope,
   mailbox: faPaperPlane,
+  delete: faTrashCan,
 
   weather: faCloudSunRain,
   wordle: faBuilding,

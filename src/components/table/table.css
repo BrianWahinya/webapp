@@ -1,0 +1,30 @@
+.tableDiv {
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.tableDiv table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: #ebebeb;
+}
+
+.tableDiv table td, .tableDiv table th {
+  border: 1px solid #5c5c5c;
+  text-align: left;
+  padding: 5px;
+}
+
+.tableDiv table thead tr {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #383838ce;
+}
+
+.tableDiv table tbody tr:hover {
+  background-color: #a3a3a379;
+}
+/*# sourceMappingURL=table.css.map */

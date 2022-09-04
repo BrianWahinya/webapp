@@ -27,7 +27,7 @@ export default function About() {
       </p>
       <div className="codingToolsDiv">
         {codingTools.map((ct) => (
-          <div className="codingTool">
+          <div key={ct.id} className="codingTool">
             <span id={`icon${ct.id}`} className="codingIcons">
               <FaIcon key={ct.id} name={ct.id} />
             </span>

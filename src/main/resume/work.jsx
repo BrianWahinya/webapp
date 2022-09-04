@@ -27,12 +27,12 @@ const workInfo = [
 ];
 export default function Work() {
   return (
-    <div class="timeline">
+    <div className="timeline">
       {workInfo.map((wi, idx) => {
         const ps = idx % 2 === 0 ? "left" : "right";
         return (
-          <div class={`tm-container ${ps}`}>
-            <div class="tm-content">
+          <div key={idx} className={`tm-container ${ps}`}>
+            <div className="tm-content">
               <h5>{wi.job}</h5>
               <h5>{wi.company}</h5>
               <p>{wi.date}</p>
