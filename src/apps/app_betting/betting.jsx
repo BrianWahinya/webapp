@@ -83,7 +83,7 @@ export default function Betting() {
   };
   const deleteGame = (e) => {
     // console.log(e);
-    const gmId = e.target.id;
+    const gmId = e.currentTarget.id;
     setGames((gms) => {
       return gms.filter((gm) => gm.id !== gmId);
     });
