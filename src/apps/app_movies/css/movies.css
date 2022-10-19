@@ -2,7 +2,16 @@ p{
   margin: 0;
   padding: 0;
 }
-.moviesDiv{
+.moviesDiv {
+  display: flex;
+  /* background-color: #c9c9c9; */
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 20px auto;
+  gap: 20px 10px;
+  flex-wrap: wrap;
+}
+/* .moviesDiv{
   margin-top: 10px;
   display: flex;
   flex-flow: row wrap;
@@ -11,7 +20,6 @@ p{
 }
 .movie{
   display: block;
-  /* margin: 5px; */
   width: 185px;
   height: 350px;
   background-color: rgb(222, 245, 220);
@@ -49,8 +57,11 @@ p{
     margin-top: 0%;
     width: 100%;
   }
-}
+} */
 
 .pagination{
   justify-content: center;
 }
+
+
+/* New */

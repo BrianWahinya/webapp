@@ -1,0 +1,9 @@
+.bgImgDiv {
+  border-radius: 5px;
+}
+.bgImgBody,
+.bgImgHeader {
+  background-color: #dbdbdbcb;
+  padding: 5px;
+  border-radius: 3px;
+}

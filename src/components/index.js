@@ -6,3 +6,4 @@ export { default as Loader } from "./loader/loader";
 export { default as Keyboard } from "./keyboard/keyboard";
 export { default as Table } from "./table/table";
 export { default as FaIcon } from "./icons/icons";
+export { default as CustomModal } from "./modal/modal";

@@ -43,6 +43,7 @@ import {
   faChartLine,
   faChessBoard,
   faListCheck,
+  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Brands
@@ -75,6 +76,7 @@ const icons = {
   email: faEnvelope,
   mailbox: faPaperPlane,
   delete: faTrashCan,
+  moreinfo: faCircleInfo,
 
   weather: faCloudSunRain,
   wordle: faBuilding,

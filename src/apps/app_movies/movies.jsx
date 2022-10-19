@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Loader } from "../../components";
-import "./movies.css";
+import Movie from "./movie";
+import "./css/movies.css";
 export default function Movies() {
   const [loading, setLoading] = useState(false);
   const [year, setYear] = useState("2022");
@@ -161,25 +162,11 @@ export default function Movies() {
         <div className="moviesDiv">
           {moviesData.results
             ? moviesData.results.map((movie) => (
-                <div key={movie.id} className="movie">
-                  <img
-                    className="moviePoster"
-                    alt={movie.original_title}
-                    src={
-                      movie.poster_path
-                        ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
-                        : ""
-                    }
-                  />
-                  <div>
-                    <p className="movieTitle">
-                      {movie.original_title && movie.original_title.length > 20
-                        ? movie.original_title.slice(0, 40) + "..."
-                        : movie.original_title}
-                    </p>
-                    <p className="movieReleaseDate">{movie.release_date}</p>
-                  </div>
-                </div>
+                <Movie
+                  key={movie.id}
+                  movieInfo={movie}
+                  moreInfo={"more info"}
+                />
               ))
             : ""}
         </div>
