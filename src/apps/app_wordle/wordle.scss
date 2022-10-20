@@ -13,7 +13,7 @@
     font-size: 12px;
   }
   .hints{
-    font-size: 10px;
+    font-size: 12px;
   }
   .guess{
     display: flex;
@@ -31,32 +31,36 @@
     text-align: center;
     justify-content: center;
     align-content: center;
+    color: #0f0050;
   }
   .btnNextWord{
     margin-top: 5px;
     margin-bottom: 10px;
   }
   .null{
-    background-color: #f8f8f8;
+    background-color: rgba(248, 248, 248, 0.849);
   }
   .active{
-    background-color: #e1eefa;
+    background-color: #e1eefa81;
   }
   .far{
-    background-color: #d3d3d3;
+    background-color: rgba(209, 143, 143, 0.795);
+    color: white;
   }
   .close{
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.795);
+    color: #0f0050;
   }
   .exact{
-    background-color: lightgreen;
+    background-color: rgba(145, 238, 145, 0.795);
+    color: #0f0050;
   }
   .failed{
-    color: red;
+    color: #ff8282;
     font-weight: bold;
   }
   .correct{
-    color: green;
+    color: #0edd0e;
     font-weight: bold;
   }
   .inputs{
@@ -69,5 +73,10 @@
   }
   .btnEnter{
     margin-left: 5px;
+  }
+  .compWord{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 }

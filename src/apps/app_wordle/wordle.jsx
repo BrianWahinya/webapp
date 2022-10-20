@@ -360,7 +360,8 @@ export default function Wordle() {
             <>
               <span className="failed">&#128518;Failed!!&#128569;</span>
               <br />
-              <span>Word is: {word}</span>
+              <span>Word is: </span>
+              <span className="compWord">{word}</span>
             </>
           )}
           {correct && !playing && (

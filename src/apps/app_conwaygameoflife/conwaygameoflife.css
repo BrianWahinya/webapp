@@ -1,9 +1,13 @@
 .conwayDiv{
-  height: 100%;
+  min-height: 50vh;
   margin: 0 auto;
   text-align: center;
 }
 
 .conwayDiv .btn {
   margin: 2px;
+}
+
+canvas{
+  height: 70vh;
 }

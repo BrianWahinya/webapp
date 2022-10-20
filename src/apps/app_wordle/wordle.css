@@ -20,7 +20,7 @@
 }
 
 .wordle .hints {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .wordle .guess {
@@ -50,6 +50,7 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  color: #0f0050;
 }
 
 .wordle .btnNextWord {
@@ -58,32 +59,35 @@
 }
 
 .wordle .null {
-  background-color: #f8f8f8;
+  background-color: rgba(248, 248, 248, 0.849);
 }
 
 .wordle .active {
-  background-color: #e1eefa;
+  background-color: #e1eefa81;
 }
 
 .wordle .far {
-  background-color: #d3d3d3;
+  background-color: rgba(209, 143, 143, 0.795);
+  color: white;
 }
 
 .wordle .close {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.795);
+  color: #0f0050;
 }
 
 .wordle .exact {
-  background-color: lightgreen;
+  background-color: rgba(145, 238, 145, 0.795);
+  color: #0f0050;
 }
 
 .wordle .failed {
-  color: red;
+  color: #ff8282;
   font-weight: bold;
 }
 
 .wordle .correct {
-  color: green;
+  color: #0edd0e;
   font-weight: bold;
 }
 
@@ -103,5 +107,11 @@
 
 .wordle .btnEnter {
   margin-left: 5px;
+}
+
+.wordle .compWord {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /*# sourceMappingURL=wordle.css.map */

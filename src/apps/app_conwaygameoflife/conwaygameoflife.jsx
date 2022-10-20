@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useEffect, useRef, useState } from "react";
 import "./conwaygameoflife.css";
 
 function debounce(fn, ms) {
@@ -12,16 +12,20 @@ function debounce(fn, ms) {
   };
 }
 
+const sizeRatio = { height: 0.7, width: 0.7 };
+
 export default function ConwayGameOfLife() {
   const [arr2D, setArr2D] = useState([]);
   const [size, setSize] = useState({
-    height: window.innerHeight * 0.7,
-    width: window.innerWidth * 0.95,
+    height: 200,
+    width: 200,
   });
+  const [main, setMain] = useState({ h: 0, w: 0 });
   const [cellSize, setCellSize] = useState(10);
   const [intFunc, setIntFunc] = useState(0);
   const [intTime, setIntTime] = useState(500);
   const canvasRef = useRef();
+  const conwayDivRef = useRef();
 
   const neighbours = [
     [0, -1],
@@ -34,16 +38,7 @@ export default function ConwayGameOfLife() {
     [1, 0],
   ];
 
-  const canvasAdjust = () => {
-    setSize({
-      height: window.innerHeight * 0.7,
-      width: window.innerWidth * 0.95,
-    });
-    setArr2D([]);
-    clearInterval(intFunc);
-    setIntFunc(0);
-  };
-
+  // Generate 2D array
   const genArr2D = () => {
     const arr = [];
     const num_rows = Math.floor(size.height / cellSize);
@@ -58,6 +53,7 @@ export default function ConwayGameOfLife() {
     setArr2D(arr);
   };
 
+  // Next Generation 2D array
   const nextGeneration = () => {
     setArr2D((curr) => {
       const arr = [];
@@ -74,6 +70,7 @@ export default function ConwayGameOfLife() {
     });
   };
 
+  // Conway Rules
   const conwayRules = (arr, i, j) => {
     const curr_val = arr[i][j];
     const neigh_val = neighbours.reduce((sum, nei) => {
@@ -180,6 +177,12 @@ export default function ConwayGameOfLife() {
     );
   };
 
+  const mainChange = () => {
+    setMain({
+      h: conwayDivRef.current.offsetHeight,
+      w: conwayDivRef.current.offsetWidth,
+    });
+  };
   useEffect(() => {
     if (arr2D.length < 1) {
       genArr2D();
@@ -190,9 +193,8 @@ export default function ConwayGameOfLife() {
         Math.floor(size.width / cellSize),
       );
     }
-
     const debouncedHandleResize = debounce(function handleResize() {
-      canvasAdjust();
+      mainChange();
     }, 1000);
 
     window.addEventListener("resize", debouncedHandleResize);
@@ -200,8 +202,23 @@ export default function ConwayGameOfLife() {
       window.removeEventListener("resize", debouncedHandleResize);
     };
   }, [size, arr2D, cellSize, intTime]);
+
+  const canvasAdjust = () => {
+    setSize({
+      height: conwayDivRef.current.offsetHeight,
+      width: conwayDivRef.current.offsetWidth,
+    });
+    setArr2D([]);
+    clearInterval(intFunc);
+    setIntFunc(0);
+  };
+
+  useLayoutEffect(() => {
+    canvasAdjust();
+  }, [main]);
+
   return (
-    <div className="conwayDiv">
+    <div ref={conwayDivRef} className="conwayDiv">
       <div>
         <h5>Conway Game Of Life</h5>
         <label htmlFor="intTime">Speed:</label>
