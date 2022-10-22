@@ -55,7 +55,7 @@ export default function Navbar({ appsRoutes }) {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="/"
@@ -74,7 +74,7 @@ export default function Navbar({ appsRoutes }) {
                     );
                   })}
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

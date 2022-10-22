@@ -109,7 +109,7 @@ export default function ConwayGameOfLife() {
         const cell_value = arr[i][j];
         ctx.beginPath();
         ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
-        ctx.fillStyle = cell_value === 0 ? "#FFF" : "#000";
+        ctx.fillStyle = cell_value === 0 ? "#FFFFFFE0" : "#1d1d1d";
         ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
         ctx.strokeStyle = "#BFBFBF";
         ctx.stroke();
@@ -118,7 +118,7 @@ export default function ConwayGameOfLife() {
           ctx.moveTo(0, 0);
           ctx.lineTo(cols * cellSize, 0);
           ctx.lineTo(cols * cellSize, rows * cellSize);
-          ctx.strokeStyle = "#000";
+          ctx.strokeStyle = "#1d1d1d";
           ctx.stroke();
         }
         if (j === 0) {
@@ -126,7 +126,7 @@ export default function ConwayGameOfLife() {
           ctx.moveTo(0, 0);
           ctx.lineTo(0, rows * cellSize);
           ctx.lineTo(cols * cellSize, rows * cellSize);
-          ctx.strokeStyle = "#000";
+          ctx.strokeStyle = "#1d1d1d";
           ctx.stroke();
         }
       }
