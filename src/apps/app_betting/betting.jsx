@@ -3,7 +3,7 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import "lodash.multipermutations";
 import _ from "lodash";
-import { FaIcon, Table } from "../../components";
+import { FaIcon, Table, Breadcrumbs } from "../../components";
 import Badge from "./badge";
 
 import "../../components/table/table.css";
@@ -113,77 +113,80 @@ export default function Betting() {
   }, [games]);
 
   return (
-    <div>
-      <h5>Betting</h5>
+    <>
+      <Breadcrumbs crumbs={["home", "app", "betting"]} />
       <div>
-        <input
-          id="teamA"
-          placeholder="Team A"
-          value={teams.teamA}
-          onChange={changeTeams}
-        />
-        &nbsp;&nbsp; vs &nbsp;&nbsp;
-        <input
-          id="teamB"
-          placeholder="Team B"
-          value={teams.teamB}
-          onChange={changeTeams}
-        />
-        <select onChange={selectResult} value={teams.result}>
-          <option value="win">Win</option>
-          <option value="draw">Draw</option>
-          <option value="lose">Lose</option>
-          <option value="undecided">Undecided</option>
-        </select>
-        &nbsp;&nbsp;
-        <button onClick={submitGame} className="btn btn-sm btn-success">
-          Enter
-        </button>
-        &nbsp;&nbsp;
-        <button onClick={deleteAllGames} className="btn btn-sm btn-danger">
-          Delete All
-        </button>
-      </div>
-      <div>
-        <p>All possible permutations: {probability}</p>
-        {games.map((gm) => (
-          <div key={gm.id}>
-            {gm.teamA} - {gm.teamB}
-            &nbsp;&nbsp;
-            <Badge name={gm.result} />
-            &nbsp;&nbsp;
-            <button
-              id={gm.id}
-              onClickCapture={deleteGame}
-              className="btn btn-sm btn-danger"
-            >
-              <FaIcon name="delete" />
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className="tableDiv">
-        <table>
-          <thead>
-            <tr>
-              {games.map((gm) => (
-                <th key={gm.id}>
-                  {gm.teamA} - {gm.teamB}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {tbData.map((td, idx1) => (
-              <tr key={idx1}>
-                {td.map((res, idx2) => (
-                  <td key={`${idx1}-${idx2}`}>{res}</td>
+        <h5>Betting</h5>
+        <div>
+          <input
+            id="teamA"
+            placeholder="Team A"
+            value={teams.teamA}
+            onChange={changeTeams}
+          />
+          &nbsp;&nbsp; vs &nbsp;&nbsp;
+          <input
+            id="teamB"
+            placeholder="Team B"
+            value={teams.teamB}
+            onChange={changeTeams}
+          />
+          <select onChange={selectResult} value={teams.result}>
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+            <option value="lose">Lose</option>
+            <option value="undecided">Undecided</option>
+          </select>
+          &nbsp;&nbsp;
+          <button onClick={submitGame} className="btn btn-sm btn-success">
+            Enter
+          </button>
+          &nbsp;&nbsp;
+          <button onClick={deleteAllGames} className="btn btn-sm btn-danger">
+            Delete All
+          </button>
+        </div>
+        <div>
+          <p>All possible permutations: {probability}</p>
+          {games.map((gm) => (
+            <div key={gm.id}>
+              {gm.teamA} - {gm.teamB}
+              &nbsp;&nbsp;
+              <Badge name={gm.result} />
+              &nbsp;&nbsp;
+              <button
+                id={gm.id}
+                onClickCapture={deleteGame}
+                className="btn btn-sm btn-danger"
+              >
+                <FaIcon name="delete" />
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="tableDiv">
+          <table>
+            <thead>
+              <tr>
+                {games.map((gm) => (
+                  <th key={gm.id}>
+                    {gm.teamA} - {gm.teamB}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {tbData.map((td, idx1) => (
+                <tr key={idx1}>
+                  {td.map((res, idx2) => (
+                    <td key={`${idx1}-${idx2}`}>{res}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

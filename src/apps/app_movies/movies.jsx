@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { Loader } from "../../components";
+import { Loader, Breadcrumbs } from "../../components";
 import Movie from "./movie";
 import "./css/movies.css";
 export default function Movies() {
@@ -107,6 +107,7 @@ export default function Movies() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "movies"]} />
       <h5>Movies App (Using TMDB API)</h5>
       {/* <input
         type="text"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader } from "../../components";
+import { Loader, Breadcrumbs } from "../../components";
 import "./gallery.css";
 
 export default function Gallery() {
@@ -85,73 +85,76 @@ export default function Gallery() {
     setPage(1);
   };
   return (
-    <div className="mainGalDiv">
-      <h5>Gallery (coding in progress)</h5>
-      <p>From Pexels API</p>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <p>Total: {data.total_results}</p>
-          <p>
-            <label htmlFor="topics">Topic:</label>
-            <select name="topics" onChange={changeTopic} value={topic}>
-              {topics.map((tp) => (
-                <option key={tp} value={tp}>
-                  {tp}
-                </option>
-              ))}
-            </select>
-            &nbsp; Page: {data.page} &nbsp; Per_page: {data.per_page}
-          </p>
-          <div className="pagination">
-            <button
-              className="btn btn-sm btn-info"
-              onClick={pageChange}
-              id="start"
-            >
-              Start
-            </button>
-            <button
-              className="btn btn-sm btn-secondary"
-              onClick={pageChange}
-              id="previous"
-            >
-              Previous
-            </button>
-            <button
-              className="btn btn-sm btn-success"
-              onClick={pageChange}
-              id="next"
-            >
-              Next
-            </button>
-            <button
-              className="btn btn-sm btn-warning"
-              onClick={pageChange}
-              id="end"
-            >
-              End
-            </button>
-          </div>
-          <div className="divGallery">
-            {data.photos.map((photo) => (
-              <div key={photo.id} className="containerImage">
-                <img
-                  className="photo"
-                  src={photo.src.small}
-                  alt={`${photo.alt}`}
-                  // onMouseEnter={imageHover}
-                  // onMouseLeave={imageHoverOut}
-                />
-                <div className="photographer">
-                  Photo by: {photo.photographer}
+    <>
+      <Breadcrumbs crumbs={["home", "app", "gallery"]} />
+      <div className="mainGalDiv">
+        <h5>Gallery (coding in progress)</h5>
+        <p>From Pexels API</p>
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            <p>Total: {data.total_results}</p>
+            <p>
+              <label htmlFor="topics">Topic:</label>
+              <select name="topics" onChange={changeTopic} value={topic}>
+                {topics.map((tp) => (
+                  <option key={tp} value={tp}>
+                    {tp}
+                  </option>
+                ))}
+              </select>
+              &nbsp; Page: {data.page} &nbsp; Per_page: {data.per_page}
+            </p>
+            <div className="pagination">
+              <button
+                className="btn btn-sm btn-info"
+                onClick={pageChange}
+                id="start"
+              >
+                Start
+              </button>
+              <button
+                className="btn btn-sm btn-secondary"
+                onClick={pageChange}
+                id="previous"
+              >
+                Previous
+              </button>
+              <button
+                className="btn btn-sm btn-success"
+                onClick={pageChange}
+                id="next"
+              >
+                Next
+              </button>
+              <button
+                className="btn btn-sm btn-warning"
+                onClick={pageChange}
+                id="end"
+              >
+                End
+              </button>
+            </div>
+            <div className="divGallery">
+              {data.photos.map((photo) => (
+                <div key={photo.id} className="containerImage">
+                  <img
+                    className="photo"
+                    src={photo.src.small}
+                    alt={`${photo.alt}`}
+                    // onMouseEnter={imageHover}
+                    // onMouseLeave={imageHoverOut}
+                  />
+                  <div className="photographer">
+                    Photo by: {photo.photographer}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }

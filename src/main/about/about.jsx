@@ -1,4 +1,4 @@
-import { FaIcon } from "../../components";
+import { Breadcrumbs, FaIcon } from "../../components";
 import "./about.css";
 
 const codingTools = [
@@ -16,25 +16,28 @@ const codingTools = [
 ];
 export default function About() {
   return (
-    <div className="aboutDiv">
-      <h5>About Me</h5>
-      <p>
-        6+ yrs in software design and development. Currently based in Nairobi,
-        Kenya.
-      </p>
-      <p>
-        <u>Languages and tools</u>
-      </p>
-      <div className="codingToolsDiv">
-        {codingTools.map((ct) => (
-          <div key={ct.id} className="codingTool">
-            <span id={`icon${ct.id}`} className="codingIcons">
-              <FaIcon key={ct.id} name={ct.id} />
-            </span>
-            <p className="codingToolName">{ct.name}</p>
-          </div>
-        ))}
+    <>
+      <Breadcrumbs crumbs={["home", "about"]} />
+      <div className="aboutDiv">
+        <h5>About Me</h5>
+        <p>
+          6+ yrs in software design and development. Currently based in Nairobi,
+          Kenya.
+        </p>
+        <p>
+          <u>Languages and tools</u>
+        </p>
+        <div className="codingToolsDiv">
+          {codingTools.map((ct) => (
+            <div key={ct.id} className="codingTool">
+              <span id={`icon${ct.id}`} className="codingIcons">
+                <FaIcon key={ct.id} name={ct.id} />
+              </span>
+              <p className="codingToolName">{ct.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

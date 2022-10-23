@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AnalogClock from "./analog";
 import DigitalClock from "./digital";
+import { Breadcrumbs } from "../../components";
 
 export default function Clock() {
   const [checkedClock, setCheckedClock] = useState("analog");
@@ -11,6 +12,7 @@ export default function Clock() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "clock"]} />
       <h5>Clock App</h5>
       <label htmlFor="digital">
         Digital:

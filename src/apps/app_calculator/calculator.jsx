@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { evaluate } from "mathjs";
 import parse from "html-react-parser";
+import { Breadcrumbs } from "../../components";
 import "./calculator.css";
 
 export default function Calculator() {
@@ -174,6 +175,7 @@ export default function Calculator() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "calculator"]} />
       <h5>Calculator</h5>
       <div className="calcGrid">
         <div className="results">{result}</div>

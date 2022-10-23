@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Breadcrumbs } from "../../components";
 import Task from "./task";
 import CreateTask from "./create_task";
 import "./taskmanager.css";
@@ -49,6 +50,7 @@ export default function TaskManager() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "taskmanager"]} />
       <div>
         <h4>Task Manager App</h4>
       </div>

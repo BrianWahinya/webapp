@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Keyboard, Loader } from "../../components";
+import { Keyboard, Loader, Breadcrumbs } from "../../components";
 import "./wordle.css";
 
 const wordsApiUrl = "https://random-word-api.herokuapp.com/word";
@@ -310,75 +310,79 @@ export default function Wordle() {
   }, [guesses, activeRow, playing]);
 
   return (
-    <div className="wordle">
-      <h5>Wordle Game</h5>
-      <select value={lang} onChange={changeLang}>
-        <option value="en">En</option>
-        <option value="es">Es</option>
-        <option value="it">It</option>
-      </select>
-      <select value={level} onChange={changeLevel}>
-        <option value="easy">Easy</option>
-        <option value="beginner">Beginner</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="expert">Expert</option>
-      </select>
-      <p className="instructions">
-        Guess the name then press enter after every row
-      </p>
-      <p className="hints">
-        Hints:
-        <br />
-        <span className="far">grey:</span> not present,
-        <br />
-        <span className="close">yellow:</span> present &amp; incorrect position,
-        <br />
-        <span className="exact">green:</span> present &amp; correct position
-      </p>
-      {loading && <Loader />}
-      {!loading && guessesColored}
-      <div>
-        <div className="inputs">
-          <button
-            onClick={enterClicked}
-            className="btn btn-sm btn-warning btnEnter"
-            disabled={loading || !playing}
-          >
-            Enter
-          </button>
-          {/* <button
+    <>
+      <Breadcrumbs crumbs={["home", "app", "wordlegame"]} />
+      <div className="wordle">
+        <h5>Wordle Game</h5>
+        <select value={lang} onChange={changeLang}>
+          <option value="en">En</option>
+          <option value="es">Es</option>
+          <option value="it">It</option>
+        </select>
+        <select value={level} onChange={changeLevel}>
+          <option value="easy">Easy</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+        <p className="instructions">
+          Guess the name then press enter after every row
+        </p>
+        <p className="hints">
+          Hints:
+          <br />
+          <span className="far">grey:</span> not present,
+          <br />
+          <span className="close">yellow:</span> present &amp; incorrect
+          position,
+          <br />
+          <span className="exact">green:</span> present &amp; correct position
+        </p>
+        {loading && <Loader />}
+        {!loading && guessesColored}
+        <div>
+          <div className="inputs">
+            <button
+              onClick={enterClicked}
+              className="btn btn-sm btn-warning btnEnter"
+              disabled={loading || !playing}
+            >
+              Enter
+            </button>
+            {/* <button
             onClick={removeChar}
             className="btn btn-sm btn-danger btnEnter"
             disabled={loading || !playing}
           >
             Del
           </button> */}
-        </div>
+          </div>
 
-        <p>
-          {!correct && !playing && (
-            <>
-              <span className="failed">&#128518;Failed!!&#128569;</span>
-              <br />
-              <span>Word is: </span>
-              <span className="compWord">{word}</span>
-            </>
-          )}
-          {correct && !playing && (
-            <span className="correct">&#128521;Correct!!&#128526;</span>
-          )}
-        </p>
+          <p>
+            {!correct && !playing && (
+              <>
+                <span className="failed">&#128518;Failed!!&#128569;</span>
+                <br />
+                <span>Word is: </span>
+                <span className="compWord">{word}</span>
+              </>
+            )}
+            {correct && !playing && (
+              <span className="correct">&#128521;Correct!!&#128526;</span>
+            )}
+          </p>
+        </div>
+        {!playing && (
+          <button
+            className="btn btn-sm btn-primary btnNextWord"
+            onClick={nextWord}
+            disabled={disableBtn}
+          >
+            Try Next
+          </button>
+        )}
+        <Keyboard getKeyPressed={getKeyPressed} disabled={!playing} />
       </div>
-      {!playing && (
-        <button
-          className="btn btn-sm btn-primary btnNextWord"
-          onClick={nextWord}
-          disabled={disableBtn}
-        >
-          Try Next
-        </button>
-      )}
-      <Keyboard getKeyPressed={getKeyPressed} disabled={!playing} />
-    </div>
+    </>
   );
 }

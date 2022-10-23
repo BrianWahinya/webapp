@@ -5,7 +5,13 @@ import "bootstrap/dist/js/bootstrap.js";
 import comingSoonPic from "./assets/images/comingsoon.jpg";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Navbar, Footer, ErrorPage, WebArchiveIframe } from "./components";
+import {
+  Navbar,
+  Footer,
+  ErrorPage,
+  WebArchiveIframe,
+  Breadcrumbs,
+} from "./components";
 import { Register } from "./entities";
 import { About, Resume, Projects, Contact } from "./main";
 import {

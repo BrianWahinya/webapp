@@ -1,0 +1,27 @@
+const dims = {
+  home: { name: "Home", path: "/" },
+  about: { name: "About", path: "/about" },
+  app: { name: "Mini-Apps", path: "/app" },
+  resume: { name: "Resume", path: "/resume" },
+  betting: { name: "Betting", path: "/betting" },
+  contact: { name: "Contact", path: "/contact" },
+  projects: { name: "Projects", path: "/projects" },
+  statistics: { name: "Statistics", path: "/app/statistics" },
+  conway: { name: "ConwayGameofLife", path: "/app/conwaygameoflife" },
+  wordlegame: { name: "Wordle-Game", path: "/app/wordle" },
+  snakegame: { name: "Snake-Game", path: "/app/snakegame" },
+  concepts: { name: "Coding-Concepts", path: "/app/concepts" },
+  calculator: { name: "Calculator", path: "/app/calculator" },
+  clock: { name: "Clock", path: "/app/clock" },
+  weather: { name: "Weather", path: "/app/weather" },
+  movies: { name: "Movies", path: "/app/movies" },
+  taskmanager: { name: "TaskManager", path: "/app/taskmanager" },
+  quotegenerator: { name: "QuoteGenerator", path: "/app/quotegenerator" },
+  rockpaperscissors: {
+    name: "RockPaperScissors",
+    path: "/app/rockpaperscissors",
+  },
+  stopwatch: { name: "StopWatch", path: "/app/stopwatch" },
+  gallery: { name: "Gallery", path: "/app/gallery" },
+};
+export default dims;

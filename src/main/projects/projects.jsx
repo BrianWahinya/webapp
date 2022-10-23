@@ -1,5 +1,10 @@
-import React from "react";
+import { Breadcrumbs } from "../../components";
 
 export default function Projects() {
-  return <div>Projects</div>;
+  return (
+    <>
+      <Breadcrumbs crumbs={["home", "projects"]} />
+      <div>Projects</div>
+    </>
+  );
 }

@@ -5,6 +5,7 @@ import {
   faHandBackFist,
   faScissors,
 } from "@fortawesome/free-solid-svg-icons";
+import { Breadcrumbs } from "../../components";
 import "./rockpaperscissors.css";
 
 export default function RockPaperScissors() {
@@ -53,6 +54,7 @@ export default function RockPaperScissors() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "rockpaperscissors"]} />
       <h5>Rock-Paper-Scissors Game</h5>
       <div className="gameDiv">
         <div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Breadcrumbs } from "../../components";
 import SnakeCanvas from "./snakecanvas";
 import SnakeControls from "./snakecontrols";
 import SnakeDefaults from "./snakedefaults";
@@ -319,29 +320,32 @@ export default function Snakegame() {
   }, [state.error]);
 
   return (
-    <div className="snakeDiv">
-      <h5>SNAKE - GAME</h5>
-      <SnakeDefaults
-        score={state.score}
-        play={play}
-        pause={pause}
-        restart={restart}
-        changeCellSize={changeCellSize}
-        cellSize={state.cellSize}
-        error={state.error}
-        playing={state.playing}
-        speed={state.speed}
-      />
-      <SnakeCanvas
-        canvasRef={canvasRef}
-        height={state.size.height}
-        width={state.size.width}
-        error={state.error}
-        key="canvas"
-      />
-      <div className="snakeControlsGrid">
-        <SnakeControls getControl={getControl} playing={state.playing} />
+    <>
+      <Breadcrumbs crumbs={["home", "app", "snakegame"]} />
+      <div className="snakeDiv">
+        <h5>SNAKE - GAME</h5>
+        <SnakeDefaults
+          score={state.score}
+          play={play}
+          pause={pause}
+          restart={restart}
+          changeCellSize={changeCellSize}
+          cellSize={state.cellSize}
+          error={state.error}
+          playing={state.playing}
+          speed={state.speed}
+        />
+        <SnakeCanvas
+          canvasRef={canvasRef}
+          height={state.size.height}
+          width={state.size.width}
+          error={state.error}
+          key="canvas"
+        />
+        <div className="snakeControlsGrid">
+          <SnakeControls getControl={getControl} playing={state.playing} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

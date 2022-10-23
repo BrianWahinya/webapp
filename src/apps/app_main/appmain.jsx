@@ -1,7 +1,7 @@
-import { Card, CardImg, CardImgOverlay, CardTitle, CardText } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Breadcrumbs, FaIcon } from "../../components";
 import "./css/main.css";
-import { FaIcon } from "../../components";
+
 export default function AppMain() {
   const apps = [
     {
@@ -86,6 +86,7 @@ export default function AppMain() {
   ];
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app"]} />
       <h5>Mini-Apps: </h5>
       <code>Still in coding &amp; design stages</code>
       <p>

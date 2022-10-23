@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Breadcrumbs } from "../../components";
 import Kenya from "./kenya/kenya";
 import World from "./world/world";
 
@@ -13,25 +14,28 @@ export default function Statistics() {
     setOption(e.target.id);
   };
   return (
-    <div className="statistics">
-      <h5>Statistics</h5>
-      <div>
-        {Object.keys(options).map((op) => (
-          <React.Fragment key={op}>
-            <label htmlFor={op}>{op}</label>
-            <input
-              type="radio"
-              key={op}
-              id={op}
-              name="options"
-              checked={op === option}
-              onChange={changeOption}
-            />
-            &nbsp;
-          </React.Fragment>
-        ))}
+    <>
+      <Breadcrumbs crumbs={["home", "app", "statistics"]} />
+      <div className="statistics">
+        <h5>Statistics</h5>
+        <div>
+          {Object.keys(options).map((op) => (
+            <React.Fragment key={op}>
+              <label htmlFor={op}>{op}</label>
+              <input
+                type="radio"
+                key={op}
+                id={op}
+                name="options"
+                checked={op === option}
+                onChange={changeOption}
+              />
+              &nbsp;
+            </React.Fragment>
+          ))}
+        </div>
+        {options[option]}
       </div>
-      {options[option]}
-    </div>
+    </>
   );
 }

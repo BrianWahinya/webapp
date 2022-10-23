@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Breadcrumbs } from "../../components";
 import "./stopwatch.css";
 
 export default function StopWatch() {
@@ -52,6 +53,7 @@ export default function StopWatch() {
 
   return (
     <>
+      <Breadcrumbs crumbs={["home", "app", "stopwatch"]} />
       <h5>Stop Watch</h5>
       <div className="time">
         {timeFormat(time).hr !== "00" && <span>{timeFormat(time).hr}:</span>}

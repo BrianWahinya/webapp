@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Breadcrumbs } from "../../components";
 import "./quotegenerator.css";
 
 export default function QouteGenerator() {
@@ -84,40 +85,43 @@ export default function QouteGenerator() {
   }, []);
 
   return (
-    <div className="divQuoteGen">
-      <h5>Random Quote Generator</h5>
-      <p className="pQuote">" {advice.quote} "</p>
-      <p className="pAuthor">{advice.author}</p>
-      {previousQuotesIndexes.length > 0 && (
+    <>
+      <Breadcrumbs crumbs={["home", "app", "quotegenerator"]} />
+      <div className="divQuoteGen">
+        <h5>Random Quote Generator</h5>
+        <p className="pQuote">" {advice.quote} "</p>
+        <p className="pAuthor">{advice.author}</p>
+        {previousQuotesIndexes.length > 0 && (
+          <button
+            disabled={disable}
+            className="advicePrevious btn btn-sm btn-outline-warning"
+            onClick={getPreviousQuote}
+          >
+            Previous
+          </button>
+        )}
         <button
           disabled={disable}
-          className="advicePrevious btn btn-sm btn-outline-warning"
-          onClick={getPreviousQuote}
+          className="adviceNext btn btn-sm btn-outline-primary"
+          onClick={getNextQuote}
         >
-          Previous
+          Next
         </button>
-      )}
-      <button
-        disabled={disable}
-        className="adviceNext btn btn-sm btn-outline-primary"
-        onClick={getNextQuote}
-      >
-        Next
-      </button>
-      <a
-        disabled={disable}
-        role="button"
-        className={`btn btn-primary btn-sm btnTweet ${
-          disable ? "disabled" : ""
-        }`}
-        href={encodeURI(
-          `https://twitter.com/intent/tweet?text=${advice.quote} - ${advice.author}`,
-        )}
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        Tweet
-      </a>
-    </div>
+        <a
+          disabled={disable}
+          role="button"
+          className={`btn btn-primary btn-sm btnTweet ${
+            disable ? "disabled" : ""
+          }`}
+          href={encodeURI(
+            `https://twitter.com/intent/tweet?text=${advice.quote} - ${advice.author}`,
+          )}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Tweet
+        </a>
+      </div>
+    </>
   );
 }
