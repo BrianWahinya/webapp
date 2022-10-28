@@ -3,9 +3,10 @@ import { Breadcrumbs } from "../../components";
 import SnakeCanvas from "./snakecanvas";
 import SnakeControls from "./snakecontrols";
 import SnakeDefaults from "./snakedefaults";
-import "./snakegame.css";
+import SnakeMode from "./snakemode";
+import "./css/snakegame.css";
 
-const ratio = { h: 0.55, w: 0.95 };
+const ratio = { h: 2.5, w: 1.7 };
 
 function debounce(fn, ms) {
   let timer;
@@ -61,9 +62,10 @@ const drawCanvas = (ctx, rows, cols, arr, cellSize, snakeHead) => {
           ? i === snakeHead[0] && j === snakeHead[1]
             ? "#636363"
             : "#000"
-          : "#FFF";
+          : "#fafcffda";
       ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
-      ctx.strokeStyle = "#BFBFBF";
+      ctx.lineWidth = 0.2;
+      ctx.strokeStyle = "#787878";
       ctx.stroke();
     }
   }
@@ -116,15 +118,15 @@ const defaultState = {
   food: [],
   direction: "right",
   arr2D: [],
-  size: {
-    height: window.innerHeight * ratio.h,
-    width: window.innerWidth * ratio.w,
-  },
-  rows: (window.innerHeight * ratio.h) / 15,
-  cols: (window.innerWidth * ratio.w) / 15,
   error: false,
   playing: false,
   speed: 500,
+  size: {
+    height: window.innerHeight / ratio.h,
+    width: window.innerWidth / ratio.w,
+  },
+  rows: window.innerHeight / ratio.h / 15,
+  cols: window.innerWidth / ratio.w / 15,
 };
 
 const reducer = (state, elem, vals) => {
@@ -132,6 +134,7 @@ const reducer = (state, elem, vals) => {
 };
 
 export default function Snakegame() {
+  const divRef = useRef();
   const canvasRef = useRef();
   const [state, setState] = useState(defaultState);
 
@@ -139,11 +142,11 @@ export default function Snakegame() {
     setState((curr) => ({
       ...curr,
       size: {
-        height: window.innerHeight * ratio.h,
-        width: window.innerWidth * ratio.w,
+        height: window.innerHeight / ratio.h,
+        width: window.innerWidth / ratio.w,
       },
-      rows: (window.innerHeight * ratio.h) / curr.cellSize,
-      cols: (window.innerWidth * ratio.w) / curr.cellSize,
+      rows: window.innerHeight / ratio.h / curr.cellSize,
+      cols: window.innerWidth / ratio.w / curr.cellSize,
     }));
   };
 
@@ -322,18 +325,19 @@ export default function Snakegame() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "snakegame"]} />
-      <div className="snakeDiv">
-        <h5>SNAKE - GAME</h5>
+      <div className="snakeDiv" ref={divRef}>
         <SnakeDefaults
           score={state.score}
+          changeCellSize={changeCellSize}
+          cellSize={state.cellSize}
+          speed={state.speed}
+        />
+        <SnakeMode
           play={play}
           pause={pause}
           restart={restart}
-          changeCellSize={changeCellSize}
-          cellSize={state.cellSize}
           error={state.error}
           playing={state.playing}
-          speed={state.speed}
         />
         <SnakeCanvas
           canvasRef={canvasRef}

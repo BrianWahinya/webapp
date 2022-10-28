@@ -1,0 +1,11 @@
+.conwayDiv{
+  min-height: 50vh;
+  margin: 0 auto;
+  text-align: center;
+  .btn {
+    margin: 2px;
+  }
+  canvas{
+    height: 70vh;
+  }
+}

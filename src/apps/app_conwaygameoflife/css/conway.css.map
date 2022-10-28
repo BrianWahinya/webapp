@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACR,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,MAAM;CAOnB;;AAVD,AAIE,UAJQ,CAIR,IAAI,CAAC;EACH,MAAM,EAAE,GAAG;CACZ;;AANH,AAOE,UAPQ,CAOR,MAAM,CAAA;EACJ,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "conway.scss"
+    ],
+    "names": [],
+    "file": "conway.css"
+}

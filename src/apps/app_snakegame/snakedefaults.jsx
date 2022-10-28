@@ -1,12 +1,7 @@
 export default function SnakeDefaults({
   score,
-  play,
-  pause,
-  restart,
   changeCellSize,
   cellSize,
-  error,
-  playing,
   speed,
 }) {
   return (
@@ -39,36 +34,6 @@ export default function SnakeDefaults({
         </span>
         &nbsp;&nbsp;
         <span>Score: {score}</span>
-      </div>
-      <div>
-        {playing && !error && (
-          <>
-            <button
-              className="btn btn-sm btn-outline-info pause"
-              onClick={pause}
-            >
-              Pause
-            </button>
-          </>
-        )}
-        {(playing || error) && (
-          <button
-            className="btn btn-sm btn-outline-secondary restart"
-            onClick={restart}
-          >
-            Restart
-          </button>
-        )}
-        {!playing && !error && (
-          <button
-            className="btn btn-sm btn-outline-success play"
-            onClick={play}
-          >
-            Play
-          </button>
-        )}
-        <br />
-        {error && <p className="snakeError">Out of bounds!!!</p>}
       </div>
     </>
   );

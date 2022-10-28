@@ -1,6 +1,6 @@
 import { useLayoutEffect, useEffect, useRef, useState } from "react";
 import { Breadcrumbs } from "../../components";
-import "./conwaygameoflife.css";
+import "./css/conway.css";
 
 function debounce(fn, ms) {
   let timer;
