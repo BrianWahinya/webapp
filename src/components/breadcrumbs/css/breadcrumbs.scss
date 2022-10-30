@@ -1,3 +1,111 @@
-.navBreadcrumbs{
-  --bs-breadcrumb-divider: ">"
+$hover 		  : #838383ef;
+$active 		  : #a5a5a5de;
+$inactive 		  : #5a5a5ae7;
+
+@mixin border-radius($pixel...) {
+  border-radius: $pixel;
+}
+
+.breadcrumb{
+  list-style:none;
+  display: inline-block;
+  
+  .icon{
+    font-size: 11px;
+  }
+  
+  .breadcrumb-link{
+    float:left;
+    .breadcrumb-ahref{
+      color:#e0d7ff;
+      display:block;
+      background: $inactive;
+      text-decoration: none;
+      position:relative;
+      height: 25px;
+      line-height:25px;
+      padding: 0 10px 0 5px;
+      text-align: center;
+      margin-right: 23px;
+      &:before,
+      &:after{
+        content: "";
+        position:absolute;
+        top: 0;
+        border:0 solid $inactive;
+        border-width:12.5px 10px;
+        width: 0;
+        height: 0;
+      }
+      &:before{
+        left:-20px;
+        border-left-color:transparent;
+      }
+      &:after{
+        left:100%;
+        border-color:transparent;
+        border-left-color:$inactive;
+      }
+      &:hover{
+        background-color: $hover;
+        &:before{
+          border-color:$hover;
+          border-left-color:transparent;
+        }
+        &:after{
+          border-left-color:$hover;
+        }
+      }
+    }
+    
+    .notactive{
+      background-color: $inactive;
+      &:before{
+        border-color:$inactive;
+        border-left-color:transparent;
+        }
+      &:after{
+        border-left-color:$inactive;
+      }
+    }
+    
+    &:first-child{
+      .breadcrumb-ahref{
+        padding-left:15px;
+        @include border-radius(4px 0 0 4px);
+        &:before{
+          border:none;
+        }
+      }
+    }
+
+    &.last-link{
+      .isactive{
+        color:#f8f6ff;
+        padding-right:15px;
+        background: $active;
+        background-color: $active;
+        border:0 solid $active;
+        @include border-radius(0 4px 4px 0);
+        &:before{
+          border-color:$active;
+          border-left-color:transparent;
+        }
+        &:after{
+          border-left-color:$active;
+          border:none;
+        }
+        &:hover{
+          background-color: $active;
+          &:before{
+            border-color:$active;
+            border-left-color:transparent;
+            }
+          &:after{
+            border-left-color:$active;
+          }
+        }
+      }
+    }
+  }
 }

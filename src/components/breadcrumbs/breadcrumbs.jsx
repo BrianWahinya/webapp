@@ -4,28 +4,32 @@ import "./css/breadcrumbs.css";
 
 export default function Breadcrumbs({ crumbs }) {
   return (
-    <nav className="navBreadcrumbs" aria-label="breadcrumb">
-      <ol className="breadcrumb">
-        {crumbs.map((cm, idx) => {
-          const { name, path } = dims[cm];
-          if (idx !== crumbs.length - 1) {
-            return (
-              <li className="breadcrumb-item" key={name}>
-                <Link to={path}>{name}</Link>
-              </li>
-            );
-          }
+    // <nav className="breadcrumbs" aria-label="breadcrumb">
+    <ol className="breadcrumb">
+      {crumbs.map((cm, idx) => {
+        const { name, path } = dims[cm];
+        if (idx !== crumbs.length - 1) {
           return (
-            <li
-              className="breadcrumb-item active"
-              aria-current="page"
-              key={name}
-            >
-              {name}
+            <li className="breadcrumb-link" key={name}>
+              <Link to={path} className="breadcrumb-ahref notactive">
+                {name}
+              </Link>
             </li>
           );
-        })}
-      </ol>
-    </nav>
+        }
+        return (
+          <li
+            className="breadcrumb-link last-link"
+            aria-current="page"
+            key={name}
+          >
+            <Link to={path} className="breadcrumb-ahref isactive">
+              {name}
+            </Link>
+          </li>
+        );
+      })}
+    </ol>
+    // </nav>
   );
 }

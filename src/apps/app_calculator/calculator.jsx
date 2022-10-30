@@ -166,7 +166,7 @@ export default function Calculator() {
   };
 
   useEffect(() => {
-    console.log(window);
+    // console.log(window);
     window.document.addEventListener("keydown", keyboardEnter);
     return () => {
       window.document.removeEventListener("keydown", keyboardEnter);
