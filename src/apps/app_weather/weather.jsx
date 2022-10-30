@@ -60,7 +60,6 @@ export default function Weather() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "weather"]} />
-      <h5>Weather app</h5>
       <input
         type="text"
         placeholder="Enter Location"

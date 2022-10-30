@@ -6,7 +6,6 @@ export default function Contact() {
     <>
       <Breadcrumbs crumbs={["home", "contact"]} />
       <div className="contactsDiv">
-        <h5>Contacts</h5>
         <div className="contactDetails">
           <p className="pTitles">
             <FaIcon name="whatsapp" /> Whatsapp

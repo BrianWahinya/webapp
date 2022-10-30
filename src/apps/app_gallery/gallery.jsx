@@ -88,7 +88,6 @@ export default function Gallery() {
     <>
       <Breadcrumbs crumbs={["home", "app", "gallery"]} />
       <div className="mainGalDiv">
-        <h5>Gallery (coding in progress)</h5>
         <p>From Pexels API</p>
         {loading ? (
           <Loader />

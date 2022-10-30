@@ -17,7 +17,6 @@ export default function Statistics() {
     <>
       <Breadcrumbs crumbs={["home", "app", "statistics"]} />
       <div className="statistics">
-        <h5>Statistics</h5>
         <div>
           {Object.keys(options).map((op) => (
             <React.Fragment key={op}>

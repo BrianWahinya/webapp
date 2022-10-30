@@ -51,9 +51,7 @@ export default function TaskManager() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "taskmanager"]} />
-      <div>
-        <h4>Task Manager App</h4>
-      </div>
+      <div></div>
       <CreateTask addTask={addTask} />
       <button
         className="btn btn-outline-danger btn-sm btn-tasks"

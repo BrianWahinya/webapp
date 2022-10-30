@@ -223,7 +223,6 @@ export default function ConwayGameOfLife() {
       <Breadcrumbs crumbs={["home", "app", "conway"]} />
       <div ref={conwayDivRef} className="conwayDiv">
         <div>
-          <h5>Conway Game Of Life</h5>
           <label htmlFor="intTime">Speed:</label>
           <select name="intTime" onChange={changeTime} value={intTime}>
             <option value={500}>500ms</option>

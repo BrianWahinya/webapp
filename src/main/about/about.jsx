@@ -19,7 +19,6 @@ export default function About() {
     <>
       <Breadcrumbs crumbs={["home", "about"]} />
       <div className="aboutDiv">
-        <h5>About Me</h5>
         <p>
           6+ yrs in software design and development. Currently based in Nairobi,
           Kenya.

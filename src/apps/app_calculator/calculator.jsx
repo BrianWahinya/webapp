@@ -176,7 +176,6 @@ export default function Calculator() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "calculator"]} />
-      <h5>Calculator</h5>
       <div className="calcGrid">
         <div className="results">{result}</div>
         <div className="calc-inputs">

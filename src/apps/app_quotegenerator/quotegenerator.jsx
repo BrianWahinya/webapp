@@ -88,7 +88,6 @@ export default function QouteGenerator() {
     <>
       <Breadcrumbs crumbs={["home", "app", "quotegenerator"]} />
       <div className="divQuoteGen">
-        <h5>Random Quote Generator</h5>
         <p className="pQuote">" {advice.quote} "</p>
         <p className="pAuthor">{advice.author}</p>
         {previousQuotesIndexes.length > 0 && (

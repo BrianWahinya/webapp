@@ -13,7 +13,6 @@ export default function Clock() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "clock"]} />
-      <h5>Clock App</h5>
       <label htmlFor="digital">
         Digital:
         <input

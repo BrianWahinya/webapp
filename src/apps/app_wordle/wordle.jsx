@@ -313,7 +313,6 @@ export default function Wordle() {
     <>
       <Breadcrumbs crumbs={["home", "app", "wordlegame"]} />
       <div className="wordle">
-        <h5>Wordle Game</h5>
         <select value={lang} onChange={changeLang}>
           <option value="en">En</option>
           <option value="es">Es</option>

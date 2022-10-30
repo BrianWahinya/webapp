@@ -55,7 +55,6 @@ export default function RockPaperScissors() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "rockpaperscissors"]} />
-      <h5>Rock-Paper-Scissors Game</h5>
       <div className="gameDiv">
         <div>
           You: {userOption} vs Comp {compOption}

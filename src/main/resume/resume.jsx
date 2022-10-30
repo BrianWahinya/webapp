@@ -8,7 +8,6 @@ export default function Resume() {
     <>
       <Breadcrumbs crumbs={["home", "resume"]} />
       <div>
-        <h5>Resume</h5>
         <nav>
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
             <button
