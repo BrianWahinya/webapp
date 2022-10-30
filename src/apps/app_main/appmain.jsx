@@ -87,7 +87,6 @@ export default function AppMain() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app"]} />
-      <h5>Mini-Apps: </h5>
       <code>Still in coding &amp; design stages</code>
       <p>
         These are small applications I have always wanted to do
