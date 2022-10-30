@@ -2,7 +2,7 @@ import { useState } from "react";
 import Population from "./population";
 import Elections from "./elections/elections";
 
-import "./kenya.css";
+import "./css/kenya.css";
 
 const topics = {
   // population: <Population />,

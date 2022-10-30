@@ -14,24 +14,28 @@
       }
       
       tr:nth-child(even) {
-        background-color: #dddddd;
+        background-color: #9999999f;
+        color: #000000;
       }
       thead tr {
         position: sticky;
         top: 0;
-        background-color: #eeeeee;
+        background-color: #d2c7ffdc;
+        color: #000000;
       }
 
       tbody tr:hover{
-        background-color: #d3e1ff;
+        background-color: #f5ffd2c9;
+        color: #000000;
+        cursor: pointer;
       }
     }
   }
+  .chartDiv{
+    width: 99%;
+    height: 70vh;
+    min-width: 250px;
+    min-height: 250px;
+  }
 }
 
-.chartDiv{
-  width: 90vw;
-  height: 70vh;
-  min-width: 250px;
-  min-height: 250px;
-}
