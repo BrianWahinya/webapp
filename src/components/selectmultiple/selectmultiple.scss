@@ -3,46 +3,46 @@ $width: 200px;
 .multiselect {
   width: $width;
   font-size: 12px;
+  .selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+    background-color: #e4e4e4ee;
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxes {
+    border: 1px #dadada solid;
+    position: absolute;
+    z-index: 1000;
+    max-height: 300px;
+    width: $width;
+    overflow-y: auto;
+    label {
+      display: block;
+      color: black;
+      &:hover {
+        background-color: #cececeee;
+      }
+    }
+  }
+
+  .showCheckboxes{
+    display: block;
+    background-color: #e4e4e4ee;
+  }
+  .hideCheckboxes{
+    display: none;
+  }
 }
 
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
-  width: 100%;
-  font-weight: bold;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#checkboxes {
-  border: 1px #dadada solid;
-  position: absolute;
-  z-index: 1000;
-  max-height: 300px;
-  width: $width;
-  overflow-y: auto;
-}
-
-#checkboxes label {
-  display: block;
-}
-
-#checkboxes label:hover {
-  background-color: #1e90ff;
-}
-
-.showCheckboxes{
-  display: block;
-  background-color: #ffffff;
-}
-.hideCheckboxes{
-  display: none;
-}
