@@ -2,17 +2,17 @@
   color: #cecece;
 }
 
-.codingToolsDiv {
+.aboutDiv .codingToolsDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 99%;
+  width: 80%;
   margin: 0 auto;
 }
 
-.codingToolsDiv .codingTool {
+.aboutDiv .codingToolsDiv .codingTool {
   min-width: 80px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -23,13 +23,13 @@
   border-radius: 3px;
 }
 
-.codingToolsDiv .codingTool .codingToolName {
+.aboutDiv .codingToolsDiv .codingTool .codingToolName {
   font-size: 13px;
   padding: 0;
   margin: 0;
 }
 
-.codingToolsDiv .codingTool:hover {
+.aboutDiv .codingToolsDiv .codingTool:hover {
   background-color: rgba(247, 237, 225, 0.39);
   cursor: pointer;
   -webkit-transform: scale(0.9);
@@ -38,55 +38,55 @@
   transition: all 250ms ease;
 }
 
-.codingToolsDiv .codingTool:hover .codingToolName {
+.aboutDiv .codingToolsDiv .codingTool:hover .codingToolName {
   color: #ffffff !important;
 }
 
-.codingToolsDiv .codingTool:hover .codingIcons {
+.aboutDiv .codingToolsDiv .codingTool:hover .codingIcons {
   color: #ffffff !important;
 }
 
-.codingToolsDiv #iconpython {
+.aboutDiv .codingToolsDiv #iconpython {
   color: #009ADC;
 }
 
-.codingToolsDiv #iconjs {
+.aboutDiv .codingToolsDiv #iconjs {
   color: #f1ee19;
 }
 
-.codingToolsDiv #iconhtml {
+.aboutDiv .codingToolsDiv #iconhtml {
   color: #ff822f;
 }
 
-.codingToolsDiv #iconcss {
+.aboutDiv .codingToolsDiv #iconcss {
   color: #b159bd;
 }
 
-.codingToolsDiv #iconcharts {
+.aboutDiv .codingToolsDiv #iconcharts {
   color: #925268;
 }
 
-.codingToolsDiv #icongit {
+.aboutDiv .codingToolsDiv #icongit {
   color: #2fb3ff;
 }
 
-.codingToolsDiv #iconsql {
+.aboutDiv .codingToolsDiv #iconsql {
   color: #2fffe3;
 }
 
-.codingToolsDiv #icondocker {
+.aboutDiv .codingToolsDiv #icondocker {
   color: #ff7950;
 }
 
-.codingToolsDiv #iconreact {
+.aboutDiv .codingToolsDiv #iconreact {
   color: #6f8ee6;
 }
 
-.codingToolsDiv #iconbootstrap {
+.aboutDiv .codingToolsDiv #iconbootstrap {
   color: #8d74b4;
 }
 
-.codingToolsDiv #iconlinux {
+.aboutDiv .codingToolsDiv #iconlinux {
   color: #1C89BB;
 }
 /*# sourceMappingURL=about.css.map */

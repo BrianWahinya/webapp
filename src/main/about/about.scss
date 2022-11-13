@@ -1,67 +1,67 @@
 .aboutDiv{
   color: #cecece;
-}
-.codingToolsDiv{
-  display: flex;
-  flex-wrap: wrap;
-  width: 99%;
-  margin: 0 auto;
-  .codingTool{
-    min-width: 80px;
-    height: fit-content;
-    text-align: center;
-    margin: 5px;
-    font-size: 40px;
-    border-radius: 3px;
-    .codingToolName{
-      font-size: 13px;
-      padding: 0;
-      margin: 0;
-    }
-    &:hover{
-      background-color: rgba(247, 237, 225, 0.39);
-      cursor: pointer;
-      transform: scale(0.9);
-      transition: all 250ms ease;
+  .codingToolsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    .codingTool{
+      min-width: 80px;
+      height: fit-content;
+      text-align: center;
+      margin: 5px;
+      font-size: 40px;
+      border-radius: 3px;
       .codingToolName{
-        color: #ffffff !important;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
       }
-      .codingIcons{
-        color: #ffffff !important;
+      &:hover{
+        background-color: rgba(247, 237, 225, 0.39);
+        cursor: pointer;
+        transform: scale(0.9);
+        transition: all 250ms ease;
+        .codingToolName{
+          color: #ffffff !important;
+        }
+        .codingIcons{
+          color: #ffffff !important;
+        }
       }
     }
-  }
-  #iconpython{
-    color:#009ADC;
-  }
-  #iconjs{
+    #iconpython{
+      color:#009ADC;
+    }
+    #iconjs{
       color:#f1ee19;
-  }
-  #iconhtml{
+    }
+    #iconhtml{
       color:#ff822f;
-  }
-  #iconcss{
+    }
+    #iconcss{
       color:#b159bd;
-  }
-  #iconcharts{
+    }
+    #iconcharts{
       color:#925268;
-  }
-  #icongit{
+    }
+    #icongit{
       color:#2fb3ff;
-  }
-  #iconsql{
+    }
+    #iconsql{
       color:#2fffe3;
-  }
-  #icondocker{
+    }
+    #icondocker{
       color:#ff7950;
-  }
-  #iconreact{
+    }
+    #iconreact{
       color:#6f8ee6;
-  }
-  #iconbootstrap{
-    color: #8d74b4;
-  }
-  #iconlinux{
-    color: #1C89BB;
+    }
+    #iconbootstrap{
+      color: #8d74b4;
+    }
+    #iconlinux{
+      color: #1C89BB;
+    }
   }
 }
