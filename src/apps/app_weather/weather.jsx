@@ -1,7 +1,7 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import { Loader, Breadcrumbs } from "../../components";
 import WeatherDisplay from "./weatherdisplay";
+import "./css/weather.css";
 
 export default function Weather() {
   const [location, setLocation] = useState("Nairobi");
@@ -60,28 +60,34 @@ export default function Weather() {
   return (
     <>
       <Breadcrumbs crumbs={["home", "app", "weather"]} />
-      <input
-        type="text"
-        placeholder="Enter Location"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        onKeyPress={getWeather}
-      />
-      <button className="btn btn-sm btn-outline-info" onClick={getWeather}>
-        Submit
-      </button>
-      <br />
+      <div className="weather">
+        <input
+          type="text"
+          placeholder="Enter Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          onKeyPress={getWeather}
+        />
+        <button className="btn btn-sm btn-outline-info" onClick={getWeather}>
+          Submit
+        </button>
+        <br />
 
-      {loading ? (
-        <Loader />
-      ) : (
-        <div>
-          {weatherData.length > 0 ? <WeatherDisplay data={weatherData} /> : ""}
-          {errors.length > 0
-            ? errors.map((err, index) => <p key={index}>{err}</p>)
-            : ""}
-        </div>
-      )}
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {weatherData.length > 0 ? (
+              <WeatherDisplay data={weatherData} />
+            ) : (
+              ""
+            )}
+            {errors.length > 0
+              ? errors.map((err, index) => <p key={index}>{err}</p>)
+              : ""}
+          </>
+        )}
+      </div>
     </>
   );
 }

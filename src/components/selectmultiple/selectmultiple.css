@@ -2,17 +2,14 @@
   width: 200px;
   font-size: 12px;
 }
-
 .multiselect .selectBox {
   position: relative;
 }
-
 .multiselect .selectBox select {
   width: 100%;
   font-weight: bold;
-  background-color: #e4e4e4ee;
+  background-color: rgba(228, 228, 228, 0.9333333333);
 }
-
 .multiselect .overSelect {
   position: absolute;
   left: 0;
@@ -20,7 +17,6 @@
   top: 0;
   bottom: 0;
 }
-
 .multiselect #checkboxes {
   border: 1px #dadada solid;
   position: absolute;
@@ -29,22 +25,17 @@
   width: 200px;
   overflow-y: auto;
 }
-
 .multiselect #checkboxes label {
   display: block;
   color: black;
 }
-
 .multiselect #checkboxes label:hover {
-  background-color: #cececeee;
+  background-color: rgba(206, 206, 206, 0.9333333333);
 }
-
 .multiselect .showCheckboxes {
   display: block;
-  background-color: #e4e4e4ee;
+  background-color: rgba(228, 228, 228, 0.9333333333);
 }
-
 .multiselect .hideCheckboxes {
   display: none;
 }
-/*# sourceMappingURL=selectmultiple.css.map */

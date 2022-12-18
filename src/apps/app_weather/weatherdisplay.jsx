@@ -4,8 +4,8 @@ export default function WeatherDisplay({ data }) {
   const { temp } = main;
 
   return (
-    <div className="weatherDisplay">
-      <h3>{name}</h3>
+    <div className="weatherInfo">
+      <h5>{name}</h5>
       <img src={`https://openweathermap.org/img/wn/${icon}@4x.png `} />
       <p>{mainWeather}</p>
       <p>{desc}</p>

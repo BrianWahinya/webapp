@@ -1,33 +1,22 @@
 .mainGalDiv {
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
 }
 
 .divGallery {
   margin-top: 5px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .containerImage {
   position: relative;
   min-width: 200px;
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-basis: auto;
+  flex-grow: 1;
 }
 
 .photo {
@@ -39,13 +28,11 @@
 .photographer {
   position: absolute;
   bottom: 0;
-  background: black;
-  background: rgba(0, 0, 0, 0.5);
-  /* Black see-through */
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1;
   width: 100%;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   color: white;
   font-size: 13px;
@@ -56,11 +43,9 @@
 .containerImage:hover {
   cursor: pointer;
 }
-
 .containerImage:hover .photographer {
   opacity: 1;
 }
-
 .containerImage:hover .photo {
   opacity: 0.5;
 }
@@ -68,4 +53,3 @@
 .pagination .btn {
   margin: 2px;
 }
-/*# sourceMappingURL=gallery.css.map */

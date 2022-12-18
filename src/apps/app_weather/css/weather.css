@@ -1,0 +1,11 @@
+.weather {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+.weather .btn {
+  margin: 5px;
+}
+.weather .weatherInfo {
+  margin-top: 5px;
+}

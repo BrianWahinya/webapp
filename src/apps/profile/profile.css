@@ -1,21 +1,13 @@
 .profileDiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   vertical-align: middle;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   min-height: 60vh !important;
 }
-
 .profileDiv span {
-  font-family: 'Courier New', Courier, monospace !important;
+  font-family: "Courier New", Courier, monospace !important;
   font-size: 30px !important;
   font-weight: bold;
 }
-/*# sourceMappingURL=profile.css.map */

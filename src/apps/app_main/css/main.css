@@ -1,19 +1,10 @@
 .divMainApps {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
 .divMainApps .appLink {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -22,22 +13,17 @@
   padding: 5px;
   border: 2px solid #1d1d1d;
   border-radius: 5px;
-  background-color: #3d3d3dd8;
+  background-color: rgba(61, 61, 61, 0.8470588235);
   color: #cedfee;
   font-size: 16px;
   text-decoration: none;
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 .divMainApps .appLink:hover {
   cursor: pointer;
-  background-color: #7e7e7ed8;
+  background-color: rgba(126, 126, 126, 0.8470588235);
 }
-
 .divMainApps .appLink .appIcon {
   font-size: 25px;
 }
-/*# sourceMappingURL=main.css.map */

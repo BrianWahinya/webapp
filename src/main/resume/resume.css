@@ -1,16 +1,14 @@
 .nav-link {
-  background: #8f8f8f00 !important;
+  background: rgba(143, 143, 143, 0) !important;
   color: #b1b1b1;
   border: none !important;
 }
-
 .nav-link.active {
-  background-color: #8f8f8f60 !important;
+  background-color: rgba(143, 143, 143, 0.3764705882) !important;
   border: none !important;
   color: #f0f8ff !important;
   outline: none;
 }
-
 .nav-link:hover {
   color: #dfdfdf !important;
   text-decoration: line-through;
@@ -23,13 +21,11 @@
 }
 
 .tab-content {
-  background-color: #8f8f8f60;
+  background-color: rgba(143, 143, 143, 0.3764705882);
   border: none !important;
   margin-top: 1px;
   border-radius: 0 0 5px 5px;
 }
-
 .tab-content .tab-pane {
   padding: 5px;
 }
-/*# sourceMappingURL=resume.css.map */

@@ -1,17 +1,12 @@
 .aboutDiv {
   color: #cecece;
 }
-
 .aboutDiv .codingToolsDiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
 }
-
 .aboutDiv .codingToolsDiv .codingTool {
   min-width: 80px;
   height: -webkit-fit-content;
@@ -22,71 +17,53 @@
   font-size: 40px;
   border-radius: 3px;
 }
-
 .aboutDiv .codingToolsDiv .codingTool .codingToolName {
   font-size: 13px;
   padding: 0;
   margin: 0;
 }
-
 .aboutDiv .codingToolsDiv .codingTool:hover {
   background-color: rgba(247, 237, 225, 0.39);
   cursor: pointer;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  -webkit-transition: all 250ms ease;
+  transform: scale(0.9);
   transition: all 250ms ease;
 }
-
 .aboutDiv .codingToolsDiv .codingTool:hover .codingToolName {
   color: #ffffff !important;
 }
-
 .aboutDiv .codingToolsDiv .codingTool:hover .codingIcons {
   color: #ffffff !important;
 }
-
 .aboutDiv .codingToolsDiv #iconpython {
   color: #009ADC;
 }
-
 .aboutDiv .codingToolsDiv #iconjs {
   color: #f1ee19;
 }
-
 .aboutDiv .codingToolsDiv #iconhtml {
   color: #ff822f;
 }
-
 .aboutDiv .codingToolsDiv #iconcss {
   color: #b159bd;
 }
-
 .aboutDiv .codingToolsDiv #iconcharts {
   color: #925268;
 }
-
 .aboutDiv .codingToolsDiv #icongit {
   color: #2fb3ff;
 }
-
 .aboutDiv .codingToolsDiv #iconsql {
   color: #2fffe3;
 }
-
 .aboutDiv .codingToolsDiv #icondocker {
   color: #ff7950;
 }
-
 .aboutDiv .codingToolsDiv #iconreact {
   color: #6f8ee6;
 }
-
 .aboutDiv .codingToolsDiv #iconbootstrap {
   color: #8d74b4;
 }
-
 .aboutDiv .codingToolsDiv #iconlinux {
   color: #1C89BB;
 }
-/*# sourceMappingURL=about.css.map */

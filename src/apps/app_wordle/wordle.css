@@ -1,42 +1,27 @@
 .wordle {
   margin: 0 auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
 }
-
 .wordle h5 {
   font-size: 14px;
   font-weight: bold;
 }
-
 .wordle select {
   font-size: 12px;
 }
-
 .wordle .instructions {
   font-size: 12px;
 }
-
 .wordle .hints {
   font-size: 12px;
 }
-
 .wordle .guess {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   margin-top: 5px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .wordle .letter {
   width: 40px;
   height: 40px;
@@ -45,73 +30,53 @@
   border: 1px solid darkblue;
   border-radius: 2px;
   text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   color: #0f0050;
 }
-
 .wordle .btnNextWord {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-
 .wordle .null {
   background-color: rgba(248, 248, 248, 0.849);
 }
-
 .wordle .active {
-  background-color: #e1eefa81;
+  background-color: rgba(225, 238, 250, 0.5058823529);
 }
-
 .wordle .far {
   background-color: rgba(209, 143, 143, 0.795);
   color: white;
 }
-
 .wordle .close {
   background-color: rgba(255, 255, 0, 0.795);
   color: #0f0050;
 }
-
 .wordle .exact {
   background-color: rgba(145, 238, 145, 0.795);
   color: #0f0050;
 }
-
 .wordle .failed {
   color: #ff8282;
   font-weight: bold;
 }
-
 .wordle .correct {
   color: #0edd0e;
   font-weight: bold;
 }
-
 .wordle .inputs {
   margin-top: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .wordle .textInput {
   height: 30px;
 }
-
 .wordle .btnEnter {
   margin-left: 5px;
 }
-
 .wordle .compWord {
   font-weight: bold;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/*# sourceMappingURL=wordle.css.map */

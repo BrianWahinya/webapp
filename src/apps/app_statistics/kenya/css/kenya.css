@@ -3,42 +3,35 @@
   max-height: 300px;
   overflow: auto;
 }
-
 .kenyaDiv .tableDiv table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
-
 .kenyaDiv .tableDiv table td, .kenyaDiv .tableDiv table th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 5px;
 }
-
 .kenyaDiv .tableDiv table tr:nth-child(even) {
-  background-color: #9999999f;
+  background-color: rgba(153, 153, 153, 0.6235294118);
   color: #000000;
 }
-
 .kenyaDiv .tableDiv table thead tr {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #d2c7ffdc;
+  background-color: rgba(210, 199, 255, 0.862745098);
   color: #000000;
 }
-
 .kenyaDiv .tableDiv table tbody tr:hover {
-  background-color: #f5ffd2c9;
+  background-color: rgba(245, 255, 210, 0.7882352941);
   color: #000000;
   cursor: pointer;
 }
-
 .kenyaDiv .chartDiv {
   width: 99%;
   height: 70vh;
   min-width: 250px;
   min-height: 250px;
 }
-/*# sourceMappingURL=kenya.css.map */

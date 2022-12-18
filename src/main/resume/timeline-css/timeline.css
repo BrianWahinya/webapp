@@ -14,19 +14,17 @@
   *  SCROLLBAR
   */
 }
-
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
   height: 100vh;
-  background-color: #7e7e7e59;
+  background-color: rgba(126, 126, 126, 0.3490196078);
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
 }
-
 .timeline .tm-container {
   padding: 10px 40px;
   position: relative;
@@ -34,25 +32,22 @@
   max-width: 50%;
   /* The circles on the timeline */
 }
-
 .timeline .tm-container::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: #7e7e7e59;
+  background-color: rgba(126, 126, 126, 0.3490196078);
   border: 4px solid #c4c4c4;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
 }
-
 .timeline .left {
   left: 0;
   /* Add arrows to the left tm-container (pointing right) */
 }
-
 .timeline .left::before {
   content: " ";
   height: 0;
@@ -63,15 +58,13 @@
   right: 30px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #7e7e7e59;
+  border-color: transparent transparent transparent rgba(126, 126, 126, 0.3490196078);
 }
-
 .timeline .right {
   left: 50%;
   /* Add arrows to the right tm-container (pointing left) */
   /* Fix the circle for tm-containers on the right side */
 }
-
 .timeline .right::before {
   content: " ";
   height: 0;
@@ -82,36 +75,30 @@
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #7e7e7e59 transparent transparent;
+  border-color: transparent rgba(126, 126, 126, 0.3490196078) transparent transparent;
 }
-
 .timeline .right::after {
   left: -16px;
 }
-
 .timeline .tm-content {
   padding: 20px 30px;
-  background-color: #7e7e7e59;
+  background-color: rgba(126, 126, 126, 0.3490196078);
   position: relative;
   border-radius: 6px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
-
 .timeline::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fafafa;
   border-radius: 10px;
 }
-
 .timeline::-webkit-scrollbar {
   width: 10px;
   border-radius: 10px;
   background-color: #fafafa;
 }
-
 .timeline::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.2, #a1a1a1), color-stop(0.45, #747474), color-stop(0.66, #3a3a3a));
@@ -139,7 +126,7 @@
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #7e7e7e59 transparent transparent;
+    border-color: transparent rgba(126, 126, 126, 0.3490196078) transparent transparent;
   }
   .timeline .left::after, .timeline .right::after {
     left: 15px;
@@ -148,4 +135,3 @@
     left: 0%;
   }
 }
-/*# sourceMappingURL=timeline.css.map */

@@ -3,28 +3,23 @@
   max-height: 300px;
   overflow: auto;
 }
-
 .tableDiv table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
   color: #ebebeb;
 }
-
 .tableDiv table td, .tableDiv table th {
   border: 1px solid #5c5c5c;
   text-align: left;
   padding: 5px;
 }
-
 .tableDiv table thead tr {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #383838ce;
+  background-color: rgba(56, 56, 56, 0.8078431373);
 }
-
 .tableDiv table tbody tr:hover {
-  background-color: #a3a3a379;
+  background-color: rgba(163, 163, 163, 0.4745098039);
 }
-/*# sourceMappingURL=table.css.map */

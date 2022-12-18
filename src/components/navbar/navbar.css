@@ -1,59 +1,38 @@
 .mainContent {
   width: 100%;
 }
-
 .mainContent .svg-inline--fa {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  -webkit-transition: 250ms;
+  transform: scale(1.5);
   transition: 250ms;
 }
-
 .mainContent .svg-inline--fa:hover {
   color: aquamarine;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 250ms;
+  transform: scale(1.1);
   transition: 250ms;
 }
 
 @media (min-width: 576px) {
   .navbar-expand-sm {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .mainContent {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }
-
 @media (max-width: 576px) {
   .navbar-expand-sm {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .mainContent {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify !important;
-        -ms-flex-pack: justify !important;
-            justify-content: space-between !important;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    justify-content: space-between !important;
+    flex-wrap: nowrap;
   }
   .container-fluid {
-    -ms-flex-wrap: wrap !important;
-        flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
   }
 }
-
 code {
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-/*# sourceMappingURL=navbar.css.map */

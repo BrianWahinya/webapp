@@ -1,19 +1,16 @@
 .divQuoteGen {
   text-align: center;
 }
-
 .divQuoteGen .wait {
   color: red;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 12px;
 }
-
 .divQuoteGen .btnTweet, .divQuoteGen .adviceNext {
   margin: 5px;
   font-size: 12px;
 }
-
 .divQuoteGen .adviceNext:disabled,
 .divQuoteGen .disabled {
   pointer-events: none;
@@ -21,9 +18,7 @@
   border-color: #a0a0a0 !important;
   color: #8a8a8a !important;
 }
-
 .divQuoteGen .pAuthor {
   font-style: italic;
   color: #cee2ff;
 }
-/*# sourceMappingURL=quotegenerator.css.map */

@@ -3,12 +3,9 @@
   margin: 0 auto;
   text-align: center;
 }
-
 .conwayDiv .btn {
   margin: 2px;
 }
-
 .conwayDiv canvas {
   height: 70vh;
 }
-/*# sourceMappingURL=conway.css.map */
