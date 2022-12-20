@@ -1,8 +1,27 @@
 .aboutDiv {
   color: #cecece;
+  text-align: center;
 }
 .aboutDiv p {
   text-align: center;
+}
+.aboutDiv .input-group {
+  background-color: rgba(120, 120, 121, 0.2941176471);
+  margin: 0 auto;
+  margin-bottom: 2px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.aboutDiv .input-group .input-group-text {
+  background-color: rgba(126, 126, 126, 0.2039215686);
+  color: #1d1d1d;
+  font-size: 0.9em;
+}
+.aboutDiv .input-group input, .aboutDiv .input-group span.input {
+  background-color: rgba(138, 138, 138, 0.5137254902);
+  color: #2e2e2e;
+  font-size: 0.9em;
 }
 .aboutDiv .codingToolsDiv {
   display: flex;

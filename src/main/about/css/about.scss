@@ -1,7 +1,24 @@
 .aboutDiv{
   color: #cecece;
+  text-align: center;
   p{
     text-align: center;
+  }
+  .input-group{
+    background-color: #7878794b;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    width: max-content;
+    .input-group-text{
+      background-color: #7e7e7e34;
+      color: #1d1d1d;
+      font-size: 0.9em;
+    }
+    input, span.input{
+      background-color: #8a8a8a83;
+      color: #2e2e2e;
+      font-size: 0.9em;
+    }
   }
   .codingToolsDiv{
     display: flex;

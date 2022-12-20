@@ -1,3 +1,4 @@
+import { InputGroup, InputGroupText, Input } from "reactstrap";
 import { Breadcrumbs, FaIcon, LocalCard } from "../../components";
 import "./css/about.css";
 
@@ -15,14 +16,30 @@ const codingTools = [
   { id: "linux", name: "Linux-basics" },
 ];
 export default function About() {
-  const header = () => (
-    <p>
-      6+ yrs in software design and development.
-      <br /> Currently based in Nairobi, Kenya.
-      <br />
-      Worked globally for international organisations in:
-      <br /> Santiago, Chile and Bangkok, Thailand.
-    </p>
+  const currentYear = new Date().getFullYear();
+  const header = (yr) => (
+    <>
+      <InputGroup size="sm" width="xs">
+        <InputGroupText>Experience</InputGroupText>
+        <Input
+          placeholder={`${yr - 2018}+ years`}
+          value={`${yr - 2018}+ years`}
+          disabled
+        />
+      </InputGroup>
+      <InputGroup size="sm">
+        <InputGroupText>Current Base</InputGroupText>
+        <Input placeholder="Nairobi, Kenya" value="Nairobi, Kenya" disabled />
+      </InputGroup>
+      <InputGroup size="sm">
+        <InputGroupText>Previous Locations</InputGroupText>
+        <Input
+          placeholder="Santiago and Bangkok"
+          defaultValue="Santiago and Bangkok"
+          disabled
+        />
+      </InputGroup>
+    </>
   );
 
   const body = () => (
@@ -46,7 +63,7 @@ export default function About() {
     <>
       <Breadcrumbs crumbs={["home", "about"]} />
       <div className="aboutDiv">
-        <LocalCard header={header()} body={body()} />
+        <LocalCard header={header(currentYear)} body={body()} />
       </div>
     </>
   );
