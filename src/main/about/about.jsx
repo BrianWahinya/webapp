@@ -1,5 +1,5 @@
-import { Breadcrumbs, FaIcon } from "../../components";
-import "./about.css";
+import { Breadcrumbs, FaIcon, LocalCard } from "../../components";
+import "./css/about.css";
 
 const codingTools = [
   { id: "python", name: "Python" },
@@ -15,27 +15,38 @@ const codingTools = [
   { id: "linux", name: "Linux-basics" },
 ];
 export default function About() {
+  const header = () => (
+    <p>
+      6+ yrs in software design and development.
+      <br /> Currently based in Nairobi, Kenya.
+      <br />
+      Worked globally for international organisations in:
+      <br /> Santiago, Chile and Bangkok, Thailand.
+    </p>
+  );
+
+  const body = () => (
+    <>
+      <p>
+        <u>Languages and tools</u>
+      </p>
+      <div className="codingToolsDiv">
+        {codingTools.map((ct) => (
+          <div key={ct.id} className="codingTool">
+            <span id={`icon${ct.id}`} className="codingIcons">
+              <FaIcon key={ct.id} name={ct.id} />
+            </span>
+            <p className="codingToolName">{ct.name}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
   return (
     <>
       <Breadcrumbs crumbs={["home", "about"]} />
       <div className="aboutDiv">
-        <p>
-          6+ yrs in software design and development. Currently based in Nairobi,
-          Kenya.
-        </p>
-        <p>
-          <u>Languages and tools</u>
-        </p>
-        <div className="codingToolsDiv">
-          {codingTools.map((ct) => (
-            <div key={ct.id} className="codingTool">
-              <span id={`icon${ct.id}`} className="codingIcons">
-                <FaIcon key={ct.id} name={ct.id} />
-              </span>
-              <p className="codingToolName">{ct.name}</p>
-            </div>
-          ))}
-        </div>
+        <LocalCard header={header()} body={body()} />
       </div>
     </>
   );

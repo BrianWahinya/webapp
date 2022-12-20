@@ -1,5 +1,5 @@
 import Typed from "react-typed";
-import "./profile.css";
+import "./css/profile.css";
 
 const txtLines = ["I'm Brian Wahinya", "I'm a Software Engineer"];
 export default function Profile() {

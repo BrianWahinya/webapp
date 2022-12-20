@@ -1,11 +1,19 @@
 .aboutDiv {
   color: #cecece;
 }
+.aboutDiv p {
+  text-align: center;
+}
 .aboutDiv .codingToolsDiv {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto;
+}
+.aboutDiv .codingToolsDiv:after {
+  content: "";
+  flex: auto;
 }
 .aboutDiv .codingToolsDiv .codingTool {
   min-width: 80px;

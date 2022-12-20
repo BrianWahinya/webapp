@@ -8,3 +8,4 @@ export { default as Table } from "./table/table";
 export { default as FaIcon } from "./icons/icons";
 export { default as CustomModal } from "./modal/modal";
 export { default as Breadcrumbs } from "./breadcrumbs/breadcrumbs";
+export { default as LocalCard } from "./card/card";

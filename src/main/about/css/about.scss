@@ -1,10 +1,18 @@
 .aboutDiv{
   color: #cecece;
+  p{
+    text-align: center;
+  }
   .codingToolsDiv{
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
+    &:after {
+      content: "";
+      flex: auto;
+    }
     .codingTool{
       min-width: 80px;
       height: fit-content;
